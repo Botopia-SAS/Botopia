@@ -12,7 +12,20 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        float: {
+          "0%, 100%": {
+            transform: "translateY(0)", // Posición inicial y final
+          },
+          "50%": {
+            transform: "translateY(-10px)", // Flotación hacia arriba
+          },
+        },
+      },
+      animation: {
+        float: "float 4s ease-in-out infinite", // Animación suave y repetitiva
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 } satisfies Config;
