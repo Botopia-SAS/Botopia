@@ -11,7 +11,7 @@ export default function Header() {
         <div className="container mx-auto flex justify-between items-center text-sm px-4">
           <div>
             <span>📞 +57 (322) 871 6267</span>
-            <span className="mx-12">✉️ contacto@botopia.tech</span>
+            <span className="mx-6">✉️ contacto@botopia.tech</span>
           </div>
           <div className="hidden lg:block">Impulsamos tu negocio con tecnología personalizada</div>
         </div>

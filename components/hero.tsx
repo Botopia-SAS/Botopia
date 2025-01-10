@@ -1,11 +1,11 @@
 export default function Hero() {
     return (
-        <section className="bg-gradient-to-b from-black to-purple-800 text-white py-0 relative">
+        <section className="bg-gradient-to-b from-black to-purple-800 text-white relative">
             {/* Contenedor principal */}
-            <div className="container mx-auto px-6 lg:px-20 text-center relative z-10 pt-16">
+            <div className="container mx-auto px-6 lg:px-20 text-center relative z-10 pt-10">
                 {/* Título y subtítulo */}
-                <h1 className="text-4xl font-bold mb-4 lg:text-5xl">
-                    Conectamos <span className="text-purple-400">empresas</span> y{" "}
+                <h1 className="text-3xl font-bold mb-4 lg:text-5xl">
+                    Conectamos <br /> <span className="text-purple-400">empresas</span> y{" "}
                     <span className="text-purple-400">tecnología</span>
                 </h1>
                 <p className="text-lg lg:text-xl mb-8">
@@ -30,7 +30,7 @@ export default function Hero() {
                 </div>
 
                 {/* Características */}
-                <div className="lg:relative flex flex-wrap justify-center items-center ">
+                <div className="lg:relative flex flex-wrap justify-center items-center gap-4">
                     {/* Imagen central */}
                     <img
                         src="/persona2.svg"
@@ -42,25 +42,25 @@ export default function Hero() {
                     <img
                         src="/icon1.png"
                         alt="Icono 1"
-                        className="lg:absolute w-48 lg:w-60 h-auto top-0 left-1/4 animate-float"
+                        className="lg:absolute w-36 lg:w-60 h-auto top-0 left-1/4 animate-float"
                         style={{ animationDelay: "9s" }}
                     />
                     <img
                         src="/icon2.png"
                         alt="Icono 2"
-                        className="lg:absolute w-48 lg:w-60 h-auto bottom-6 left-1 animate-float"
+                        className="lg:absolute w-36 lg:w-60 h-auto bottom-6 left-1 animate-float"
                         style={{ animationDelay: "6s" }}
                     />
                     <img
                         src="/icon3.png"
                         alt="Icono 3"
-                        className="lg:absolute w-48 lg:w-60 h-auto top-10 right-1/4 animate-float"
+                        className="lg:absolute w-36 lg:w-60 h-auto top-10 right-1/4 animate-float"
                         style={{ animationDelay: "8s" }}
                     />
                     <img
                         src="/icon4.png"
                         alt="Icono 3"
-                        className="lg:absolute w-48 lg:w-60 h-auto top-30 right-1 animate-float"
+                        className="lg:absolute w-36 lg:w-60 h-auto top-30 right-1 animate-float"
                         style={{ animationDelay: "7s" }}
                     />
                 </div>
