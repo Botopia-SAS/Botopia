@@ -14,6 +14,39 @@
   }
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes marquee {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 15s linear infinite;
+}
+
+
+.animate-marquee:hover {
+  animation-play-state: paused; /* Pausa la animación al pasar el cursor */
+}
+
+
+.jump-button {
+  animation: bounce 1s infinite;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
