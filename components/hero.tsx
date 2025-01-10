@@ -2,7 +2,7 @@ export default function Hero() {
     return (
         <section className="bg-gradient-to-b from-black to-purple-800 text-white relative">
             {/* Contenedor principal */}
-            <div className="container mx-auto px-6 lg:px-20 text-center relative z-10 pt-10">
+            <div className="container mx-auto px-6 lg:px-20 text-center relative z-10 pt-16">
                 {/* Título y subtítulo */}
                 <h1 className="text-3xl font-bold mb-4 lg:text-5xl">
                     Conectamos <br /> <span className="text-purple-400">empresas</span> y{" "}
