@@ -14,6 +14,9 @@ export default function Clientes() {
     return (
         <section className="bg-[#6b21a8] to-black py-12">
             <div className="mx-auto w-full">
+                <h2 className="text-3xl font-bold text-center mb-8 text-white">
+                    Únete a quienes confían en nosotros
+                </h2>
                 {/* Carrusel animado */}
                 <div className="relative overflow-hidden w-full h-32 py-8">
                     {/* Degradado en los bordes */}

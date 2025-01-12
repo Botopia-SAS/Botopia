@@ -2,7 +2,7 @@ export default function Hero() {
     return (
         <section className="bg-gradient-to-b from-black to-purple-800 text-white relative">
             {/* Contenedor principal */}
-            <div className="container px-8 md:mx-16 lg:px-20 md:pt-32 py-4">
+            <div className="container px-8 md:mx-16 lg:px-20 md:pt-32 py-4 md:py-24">
                 <div className="flex flex-col lg:flex-row items-center lg:items-start">
                     {/* Contenedor del título y subtítulo */}
                     <div className="lg:w-1/2 text-center lg:text-left">
@@ -45,25 +45,25 @@ export default function Hero() {
                         <img
                             src="/chatbot.png"
                             alt="Icono 1"
-                            className="absolute w-40 lg:w-56 h-auto md:top-0 md:left-1/4 md:right-2/4 animate-float"
+                            className="absolute w-40 lg:w-52 h-auto md:top-0 md:left-1/4 md:right-2/4 animate-float"
                             style={{ animationDelay: "4s" }}
                         />
                         <img
                             src="/paginaweb.png"
                             alt="Icono 2"
-                            className="absolute w-40 md:w-56 md:h-auto right-56 md:-left-2 animate-float md:top-64"
+                            className="absolute w-40 md:w-52 md:h-auto right-56 md:-left-2 animate-float md:top-64"
                             style={{ animationDelay: "3s" }}
                         />
                         <img
                             src="/app.png"
                             alt="Icono 3"
-                            className="absolute w-40 md:w-56 md:h-auto top-96 md:top-10 md:-right-1/4 animate-float"
+                            className="absolute w-40 md:w-52 md:h-auto top-96 md:top-10 md:-right-1/4 animate-float"
                             style={{ animationDelay: "2s" }}
                         />
                         <img
                             src="/icon4.png"
                             alt="Icono 4"
-                            className="absolute w-40 lg:w-56 md:h-auto top-96 right-56 md:-top-20 md:right-2 animate-float"
+                            className="absolute w-40 lg:w-52 md:h-auto top-96 right-56 md:-top-20 md:right-2 animate-float"
                             style={{ animationDelay: "1s" }}
                         />
                     </div>
