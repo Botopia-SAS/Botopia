@@ -1,0 +1,65 @@
+{
+  "Header": {
+      "phrase": "Impulsionamos o seu negócio com tecnologia personalizada",
+      "Languages": {  
+          "Spanish": "Espanhol",
+          "English": "Inglês",
+          "Portuguese": "Português"
+      },
+      "menu": {
+          "home": "Início",  
+          "ourSolutions": "Nossas Soluções",
+          "aboutUs": "Sobre Nós",
+          "contact": "Contate-nos"
+      }
+  },
+  "Hero": {
+    "title": {
+      "part1": "Conectamos",
+      "highlight1": "empresas",
+      "and": "e",
+      "highlight2": "tecnologia"
+    },
+    "subtitle": {
+      "part1": "Facilite o",
+      "part2": "acesso aos seus serviços com tecnologia",
+      "part3": "e melhore o relacionamento com seus clientes"
+    },
+    "buttons": {
+      "contactSales": "Falar com vendas",
+      "tryUsFree": "Experimente grátis!"
+    },
+    "images": {
+      "mainAlt": "Pessoa",
+      "icon1Alt": "Ícone de chatbot",
+      "icon2Alt": "Ícone de página web",
+      "icon3Alt": "Ícone de aplicativo",
+      "icon4Alt": "Outro ícone flutuante"
+    }
+  },
+  "Clientes": {
+    "title": "Junte-se a quem confia em nós",
+    "images": {
+      "alt": "Cliente número {index}"
+    }
+  },
+  "Footer": {
+    "intro": "Vamos começar a transformar o futuro juntos!",
+    "quickLinks": {
+      "title": "Links rápidos",
+      "terms": "Termos e condições",
+      "privacy": "Política de privacidade",
+      "careers": "Trabalhe conosco"
+    },
+    "contact": {
+      "title": "Contato",
+      "email": "contato@botopia.tech"
+    },
+    "newsletter": {
+      "title": "Inscreva-se na nossa Newsletter",
+      "label": "Cadastre-se na nossa Newsletter",
+      "placeholder": "Por favor insira seu e-mail"
+    },
+    "footerRights": "Botopia Technology S.A.S. Todos os direitos reservados."
+  }
+}

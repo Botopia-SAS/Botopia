@@ -1,0 +1,65 @@
+{
+    "Header": {
+        "phrase": "We boost your business with personalized technology",
+        "Languages": {
+            "Spanish": "Spanish",
+            "English": "English",
+            "Portuguese": "Portuguese"
+        },
+        "menu": {
+            "home": "Home",
+            "ourSolutions": "Our Solutions",
+            "aboutUs": "About Us",
+            "contact": "Contact Us"
+        }
+    },
+    "Hero": {
+        "title": {
+            "part1": "Connecting",
+            "highlight1": "businesses",
+            "and": "&",
+            "highlight2": "technology"
+        },
+        "subtitle": {
+            "part1": "Make it easier",
+            "part2": "to access your services with technology",
+            "part3": "and improve relationships with your customers"
+        },
+        "buttons": {
+            "contactSales": "Contact Sales",
+            "tryUsFree": "Try us for free!"
+        },
+        "images": {
+            "mainAlt": "Person",
+            "icon1Alt": "Chatbot icon",
+            "icon2Alt": "Web page icon",
+            "icon3Alt": "App icon",
+            "icon4Alt": "Another floating icon"
+        }
+    },
+    "Clientes": {
+        "title": "Join those who trust us",
+        "images": {
+            "alt": "Client number {index}"
+        }
+    },
+    "Footer": {
+        "intro": "Let’s start transforming the future together!",
+        "quickLinks": {
+          "title": "Quick Links",
+          "terms": "Terms and Conditions",
+          "privacy": "Privacy Policy",
+          "careers": "Careers"
+        },
+        "contact": {
+          "title": "Contact",
+          "email": "contact@botopia.tech"
+        },
+        "newsletter": {
+          "title": "Subscribe to our Newsletter",
+          "label": "Sign up for our Newsletter",
+          "placeholder": "Please enter your email"
+        },
+        "footerRights": "Botopia Technology S.A.S. All rights reserved."
+      }
+}

@@ -1,0 +1,65 @@
+{
+    "Header": {
+        "phrase": "Impulsamos tu negocio con tecnología personalizada",
+        "Languages": {
+            "Spanish": "Español",
+            "English": "Inglés",
+            "Portuguese": "Portugués"
+        },
+        "menu": {
+            "home": "Inicio",
+            "ourSolutions": "Nuestras soluciones",
+            "aboutUs": "Nosotros",
+            "contact": "Contáctanos"
+        }
+    },
+    "Hero": {
+        "title": {
+            "part1": "Conectamos",
+            "highlight1": "empresas",
+            "and": "y",
+            "highlight2": "tecnología"
+        },
+        "subtitle": {
+            "part1": "Facilita el",
+            "part2": "acceso a tus servicios con tecnología",
+            "part3": "y mejora las relaciones con tus clientes"
+        },
+        "buttons": {
+            "contactSales": "Hablar con ventas",
+            "tryUsFree": "¡Pruébanos gratis!"
+        },
+        "images": {
+            "mainAlt": "Persona",
+            "icon1Alt": "Icono de chatbot",
+            "icon2Alt": "Icono de página web",
+            "icon3Alt": "Icono de aplicación",
+            "icon4Alt": "Otro icono flotante"
+        }
+    },
+    "Clientes": {
+        "title": "Únete a quienes confían en nosotros",
+        "images": {
+            "alt": "Cliente número {index}"
+        }
+    },
+    "Footer": {
+        "intro": "¡Comencemos a transformar el futuro juntos!",
+        "quickLinks": {
+          "title": "Accesos rápidos",
+          "terms": "Términos y condiciones",
+          "privacy": "Políticas de privacidad",
+          "careers": "Trabaja con nosotros"
+        },
+        "contact": {
+          "title": "Contacto",
+          "email": "contacto@botopia.tech"
+        },
+        "newsletter": {
+          "title": "Suscríbete a nuestro Newsletter",
+          "label": "Regístrate a nuestro Newsletter",
+          "placeholder": "Por favor ingresa tu correo"
+        },
+        "footerRights": "Botopia Technology S.A.S. Todos los derechos reservados."
+      }
+}

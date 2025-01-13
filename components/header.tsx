@@ -1,9 +1,32 @@
 'use client'; // Si necesitas interactividad
 
-import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation'; 
+import { useState, useEffect } from 'react';
+
 
 export default function Header() {
+
+  const t = useTranslations("Header");
+  const router = useRouter(); // Para manejar cambios de idioma
+  const pathname = usePathname(); // Obtiene la ruta actual incluyendo el idioma
+  const [currentLanguage, setCurrentLanguage] = useState('es'); // Estado para almacenar el idioma actual
+
+  // Actualizar el estado del idioma al cargar la página
+  useEffect(() => {
+    const locale = pathname.split('/')[1]; // Extraer el idioma de la ruta actual
+    setCurrentLanguage(locale || 'es'); // Predeterminado a español si no hay idioma
+  }, [pathname]);
+
+
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para el menú
+
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedLanguage = e.target.value; // Obtener el valor del idioma seleccionado
+    router.push(`/${selectedLanguage}`); // Cambiar la ruta al idioma seleccionado
+  };
+
   return (
     <header className="bg-black text-white">
       {/* Sección Superior */}
@@ -13,7 +36,7 @@ export default function Header() {
             <span>📞 +57 (322) 871 6267</span>
             <span className="mx-6">✉️ contacto@botopia.tech</span>
           </div>
-          <div className="hidden lg:block">Impulsamos tu negocio con tecnología personalizada</div>
+          <div className="hidden lg:block">{t("phrase")}</div>
         </div>
       </div>
 
@@ -25,25 +48,30 @@ export default function Header() {
             <img src="/logo.svg" alt="Bogotpia Logo" className="h-6 md:h-10 lg:h-12" />
           </div>
 
-          {/* Selector de Idioma y Botón */}
+          {/* Selector de Idioma */}
           <div className="md:flex md:items-center md:space-x-4">
-            <select className="bg-gray-800 text-white border-none rounded-md px-4 py-1">
-              <option value="es">Español</option>
-              <option value="en">Inglés</option>
+            <select
+              value={currentLanguage} // Idioma actual seleccionado
+              onChange={handleLanguageChange} // Cambiar idioma al seleccionar
+              className="bg-gray-800 text-white border-none rounded-md px-4 py-1"
+            >
+              <option value="es">{t('Languages.Spanish')}</option>
+              <option value="en">{t('Languages.English')}</option>
+              <option value="pt">{t('Languages.Portuguese')}</option>
             </select>
           </div>
 
           {/* Menú de Navegación */}
           <nav className="hidden md:flex space-x-6">
-            <a href="#" className="hover:text-[#9165f3] py-2">Inicio</a>
-            <a href="#" className="hover:text-[#9165f3] py-2">Nuestras Soluciones</a>
-            <a href="#" className="hover:text-[#9165f3] py-2">Nosotros</a>
-            <a href="#" className="hover:text-[#9165f3] py-2 px-2">Blog / Podcast</a>
+            <a href="#" className="hover:text-[#9165f3] py-2">{t("menu.home")}</a>
+            <a href="#" className="hover:text-[#9165f3] py-2">{t("menu.ourSolutions")}</a>
+            <a href="#" className="hover:text-[#9165f3] py-2">{t("menu.aboutUs")}</a>
+            <a href="#" className="hover:text-[#9165f3] py-2 px-2">Blog/Podcast</a>
             <a
               href="#"
               className="bg-[#9165f3] text-white font-bold py-2 px-2 rounded-full hover:bg-pink-600"
             >
-              Contáctanos
+              {t("menu.contact")}
             </a>
           </nav>
 
@@ -102,13 +130,13 @@ export default function Header() {
 
             {/* Enlaces del menú */}
             <a href="#" className="block text-center hover:text-[#9165f3] py-2">
-              Inicio
+              {t("menu.home")}
             </a>
             <a href="#" className="block text-center hover:text-[#9165f3] py-2">
-              Nuestras Soluciones
+              {t("menu.ourSolutions")}
             </a>
             <a href="#" className="block text-center hover:text-[#9165f3] py-2">
-              Nosotros
+              {t("menu.aboutUs")}
             </a>
             <a href="#" className="block text-center hover:text-[#9165f3] py-2">
               Blog / Podcast
@@ -117,7 +145,7 @@ export default function Header() {
               href="#"
               className="block text-center bg-[#9165f3] text-white font-bold py-2 px-4 rounded-full hover:bg-pink-600"
             >
-              Contáctanos
+              {t("menu.contact")}
             </a>
           </nav>
 
