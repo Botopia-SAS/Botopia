@@ -34,8 +34,9 @@ export default function Header() {
         <div className="container mx-auto flex justify-between items-center text-sm px-4">
           <div>
             <span>📞 +57 (322) 871 6267</span>
-            <span className="mx-6">✉️ contacto@botopia.tech</span>
-          </div>
+            
+            <span className="mx-6"><br className='hidden below700:block'/>✉️ contacto@botopia.tech</span>
+          </div>  
           <div className="hidden lg:block">{t("phrase")}</div>
         </div>
       </div>
@@ -45,15 +46,15 @@ export default function Header() {
         <div className="container mx-auto flex justify-between items-center px-4">
           {/* Logotipo */}
           <div className="text-2xl font-bold">
-            <img src="/logo.svg" alt="Bogotpia Logo" className="h-6 md:h-10 lg:h-12" />
+            <img src="/logo.svg" alt="Bogotpia Logo" className="h-6 lg:h-12" />
           </div>
 
           {/* Selector de Idioma */}
-          <div className="md:flex md:items-center md:space-x-4">
+          <div className="lg:flex lg:items-center lg:space-x-4">
             <select
               value={currentLanguage} // Idioma actual seleccionado
               onChange={handleLanguageChange} // Cambiar idioma al seleccionar
-              className="bg-gray-800 text-white border-none rounded-md px-4 py-1"
+              className="bg-gray-800 text-white border-none rounded-md px-4 py-1 below700:mr-2"
             >
               <option value="es">{t('Languages.Spanish')}</option>
               <option value="en">{t('Languages.English')}</option>
@@ -62,7 +63,7 @@ export default function Header() {
           </div>
 
           {/* Menú de Navegación */}
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden lg:flex space-x-6">
             <a href="#" className="hover:text-[#9165f3] py-2">{t("menu.home")}</a>
             <a href="#" className="hover:text-[#9165f3] py-2">{t("menu.ourSolutions")}</a>
             <a href="#" className="hover:text-[#9165f3] py-2">{t("menu.aboutUs")}</a>
@@ -76,7 +77,7 @@ export default function Header() {
           </nav>
 
           {/* Botón para abrir/cerrar el menú en móviles */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white focus:outline-none"
@@ -108,7 +109,7 @@ export default function Header() {
           {/* Menú de Navegación en móviles */}
           <nav
             className={`${isMenuOpen ? 'block' : 'hidden'
-              } md:hidden absolute top-0 left-0 w-full bg-black space-y-4 z-50 p-6`}
+              } lg:hidden absolute top-0 left-0 w-full bg-black space-y-4 z-50 p-6`}
           >
             {/* Botón para cerrar el menú */}
             <div className="flex justify-end">

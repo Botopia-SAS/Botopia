@@ -15,15 +15,18 @@ export default {
       keyframes: {
         float: {
           "0%, 100%": {
-            transform: "translateY(0)", // Posición inicial y final
+            transform: "translateY(0)",
           },
           "50%": {
-            transform: "translateY(-10px)", // Flotación hacia arriba
+            transform: "translateY(-10px)",
           },
         },
       },
       animation: {
-        float: "float 4s ease-in-out infinite", // Animación suave y repetitiva
+        float: "float 4s ease-in-out infinite",
+      },
+      screens: {
+        below700: { max: "389px" }, // Aplica estilos solo en pantallas menores a 700px
       },
     },
   },
