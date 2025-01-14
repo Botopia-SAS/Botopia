@@ -26,7 +26,7 @@ export default {
         float: "float 4s ease-in-out infinite",
       },
       screens: {
-        below700: { max: "389px" }, // Aplica estilos solo en pantallas menores a 700px
+        below700: { max: "400px" }, // Aplica estilos solo en pantallas menores a 700px
       },
     },
   },
