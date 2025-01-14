@@ -8,16 +8,16 @@ export default function Hero() {
   return (
     <section className="bg-gradient-to-b from-black to-purple-800 text-white relative">
       {/* Contenedor principal */}
-      <div className="container px-8 lg:mx-16 lg:px-20 lg:pt-32 py-4 lg:py-24">
+      <div className="container px-5 md:mx-28 md:px-4 lg:mx-16 lg:px-4 lg:pt-32 py-4 lg:py-24">
         <div className="flex flex-col lg:flex-row items-center lg:items-start">
           {/* Contenedor del título y subtítulo */}
           <div className="lg:w-1/2 text-center lg:text-left">
-            <h1 className="text-3xl font-bold mb-4 lg:text-5xl lg:mb-12">
-              {t('title.part1')} <br /> 
+            <h1 className="text-3xl below700:text-xl font-bold mb-4 lg:text-5xl lg:mb-12">
+              {t('title.part1')} <br />
               <span className="text-purple-400">{t('title.highlight1')}</span> {t('title.and')}{" "}
               <span className="text-purple-400">{t('title.highlight2')}</span>
             </h1>
-            <p className="text-lg lg:text-2xl lg:mb-20">
+            <p className="text-lg lg:text-2xl lg:mb-20 below700:text-base">
               <br />
               {t('subtitle.part1')} <span className="font-bold">{t('subtitle.part2')}</span> <br className="hidden lg:block" />
               {t('subtitle.part3')}
@@ -40,8 +40,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Contenedor de las imágenes */}
-          <div className="lg:w-1/2 lg:relative flex lg:justify-end flex-wrap lg:items-center gap-4 lg:py-0 py-10 pt-32">
+          {/* Contenedor de las imágenes desktop*/}
+          <div className="hidden lg:w-1/2 lg:relative lg:flex lg:justify-end flex-wrap lg:items-center gap-4 lg:py-0 py-10 pt-32 px-10">
             {/* Imagen central */}
             <img
               src="/astronave.svg"
@@ -53,25 +53,53 @@ export default function Hero() {
             <img
               src="/chatbot.png"
               alt={t('images.icon1Alt')}
-              className="absolute w-40 lg:w-48 h-auto lg:top-3 lg:left-1/4 lg:right-2/4 animate-float"
+              className="absolute w-40 lg:w-48 h-auto lg:top-14 lg:right-80 animate-float"
               style={{ animationDelay: '4s' }}
             />
             <img
               src="/paginaweb.png"
               alt={t('images.icon2Alt')}
-              className="absolute w-40 lg:w-48 lg:h-auto right-56 lg:-left-2 animate-float lg:top-64"
+              className="absolute w-40 lg:w-48 lg:h-auto right-56 lg:-left-4 animate-float lg:top-80"
               style={{ animationDelay: '3s' }}
             />
             <img
               src="/app.png"
               alt={t('images.icon3Alt')}
-              className="absolute w-40 lg:w-48 lg:h-auto top-96 lg:top-8 lg:-right-20 animate-float"
+              className="absolute w-40 lg:w-48 lg:h-auto top-96 lg:top-0 lg:right-7 animate-float"
               style={{ animationDelay: '2s' }}
             />
             <img
               src="/icon4.png"
               alt={t('images.icon4Alt')}
-              className="absolute w-40 lg:w-48 lg:h-auto top-96 right-56 lg:-top-20 lg:right-2 animate-float"
+              className="absolute w-40 lg:w-48 lg:h-auto top-96 right-56 lg:-top-20 lg:right-40 animate-float"
+              style={{ animationDelay: '1s' }}
+            />
+          </div>
+
+          {/* Contenedor de las imágenes NO desktop*/}
+          <div className='flex flex-wrap lg:hidden mx- py-4 pt-10 below700:mx-0 justify-center'>
+            <img
+              src="/chatbot.png"
+              alt={t('images.icon1Alt')}
+              className="w-44 below700:w-40"
+              style={{ animationDelay: '4s' }}
+            />
+            <img
+              src="/paginaweb.png"
+              alt={t('images.icon2Alt')}
+              className="w-44 below700:w-40"
+              style={{ animationDelay: '3s' }}
+            />
+            <img
+              src="/app.png"
+              alt={t('images.icon3Alt')}
+              className="w-44 below700:w-40"
+              style={{ animationDelay: '2s' }}
+            />
+            <img
+              src="/icon4.png"
+              alt={t('images.icon4Alt')}
+              className="w-44 below700:w-40"
               style={{ animationDelay: '1s' }}
             />
           </div>
