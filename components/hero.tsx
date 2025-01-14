@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="bg-gradient-to-b from-black to-purple-800 text-white relative">
       {/* Contenedor principal */}
-      <div className="container px-5 md:mx-28 md:px-4 lg:mx-16 lg:px-4 lg:pt-32 py-4 lg:py-24">
+      <div className="container px-4 md:mx-28 md:px-4 lg:mx-16 lg:px-4 lg:pt-32 py-4 lg:py-24">
         <div className="flex flex-col lg:flex-row items-center lg:items-start">
           {/* Contenedor del título y subtítulo */}
           <div className="lg:w-1/2 text-center lg:text-left">
