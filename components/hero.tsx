@@ -8,10 +8,10 @@ export default function Hero() {
   return (
     <section className="bg-gradient-to-b from-black to-purple-800 text-white relative justify-center items-center">
       {/* Contenedor principal */}
-      <div className="container px-4 md:mx-28 md:px-4 lg:mx-16 lg:px-4 lg:pt-32 py-4 lg:py-24 items-center justify-center">
+      <div className="container pt-32 lg:pt-56 lg:py-16 px-4 md:mx-28 items-center justify-center">
         <div className="flex flex-col lg:flex-row items-center justify-center">
           {/* Contenedor del título y subtítulo */}
-          <div className="lg:w-1/2 text-center">
+          <div className="lg:w-1/2 lg:text-left text-center">
             <h1 className="text-3xl below700:text-xl font-bold mb-4 lg:text-5xl lg:mb-12">
               {t('title.part1')} <br />
               <span className="text-purple-400">{t('title.highlight1')}</span> {t('title.and')}{" "}
