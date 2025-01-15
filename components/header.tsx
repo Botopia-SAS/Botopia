@@ -31,7 +31,7 @@ export default function Header() {
     <header className="bg-black text-white">
       {/* Sección Superior */}
       <div className="bg-black py-2">
-        <div className="container mx-auto flex justify-between items-center text-sm px-4 below700:px-0">
+        <div className="container mx-auto flex justify-between items-center text-sm px-4">
           <div className='text-sm below700:text-xs md:text-base'>
             <span>📞 +57 (322) 871 6267</span>
             
