@@ -46,20 +46,55 @@
     "Footer": {
         "intro": "¡Comencemos a transformar el futuro juntos!",
         "quickLinks": {
-          "title": "Accesos rápidos",
-          "terms": "Términos y condiciones",
-          "privacy": "Políticas de privacidad",
-          "careers": "Trabaja con nosotros"
+            "title": "Accesos rápidos",
+            "terms": "Términos y condiciones",
+            "privacy": "Políticas de privacidad",
+            "careers": "Trabaja con nosotros"
         },
         "contact": {
-          "title": "Contacto",
-          "email": "contacto@botopia.tech"
+            "title": "Contacto",
+            "email": "contacto@botopia.tech"
         },
         "newsletter": {
-          "title": "Suscríbete a nuestro Newsletter",
-          "label": "Regístrate a nuestro Newsletter",
-          "placeholder": "Por favor ingresa tu correo"
+            "title": "Suscríbete a nuestro Newsletter",
+            "label": "Regístrate a nuestro Newsletter",
+            "placeholder": "Por favor ingresa tu correo"
         },
         "footerRights": "Botopia Technology S.A.S. Todos los derechos reservados."
+    },
+    "Servicios": {
+        "title": "Nuestros servicios",
+        "filters": {
+          "strategy": "Consultoría & Estrategia",
+          "technology": "Servicios de Tecnología",
+          "design": "Servicios de Diseño & Branding",
+          "marketing": "Servicios de Marketing"
+        },
+        "services": {
+          "ecommerce": {
+            "title": "Desarrollo E-commerce",
+            "category": "Ventas Online",
+            "description": "Construimos plataformas de comercio electrónico robustas y personalizadas para que tu negocio crezca en el mundo digital de forma efectiva.",
+            "icon": "/icons/ecommerce.svg"
+          },
+          "aiIntegration": {
+            "title": "Integración AI",
+            "category": "Negocios",
+            "description": "Lleva tus aplicaciones y sitios web al siguiente nivel con inteligencia artificial personalizada. Mejoramos personalización, optimizamos automatización y ofrecemos experiencias más inteligentes.",
+            "icon": "/icons/ai-integration.svg"
+          },
+          "customTechnology": {
+            "title": "Tecnología a la Medida",
+            "category": "Personalización",
+            "description": "Desarrollamos soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de tu negocio, impulsando su crecimiento y eficiencia.",
+            "icon": "/icons/custom-technology.svg"
+          },
+          "webDevelopment": {
+            "title": "Desarrollo de Sitio Web",
+            "category": "Web",
+            "description": "Creamos sitios web dinámicos, atractivos y optimizados para ofrecer la mejor experiencia de usuario, ayudando a tu negocio a destacar en el entorno digital.",
+            "icon": "/icons/web-development.svg"
+          }
+        }
       }
 }
