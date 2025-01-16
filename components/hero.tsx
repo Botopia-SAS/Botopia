@@ -6,7 +6,7 @@ export default function Hero() {
   const t = useTranslations('Hero'); // Hook para traducir los textos
 
   return (
-    <section className="bg-gradient-to-b from-black to-purple-800 text-white relative justify-center items-center">
+    <section className="md:mt-8 bg-gradient-to-b from-black to-purple-800 text-white relative justify-center items-center">
       {/* Contenedor principal */}
       <div className="container pt-32 lg:pt-56 lg:py-16 px-4 md:mx-28 items-center justify-center">
         <div className="flex flex-col lg:flex-row items-center justify-center">

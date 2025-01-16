@@ -11,7 +11,7 @@ export default function FiltroServicios({ filters }: FiltroServiciosProps) {
                 {filters.map(({ key, label }) => (
                     <button
                         key={key}
-                        className="px-6 py-2 bg-transparent border border-pink-500 text-pink-500 rounded-full hover:bg-pink-600 hover:text-white h-auto text-center text-sm sm:text-base"
+                        className="px-6 py-2 bg-transparent border-2 border-white text-white rounded-full hover:bg-purple-600 hover:border-black hover:text-white h-auto text-center text-sm sm:text-base"
                     >
                         {label}
                     </button>

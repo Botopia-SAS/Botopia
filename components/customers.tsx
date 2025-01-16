@@ -17,21 +17,23 @@ export default function Clientes() {
   return (
     <section className="bg-[#6b21a8] py-12">
       <div className="mx-auto w-full text-center justify-center align-middle">
-          <button
-            className="shadow-md shadow-gray-700 text-xl md:text-3xl font-light text-center mb-8 text-white py-2 px-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-full hover:scale-105 transition-transform"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            {t("title")}
-          </button>
+        <button
+          className="shadow-md shadow-gray-700 text-xl md:text-3xl font-light text-center mb-8 text-white py-2 px-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-full hover:scale-105 transition-transform"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          {t("title")}
+        </button>
         {/* Carrusel animado */}
         <div className="relative overflow-hidden w-full h-32 py-8">
           {/* Degradado en los bordes */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
+              background:
+                "linear-gradient(to right, rgba(107, 33, 168, 1) 0%, rgba(107, 33, 168, 0) 20%, rgba(107, 33, 168, 0) 80%, rgba(107, 33, 168, 1) 100%)",
               zIndex: 10,
             }}
-          />
+          ></div>
           {/* Contenedor animado */}
           <div className="flex w-[500%] md:w-[235%] animate-marquee">
             {clientes.concat(clientes).map((cliente, index) => (
