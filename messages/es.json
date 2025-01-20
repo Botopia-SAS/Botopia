@@ -65,36 +65,46 @@
     "Servicios": {
         "title": "Nuestros servicios",
         "filters": {
-          "strategy": "Consultoría & Estrategia",
-          "technology": "Servicios de Tecnología",
-          "design": "Servicios de Diseño & Branding",
-          "marketing": "Servicios de Marketing"
+            "strategy": "Consultoría & Estrategia",
+            "technology": "Servicios de Tecnología",
+            "design": "Servicios de Diseño & Branding",
+            "marketing": "Servicios de Marketing"
         },
         "services": {
-          "ecommerce": {
-            "title": "Desarrollo E-commerce",
-            "category": "Ventas Online",
-            "description": "Construimos plataformas de comercio electrónico robustas y personalizadas para que tu negocio crezca en el mundo digital de forma efectiva.",
-            "icon": "/dumpster-solid.svg"
-          },
-          "aiIntegration": {
-            "title": "Integración AI",
-            "category": "Negocios",
-            "description": "Lleva tus aplicaciones y sitios web al siguiente nivel con inteligencia artificial personalizada. Mejoramos personalización, optimizamos automatización y ofrecemos experiencias más inteligentes.",
-            "icon": "/robot-solid.svg"
-          },
-          "customTechnology": {
-            "title": "Tecnología a la Medida",
-            "category": "Personalización",
-            "description": "Desarrollamos soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de tu negocio, impulsando su crecimiento y eficiencia.",
-            "icon": "/microchip-solid.svg"
-          },
-          "webDevelopment": {
-            "title": "Desarrollo de Sitio Web",
-            "category": "Web",
-            "description": "Creamos sitios web dinámicos, atractivos y optimizados para ofrecer la mejor experiencia de usuario, ayudando a tu negocio a destacar en el entorno digital.",
-            "icon": "/globe-solid.svg"
-          }
+            "ecommerce": {
+                "title": "Desarrollo E-commerce",
+                "category": "Ventas Online",
+                "description": "Construimos plataformas de comercio electrónico robustas y personalizadas para que tu negocio crezca en el mundo digital de forma efectiva.",
+                "icon": "/dumpster-solid.svg"
+            },
+            "aiIntegration": {
+                "title": "Integración AI",
+                "category": "Negocios",
+                "description": "Lleva tus aplicaciones y sitios web al siguiente nivel con inteligencia artificial personalizada. Mejoramos personalización, optimizamos automatización y ofrecemos experiencias más inteligentes.",
+                "icon": "/robot-solid.svg"
+            },
+            "customTechnology": {
+                "title": "Tecnología a la Medida",
+                "category": "Personalización",
+                "description": "Desarrollamos soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de tu negocio, impulsando su crecimiento y eficiencia.",
+                "icon": "/microchip-solid.svg"
+            },
+            "webDevelopment": {
+                "title": "Desarrollo de Sitio Web",
+                "category": "Web",
+                "description": "Creamos sitios web dinámicos, atractivos y optimizados para ofrecer la mejor experiencia de usuario, ayudando a tu negocio a destacar en el entorno digital.",
+                "icon": "/globe-solid.svg"
+            }
         }
-      }
+    },
+    "Demos": {
+        "title": "Explora nuestras demos",
+        "description": "Descubre cómo nuestras soluciones personalizadas pueden ayudarte a alcanzar tus metas.",
+        "ctaButton": "Ver demos",
+        "productsTitle": "Nuestros productos",
+        "viewDemo": "Haz tu demo",
+        "contactTitle": "¿Interesado en trabajar con nosotros?",
+        "contactDescription": "Contáctanos para más información sobre cómo nuestras soluciones pueden ayudarte.",
+        "contactButton": "Contáctanos"
+    }
 }

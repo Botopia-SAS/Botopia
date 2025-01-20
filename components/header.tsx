@@ -64,7 +64,7 @@ export default function Header() {
 
           {/* Menú de Navegación */}
           <nav className="hidden lg:flex space-x-6">
-            <a href="#" className="hover:text-[#9165f3] py-2">{t("menu.home")}</a>
+            <a href="/" className="hover:text-[#9165f3] py-2">{t("menu.home")}</a>
             <a href="#" className="hover:text-[#9165f3] py-2">{t("menu.ourSolutions")}</a>
             <a href="#" className="hover:text-[#9165f3] py-2">{t("menu.aboutUs")}</a>
             <a href="#" className="hover:text-[#9165f3] py-2 px-2">Blog/Podcast</a>
@@ -130,7 +130,7 @@ export default function Header() {
             </div>
 
             {/* Enlaces del menú */}
-            <a href="#" className="block text-center hover:text-[#9165f3] py-2">
+            <a href="/" className="block text-center hover:text-[#9165f3] py-2">
               {t("menu.home")}
             </a>
             <a href="#" className="block text-center hover:text-[#9165f3] py-2">

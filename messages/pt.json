@@ -1,17 +1,17 @@
 {
   "Header": {
-      "phrase": "Impulsionamos o seu negócio com tecnologia personalizada",
-      "Languages": {  
-          "Spanish": "Espanhol",
-          "English": "Inglês",
-          "Portuguese": "Português"
-      },
-      "menu": {
-          "home": "Início",  
-          "ourSolutions": "Nossas Soluções",
-          "aboutUs": "Sobre Nós",
-          "contact": "Contate-nos"
-      }
+    "phrase": "Impulsionamos o seu negócio com tecnologia personalizada",
+    "Languages": {
+      "Spanish": "Espanhol",
+      "English": "Inglês",
+      "Portuguese": "Português"
+    },
+    "menu": {
+      "home": "Início",
+      "ourSolutions": "Nossas Soluções",
+      "aboutUs": "Sobre Nós",
+      "contact": "Contate-nos"
+    }
   },
   "Hero": {
     "title": {
@@ -63,38 +63,48 @@
     "footerRights": "Botopia Technology S.A.S. Todos os direitos reservados."
   },
   "Servicios": {
-      "title": "Servicios de Tecnología",
-      "filters": {
-        "strategy": "Consultoría & Estrategia",
-        "technology": "Servicios de Tecnología",
-        "design": "Servicios de Diseño & Branding",
-        "marketing": "Servicios de Marketing"
+    "title": "Servicios de Tecnología",
+    "filters": {
+      "strategy": "Consultoría & Estrategia",
+      "technology": "Servicios de Tecnología",
+      "design": "Servicios de Diseño & Branding",
+      "marketing": "Servicios de Marketing"
+    },
+    "services": {
+      "ecommerce": {
+        "title": "Desarrollo E-commerce",
+        "category": "Ventas Online",
+        "description": "Construimos plataformas de comercio electrónico robustas y personalizadas para que tu negocio crezca en el mundo digital de forma efectiva.",
+        "icon": "/dumpster-solid.svg"
       },
-      "services": {
-        "ecommerce": {
-          "title": "Desarrollo E-commerce",
-          "category": "Ventas Online",
-          "description": "Construimos plataformas de comercio electrónico robustas y personalizadas para que tu negocio crezca en el mundo digital de forma efectiva.",
-          "icon": "/dumpster-solid.svg"
-        },
-        "aiIntegration": {
-          "title": "Integración AI",
-          "category": "Negocios",
-          "description": "Lleva tus aplicaciones y sitios web al siguiente nivel con inteligencia artificial personalizada. Mejoramos personalización, optimizamos automatización y ofrecemos experiencias más inteligentes.",
-          "icon": "/robot-solid.svg"
-        },
-        "customTechnology": {
-          "title": "Tecnología a la Medida",
-          "category": "Personalización",
-          "description": "Desarrollamos soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de tu negocio, impulsando su crecimiento y eficiencia.",
-          "icon": "/icons/custom-technology.svg"
-        },
-        "webDevelopment": {
-          "title": "Desarrollo de Sitio Web",
-          "category": "Web",
-          "description": "Creamos sitios web dinámicos, atractivos y optimizados para ofrecer la mejor experiencia de usuario, ayudando a tu negocio a destacar en el entorno digital.",
-          "icon": "/icons/web-development.svg"
-        }
+      "aiIntegration": {
+        "title": "Integración AI",
+        "category": "Negocios",
+        "description": "Lleva tus aplicaciones y sitios web al siguiente nivel con inteligencia artificial personalizada. Mejoramos personalización, optimizamos automatización y ofrecemos experiencias más inteligentes.",
+        "icon": "/robot-solid.svg"
+      },
+      "customTechnology": {
+        "title": "Tecnología a la Medida",
+        "category": "Personalización",
+        "description": "Desarrollamos soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de tu negocio, impulsando su crecimiento y eficiencia.",
+        "icon": "/icons/custom-technology.svg"
+      },
+      "webDevelopment": {
+        "title": "Desarrollo de Sitio Web",
+        "category": "Web",
+        "description": "Creamos sitios web dinámicos, atractivos y optimizados para ofrecer la mejor experiencia de usuario, ayudando a tu negocio a destacar en el entorno digital.",
+        "icon": "/icons/web-development.svg"
       }
     }
-}
+  },
+  "Demos": {
+    "title": "Explore nossas demos",
+    "description": "Descubra como nossas soluções personalizadas podem ajudá-lo a alcançar seus objetivos.",
+    "ctaButton": "Ver demos",
+    "productsTitle": "Nossos produtos",
+    "viewDemo": "Ver Demo",
+    "contactTitle": "Interessado em trabalhar conosco?",
+    "contactDescription": "Entre em contato para mais informações sobre como nossas soluções podem ajudá-lo.",
+    "contactButton": "Contate-nos"
+  }
+  }

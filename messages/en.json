@@ -65,36 +65,46 @@
     "Servicios": {
         "title": "Servicios de Tecnología",
         "filters": {
-          "strategy": "Consultoría & Estrategia",
-          "technology": "Servicios de Tecnología",
-          "design": "Servicios de Diseño & Branding",
-          "marketing": "Servicios de Marketing"
+            "strategy": "Consultoría & Estrategia",
+            "technology": "Servicios de Tecnología",
+            "design": "Servicios de Diseño & Branding",
+            "marketing": "Servicios de Marketing"
         },
         "services": {
-          "ecommerce": {
-            "title": "Desarrollo E-commerce",
-            "category": "Ventas Online",
-            "description": "Construimos plataformas de comercio electrónico robustas y personalizadas para que tu negocio crezca en el mundo digital de forma efectiva.",
-            "icon": "/dumpster-solid.svg"
-          },
-          "aiIntegration": {
-            "title": "Integración AI",
-            "category": "Negocios",
-            "description": "Lleva tus aplicaciones y sitios web al siguiente nivel con inteligencia artificial personalizada. Mejoramos personalización, optimizamos automatización y ofrecemos experiencias más inteligentes.",
-            "icon": "/icons/ai-integration.svg"
-          },
-          "customTechnology": {
-            "title": "Tecnología a la Medida",
-            "category": "Personalización",
-            "description": "Desarrollamos soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de tu negocio, impulsando su crecimiento y eficiencia.",
-            "icon": "/icons/custom-technology.svg"
-          },
-          "webDevelopment": {
-            "title": "Desarrollo de Sitio Web",
-            "category": "Web",
-            "description": "Creamos sitios web dinámicos, atractivos y optimizados para ofrecer la mejor experiencia de usuario, ayudando a tu negocio a destacar en el entorno digital.",
-            "icon": "/icons/web-development.svg"
-          }
+            "ecommerce": {
+                "title": "Desarrollo E-commerce",
+                "category": "Ventas Online",
+                "description": "Construimos plataformas de comercio electrónico robustas y personalizadas para que tu negocio crezca en el mundo digital de forma efectiva.",
+                "icon": "/dumpster-solid.svg"
+            },
+            "aiIntegration": {
+                "title": "Integración AI",
+                "category": "Negocios",
+                "description": "Lleva tus aplicaciones y sitios web al siguiente nivel con inteligencia artificial personalizada. Mejoramos personalización, optimizamos automatización y ofrecemos experiencias más inteligentes.",
+                "icon": "/icons/ai-integration.svg"
+            },
+            "customTechnology": {
+                "title": "Tecnología a la Medida",
+                "category": "Personalización",
+                "description": "Desarrollamos soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de tu negocio, impulsando su crecimiento y eficiencia.",
+                "icon": "/icons/custom-technology.svg"
+            },
+            "webDevelopment": {
+                "title": "Desarrollo de Sitio Web",
+                "category": "Web",
+                "description": "Creamos sitios web dinámicos, atractivos y optimizados para ofrecer la mejor experiencia de usuario, ayudando a tu negocio a destacar en el entorno digital.",
+                "icon": "/icons/web-development.svg"
+            }
         }
-      }
+    },
+    "Demos": {
+        "title": "Explore Our Demos",
+        "description": "Discover how our tailored solutions can help you achieve your goals.",
+        "ctaButton": "View Demos",
+        "productsTitle": "Our products",
+        "viewDemo": "View Demo",
+        "contactTitle": "Interested in working with us?",
+        "contactDescription": "Get in touch for more information about how our solutions can help you.",
+        "contactButton": "Contact Us"
+    }
 }

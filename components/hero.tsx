@@ -1,10 +1,11 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import Link from "next/link"; // Importa el componente Link de Next.js
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function Hero() {
-  const t = useTranslations('Hero'); // Hook para traducir los textos
-
+  const t = useTranslations('Hero'); 
+  const locale = useLocale();
   return (
     <section className="md:mt-8 bg-gradient-to-b from-black to-purple-800 text-white relative justify-center items-center">
       {/* Contenedor principal */}
@@ -31,12 +32,12 @@ export default function Hero() {
               >
                 {t('buttons.contactSales')}
               </a>
-              <a
-                href="#"
+              <Link
+                href={`/${locale}/demos`} // Incluye el prefijo del idioma en la ruta
                 className="border border-black shadow-lg jump-button bg-white text-black py-3 px-6 rounded-md font-semibold hover:bg-purple-600"
               >
                 {t('buttons.tryUsFree')}
-              </a>
+              </Link>
             </div>
           </div>
 
