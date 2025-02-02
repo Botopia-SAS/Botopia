@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 interface DemoProduct {
@@ -12,32 +13,34 @@ interface DemoProduct {
   demoLink: string;
 }
 
-const demoProducts: DemoProduct[] = [
-  {
-    id: "1",
-    title: "E-commerce Personalizado",
-    description: "Explora cómo nuestra solución de e-commerce puede transformar tu negocio.",
-    image: "/dumpster-solid-w.svg",
-    demoLink: "#",
-  },
-  {
-    id: "2",
-    title: "Chat-Bot de WhatsApp",
-    description: "Descubre cómo integramos IA en tus plataformas para optimizar procesos.",
-    image: "/robot-solid-w.svg",
-    demoLink: "#",
-  },
-  {
-    id: "3",
-    title: "Sitios Web a Medida",
-    description: "Crea sitios web personalizados y optimizados para tus necesidades.",
-    image: "/globe-solid-w.svg",
-    demoLink: "#",
-  },
-];
-
 export default function DemosPage() {
-  const t = useTranslations("Demos"); // Hook para traducir los textos
+  const t = useTranslations("Demos");
+  const pathname = usePathname(); // Obtiene la ruta actual
+  const locale = pathname.split("/")[1]; // Extrae el locale desde la URL
+
+  const demoProducts: DemoProduct[] = [
+    {
+      id: "1",
+      title: "E-commerce Personalizado",
+      description: "Explora cómo nuestra solución de e-commerce puede transformar tu negocio.",
+      image: "/dumpster-solid-w.svg",
+      demoLink: `/${locale}/demos/ecommerce-demo`, // Agrega el locale dinámicamente
+    },
+    {
+      id: "2",
+      title: "Chat-Bot de WhatsApp",
+      description: "Descubre cómo integramos IA en tus plataformas para optimizar procesos.",
+      image: "/robot-solid-w.svg",
+      demoLink: `/${locale}/demos/whatsapp-bot-demo`,
+    },
+    {
+      id: "3",
+      title: "Sitios Web a Medida",
+      description: "Crea sitios web personalizados y optimizados para tus necesidades.",
+      image: "/globe-solid-w.svg",
+      demoLink: `/${locale}/demos/custom-websites`,
+    },
+  ];
 
   return (
     <div className="bg-gradient-to-b from-black via-purple-900 to-black text-white pt-24">
@@ -80,7 +83,7 @@ export default function DemosPage() {
         <h2 className="text-2xl font-bold mb-4">{t("contactTitle")}</h2>
         <p className="text-gray-300 mb-8">{t("contactDescription")}</p>
         <a
-          href="/contact"
+          href={`/${locale}/contact`}
           className="px-6 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600"
         >
           {t("contactButton")}
