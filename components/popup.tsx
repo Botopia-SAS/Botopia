@@ -53,12 +53,14 @@ export default function Popup() {
         </p>
 
         {/* Botón de Acción */}
-        <Link
-          href={`/${locale}/free-chatbot-demo`}
+        <a
+          href="https://botopia-5mvketyum-david-espejos-projects.vercel.app/en/demos/whatsapp-bot-demo"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-purple-500 text-white py-3 px-6 rounded-full font-semibold hover:bg-purple-600 w-full block"
         >
           ¡Probar Gratis Ahora!
-        </Link>
+        </a>
 
         {/* Nota */}
         <p className="text-xs mt-3 text-gray-400">
