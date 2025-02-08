@@ -8,13 +8,13 @@ export default function Popup() {
   const [showPopup, setShowPopup] = useState(false);
   const locale = useLocale();
 
-  // Mostrar el popup solo si no se ha visto antes (usa localStorage)
+  // Mostrar el popup solo si no se ha visto en la sesión actual
   useEffect(() => {
-    const hasSeenPopup = localStorage.getItem("seenPopup");
+    const hasSeenPopup = sessionStorage.getItem("seenPopup");
     if (!hasSeenPopup) {
       setTimeout(() => {
         setShowPopup(true);
-        localStorage.setItem("seenPopup", "true"); // Guarda que ya se mostró
+        sessionStorage.setItem("seenPopup", "true"); // Se borra cuando se cierra la pestaña
       }, 1500);
     }
   }, []);
