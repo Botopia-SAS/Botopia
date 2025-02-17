@@ -1,6 +1,6 @@
 "use client";
 
-import Popup from "./popup";
+//import Popup from "./popup";
 import Link from "next/link"; // Importa el componente Link de Next.js
 import { useTranslations, useLocale } from "next-intl";
 
@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section className="md:mt-8 bg-gradient-to-b from-black to-purple-800 text-white relative justify-center items-center">
       {/* Contenedor principal */}
-      <Popup />
+      //Popup /
       <div className="container pt-32 lg:pt-56 lg:py-16 px-4 md:mx-28 items-center justify-center">
         <div className="flex flex-col lg:flex-row items-center justify-center">
           {/* Contenedor del título y subtítulo */}
