@@ -28,8 +28,8 @@ export default function Header() {
       <div className="bg-black py-2">
         <div className="container mx-auto flex justify-between items-center text-sm ">
           <div className="text-sm md:text-base">
-            <a href="tel:3228716267" className="hover:text-purple-400 transition">
-              📞 +57 (322) 871 6267
+            <a href="tel:3228726267" className="hover:text-purple-400 transition">
+              📞 +57 (322) 872 6267
             </a>
             <a href="mailto:contacto@botopia.tech" className="mx-6 hidden lg:inline hover:text-purple-400 transition">
               ✉️ contacto@botopia.tech
