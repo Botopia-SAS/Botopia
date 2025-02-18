@@ -28,10 +28,18 @@ export default function Header() {
       <div className="bg-black py-2">
         <div className="container mx-auto flex justify-between items-center text-sm ">
           <div className="text-sm md:text-base">
-            <span>📞 +57 (322) 871 6267</span>
-            <span className="mx-6 hidden lg:inline">✉️ contacto@botopia.tech</span>
+            <a href="tel:+573228716267" className="hover:text-purple-400 transition">
+              📞 +57 (322) 871 6267
+            </a>
+            <a href="mailto:contacto@botopia.tech" className="mx-6 hidden lg:inline hover:text-purple-400 transition">
+              ✉️ contacto@botopia.tech
+            </a>
           </div>
-          <span className="lg:hidden text-sm">✉️ contacto@botopia.tech</span>
+          <span className="lg:hidden text-sm">
+            <a href="mailto:contacto@botopia.tech" className="hover:text-purple-400 transition">
+              ✉️ contacto@botopia.tech
+            </a>
+          </span>
           <div className="hidden md:block text-base">{t("phrase")}</div>
         </div>
       </div>
@@ -40,12 +48,12 @@ export default function Header() {
       <div className="py-4">
         <div className="container mx-auto flex items-center justify-between relative">
           {/* Logo */}
-            <img
-              src="/logo.svg"
-              alt="Botopia Logo"
-              className="h-6 lg:h-10 cursor-pointer"
-              onClick={() => router.push(`/${currentLanguage}`)}
-            />
+          <img
+            src="/logo.svg"
+            alt="Botopia Logo"
+            className="h-6 lg:h-10 cursor-pointer"
+            onClick={() => router.push(`/${currentLanguage}`)}
+          />
 
           {/* Menú Desktop centrado */}
           <nav className="hidden lg:flex gap-10 absolute left-1/2 transform -translate-x-1/2 text-lg">
@@ -180,9 +188,9 @@ export default function Header() {
               onChange={handleLanguageChange}
               className="bg-black text-white border border-gray-600 rounded-lg h-6"
             >
-            <option value="es">{t("Languages.Spanish")}</option>
-            <option value="en">{t("Languages.English")}</option>
-            <option value="pt">{t("Languages.Portuguese")}</option>
+              <option value="es">{t("Languages.Spanish")}</option>
+              <option value="en">{t("Languages.English")}</option>
+              <option value="pt">{t("Languages.Portuguese")}</option>
             </select>
           </div>
           {/* Botón menú mobile */}
@@ -193,7 +201,7 @@ export default function Header() {
             {mobileMenuOpen ? "✖" : "☰"}
           </button>
         </div>
-        
+
       </div>
 
       {/* Menú Mobile */}
