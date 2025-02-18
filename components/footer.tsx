@@ -66,7 +66,7 @@ export default function Footer() {
 
           {/* Columna 2: Accesos rápidos */}
           <div>
-            <h4 className="text-pink-500 font-bold mb-4">{t('quickLinks.title')}</h4>
+            <h4 className="text-purple-400 font-bold mb-4">{t('quickLinks.title')}</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white">
@@ -88,7 +88,7 @@ export default function Footer() {
 
           {/* Columna 3: Contacto */}
           <div>
-            <h4 className="text-pink-500 font-bold mb-4">{t('contact.title')}</h4>
+            <h4 className="text-purple-400 font-bold mb-4">{t('contact.title')}</h4>
             <p className="text-gray-400">{t('contact.email')}</p>
 
             <h2 className="text-white mt-12 md:mt-2">{t('newsletter.title')}</h2>
@@ -105,7 +105,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="bg-pink-500 text-white px-4 py-2 hover:bg-pink-600"
+                  className="bg-purple-400 text-white px-4 py-2 hover:bg-pink-600"
                 >
                   &gt;
                 </button>

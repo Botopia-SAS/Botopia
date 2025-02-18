@@ -37,17 +37,15 @@ export default function Header() {
       </div>
 
       {/* Barra principal */}
-      <div className="py-4">
+      <div className="py-2">
         <div className="container mx-auto flex items-center justify-between px-6 relative">
           {/* Logo */}
-          <div className="text-2xl font-bold">
             <img
               src="/logo.svg"
               alt="Botopia Logo"
-              className="h-8 lg:h-10 cursor-pointer"
+              className="h-6 lg:h-10 cursor-pointer"
               onClick={() => router.push(`/${currentLanguage}`)}
             />
-          </div>
 
           {/* Menú Desktop centrado */}
           <nav className="hidden lg:flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
@@ -162,10 +160,11 @@ export default function Header() {
             <select
               value={currentLanguage}
               onChange={handleLanguageChange}
-              className="bg-black text-white border border-gray-600 p-1 rounded-md"
+              className="bg-black text-white border border-gray-600 rounded-lg h-10 px-2"
             >
-              <option value="es">Español</option>
-              <option value="en">Inglés</option>
+              <option value="es">{t("Languages.Spanish")}</option>
+              <option value="en">{t("Languages.English")}</option>
+              <option value="pt">{t("Languages.Portuguese")}</option>
             </select>
 
             <button onClick={() => router.push(`/${currentLanguage}/contact`)} className="bg-[#9165f3] text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-600">
@@ -174,26 +173,27 @@ export default function Header() {
           </div>
 
 
-          <div className="lg:hidden flex ml-32 px-4">
+          <div className="lg:hidden flex ml- px-4">
             {/* Selector de idioma */}
             <select
               value={currentLanguage}
               onChange={handleLanguageChange}
-              className="bg-black text-white border border-gray-600 rounded-md"
+              className="bg-black text-white border border-gray-600 rounded-lg h-6"
             >
-              <option value="es">Español</option>
-              <option value="en">Inglés</option>
-              <option value="pt">Portugués</option>
+            <option value="es">{t("Languages.Spanish")}</option>
+            <option value="en">{t("Languages.English")}</option>
+            <option value="pt">{t("Languages.Portuguese")}</option>
             </select>
           </div>
           {/* Botón menú mobile */}
           <button
-            className="lg:hidden text-3xl"
+            className="lg:hidden text-3xl mb-1"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            ☰
+            {mobileMenuOpen ? "✖" : "☰"}
           </button>
         </div>
+        
       </div>
 
       {/* Menú Mobile */}
