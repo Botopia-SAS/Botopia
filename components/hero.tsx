@@ -83,7 +83,7 @@ export default function Hero() {
           </div>
 
           {/* Contenedor de las imágenes móviles */}
-          <div className="flex flex-wrap lg:hidden px-6 py-4 pt-10 below700:px-0 justify-center">
+          <div className="flex flex-wrap lg:hidden px-2 py-4 pt-10 below700:px-0 justify-center">
             <img
               src="/chatbot.png"
               alt={t("images.icon1Alt")}
