@@ -7,7 +7,7 @@ export default function Hero() {
   const t = useTranslations("Hero");
   const locale = useLocale();
   return (
-    <section className="md:mt-8 bg-gradient-to-b from-black to-purple-800 text-white relative justify-center items-center">
+    <section className="md:mt-8 bg-gradient-to-b from-black to-purple-800 text-white relative justify-center items-center px-2 md:px-0">
       {/* Contenedor principal */}
       <div className="container mx-auto pt-32 lg:pt-56 lg:py-16 items-center justify-center">
         <div className="flex flex-col lg:flex-row items-center justify-center">
