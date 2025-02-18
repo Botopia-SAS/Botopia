@@ -28,11 +28,6 @@ export default function Clientes() {
           {/* Degradado en los bordes */}
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "linear-gradient(to right, rgba(107, 33, 168, 1) 0%, rgba(107, 33, 168, 0) 20%, rgba(107, 33, 168, 0) 80%, rgba(107, 33, 168, 1) 100%)",
-              zIndex: 10,
-            }}
           ></div>
           {/* Contenedor animado */}
           <div className="flex w-[500%] md:w-[235%] animate-marquee">

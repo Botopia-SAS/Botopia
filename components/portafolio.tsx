@@ -72,7 +72,7 @@ const Portfolio = () => {
         >
           {portfolioItems.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col md:flex-row items-center gap-12 bg-purple-500/20 rounded-3xl p-8 shadow-lg">
+              <div className="flex flex-col md:flex-row items-center gap-12 rounded-3xl p-8 shadow-lg">
 
                 {/* Contenedor de Imagen con Degradado */}
                 <div className="relative w-full md:w-1/2 h-[500px] overflow-hidden">
@@ -84,7 +84,7 @@ const Portfolio = () => {
                     className="relative z-10"
                   />
                   {/* Degradado en la parte derecha para el efecto de desvanecido */}
-                  <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-transparent to-purple-700/80"></div>
+                  <div className="absolute inset-y-0 right-0 w-1/3 "></div>
                 </div>
 
                 {/* Contenedor de Texto */}
