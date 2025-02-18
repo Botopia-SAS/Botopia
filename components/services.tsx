@@ -17,7 +17,7 @@ export default function Servicios() {
   }));
 
   return (
-    <section className="bg-gradient-to-b from-purple-800 to-white text-white">
+    <section className="bg-gradient-to-b from-purple-800 to-purple-300 text-white">
       <div className="container mx-auto px-6">
         <h2 className="text-center text-3xl font-bold mb-8">{t("title")}</h2>
         {/* Filtros */}

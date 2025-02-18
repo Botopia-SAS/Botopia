@@ -1,120 +1,109 @@
-'use client'; // Para interactividad
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/navigation';
-import { usePathname } from 'next/navigation'; 
-import { useState, useEffect } from 'react';
+import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const t = useTranslations("Header");
-  const router = useRouter(); // Para manejar cambios de idioma
-  const pathname = usePathname(); // Obtiene la ruta actual incluyendo el idioma
-  const [currentLanguage, setCurrentLanguage] = useState('es'); // Estado del idioma actual
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para el menú
+  const router = useRouter();
+  const pathname = usePathname();
+  const [currentLanguage, setCurrentLanguage] = useState("es");
 
-  // Actualizar el estado del idioma al cargar la página
   useEffect(() => {
-    const locale = pathname.split('/')[1]; // Extraer el idioma de la ruta
-    setCurrentLanguage(locale || 'es'); // Predeterminado a español si no hay idioma
+    const locale = pathname.split("/")[1];
+    setCurrentLanguage(locale || "es");
   }, [pathname]);
 
-  // Cambio de idioma
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedLanguage = e.target.value;
-    router.push(`/${selectedLanguage}`); // Redirigir a la versión en otro idioma
-  };
-
-  // Navegación a diferentes páginas
-  const navigateTo = (path: string) => {
-    router.push(`/${currentLanguage}${path}`); // Agregar el idioma actual en la ruta
-    setIsMenuOpen(false); // Cerrar menú en móviles
+    router.push(`/${selectedLanguage}`);
   };
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-sm text-white">
-      {/* Sección Superior */}
       <div className="bg-black py-2">
         <div className="container mx-auto flex justify-between items-center text-sm px-4">
-          <div className='text-sm below700:text-xs md:text-base'>
+          <div className="text-sm md:text-base">
             <span>📞 +57 (322) 871 6267</span>
             <span className="mx-6">✉️ contacto@botopia.tech</span>
-          </div>  
+          </div>
           <div className="hidden md:block">{t("phrase")}</div>
         </div>
       </div>
 
-      {/* Sección Inferior */}
       <div className="py-4">
-        <div className="container mx-auto flex justify-between items-center px-4">
-          {/* Logotipo */}
+        <div className="container mx-auto flex justify-between items-center px-6">
           <div className="text-2xl font-bold">
-            <img src="/logo.svg" alt="Botopia Logo" className="h-6 lg:h-12 cursor-pointer" onClick={() => navigateTo('/')} />
+            <img
+              src="/logo.svg"
+              alt="Botopia Logo"
+              className="h-6 lg:h-12 cursor-pointer"
+              onClick={() => router.push(`/${currentLanguage}`)}
+            />
           </div>
 
-          {/* Selector de Idioma */}
-          <div className="lg:flex lg:items-center lg:space-x-4">
-            <select
-              value={currentLanguage}
-              onChange={handleLanguageChange}
-              className="bg-gray-800 text-white border-none rounded-md px-4 py-1 below700:mr-2"
-            >
-              <option value="es">{t('Languages.Spanish')}</option>
-              <option value="en">{t('Languages.English')}</option>
-              <option value="pt">{t('Languages.Portuguese')}</option>
-            </select>
-          </div>
-
-          {/* Menú de Navegación */}
-          <nav className="hidden lg:flex space-x-6">
-            <button onClick={() => navigateTo('/')} className="hover:text-[#9165f3] py-2">{t("menu.home")}</button>
-            <button onClick={() => navigateTo('/solutions')} className="hover:text-[#9165f3] py-2">{t("menu.ourSolutions")}</button>
-            <button onClick={() => navigateTo('/about')} className="hover:text-[#9165f3] py-2">{t("menu.aboutUs")}</button>
-            <button onClick={() => navigateTo('/blog')} className="hover:text-[#9165f3] py-2 px-2">Blog/Podcast</button>
-            <button onClick={() => navigateTo('/contact')} className="bg-[#9165f3] text-white font-bold py-2 px-2 rounded-full hover:bg-pink-600">
-              {t("menu.contact")}
-            </button>
-          </nav>
-
-          {/* Botón para abrir/cerrar el menú en móviles */}
-          <div className="lg:hidden">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none">
-              {isMenuOpen ? (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-              )}
-            </button>
-          </div>
-
-          {/* Menú de Navegación en móviles */}
-          <nav className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden absolute top-0 left-0 w-full bg-black space-y-4 z-50 p-6`}>
-            {/* Botón para cerrar el menú */}
-            <div className="flex justify-end">
-              <button onClick={() => setIsMenuOpen(false)} className="text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Enlaces del menú */}
-            <button onClick={() => navigateTo('/')} className="block text-center hover:text-[#9165f3] py-2">
+          <nav className="hidden lg:flex space-x-6 relative">
+            <button onClick={() => router.push(`/${currentLanguage}`)} className="hover:text-[#9165f3] py-2">
               {t("menu.home")}
             </button>
-            <button onClick={() => navigateTo('/solutions')} className="block text-center hover:text-[#9165f3] py-2">
-              {t("menu.ourSolutions")}
+
+            {/* Nuestras Soluciones */}
+            <div className="relative group">
+              <button className="hover:text-[#9165f3] py-2 flex items-center">
+                {t("menu.ourSolutions")} <span className="ml-1 text-lg">▾</span>
+              </button>
+              <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-black shadow-lg rounded-lg p-4 w-[500px] max-w-screen-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 pointer-events-auto">
+                <h2 className="text-lg font-bold text-purple-400 text-center mb-2">Tecnología</h2>
+                <hr className="border-purple-500 w-1/3 mx-auto mb-4" />
+                <div className="grid grid-cols-2 gap-2 text-left">
+                  {[
+                    { name: "Aplicaciones Móviles", path: "/soluciones/appmovil" },
+                    { name: "Aplicaciones Web", path: "/soluciones/appweb" },
+                    { name: "Chatbot o Integraciones de IA", path: "/soluciones/chatbot" },
+                    { name: "E-commerce", path: "/soluciones/ecommerce" },
+                    { name: "Integración API Básica", path: "/soluciones/api" },
+                    { name: "Landing Page estándar", path: "/soluciones/landing" },
+                    { name: "Plataformas SaaS", path: "/soluciones/saas" },
+                    { name: "Proyectos Especiales", path: "/soluciones/proyectos" },
+                    { name: "Sitio Web Corporativo", path: "/soluciones/corporativo" },
+                    { name: "Software a la Medida", path: "/soluciones/software" }
+                  ].map((item, index) => (
+                    <Link
+                      key={index}
+                      href={`/${currentLanguage}${item.path}`}
+                      className="bg-black/50 p-2 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white transition block text-center"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Menú Nosotros */}
+            <div className="relative group">
+              <button className="hover:text-[#9165f3] py-2 flex items-center">
+                {t("menu.aboutUs")} <span className="ml-1 text-lg">▾</span>
+              </button>
+              <div className="absolute left-0 mt-2 w-56 bg-black shadow-lg rounded-lg p-4 flex flex-col opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 pointer-events-auto">
+                <Link href={`/${currentLanguage}/about/quienes-somos`} className="hover:bg-purple-700 hover:text-white px-4 py-2 rounded-md">
+                  Quiénes somos
+                </Link>
+                
+                <Link href={`/${currentLanguage}/about/casos-de-exito`} className="hover:bg-purple-700 hover:text-white px-4 py-2 rounded-md">
+                  Casos de éxito
+                </Link>
+              </div>
+            </div>
+
+            <button onClick={() => router.push(`/${currentLanguage}/blog`)} className="hover:text-[#9165f3] py-2">
+              Blog/Podcast
             </button>
-            <button onClick={() => navigateTo('/about')} className="block text-center hover:text-[#9165f3] py-2">
-              {t("menu.aboutUs")}
-            </button>
-            <button onClick={() => navigateTo('/blog')} className="block text-center hover:text-[#9165f3] py-2">
-              Blog / Podcast
-            </button>
-            <button onClick={() => navigateTo('/contact')} className="block text-center bg-[#9165f3] text-white font-bold py-2 px-4 rounded-full hover:bg-pink-600">
+
+            <button onClick={() => router.push(`/${currentLanguage}/contact`)} className="bg-[#9165f3] text-white font-bold py-2 px-2 rounded-full hover:bg-pink-600">
               {t("menu.contact")}
             </button>
           </nav>

@@ -1,7 +1,13 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
+// Importa los estilos de Swiper
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 interface PortfolioItem {
   title: string;
@@ -12,102 +18,77 @@ interface PortfolioItem {
 const Portfolio = () => {
   const portfolioItems: PortfolioItem[] = [
     {
-      title: 'Planta Femsa Cocacola',
-      description:
-        'Automatizamos la planta de retrolavado en Coca-Cola FEMSA mediante PLCs, optimizando el proceso y desarrollando una interfaz HMI personalizada.',
-      image: '/Portafolio/Cocacola.svg',
-    },
-    {
       title: 'VohGo',
-      description:
-        'Vohgo es una app para Android y iOS que facilita la compra rápida de componentes eléctricos, con una interfaz intuitiva y entregas en tiempo récord.',
-      image: '/Portafolio/Vohgo.svg',
+      description: 'Desarrollo de aplicación personalizada',
+      image: '/Portafolio/Vohgo2.svg',
     },
     {
       title: 'FridOOM',
-      description:
-        'FridOOM centraliza y administra la información financiera de una persona en un solo lugar, transformando su vida financiera y generando un impacto positivo.',
-      image: '/Portafolio/Fridoom.svg',
+      description: 'Desarrollo de sitio web personalizado',
+      image: '/Portafolio/Fridoom2.svg',
     },
     {
       title: 'Startups Calendar',
-      description:
-        'Plataforma que simplifica la gestión de eventos en el ecosistema emprendedor, permitiendo a los organizadores difundir actividades y a los usuarios inscribirse de forma ágil.',
-      image: '/Portafolio/Calendar.svg',
+      description: 'Desarrollo de sitio web personalizado',
+      image: '/Portafolio/Calendar2.svg',
     },
     {
       title: 'Alliance',
-      description:
-        'Plataforma médica que conecta profesionales y pacientes, permitiendo mostrar servicios, contactar y agendar citas de manera ágil.',
-      image: '/Portafolio/Alliance.svg',
+      description: 'Desarrollo de sitio web personalizado',
+      image: '/Portafolio/Alliance2.svg',
+    },
+    {
+      title: 'Driving School',
+      description: 'Desarrollo de sitio web personalizado con Dashboard',
+      image: '/Portafolio/DS.svg',
+    },
+    {
+      title: 'Planta Femsa Cocacola',
+      description: 'Automatización industrial',
+      image: '/Portafolio/Cocacola2.svg',
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % portfolioItems.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? portfolioItems.length - 1 : prev - 1
-    );
-  };
-
-  const { title, description, image } = portfolioItems[currentIndex];
-
   return (
-    <section className="bg-gradient-to-b from-white to-purple-400 py-16 text-gray-800">
-      <div className="max-w-5xl mx-auto px-6">
-        {/* Título */}
-        <h2 className="text-4xl font-bold text-center mb-10">Portafolio</h2>
+    <section className="bg-gradient-to-br from-purple-300 to-purple-700 py-20 text-gray-800 relative">
+      <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-purple-300 to-transparent"></div>
+      <div className="mx-auto px-6">
+        <h2 className="text-4xl font-bold text-center mb-10 text-white">Portafolio</h2>
 
-        {/*
-          Contenedor principal:
-          - flex-col en mobile
-          - flex-row en pantallas md y mayores
-          - items-center para alinear verticalmente en escritorio
-          - gap: espacio entre imagen y recuadro
-        */}
-        <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
-          
-          {/* Imagen sin recuadro, ni borde */}
-          <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] mx-auto md:mx-0">
-            <Image
-              src={image}
-              alt={title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 33vw"
-            />
-          </div>
+        {/* Carrusel con Swiper */}
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={40}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          className="w-full md:w-4/5 lg:w-[90%] mx-auto"
+        >
+          {portfolioItems.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex flex-col md:flex-row items-center gap-12">
 
-          {/*
-            Recuadro semitransparente:
-            - Con una ALTURA MÍNIMA (min-h-[350px]) para mantener tamaño constante
-            - Se expande si el texto es mayor
-            - bg-white/20 + backdrop-blur-sm para efecto difuminado
-          */}
-          <div className="bg-white/20 backdrop-blur-sm rounded-md p-6 shadow-sm max-w-md w-full min-h-[350px] mx-auto md:mx-0 flex flex-col justify-center">
-            <h3 className="text-2xl font-semibold mb-2">{title}</h3>
-            <p className="mb-6">{description}</p>
-            <div className="flex gap-4 justify-center md:justify-start">
-              <button
-                onClick={handlePrev}
-                className="px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition-colors"
-              >
-                ← Anterior
-              </button>
-              <button
-                onClick={handleNext}
-                className="px-4 py-2 bg-purple-500 text-white rounded-md hover:bg-purple-600 transition-colors"
-              >
-                Siguiente →
-              </button>
-            </div>
-          </div>
-        </div>
+                {/* Imagen con desvanecido SOLO a la derecha */}
+                <div className="relative  w-full md:w-1/2 h-[500px] overflow-hidden ">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                  {/* Desvanecido solo en la parte derecha */}
+                  <div className="absolute inset-y-0 right-0 w-1/3 "></div>
+                </div>
+
+                {/* Texto sin fondo adicional */}
+                <div className="flex flex-col justify-center w-full md:w-1/2 text-center md:text-left">
+                  <h3 className="text-4xl font-semibold text-white">{item.title}</h3>
+                  <p className="text-xl text-gray-200 mt-4">{item.description}</p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );
