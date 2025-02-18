@@ -31,13 +31,13 @@ export default function Header() {
             <span>📞 +57 (322) 871 6267</span>
             <span className="mx-6 hidden lg:inline">✉️ contacto@botopia.tech</span>
           </div>
-          <span className="mx- lg:hidden">✉️ contacto@botopia.tech</span>
-          <div className="hidden md:block">{t("phrase")}</div>
+          <span className="lg:hidden text-sm">✉️ contacto@botopia.tech</span>
+          <div className="hidden md:block text-base">{t("phrase")}</div>
         </div>
       </div>
 
       {/* Barra principal */}
-      <div className="py-2">
+      <div className="py-4">
         <div className="container mx-auto flex items-center justify-between px-6 relative">
           {/* Logo */}
             <img
@@ -48,7 +48,7 @@ export default function Header() {
             />
 
           {/* Menú Desktop centrado */}
-          <nav className="hidden lg:flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
+          <nav className="hidden lg:flex gap-10 absolute left-1/2 transform -translate-x-1/2 text-lg">
             <button onClick={() => router.push(`/${currentLanguage}`)} className="hover:text-[#9165f3] py-2">
               {t("menu.home")}
             </button>
