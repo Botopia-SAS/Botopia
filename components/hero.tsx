@@ -1,7 +1,6 @@
 "use client";
 
-//import Popup from "./popup";
-import Link from "next/link"; // Importa el componente Link de Next.js
+import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 
 export default function Hero() {
@@ -10,8 +9,7 @@ export default function Hero() {
   return (
     <section className="md:mt-8 bg-gradient-to-b from-black to-purple-800 text-white relative justify-center items-center">
       {/* Contenedor principal */}
-      //Popup /
-      <div className="container pt-32 lg:pt-56 lg:py-16 px-4 md:mx-28 items-center justify-center">
+      <div className="container mx-auto px-6 pt-32 lg:pt-56 lg:py-16 items-center justify-center">
         <div className="flex flex-col lg:flex-row items-center justify-center">
           {/* Contenedor del título y subtítulo */}
           <div className="lg:w-1/2 lg:text-left text-center">
@@ -48,8 +46,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Contenedor de las imágenes desktop*/}
-          <div className="hidden lg:w-1/2 lg:relative lg:flex lg:justify-end flex-wrap lg:items-center gap-4 lg:py-0 py-10 pt-32 px-10">
+          {/* Contenedor de las imágenes desktop */}
+          <div className="hidden lg:w-1/2 lg:relative lg:flex lg:justify-end flex-wrap lg:items-center gap-4 lg:py-0 py-10 pt-32 px-6">
             {/* Imagen central */}
             <img
               src="/astronave.svg"
@@ -84,8 +82,8 @@ export default function Hero() {
             />
           </div>
 
-          {/* Contenedor de las imágenes NO desktop*/}
-          <div className="flex flex-wrap lg:hidden mx- py-4 pt-10 below700:mx-0 justify-center">
+          {/* Contenedor de las imágenes móviles */}
+          <div className="flex flex-wrap lg:hidden px-6 py-4 pt-10 below700:px-0 justify-center">
             <img
               src="/chatbot.png"
               alt={t("images.icon1Alt")}

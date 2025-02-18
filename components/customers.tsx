@@ -18,10 +18,10 @@ export default function Clientes() {
     <section className="bg-[#6b21a8] py-12">
       <div className="mx-auto w-full text-center justify-center align-middle">
         <button
-          className="shadow-md shadow-gray-700 text-xl md:text-3xl font-light text-center mb-8 text-white py-2 px-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-full hover:scale-105 transition-transform"
+          className="shadow-md shadow-gray-700 text-xl md:text-3xl font-light text-center mb-8 text-white py-2 px-4 bg-purple-500 rounded-xl hover:scale-105 transition-transform"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          {t("title")}
+          {t("title")} 
         </button>
         {/* Carrusel animado */}
         <div className="relative overflow-hidden w-full h-32 py-8">

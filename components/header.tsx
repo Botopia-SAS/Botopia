@@ -11,6 +11,7 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const [currentLanguage, setCurrentLanguage] = useState("es");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const locale = pathname.split("/")[1];
@@ -25,63 +26,114 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-sm text-white">
       <div className="bg-black py-2">
-        <div className="container mx-auto flex justify-between items-center text-sm px-4">
+        <div className="container mx-auto flex justify-between items-center text-sm px-6">
           <div className="text-sm md:text-base">
             <span>📞 +57 (322) 871 6267</span>
-            <span className="mx-6">✉️ contacto@botopia.tech</span>
+            <span className="mx-6 hidden lg:inline">✉️ contacto@botopia.tech</span>
           </div>
+          <span className="mx- lg:hidden">✉️ contacto@botopia.tech</span>
           <div className="hidden md:block">{t("phrase")}</div>
         </div>
       </div>
 
+      {/* Barra principal */}
       <div className="py-4">
-        <div className="container mx-auto flex justify-between items-center px-6">
+        <div className="container mx-auto flex items-center justify-between px-6 relative">
+          {/* Logo */}
           <div className="text-2xl font-bold">
             <img
               src="/logo.svg"
               alt="Botopia Logo"
-              className="h-6 lg:h-12 cursor-pointer"
+              className="h-6 lg:h-10 cursor-pointer"
               onClick={() => router.push(`/${currentLanguage}`)}
             />
           </div>
 
-          <nav className="hidden lg:flex space-x-6 relative">
+          {/* Menú Desktop centrado */}
+          <nav className="hidden lg:flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
             <button onClick={() => router.push(`/${currentLanguage}`)} className="hover:text-[#9165f3] py-2">
               {t("menu.home")}
             </button>
 
             {/* Nuestras Soluciones */}
             <div className="relative group">
-              <button className="hover:text-[#9165f3] py-2 flex items-center">
-                {t("menu.ourSolutions")} <span className="ml-1 text-lg">▾</span>
+              <button className="hover:text-purple-400 py-2 flex items-center">
+                {t("menu.ourSolutions")} <span className="ml-1 text-xl">▾</span>
               </button>
-              <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-black shadow-lg rounded-lg p-4 w-[500px] max-w-screen-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 pointer-events-auto">
-                <h2 className="text-lg font-bold text-purple-400 text-center mb-2">Tecnología</h2>
-                <hr className="border-purple-500 w-1/3 mx-auto mb-4" />
-                <div className="grid grid-cols-2 gap-2 text-left">
-                  {[
-                    { name: "Aplicaciones Móviles", path: "/soluciones/appmovil" },
-                    { name: "Aplicaciones Web", path: "/soluciones/appweb" },
-                    { name: "Chatbot o Integraciones de IA", path: "/soluciones/chatbot" },
-                    { name: "E-commerce", path: "/soluciones/ecommerce" },
-                    { name: "Integración API Básica", path: "/soluciones/api" },
-                    { name: "Landing Page estándar", path: "/soluciones/landing" },
-                    { name: "Plataformas SaaS", path: "/soluciones/saas" },
-                    { name: "Proyectos Especiales", path: "/soluciones/proyectos" },
-                    { name: "Sitio Web Corporativo", path: "/soluciones/corporativo" },
-                    { name: "Software a la Medida", path: "/soluciones/software" }
-                  ].map((item, index) => (
-                    <Link
-                      key={index}
-                      href={`/${currentLanguage}${item.path}`}
-                      className="bg-black/50 p-2 rounded-lg shadow-lg hover:bg-purple-700 hover:text-white transition block text-center"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
+
+              {/* Menú desplegable estilo "Imaginamos" */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 top-full  bg-black shadow-xl rounded-lg p-8 w-[1900px] max-w-screen-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
+                <div className="grid grid-cols-4 space-x-12 text-white">
+
+                  {/* Consultoría & Estrategia */}
+                  <div>
+                    <h3 className="text-lg font-extrabold text-purple-400 flex items-center">
+                      Consultoría & Estrategia
+                    </h3>
+                    <hr className="border-purple-400 w-auto" />
+                    <ul className="space-y-2 py-4 font-semibold">
+                      <li>Spin Off Empresarial</li>
+                      <li>Innovación y Transformación Digital</li>
+                      <li>Metodología Ágiles</li>
+                      <li>Consultoría de Negocios</li>
+                    </ul>
+                  </div>
+
+                  {/* Tecnología */}
+                  <div>
+                    <h3 className="text-lg font-extrabold text-purple-400 flex items-center">
+                      Tecnología
+                    </h3>
+                    <hr className="border-purple-400 w-auto" />
+                    <ul className="space-y-2 py-4 font-semibold">
+                      <li>Tecnología a la Medida</li>
+                      <li>Desarrollo de Sitio Web</li>
+                      <li>Aplicaciones Móviles</li>
+                      <li>Infraestructura Cloud</li>
+                      <li>Desarrollo MVP</li>
+                      <li>Desarrollo E-commerce</li>
+                      <li>Integración AI</li>
+                    </ul>
+                  </div>
+
+                  {/* Diseño */}
+                  <div>
+                    <h3 className="text-lg font-extrabold text-purple-400 flex items-center">
+                      Diseño
+                    </h3>
+                    <hr className="border-purple-500 w-auto" />
+                    <ul className="space-y-2 py-4 font-semibold">
+                      <li>Diseño UX/UI</li>
+                      <li>Branding & Naming</li>
+                    </ul>
+                  </div>
+
+                  {/* Marketing */}
+                  <div>
+                    <h3 className="text-lg font-extrabold text-purple-400 flex items-center">
+                      Marketing
+                    </h3>
+                    <hr className="border-purple-400 w-auto" />
+                    <ul className="space-y-2 py-4 font-semibold">
+                      <li>Marketing Digital</li>
+                      <li>Growth Marketing</li>
+                      <li>E-commerce Marketing</li>
+                      <li>SEO</li>
+                      <li>Automatización</li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                {/* Botón de CTA */}
+                <div className="flex justify-center mt-6">
+                  <button className="bg-purple-400 text-white font-bold py-3 px-6 rounded-full hover:bg-[#e60073] transition">
+                    Explorar más
+                  </button>
                 </div>
               </div>
             </div>
+
 
             {/* Menú Nosotros */}
             <div className="relative group">
@@ -92,7 +144,7 @@ export default function Header() {
                 <Link href={`/${currentLanguage}/about/quienes-somos`} className="hover:bg-purple-700 hover:text-white px-4 py-2 rounded-md">
                   Quiénes somos
                 </Link>
-                
+
                 <Link href={`/${currentLanguage}/about/casos-de-exito`} className="hover:bg-purple-700 hover:text-white px-4 py-2 rounded-md">
                   Casos de éxito
                 </Link>
@@ -102,13 +154,70 @@ export default function Header() {
             <button onClick={() => router.push(`/${currentLanguage}/blog`)} className="hover:text-[#9165f3] py-2">
               Blog/Podcast
             </button>
+          </nav>
 
-            <button onClick={() => router.push(`/${currentLanguage}/contact`)} className="bg-[#9165f3] text-white font-bold py-2 px-2 rounded-full hover:bg-pink-600">
+          {/* Botones de la derecha */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* Selector de idioma */}
+            <select
+              value={currentLanguage}
+              onChange={handleLanguageChange}
+              className="bg-black text-white border border-gray-600 p-1 rounded-md"
+            >
+              <option value="es">Español</option>
+              <option value="en">Inglés</option>
+            </select>
+
+            <button onClick={() => router.push(`/${currentLanguage}/contact`)} className="bg-[#9165f3] text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-600">
+              {t("menu.contact")}
+            </button>
+          </div>
+
+
+          <div className="lg:hidden flex ml-44">
+            {/* Selector de idioma */}
+            <select
+              value={currentLanguage}
+              onChange={handleLanguageChange}
+              className="bg-black text-white border border-gray-600 rounded-md"
+            >
+              <option value="es">Español</option>
+              <option value="en">Inglés</option>
+              <option value="pt">Portugués</option>
+            </select>
+          </div>
+          {/* Botón menú mobile */}
+          <button
+            className="lg:hidden text-2xl"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      {/* Menú Mobile */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 w-full bg-black p-4 shadow-lg z-40">
+          <nav className="flex flex-col space-y-4">
+            <button onClick={() => router.push(`/${currentLanguage}`)} className="hover:text-[#9165f3] py-2">
+              {t("menu.home")}
+            </button>
+            <button onClick={() => router.push(`/${currentLanguage}`)} className="hover:text-[#9165f3] py-2">
+              {t("menu.ourSolutions")}
+            </button>
+            <button onClick={() => router.push(`/${currentLanguage}`)} className="hover:text-[#9165f3] py-2">
+              {t("menu.aboutUs")}
+            </button>
+            <button onClick={() => router.push(`/${currentLanguage}/blog`)} className="hover:text-[#9165f3] py-2">
+              Blog/Podcast
+            </button>
+            <button onClick={() => router.push(`/${currentLanguage}/contact`)} className="bg-[#9165f3] text-white font-bold py-2 px-4 rounded-full hover:bg-pink-600">
               {t("menu.contact")}
             </button>
           </nav>
         </div>
-      </div>
+      )}
     </header>
   );
 }
