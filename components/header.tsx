@@ -44,7 +44,7 @@ export default function Header() {
             <img
               src="/logo.svg"
               alt="Botopia Logo"
-              className="h-6 lg:h-10 cursor-pointer"
+              className="h-8 lg:h-10 cursor-pointer"
               onClick={() => router.push(`/${currentLanguage}`)}
             />
           </div>
@@ -174,7 +174,7 @@ export default function Header() {
           </div>
 
 
-          <div className="lg:hidden flex ml-44">
+          <div className="lg:hidden flex ml-32 px-4">
             {/* Selector de idioma */}
             <select
               value={currentLanguage}
@@ -188,7 +188,7 @@ export default function Header() {
           </div>
           {/* Botón menú mobile */}
           <button
-            className="lg:hidden text-2xl"
+            className="lg:hidden text-3xl"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             ☰
