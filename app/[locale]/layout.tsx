@@ -19,7 +19,7 @@ export default async function RootLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <html lang="es">
-        <body className="bg-gray-100">
+        <body>
           <Header />
           <main>{children}</main>
           <Footer />

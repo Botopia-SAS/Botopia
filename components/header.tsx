@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-sm text-white">
       <div className="bg-black py-2">
-        <div className="container mx-auto flex justify-between items-center text-sm px-6">
+        <div className="container mx-auto flex justify-between items-center text-sm ">
           <div className="text-sm md:text-base">
             <span>📞 +57 (322) 871 6267</span>
             <span className="mx-6 hidden lg:inline">✉️ contacto@botopia.tech</span>
@@ -38,7 +38,7 @@ export default function Header() {
 
       {/* Barra principal */}
       <div className="py-4">
-        <div className="container mx-auto flex items-center justify-between px-6 relative">
+        <div className="container mx-auto flex items-center justify-between relative">
           {/* Logo */}
             <img
               src="/logo.svg"
@@ -125,7 +125,7 @@ export default function Header() {
 
                 {/* Botón de CTA */}
                 <div className="flex justify-center mt-6">
-                  <button className="bg-purple-400 text-white font-bold py-3 px-6 rounded-full hover:bg-[#e60073] transition">
+                  <button className="bg-purple-400 text-white font-bold py-3 px-4 rounded-full hover:bg-[#e60073] transition">
                     Explorar más
                   </button>
                 </div>

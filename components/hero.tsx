@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="md:mt-8 bg-gradient-to-b from-black to-purple-800 text-white relative justify-center items-center">
       {/* Contenedor principal */}
-      <div className="container mx-auto px-6 pt-32 lg:pt-56 lg:py-16 items-center justify-center">
+      <div className="container mx-auto pt-32 lg:pt-56 lg:py-16 items-center justify-center">
         <div className="flex flex-col lg:flex-row items-center justify-center">
           {/* Contenedor del título y subtítulo */}
           <div className="lg:w-1/2 lg:text-left text-center">
@@ -33,13 +33,13 @@ export default function Hero() {
             <div className="flex flex-col lg:flex-row justify-start lg:justify-start space-y-6 lg:space-y-0 lg:space-x-6 lg:mt-14 mt-6">
               <a
                 href="#"
-                className="border-2 border-[#9165f3] text-[#9165f3] py-3 px-6 rounded-md font-semibold hover:bg-purple-500 hover:text-white"
+                className="border-2 border-[#9165f3] text-[#9165f3] py-3 px-4 rounded-md font-semibold hover:bg-purple-500 hover:text-white"
               >
                 {t("buttons.contactSales")}
               </a>
               <Link
                 href={`/${locale}/demos`} // Incluye el prefijo del idioma en la ruta
-                className="border border-black shadow-lg jump-button bg-white text-black py-3 px-6 rounded-md font-semibold hover:bg-purple-600"
+                className="border border-black shadow-lg jump-button bg-white text-black py-3 px-4 rounded-md font-semibold hover:bg-purple-600"
               >
                 {t("buttons.tryUsFree")}
               </Link>
