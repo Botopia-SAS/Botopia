@@ -28,15 +28,24 @@ export default function Header() {
       <div className="bg-black py-2">
         <div className="container mx-auto flex justify-between items-center text-sm ">
           <div className="text-sm md:text-base">
-            <a href="tel:3228726267" className="hover:text-purple-400 transition">
+            <a
+              href="tel:3228726267"
+              className="hover:text-purple-400 transition"
+            >
               📞 +57 (322) 872 6267
             </a>
-            <a href="mailto:contacto@botopia.tech" className="mx-6 hidden lg:inline hover:text-purple-400 transition">
+            <a
+              href="mailto:contacto@botopia.tech"
+              className="mx-6 hidden lg:inline hover:text-purple-400 transition"
+            >
               ✉️ contacto@botopia.tech
             </a>
           </div>
           <span className="lg:hidden text-sm">
-            <a href="mailto:contacto@botopia.tech" className="hover:text-purple-400 transition">
+            <a
+              href="mailto:contacto@botopia.tech"
+              className="hover:text-purple-400 transition"
+            >
               ✉️ contacto@botopia.tech
             </a>
           </span>
@@ -57,7 +66,10 @@ export default function Header() {
 
           {/* Menú Desktop centrado */}
           <nav className="hidden lg:flex gap-10 absolute left-1/2 transform -translate-x-1/2 text-lg">
-            <button onClick={() => router.push(`/${currentLanguage}`)} className="hover:text-[#9165f3] py-2">
+            <button
+              onClick={() => router.push(`/${currentLanguage}`)}
+              className="hover:text-[#9165f3] py-2"
+            >
               {t("menu.home")}
             </button>
 
@@ -70,7 +82,6 @@ export default function Header() {
               {/* Menú desplegable estilo "Imaginamos" */}
               <div className="absolute left-1/2 transform -translate-x-1/2 top-full  bg-black shadow-xl rounded-lg p-8 w-[1900px] max-w-screen-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
                 <div className="grid grid-cols-4 space-x-12 text-white">
-
                   {/* Consultoría & Estrategia */}
                   <div>
                     <h3 className="text-lg font-extrabold text-purple-400 flex items-center">
@@ -128,7 +139,6 @@ export default function Header() {
                       <li>Automatización</li>
                     </ul>
                   </div>
-
                 </div>
 
                 {/* Botón de CTA */}
@@ -140,24 +150,32 @@ export default function Header() {
               </div>
             </div>
 
-
             {/* Menú Nosotros */}
             <div className="relative group">
               <button className="hover:text-[#9165f3] py-2 flex items-center">
                 {t("menu.aboutUs")} <span className="ml-1 text-lg">▾</span>
               </button>
               <div className="absolute left-0 mt-2 w-56 bg-black shadow-lg rounded-lg p-4 flex flex-col opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 pointer-events-auto">
-                <Link href={`/${currentLanguage}/about/quienes-somos`} className="hover:bg-purple-700 hover:text-white px-4 py-2 rounded-md">
+                <Link
+                  href={`/${currentLanguage}/about/quienes-somos`}
+                  className="hover:bg-purple-700 hover:text-white px-4 py-2 rounded-md"
+                >
                   Quiénes somos
                 </Link>
 
-                <Link href={`/${currentLanguage}/about/casos-de-exito`} className="hover:bg-purple-700 hover:text-white px-4 py-2 rounded-md">
+                <Link
+                  href={`/${currentLanguage}/about/casos-de-exito`}
+                  className="hover:bg-purple-700 hover:text-white px-4 py-2 rounded-md"
+                >
                   Casos de éxito
                 </Link>
               </div>
             </div>
 
-            <button onClick={() => router.push(`/${currentLanguage}/blog`)} className="hover:text-[#9165f3] py-2">
+            <button
+              onClick={() => router.push(`/${currentLanguage}/blog`)}
+              className="hover:text-[#9165f3] py-2"
+            >
               Blog/Podcast
             </button>
           </nav>
@@ -175,11 +193,13 @@ export default function Header() {
               <option value="pt">{t("Languages.Portuguese")}</option>
             </select>
 
-            <button onClick={() => router.push(`/${currentLanguage}/contact`)} className="bg-[#9165f3] text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-600">
+            <button
+              onClick={() => router.push(`/${currentLanguage}/contactUs`)}
+              className="bg-[#9165f3] text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-600"
+            >
               {t("menu.contact")}
             </button>
           </div>
-
 
           <div className="lg:hidden flex ml- px-4">
             {/* Selector de idioma */}
@@ -201,26 +221,40 @@ export default function Header() {
             {mobileMenuOpen ? "✖" : "☰"}
           </button>
         </div>
-
       </div>
 
       {/* Menú Mobile */}
       {mobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-black p-4 shadow-lg z-40">
           <nav className="flex flex-col space-y-4">
-            <button onClick={() => router.push(`/${currentLanguage}`)} className="hover:text-[#9165f3] py-2">
+            <button
+              onClick={() => router.push(`/${currentLanguage}`)}
+              className="hover:text-[#9165f3] py-2"
+            >
               {t("menu.home")}
             </button>
-            <button onClick={() => router.push(`/${currentLanguage}`)} className="hover:text-[#9165f3] py-2">
+            <button
+              onClick={() => router.push(`/${currentLanguage}`)}
+              className="hover:text-[#9165f3] py-2"
+            >
               {t("menu.ourSolutions")}
             </button>
-            <button onClick={() => router.push(`/${currentLanguage}`)} className="hover:text-[#9165f3] py-2">
+            <button
+              onClick={() => router.push(`/${currentLanguage}`)}
+              className="hover:text-[#9165f3] py-2"
+            >
               {t("menu.aboutUs")}
             </button>
-            <button onClick={() => router.push(`/${currentLanguage}/blog`)} className="hover:text-[#9165f3] py-2">
+            <button
+              onClick={() => router.push(`/${currentLanguage}/blog`)}
+              className="hover:text-[#9165f3] py-2"
+            >
               Blog/Podcast
             </button>
-            <button onClick={() => router.push(`/${currentLanguage}/contact`)} className="bg-[#9165f3] text-white font-bold py-2 px-4 rounded-full hover:bg-pink-600">
+            <button
+              onClick={() => router.push(`/${currentLanguage}/contact`)}
+              className="bg-[#9165f3] text-white font-bold py-2 px-4 rounded-full hover:bg-pink-600"
+            >
               {t("menu.contact")}
             </button>
           </nav>
