@@ -46,7 +46,7 @@ export default function ContactUs() {
             <source src="/contactUs/VideoContact.mp4" type="video/mp4" />
             Tu navegador no soporta videos en fondo.
           </video>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-40 px-4 mt-28 md:mt-10 lg:mt-16">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-opacity-40 px-4 mt-28 md:mt-10 lg:mt-16">
             <h1 className="text-white text-3xl md:text-4xl font-bold mb-2">
               Contáctanos
             </h1>
