@@ -20,11 +20,6 @@ interface PortfolioItem {
 const Portfolio = () => {
   const portfolioItems: PortfolioItem[] = [
     {
-      title: "VohGo",
-      description: "Desarrollo de aplicación personalizada",
-      image: "/Portafolio/Vohgo2.svg",
-    },
-    {
       title: "fridoom",
       description:
         "Fridoom es una plataforma de gestión financiera automatizada que permite a los usuarios registrar y monitorear sus ingresos y egresos de manera inteligente. Su enfoque está basado en el concepto de open banking, lo que significa que puede integrarse con diversas fuentes de información bancaria para ofrecer un control financiero en tiempo real.",
@@ -32,14 +27,19 @@ const Portfolio = () => {
       link: "https://www.fridoom.com",
     },
     {
+      title: "VohGo",
+      description: "Vohgo es una app móvil diseñada para revolucionar la compra y venta de componentes electrónicos de manera rápida, accesible y eficiente. Desarrollamos una plataforma intuitiva que conecta vendedores y compradores, optimizando el proceso de comercialización con una experiencia fluida y segura.",
+      image: "/Portafolio/Vohgo2.svg",
+    },
+    {
       title: "Startups Calendar",
-      description: "Desarrollo de sitio web personalizado",
+      description: "Startups Calendar es una plataforma donde emprendedores y entusiastas del ecosistema tech pueden descubrir y postular eventos de startups en un solo lugar. Desarrollamos un sitio web rápido, intuitivo y sin costos operativos.",
       image: "/Portafolio/Calendar2.svg",
       link: "https://www.startupscalendar.com",
     },
     {
       title: "Alliance",
-      description: "Desarrollo de sitio web personalizado",
+      description: "Alliance Medical Supplies es una plataforma diseñada para facilitar el acceso a dispositivos médicos y medicamentos de alta calidad. Desarrollamos un sitio web intuitivo que permite a instituciones de salud y profesionales médicos descubrir, gestionar y adquirir productos innovadores de forma eficiente.",
       image: "/Portafolio/Alliance2.svg",
       link: "https://alliance-ebon.vercel.app",
     },
@@ -52,23 +52,23 @@ const Portfolio = () => {
     },
     {
       title: "Planta Femsa Cocacola",
-      description: "Automatización industrial",
+      description: "Desarrollamos la programación de un PLC para optimizar el proceso de retrolavado de tanques, garantizando eficiencia, precisión y control automatizado en la operación. Implementamos una solución robusta que mejora la gestión del agua y la limpieza, optimizando los tiempos de producción y reduciendo el desperdicio.",
       image: "/Portafolio/Cocacola2.svg",
     },
   ];
 
   return (
-    <section className="bg-gradient-to-br from-purple-300 to-purple-700 py-20 text-gray-800 relative">
-      <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-purple-300 to-transparent"></div>
-      <div className="mx-auto px-6 max-w-screen-xl">
-        <h2 className="text-4xl font-bold text-center mb-10 text-white">
+    <section className="bg-gradient-to-br from-purple-300 to-purple-700 py-12 md:py-20 text-gray-800 relative">
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-purple-300 to-transparent"></div>
+      <div className="mx-auto px-4 md:px-6 max-w-screen-xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-10 text-white">
           Portafolio
         </h2>
 
         {/* Carrusel con Swiper */}
         <Swiper
           modules={[Navigation, Pagination]}
-          spaceBetween={40}
+          spaceBetween={20} // Reducir separación en móvil
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
@@ -76,9 +76,9 @@ const Portfolio = () => {
         >
           {portfolioItems.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col md:flex-row items-center gap-12 rounded-3xl p-8 shadow-lg">
+              <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 rounded-3xl p-6 md:p-8 shadow-lg">
                 {/* Contenedor de Imagen con Degradado */}
-                <div className="relative w-full md:w-1/2 h-[500px] overflow-hidden">
+                <div className="relative w-full md:w-1/2 h-[300px] md:h-[500px] overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -86,16 +86,14 @@ const Portfolio = () => {
                     objectFit="contain"
                     className="relative z-10"
                   />
-                  {/* Degradado en la parte derecha para el efecto de desvanecido */}
-                  <div className="absolute inset-y-0 right-0 w-1/3 "></div>
                 </div>
 
                 {/* Contenedor de Texto */}
-                <div className="flex flex-col justify-center w-full md:w-1/2 text-center md:text-left px-6">
-                  <h3 className="text-4xl font-semibold text-white">
+                <div className="flex flex-col justify-center w-full md:w-1/2 text-center md:text-left px-4 md:px-6">
+                  <h3 className="text-2xl md:text-4xl font-semibold text-white">
                     {item.title}
                   </h3>
-                  <p className="text-xl text-gray-200 mt-4 text-justify">
+                  <p className="text-lg md:text-xl text-gray-200 mt-2 md:mt-4 text-justify">
                     {item.description}
                   </p>
 
@@ -106,7 +104,7 @@ const Portfolio = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <button className="mt-6 bg-white text-purple-700 font-bold py-3 px-6 rounded-full hover:bg-purple-600 hover:text-white transition">
+                      <button className="mt-4 md:mt-6 bg-white text-purple-700 font-bold py-2 md:py-3 px-4 md:px-6 rounded-full hover:bg-purple-600 hover:text-white transition">
                         Visita el sitio web
                       </button>
                     </Link>
