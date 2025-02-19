@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import Link from 'next/link';
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import Link from "next/link";
 
 // Importa los estilos de Swiper
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 interface PortfolioItem {
   title: string;
@@ -20,38 +20,40 @@ interface PortfolioItem {
 const Portfolio = () => {
   const portfolioItems: PortfolioItem[] = [
     {
-      title: 'VohGo',
-      description: 'Desarrollo de aplicación personalizada',
-      image: '/Portafolio/Vohgo2.svg',
+      title: "VohGo",
+      description: "Desarrollo de aplicación personalizada",
+      image: "/Portafolio/Vohgo2.svg",
     },
     {
-      title: 'fridoom',
-      description: 'Fridoom es una plataforma de gestión financiera automatizada que permite a los usuarios registrar y monitorear sus ingresos y egresos de manera inteligente. Su enfoque está basado en el concepto de open banking, lo que significa que puede integrarse con diversas fuentes de información bancaria para ofrecer un control financiero en tiempo real.',
-      image: '/Portafolio/fridoom.png',
-      link: 'https://www.fridoom.com',
+      title: "fridoom",
+      description:
+        "Fridoom es una plataforma de gestión financiera automatizada que permite a los usuarios registrar y monitorear sus ingresos y egresos de manera inteligente. Su enfoque está basado en el concepto de open banking, lo que significa que puede integrarse con diversas fuentes de información bancaria para ofrecer un control financiero en tiempo real.",
+      image: "/Portafolio/fridoom.png",
+      link: "https://www.fridoom.com",
     },
     {
-      title: 'Startups Calendar',
-      description: 'Desarrollo de sitio web personalizado',
-      image: '/Portafolio/Calendar2.svg',
-      link: 'https://www.startupscalendar.com',
+      title: "Startups Calendar",
+      description: "Desarrollo de sitio web personalizado",
+      image: "/Portafolio/Calendar2.svg",
+      link: "https://www.startupscalendar.com",
     },
     {
-      title: 'Alliance',
-      description: 'Desarrollo de sitio web personalizado',
-      image: '/Portafolio/Alliance2.svg',
-      link: 'https://alliance-ebon.vercel.app',
+      title: "Alliance",
+      description: "Desarrollo de sitio web personalizado",
+      image: "/Portafolio/Alliance2.svg",
+      link: "https://alliance-ebon.vercel.app",
     },
     {
-      title: 'Driving School',
-      description: 'Desarrollo de sitio web personalizado con Dashboard',
-      image: '/Portafolio/DS.svg',
-      link: 'https://driving-school-mocha.vercel.app',
+      title: "Driving School",
+      description:
+        "Desarrollamos el sitio web de Driving School Palm Beach, una plataforma moderna con reservas en línea, gestión de instructores y pagos integrados, optimizando la administración y mejorando la experiencia de los estudiantes. Creada con las mejores herramientas, digitaliza por completo el proceso de una escuela de conducción.",
+      image: "/Portafolio/DS.svg",
+      link: "https://driving-school-mocha.vercel.app",
     },
     {
-      title: 'Planta Femsa Cocacola',
-      description: 'Automatización industrial',
-      image: '/Portafolio/Cocacola2.svg',
+      title: "Planta Femsa Cocacola",
+      description: "Automatización industrial",
+      image: "/Portafolio/Cocacola2.svg",
     },
   ];
 
@@ -59,7 +61,9 @@ const Portfolio = () => {
     <section className="bg-gradient-to-br from-purple-300 to-purple-700 py-20 text-gray-800 relative">
       <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-purple-300 to-transparent"></div>
       <div className="mx-auto px-6 max-w-screen-xl">
-        <h2 className="text-4xl font-bold text-center mb-10 text-white">Portafolio</h2>
+        <h2 className="text-4xl font-bold text-center mb-10 text-white">
+          Portafolio
+        </h2>
 
         {/* Carrusel con Swiper */}
         <Swiper
@@ -73,7 +77,6 @@ const Portfolio = () => {
           {portfolioItems.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="flex flex-col md:flex-row items-center gap-12 rounded-3xl p-8 shadow-lg">
-
                 {/* Contenedor de Imagen con Degradado */}
                 <div className="relative w-full md:w-1/2 h-[500px] overflow-hidden">
                   <Image
@@ -89,19 +92,26 @@ const Portfolio = () => {
 
                 {/* Contenedor de Texto */}
                 <div className="flex flex-col justify-center w-full md:w-1/2 text-center md:text-left px-6">
-                  <h3 className="text-4xl font-semibold text-white">{item.title}</h3>
-                  <p className="text-xl text-gray-200 mt-4">{item.description}</p>
+                  <h3 className="text-4xl font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-xl text-gray-200 mt-4 text-justify">
+                    {item.description}
+                  </p>
 
                   {/* Botón de "Visita el sitio web" si tiene link */}
                   {item.link && (
-                    <Link href={item.link} target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <button className="mt-6 bg-white text-purple-700 font-bold py-3 px-6 rounded-full hover:bg-purple-600 hover:text-white transition">
                         Visita el sitio web
                       </button>
                     </Link>
                   )}
                 </div>
-
               </div>
             </SwiperSlide>
           ))}
