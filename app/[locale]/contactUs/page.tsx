@@ -13,7 +13,9 @@ export default function ContactUs() {
   return (
     <>
       <Head>
-        <title>Contact Us - Botopia</title>
+        <Head>
+          <title>Contact Us - Botopia</title>
+        </Head>
         <meta
           name="description"
           content="Get in touch with Botopia. Contact us for inquiries and collaborations."
@@ -33,7 +35,7 @@ export default function ContactUs() {
         <meta name="robots" content="index, follow" />
       </Head>
 
-      <div className="relative w-full bg-white text-black">
+      <div className="relative w-full bg-black text-black mt-28">
         {/* Sección con el video de fondo */}
         <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden">
           <video
@@ -46,7 +48,7 @@ export default function ContactUs() {
             <source src="/contactUs/VideoContact.mp4" type="video/mp4" />
             Tu navegador no soporta videos en fondo.
           </video>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-opacity-40 px-4 mt-28 md:mt-10 lg:mt-16">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-opacity-40 px-4 ">
             <h1 className="text-white text-3xl md:text-4xl font-bold mb-2">
               Contáctanos
             </h1>
@@ -59,8 +61,9 @@ export default function ContactUs() {
         </div>
 
         {/* Contenido principal */}
-        <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="container py-12 w-full sm:px-6 px-4 bg-white max-w-none md:px-40">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 item-start w-full">
             {/* Información de contacto */}
             <div>
               <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-[#450161]">
