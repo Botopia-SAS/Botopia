@@ -252,7 +252,7 @@ export default function Header() {
               Blog/Podcast
             </button>
             <button
-              onClick={() => router.push(`/${currentLanguage}/contact`)}
+              onClick={() => router.push(`/${currentLanguage}/contactUs`)}
               className="bg-[#9165f3] text-white font-bold py-2 px-4 rounded-full hover:bg-pink-600"
             >
               {t("menu.contact")}

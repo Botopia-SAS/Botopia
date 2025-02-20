@@ -49,7 +49,7 @@ export default function About() {
         {/* CTA (Call to Action) */}
         <div className="mt-12">
           <a
-            href="/contactUs"
+            href="https://botopia.tech/contactUs"
             className="bg-white text-purple-900 font-bold py-3 px-6 rounded-full text-lg hover:bg-purple-300 transition"
           >
             Contáctanos
