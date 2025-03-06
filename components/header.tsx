@@ -30,13 +30,13 @@ export default function Header() {
           <div className="text-sm md:text-base">
             <a
               href="tel:3228726267"
-              className="hover:text-purple-400 transition"
+              className="hover:text-purple-400 transition ml-4"
             >
               📞 +57 (322) 872 6267
             </a>
             <a
               href="mailto:contacto@botopia.tech"
-              className="mx-6 hidden lg:inline hover:text-purple-400 transition"
+              className="mx-6 hidden lg:inline hover:text-purple-400 transition mr-4"
             >
               ✉️ contacto@botopia.tech
             </a>
@@ -44,7 +44,7 @@ export default function Header() {
           <span className="lg:hidden text-sm">
             <a
               href="mailto:contacto@botopia.tech"
-              className="hover:text-purple-400 transition"
+              className="hover:text-purple-400 transition mr-4"
             >
               ✉️ contacto@botopia.tech
             </a>
@@ -54,7 +54,7 @@ export default function Header() {
       </div>
 
       {/* Barra principal */}
-      <div className="py-4">
+      <div className="py-4 px-4">
         <div className="container mx-auto flex items-center justify-between relative">
           {/* Logo */}
           <img
@@ -75,12 +75,12 @@ export default function Header() {
 
             {/* Nuestras Soluciones */}
             <div className="relative group">
-              <button className="hover:text-purple-400 py-2 flex items-center">
+              <button className="hover:text-purple-400 py-2 flex items-center mr-8">
                 {t("menu.ourSolutions")} <span className="ml-1 text-xl">▾</span>
               </button>
 
               {/* Menú desplegable estilo "Imaginamos" */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 top-full  bg-black shadow-xl rounded-lg p-8 w-[1900px] max-w-screen-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
+              <div className="absolute left-1/2 transform -translate-x-1/2 top-full  bg-black shadow-xl rounded-lg p-8 w-[1900px] max-w-screen-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto ">
                 <div className="grid grid-cols-4 space-x-12 text-white">
                   {/* Consultoría & Estrategia */}
                   <div>
