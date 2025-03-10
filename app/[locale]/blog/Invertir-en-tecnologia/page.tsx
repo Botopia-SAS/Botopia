@@ -11,7 +11,7 @@ export default function BlogPage() {
       {/* 🚀 Hero Section */}
       <div className="relative z-10 flex w-full max-w-7xl pt-36 mx-auto py-16 flex-col items-center">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white text-center">
-          🚨 {t("title")}
+          {t("title")}
         </h1>
         <p className="mt-4 text-lg text-gray-300 max-w-3xl text-justify leading-relaxed">
           {t("intro")}
@@ -61,9 +61,9 @@ export default function BlogPage() {
 
           <p className="text-gray-300 mt-4 text-justify">{t("caseStudy.description")}</p>
           <ul className="list-disc list-inside text-gray-300 mt-4 space-y-2">
-            <li>📉 <strong>{t("caseStudy.point1")}</strong></li>
-            <li>🚀 <strong>{t("caseStudy.point2")}</strong></li>
-            <li>✅ <strong>{t("caseStudy.point3")}</strong></li>
+            <li> <strong>{t("caseStudy.point1")}</strong></li>
+            <li> <strong>{t("caseStudy.point2")}</strong></li>
+            <li> <strong>{t("caseStudy.point3")}</strong></li>
           </ul>
         </section>
       </div>
