@@ -8,8 +8,22 @@ import {
   FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
+import { useState, useCallback } from "react";
+import { useDropzone } from "react-dropzone";
 
 export default function ContactUs() {
+  const [files, setFiles] = useState<File[]>([]);
+
+  // Función para manejar archivos al soltarlos o seleccionarlos
+  const onDrop = useCallback((acceptedFiles: File[]) => {
+    setFiles(acceptedFiles);
+  }, []);
+
+  // Configuración de Dropzone
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: { "image/*": [] }, // Solo imágenes
+  });
   return (
     <>
       <Head>
@@ -163,22 +177,15 @@ export default function ContactUs() {
                 action="https://formsubmit.co/contacto@botopia.tech"
                 method="POST"
                 encType="multipart/form-data" // 🔥 Necesario para adjuntar archivos
-                onSubmit={(e) => {
-                  setTimeout(() => {
-                    (e.target as HTMLFormElement).reset();
-                  }, 100);
-                }}
               >
                 {/* Campos Name y Email */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {["Nombre", "E-mail"].map((field) => (
                     <input
                       key={field}
-                      type={field === "email" ? "email" : "text"}
-                      name={field}
-                      placeholder={
-                        field.charAt(0).toUpperCase() + field.slice(1)
-                      }
+                      type={field === "E-mail" ? "email" : "text"}
+                      name={field.toLowerCase()}
+                      placeholder={field}
                       required
                       className="p-3 border border-gray-300 rounded w-full text-black bg-white focus:ring-2 focus:ring-[#450161]"
                     />
@@ -200,6 +207,39 @@ export default function ContactUs() {
                   required
                   className="p-3 border border-gray-300 rounded w-full h-24 md:h-32 text-black bg-white focus:ring-2 focus:ring-[#450161]"
                 ></textarea>
+
+                {/* Sección de Arrastrar o Seleccionar Imagen */}
+                <div
+                  {...getRootProps()}
+                  className="p-6 border-2 border-dashed border-gray-400 rounded-lg cursor-pointer text-center bg-white hover:bg-gray-100 transition"
+                >
+                  <input {...getInputProps()} name="attachment" />
+                  {isDragActive ? (
+                    <p className="text-gray-600">¡Suelta tu imagen aquí!</p>
+                  ) : (
+                    <p className="text-gray-600">
+                      Arrastra y suelta tu imagen aquí o{" "}
+                      <span className="text-purple-600 font-semibold">
+                        haz clic
+                      </span>{" "}
+                      para seleccionarla.
+                    </p>
+                  )}
+                </div>
+
+                {/* Vista previa de la imagen seleccionada */}
+                {files.length > 0 && (
+                  <div className="mt-4">
+                    <p className="text-sm font-medium text-gray-700">
+                      Imagen seleccionada:
+                    </p>
+                    <img
+                      src={URL.createObjectURL(files[0])}
+                      alt="Vista previa"
+                      className="mt-2 w-32 h-32 object-cover rounded-lg shadow-md"
+                    />
+                  </div>
+                )}
 
                 {/* Botón de Envío */}
                 <button
