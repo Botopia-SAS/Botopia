@@ -38,6 +38,13 @@ const Portfolio = () => {
       link: "https://www.startupscalendar.com",
     },
     {
+      title: "LensPR",
+      description:
+        "Para LF Consulting SAS - LensPR, desarrollamos un sitio web con un dashboard intuitivo y optimizado para SEO, permitiendo actualizaciones rápidas sin conocimientos técnicos. La plataforma mejora su presencia digital y facilita la captación de clientes.",
+      image: "/Portafolio/LensPR.svg",
+      link: "https://lfconsultingsas-lens-pr-pgweb.vercel.app/es",
+    },
+    {
       title: "Alliance",
       description: "Alliance Medical Supplies es una plataforma diseñada para facilitar el acceso a dispositivos médicos y medicamentos de alta calidad. Desarrollamos un sitio web intuitivo que permite a instituciones de salud y profesionales médicos descubrir, gestionar y adquirir productos innovadores de forma eficiente.",
       image: "/Portafolio/Alliance2.svg",
@@ -50,6 +57,35 @@ const Portfolio = () => {
       image: "/Portafolio/DS.svg",
       link: "https://driving-school-mocha.vercel.app",
     },
+    {
+      title: "Sion",
+      description:
+        "Para Sion, creamos un sitio web optimizado para el sector salud, con un diseño intuitivo y accesible. Implementamos una plataforma adaptable que permite actualizaciones sencillas, mejorando su presencia digital y facilitando la conexión con sus pacientes.",
+      image: "/Portafolio/Sion.svg",
+      link: "https://sion-bay.vercel.app/",
+    },
+    {
+      title: "Colombia Wellness Week",
+      description:
+        "Colombia Wellness Week es un evento anual en Bogotá del 10 al 17 de noviembre, enfocado en el bienestar físico, mental y emocional. Su sitio web ofrece información sobre talleres, conferencias y sesiones prácticas con expertos, además de opciones de suscripción para recibir actualizaciones.",
+      image: "/Portafolio/CWW.svg",
+      link: "https://www.colombiawellnessweek.com/en",
+    },
+    {
+      title: "Clínica San Roque",
+      description:
+        "Para la clínica de San Roque, desarrollamos una plataforma web moderna y funcional que optimiza la gestión de sus servicios de atención médica, permitiéndoles actualizar información de manera sencilla y mejorar su presencia digital. Implementamos un diseño intuitivo y adaptable, asegurando accesibilidad para sus pacientes y facilitando la comunicación con el equipo médico.",
+      image: "/Portafolio/SanRoque.svg",
+      link: "https://divino-bienestar-san-roque-umber.vercel.app/",
+    },
+    {
+      title: "Fabian Garzón",
+      description:
+        "Para Fabián Garzón, creamos un portafolio web visualmente impactante, diseñado para resaltar su trabajo fotográfico con una navegación fluida y una galería optimizada. La plataforma permite actualizar su contenido fácilmente, mejorando su presencia digital y facilitando la conexión con potenciales clientes.",
+      image: "/Portafolio/FG.svg",
+      link: "https://fabian-garzon-pw.vercel.app/",
+    },
+    
     {
       title: "Planta Femsa Cocacola",
       description: "Desarrollamos la programación de un PLC para optimizar el proceso de retrolavado de tanques, garantizando eficiencia, precisión y control automatizado en la operación. Implementamos una solución robusta que mejora la gestión del agua y la limpieza, optimizando los tiempos de producción y reduciendo el desperdicio.",
