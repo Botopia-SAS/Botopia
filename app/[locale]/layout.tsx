@@ -9,22 +9,24 @@ export const metadata = {
   description: "Transformación Digital para el Futuro",
 };
 
-export default async function RootLayout({
+export default async function LocaleLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
-  const messages = await getMessages();
+  params: { locale: string };
+}) {
+  const messages = await getMessages({ locale: params.locale });
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      <html lang="es">
-        <body>
+    <html lang={params.locale} suppressHydrationWarning>
+      <body>
+        <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>
           <Footer />
-        </body>
-      </html>
-    </NextIntlClientProvider>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

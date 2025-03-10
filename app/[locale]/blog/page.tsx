@@ -201,22 +201,23 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Blog 1 */}
           <div
-            onClick={() => router.push("/blog/automatizacion")}
+            onClick={() => router.push(`/${navigator.language.split("-")[0]}/blog/Invertir-en-tecnologia`)}
             className="relative cursor-pointer h-64 bg-cover bg-center rounded-lg overflow-hidden group"
             style={{ backgroundImage: "url('/blog1.jpg')" }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-30 transition"></div>
             <div className="relative z-10 p-6 text-white">
               <h3 className="text-2xl font-semibold">
-                Cómo mejorar la automatización en Next.js
+              ¿Cuándo invertir en tecnología?
               </h3>
-              <p className="text-gray-300">Febrero 10, 2024 - Juan Pérez</p>
+              <p className="text-gray-300">Marzo 9, 2025 - Isaac Páez</p>
             </div>
           </div>
 
+
           {/* Blog 2 */}
           <div
-            onClick={() => router.push("/blog/api-nextjs")}
+            onClick={() => router.push(`/${navigator.language.split("-")[0]}/blog/api-nextjs`)}
             className="relative cursor-pointer h-64 bg-cover bg-center rounded-lg overflow-hidden group"
             style={{ backgroundImage: "url('/blog2.jpg')" }}
           >

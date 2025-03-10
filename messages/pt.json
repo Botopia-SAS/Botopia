@@ -106,5 +106,48 @@
     "contactTitle": "Interessado em trabalhar conosco?",
     "contactDescription": "Entre em contato para mais informações sobre como nossas soluções podem ajudá-lo.",
     "contactButton": "Contate-nos"
+  },
+  "Blog1": {
+    "title": "Quando investir em tecnologia? 5 sinais-chave",
+    "intro": "Descubra se sua empresa está perdendo dinheiro e oportunidades por não se digitalizar. Aqui estão 5 sinais que indicam que você precisa investir em tecnologia.",
+    "highlight": "AGORA",
+    "videoNotSupported": "Seu navegador não suporta vídeos.",
+    "section1": {
+      "title": "📉 1. Sua concorrência está crescendo mais rápido",
+      "content1": "Se você perceber que seus concorrentes estão se expandindo, fechando mais negócios ou melhorando sua presença digital enquanto sua empresa continua a mesma, você está perdendo vantagem competitiva.",
+      "content2": "Hoje, a maioria das empresas bem-sucedidas usa automação, inteligência artificial e ferramentas digitais para otimizar seus processos e melhorar a experiência do cliente. Se você não investir em tecnologia, não está apenas limitando seu crescimento, mas também entregando o mercado para sua concorrência."
+    },
+    "section2": {
+      "title": "⏳ 2. Sua equipe está sobrecarregada com tarefas manuais",
+      "content1": "Sua equipe passa horas gerenciando dados manualmente?",
+      "content2": "A automação de processos pode reduzir o tempo em até 60%, permitindo que sua equipe se concentre em tarefas mais estratégicas em vez de atividades operacionais."
+    },
+    "section3": {
+      "title": "📊 3. Suas vendas estão estagnadas",
+      "content1": "Se está cada vez mais difícil conseguir novos clientes, provavelmente é porque suas estratégias de vendas não estão otimizadas com tecnologia.",
+      "content2": "Empresas que implementam funis de vendas automatizados, inteligência artificial no marketing e plataformas de gestão de clientes (CRM) aumentam suas vendas em média 35% no primeiro ano."
+    },
+    "section4": {
+      "title": "🔐 4. Suas informações não estão protegidas",
+      "content1": "60% das pequenas empresas que sofrem vazamentos de dados fecham nos seis meses seguintes.",
+      "content2": "Se você ainda armazena informações no Excel, em documentos físicos ou em bancos de dados sem segurança, está correndo um grande risco de perder dados valiosos ou ser vítima de ataques cibernéticos."
+    },
+    "section5": {
+      "title": "💰 5. Você está gastando mais dinheiro do que o necessário",
+      "content1": "Se você não usa tecnologia para automatizar, otimizar custos e reduzir erros operacionais, provavelmente está gastando até 30% mais do que deveria.",
+      "content2": "As empresas que investem na transformação digital reduzem seus custos operacionais e aumentam sua rentabilidade. Não investir em tecnologia está custando mais do que você imagina."
+    },
+    "caseStudy": {
+      "title": "🚀 Caso de sucesso: Como ajudamos a LensPR a digitalizar seu negócio",
+      "description": "A LensPR, uma empresa de relações públicas, enfrentava um problema comum: atualizar seu site exigia muito tempo e conhecimento técnico.",
+      "point1": "Redução dos custos de manutenção do site.",
+      "point2": "Aumento das visitas orgânicas e do engajamento.",
+      "point3": "Otimização da atualização de conteúdo sem depender de terceiros."
+    },
+    "cta": {
+      "title": "💡 Você está pronto para transformar seu negócio?",
+      "button": "🚀 Agende uma consulta gratuita"
+    },
+    "backToBlog": "🔙 Voltar ao Blog"
   }
-  }
+}

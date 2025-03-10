@@ -106,5 +106,48 @@
         "contactTitle": "Interested in working with us?",
         "contactDescription": "Get in touch for more information about how our solutions can help you.",
         "contactButton": "Contact Us"
+    },
+    "Blog1": {
+        "title": "When to invest in technology? 5 key signs",
+        "intro": "Find out if your company is losing money and opportunities by not going digital. Here are 5 signs that indicate you need to invest in technology.",
+        "highlight": "NOW",
+        "videoNotSupported": "Your browser does not support videos.",
+        "section1": {
+            "title": "📉 1. Your competition is growing faster",
+            "content1": "If you notice that your competitors are expanding, closing more deals, or improving their digital presence while your company remains the same, you are losing competitive advantage.",
+            "content2": "Today, most successful companies use automation, artificial intelligence, and digital tools to optimize their processes and enhance customer experience. If you don't invest in technology, you are not only limiting your growth but also handing over the market to your competition."
+        },
+        "section2": {
+            "title": "⏳ 2. Your team is overwhelmed with manual tasks",
+            "content1": "Does your team spend hours managing data manually?",
+            "content2": "Process automation can reduce time by up to 60%, allowing your team to focus on more strategic tasks instead of operational activities."
+        },
+        "section3": {
+            "title": "📊 3. Your sales are stagnating",
+            "content1": "If it’s becoming harder to acquire new customers, it’s probably because your sales strategies are not optimized with technology.",
+            "content2": "Companies that implement automated sales funnels, artificial intelligence in marketing, and customer relationship management (CRM) platforms increase their sales by an average of 35% in the first year."
+        },
+        "section4": {
+            "title": "🔐 4. Your information is not protected",
+            "content1": "60% of small businesses that suffer data breaches close within the next six months.",
+            "content2": "If you are still storing information in Excel, physical documents, or unsecured databases, you are at high risk of losing valuable data or becoming a victim of cyberattacks."
+        },
+        "section5": {
+            "title": "💰 5. You are spending more money than necessary",
+            "content1": "If you are not using technology to automate, optimize costs, and reduce operational errors, you are probably spending up to 30% more than you should.",
+            "content2": "Companies that invest in digital transformation reduce their operational costs and increase profitability. Not investing in technology is costing you more than you think."
+        },
+        "caseStudy": {
+            "title": "🚀 Case Study: How we helped LensPR digitize their business",
+            "description": "LensPR, a public relations firm, faced a common challenge: updating their website required a lot of time and technical knowledge.",
+            "point1": "Reduced web maintenance costs.",
+            "point2": "Increased organic visits and engagement.",
+            "point3": "Optimized content updates without relying on third parties."
+        },
+        "cta": {
+            "title": "💡 Are you ready to transform your business?",
+            "button": "🚀 Schedule a free consultation"
+        },
+        "backToBlog": "🔙 Back to Blog"
     }
 }

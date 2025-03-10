@@ -106,5 +106,48 @@
         "contactTitle": "¿Interesado en trabajar con nosotros?",
         "contactDescription": "Contáctanos para más información sobre cómo nuestras soluciones pueden ayudarte.",
         "contactButton": "Contáctanos"
+    },
+    "Blog1": {
+        "title": "¿Cuándo invertir en tecnología? 5 señales clave",
+        "intro": "En un mundo cada vez más digital, la tecnología se ha convertido en un pilar esencial para el crecimiento empresarial. Sin embargo, muchas empresas siguen postergando su transformación digital sin darse cuenta de que están perdiendo oportunidades valiosas. ¿Cómo saber si tu empresa necesita invertir en tecnología? Aquí te presentamos 5 señales clave que indican que es momento de modernizarte.",
+        "highlight": "AHORA",
+        "videoNotSupported": "Tu navegador no soporta videos.",
+        "section1": {
+            "title": "📉 1. Tu competencia está creciendo más rápido",
+            "content1": "Si notas que tus competidores están cerrando más negocios, ganando nuevos clientes y expandiéndose mientras tu empresa se mantiene en el mismo lugar, es posible que la tecnología esté marcando la diferencia. Hoy en día, las empresas que adoptan herramientas digitales avanzadas pueden optimizar sus procesos, reducir costos y mejorar su relación con los clientes de manera más eficiente.",
+            "content2": "Automatización, inteligencia artificial y plataformas de análisis de datos permiten a las empresas tomar decisiones más inteligentes basadas en información en tiempo real. Si no te adaptas a estas nuevas tecnologías, corres el riesgo de quedarte atrás en un mercado cada vez más competitivo."
+        },
+        "section2": {
+            "title": "⏳ 2. Tu equipo está sobrecargado con tareas manuales",
+            "content1": "Uno de los mayores problemas en las empresas tradicionales es la dependencia excesiva de procesos manuales. ¿Tu equipo pasa largas horas en tareas repetitivas como la gestión de inventario, la facturación o el seguimiento de clientes? Si la respuesta es sí, es una señal clara de que necesitas tecnología para automatizar estos procesos.",
+            "content2": "Las herramientas digitales pueden ayudarte a reducir hasta un 60% el tiempo empleado en tareas administrativas, permitiendo que tu equipo se enfoque en actividades más estratégicas que realmente generen valor para tu negocio. Además, la automatización minimiza errores humanos y mejora la eficiencia operativa."
+        },
+        "section3": {
+            "title": "📊 3. Tus ventas están estancadas",
+            "content1": "Si sientes que cada vez es más difícil captar clientes y aumentar tus ingresos, la falta de tecnología puede estar afectando tus ventas. Las estrategias tradicionales de marketing y ventas han cambiado drásticamente con la digitalización, y hoy en día es fundamental contar con herramientas que te ayuden a atraer, convertir y fidelizar clientes.",
+            "content2": "Las empresas que implementan embudos de ventas automatizados, inteligencia artificial para personalización de ofertas y plataformas de CRM para gestionar la relación con los clientes, logran aumentar sus ventas en un promedio del 35% en su primer año de digitalización. Si aún confías en métodos obsoletos, estás perdiendo una gran oportunidad de crecimiento."
+        },
+        "section4": {
+            "title": "🔐 4. Tu información no está protegida",
+            "content1": "La ciberseguridad es una de las principales preocupaciones en la era digital. Según estudios recientes, el 60% de las pequeñas empresas que sufren filtraciones de datos terminan cerrando en menos de seis meses debido al impacto financiero y la pérdida de confianza de sus clientes.",
+            "content2": "Si todavía almacenas información en hojas de Excel, documentos físicos o sistemas desactualizados, estás corriendo un alto riesgo de perder datos valiosos. Migrar a soluciones en la nube, implementar sistemas de seguridad avanzada y adoptar buenas prácticas de protección de datos no solo te permitirá prevenir ataques cibernéticos, sino que también garantizará la continuidad de tu negocio."
+        },
+        "section5": {
+            "title": "💰 5. Estás gastando más dinero del necesario",
+            "content1": "Muchas empresas creen que invertir en tecnología es un gasto innecesario, cuando en realidad es una inversión estratégica que reduce costos a largo plazo. Si no cuentas con herramientas digitales, es probable que estés gastando hasta un 30% más en procesos ineficientes y en la corrección de errores operativos.",
+            "content2": "Las empresas que apuestan por la digitalización reducen significativamente sus costos operativos, optimizan el uso de recursos y aumentan su rentabilidad. No modernizar tu empresa hoy podría estar costándote mucho más de lo que imaginas."
+        },
+        "caseStudy": {
+            "title": "🚀 Caso de éxito: Cómo ayudamos a LensPR a digitalizar su negocio",
+            "description": "LensPR, una firma de relaciones públicas, enfrentaba un gran desafío: su sitio web se había convertido en una barrera en lugar de una herramienta de crecimiento. Cada actualización requería conocimientos técnicos y un alto consumo de tiempo, lo que dificultaba mantener su presencia digital al día.",
+            "point1": "Implementamos una solución de mantenimiento web automatizado que redujo los costos en un 40%.",
+            "point2": "Desarrollamos una plataforma con herramientas de SEO y contenido dinámico, aumentando sus visitas orgánicas en un 60%.",
+            "point3": "Optimizamos el sistema de actualizaciones, permitiéndoles modificar su contenido en tiempo real sin depender de terceros."
+        },
+        "cta": {
+            "title": "💡 ¿Estás listo para transformar tu empresa?",
+            "button": "🚀 Agenda una consulta gratuita"
+        },
+        "backToBlog": "🔙 Volver al Blog"
     }
 }
