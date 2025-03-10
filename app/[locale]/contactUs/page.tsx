@@ -62,7 +62,6 @@ export default function ContactUs() {
 
         {/* Contenido principal */}
         <div className="container py-12 w-full sm:px-6 px-4 bg-white max-w-none md:px-40">
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 item-start w-full">
             {/* Información de contacto */}
             <div>
@@ -163,6 +162,7 @@ export default function ContactUs() {
                 className="space-y-4"
                 action="https://formsubmit.co/contacto@botopia.tech"
                 method="POST"
+                encType="multipart/form-data" // 🔥 Necesario para adjuntar archivos
                 onSubmit={(e) => {
                   setTimeout(() => {
                     (e.target as HTMLFormElement).reset();
