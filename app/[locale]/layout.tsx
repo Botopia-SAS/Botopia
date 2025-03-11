@@ -1,8 +1,8 @@
 import "./globals.css";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import IntlProvider from "@/components/IntlProvider";
 
 export const metadata = {
   title: "Botopia",
@@ -16,16 +16,22 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  // 🔹 Verifica que params.locale no esté vacío
+  if (!params.locale) {
+    console.error("⚠ params.locale está vacío. Puede haber un error en la ruta.");
+  }
+
+  // 🔹 Obtiene los mensajes de traducción
   const messages = await getMessages({ locale: params.locale });
 
   return (
     <html lang={params.locale} suppressHydrationWarning>
       <body>
-        <NextIntlClientProvider messages={messages}>
+        <IntlProvider locale={params.locale} messages={messages}>
           <Header />
           <main>{children}</main>
           <Footer />
-        </NextIntlClientProvider>
+        </IntlProvider>
       </body>
     </html>
   );

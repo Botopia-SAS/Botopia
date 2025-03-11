@@ -20,7 +20,8 @@ export default function Header() {
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedLanguage = e.target.value;
-    router.push(`/${selectedLanguage}`);
+    const newPath = pathname.replace(/^\/[a-z]{2}/, `/${selectedLanguage}`); // Reemplaza solo el idioma en la URL
+    router.replace(newPath);
   };
 
   return (
