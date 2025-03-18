@@ -24,12 +24,25 @@ export default function Header() {
     router.replace(newPath);
   };
 
+  const [logoSrc, setLogoSrc] = useState("/logo.svg");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setLogoSrc(window.innerWidth < 1024 ? "/logo-mobile.svg" : "/logo.svg");
+    };
+
+    handleResize(); // Llamamos a la función una vez al montar el componente
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <header className="fixed top-10 left-[30px] right-[30px] w-[calc(100%-60px)] z-40 bg-[rgba(79,7,134,0.7)] backdrop-blur-md shadow-lg rounded-full px-8 py-4 flex items-center justify-between">
       {/* Logo */}
       <div className="flex-shrink-0">
         <img
-          src="/logo.svg"
+          src={window.innerWidth < 1024 ? "/logo-mobile.svg" : "/logo.svg"}
           alt="Botopia Logo"
           className="h-6 lg:h-10 cursor-pointer"
           onClick={() => router.push(`/${currentLanguage}`)}
