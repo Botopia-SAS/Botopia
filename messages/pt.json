@@ -63,37 +63,37 @@
     "footerRights": "Botopia Technology S.A.S. Todos os direitos reservados."
   },
   "Servicios": {
-    "title": "Servicios de Tecnología",
+    "title": "Serviços de Tecnologia",
     "filters": {
-      "strategy": "Consultoría & Estrategia",
-      "technology": "Servicios de Tecnología",
-      "design": "Servicios de Diseño & Branding",
-      "marketing": "Servicios de Marketing"
+      "strategy": "Consultoria & Estratégia",
+      "technology": "Serviços de Tecnologia",
+      "design": "Serviços de Design & Branding",
+      "marketing": "Serviços de Marketing"
     },
     "services": {
       "ecommerce": {
-        "title": "Desarrollo E-commerce",
-        "category": "Ventas Online",
-        "description": "Construimos plataformas de comercio electrónico robustas y personalizadas para que tu negocio crezca en el mundo digital de forma efectiva.",
+        "title": "Desenvolvimento de E-commerce",
+        "category": "Vendas Online",
+        "description": "Construímos plataformas de comércio eletrônico robustas e personalizadas para que seu negócio cresça de forma eficaz no mundo digital.",
         "icon": "/dumpster-solid.svg"
       },
       "aiIntegration": {
-        "title": "Integración AI",
-        "category": "Negocios",
-        "description": "Lleva tus aplicaciones y sitios web al siguiente nivel con inteligencia artificial personalizada. Mejoramos personalización, optimizamos automatización y ofrecemos experiencias más inteligentes.",
+        "title": "Integração de IA",
+        "category": "Negócios",
+        "description": "Leve seus aplicativos e sites para o próximo nível com inteligência artificial personalizada. Melhoramos a personalização, otimizamos a automação e proporcionamos experiências mais inteligentes.",
         "icon": "/robot-solid.svg"
       },
       "customTechnology": {
-        "title": "Tecnología a la Medida",
-        "category": "Personalización",
-        "description": "Desarrollamos soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de tu negocio, impulsando su crecimiento y eficiencia.",
-        "icon": "/icons/custom-technology.svg"
+        "title": "Tecnologia Sob Medida",
+        "category": "Personalização",
+        "description": "Desenvolvemos soluções tecnológicas personalizadas que se adaptam às necessidades específicas do seu negócio, impulsionando seu crescimento e eficiência.",
+        "icon": "/microchip-solid.svg"
       },
       "webDevelopment": {
-        "title": "Desarrollo de Sitio Web",
+        "title": "Desenvolvimento de Site",
         "category": "Web",
-        "description": "Creamos sitios web dinámicos, atractivos y optimizados para ofrecer la mejor experiencia de usuario, ayudando a tu negocio a destacar en el entorno digital.",
-        "icon": "/icons/web-development.svg"
+        "description": "Criamos sites dinâmicos, atraentes e otimizados para oferecer a melhor experiência ao usuário, ajudando seu negócio a se destacar no ambiente digital.",
+        "icon": "/globe-solid.svg"
       }
     }
   },

@@ -71,9 +71,6 @@ export default function BlogPage() {
       {/* 📩 Call to Action */}
       <section className="w-full max-w-7xl mt-12 text-center">
         <h2 className="text-2xl font-bold text-white">{t("cta.title")}</h2>
-        <p className="text-gray-300 mt-4 text-justify max-w-2xl mx-auto">
-          {t("intro")}
-        </p>
         <button
           className="mt-6 px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition rounded-xl text-white shadow-lg"
           onClick={() => router.push(`/${navigator.language.split("-")[0]}/contactUs`)}

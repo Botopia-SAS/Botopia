@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import {
   FaFacebook,
   FaInstagram,
@@ -12,7 +13,10 @@ import {
 
 export default function HeroSection() {
   const router = useRouter(); // ✅ Para manejar la navegación
+  const pathname = usePathname();
   const [email, setEmail] = useState("");
+  const currentLanguage = pathname.split("/")[1] || "es"; // Si no encuentra idioma, usa "es" por defecto.
+
 
   return (
     <div
@@ -199,9 +203,7 @@ export default function HeroSection() {
           <div
             onClick={() =>
               router.push(
-                `/${
-                  navigator.language.split("-")[0]
-                }/blog/Invertir-en-tecnologia`
+                `/${currentLanguage}/blog/Invertir-en-tecnologia`
               )
             }
             className="relative cursor-pointer h-64 bg-cover bg-center rounded-lg overflow-hidden group"
