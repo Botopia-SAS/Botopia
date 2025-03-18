@@ -8,22 +8,84 @@ import {
   FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { useDropzone } from "react-dropzone";
 
 export default function ContactUs() {
-  const [files, setFiles] = useState<File[]>([]);
+  const [file, setFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null); // Guarda la previsualización
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
 
-  // Función para manejar archivos al soltarlos o seleccionarlos
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    setFiles(acceptedFiles);
-  }, []);
-
-  // Configuración de Dropzone
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: { "image/*": [] }, // Solo imágenes
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: { "image/*": [] },
+    onDrop: (acceptedFiles) => {
+      const selectedFile = acceptedFiles[0];
+      setFile(selectedFile);
+      setPreviewUrl(URL.createObjectURL(selectedFile)); // Genera la URL de previsualización
+    },
   });
+
+  // Manejar el envío del formulario
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget; // ✅ Obtén el formulario correctamente
+    const formData = new FormData(form); // ✅ Ahora sí es un HTMLFormElement
+
+    if (!file) {
+      alert("Por favor, selecciona una imagen.");
+      return;
+    }
+
+    setIsUploading(true);
+
+    // Subir imagen a Cloudinary
+    const uploadData = new FormData();
+    uploadData.append("file", file);
+    uploadData.append("upload_preset", "botopia_uploads"); // Asegúrate de configurar el `upload_preset`
+
+    try {
+      const uploadResponse = await fetch(
+        `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload`,
+        {
+          method: "POST",
+          body: uploadData,
+        }
+      );
+
+      const uploadResult = await uploadResponse.json();
+
+      if (!uploadResponse.ok) {
+        throw new Error(
+          uploadResult.error?.message || "Error al subir la imagen."
+        );
+      }
+
+      setImageUrl(uploadResult.secure_url);
+      setIsUploading(false);
+
+      // Agregar la URL de la imagen al FormData antes de enviarlo a FormSubmit
+      formData.append("image_url", uploadResult.secure_url);
+
+      // Enviar datos del formulario a FormSubmit
+      await fetch("https://formsubmit.co/contacto@botopia.tech", {
+        method: "POST",
+        body: formData,
+      });
+
+      alert("Formulario enviado con éxito.");
+      e.currentTarget.reset();
+      setFile(null);
+      setPreviewUrl(null);
+    } catch (error) {
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        alert("Ocurrió un error desconocido.");
+      }
+    }
+  };
+
   return (
     <>
       <Head>
@@ -49,7 +111,7 @@ export default function ContactUs() {
         <meta name="robots" content="index, follow" />
       </Head>
 
-      <div className="relative w-full bg-black text-black mt-28">
+      <div className="relative w-full bg-black text-black">
         {/* Sección con el video de fondo */}
         <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden">
           <video
@@ -172,24 +234,23 @@ export default function ContactUs() {
 
             {/* Formulario de contacto */}
             <div className="bg-[#aa8ed6] p-6 rounded-lg shadow-md">
-              <form
-                className="space-y-4"
-                action="https://formsubmit.co/contacto@botopia.tech"
-                method="POST"
-                encType="multipart/form-data" // 🔥 Necesario para adjuntar archivos
-              >
-                {/* Campos Name y Email */}
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                {/* Campos Nombre y Email */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {["Nombre", "E-mail"].map((field) => (
-                    <input
-                      key={field}
-                      type={field === "E-mail" ? "email" : "text"}
-                      name={field.toLowerCase()}
-                      placeholder={field}
-                      required
-                      className="p-3 border border-gray-300 rounded w-full text-black bg-white focus:ring-2 focus:ring-[#450161]"
-                    />
-                  ))}
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Nombre"
+                    required
+                    className="p-3 border border-gray-300 rounded w-full text-black bg-white focus:ring-2 focus:ring-[#450161]"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="E-mail"
+                    required
+                    className="p-3 border border-gray-300 rounded w-full text-black bg-white focus:ring-2 focus:ring-[#450161]"
+                  />
                 </div>
 
                 {/* Campo Teléfono */}
@@ -213,30 +274,26 @@ export default function ContactUs() {
                   {...getRootProps()}
                   className="p-6 border-2 border-dashed border-gray-400 rounded-lg cursor-pointer text-center bg-white hover:bg-gray-100 transition"
                 >
-                  <input {...getInputProps()} name="attachment" />
-                  {isDragActive ? (
-                    <p className="text-gray-600">¡Suelta tu imagen aquí!</p>
-                  ) : (
-                    <p className="text-gray-600">
-                      Arrastra y suelta tu imagen aquí o{" "}
-                      <span className="text-purple-600 font-semibold">
-                        haz clic
-                      </span>{" "}
-                      para seleccionarla.
-                    </p>
-                  )}
+                  <input {...getInputProps()} />
+                  <p className="text-gray-600">
+                    Arrastra y suelta tu imagen aquí o{" "}
+                    <span className="text-purple-600 font-semibold">
+                      haz clic
+                    </span>{" "}
+                    para seleccionarla.
+                  </p>
                 </div>
 
                 {/* Vista previa de la imagen seleccionada */}
-                {files.length > 0 && (
-                  <div className="mt-4">
+                {previewUrl && (
+                  <div className="mt-4 text-center">
                     <p className="text-sm font-medium text-gray-700">
-                      Imagen seleccionada:
+                      Vista previa:
                     </p>
                     <img
-                      src={URL.createObjectURL(files[0])}
+                      src={previewUrl}
                       alt="Vista previa"
-                      className="mt-2 w-32 h-32 object-cover rounded-lg shadow-md"
+                      className="mt-2 w-32 h-32 object-cover rounded-lg shadow-md mx-auto"
                     />
                   </div>
                 )}
@@ -245,8 +302,9 @@ export default function ContactUs() {
                 <button
                   type="submit"
                   className="w-full bg-[#450161] text-white py-3 rounded-lg hover:bg-[#320144] transition"
+                  disabled={isUploading}
                 >
-                  Enviar
+                  {isUploading ? "Subiendo imagen..." : "Enviar"}
                 </button>
 
                 {/* Configuraciones ocultas de FormSubmit */}
