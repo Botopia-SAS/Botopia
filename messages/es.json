@@ -149,5 +149,33 @@
             "button": "🚀 Agenda una consulta gratuita"
         },
         "backToBlog": "🔙 Volver al Blog"
+    },
+
+    "Podcast": {
+      "title": "Todo para amantes de la tecnología",
+      "description": "Suscríbete a nuestro Newsletter para recibir nuestros blogs y podcasts antes que nadie!",
+      "Email": "Tu correo electrónico",
+      "Suscribe": "Suscribirme",
+      "blogsTitle": "Blogs",
+      "blogsText": "Artículos sobre tecnología, IA y automatización.",
+      "blogsText1": "Ver Blogs",
+      "podcastsTitle": "Podcasts",
+      "podcastsText": "Charlas con expertos y mentores de todas las áreas.",
+      "podcastsText1": "Escuchar",
+      "socialsTitle": "Redes Sociales",
+      "socialsText": "Conéctate con nuestra comunidad en línea.",
+      "latestBlogs": "Últimos Blogs",
+      "blog1": {
+        "title": "¿Cuándo invertir en tecnología?",
+        "author": "Isaac Páez",
+        "date": "Marzo 9, 2025"
+      },
+      "blog2": {
+        "title": "Integrando API con Next.js",
+        "author": "María López",
+        "date": "Febrero 15, 2024"
+      }
     }
+  
+  
 }

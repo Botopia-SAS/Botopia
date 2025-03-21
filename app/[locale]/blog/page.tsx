@@ -10,12 +10,16 @@ import {
   FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
+import { useTranslations } from "next-intl";
+
 
 export default function HeroSection() {
   const router = useRouter(); // ✅ Para manejar la navegación
   const pathname = usePathname();
   const [email, setEmail] = useState("");
   const currentLanguage = pathname.split("/")[1] || "es"; // Si no encuentra idioma, usa "es" por defecto.
+  const t = useTranslations("Podcast");
+
 
 
   return (
@@ -33,11 +37,10 @@ export default function HeroSection() {
         {/* Texto a la izquierda */}
         <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
           <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight mt-20 md:mt-0">
-            Todo para amantes de la tecnología
+          {t("title")}
           </h1>
           <p className="mt-4 text-base md:text-lg text-white">
-            Suscríbete a nuestro Newsletter para recibir nuestros blogs y
-            podcasts antes que nadie!
+           {t("description")}
           </p>
 
           {/* Formulario de suscripción con FormSubmit */}
@@ -56,7 +59,7 @@ export default function HeroSection() {
               type="email"
               name="email"
               required
-              placeholder="Tu correo electrónico"
+              placeholder={t("Email")}
               className="p-3 border border-gray-300 rounded-xl text-black w-full sm:w-auto focus:ring-2 focus:ring-[#450161]"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -67,7 +70,7 @@ export default function HeroSection() {
               type="submit"
               className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-400 hover:to-blue-400 transition rounded-xl text-white shadow-lg"
             >
-              Suscribirme
+              {t("Suscribe")}
             </button>
 
             {/* Configuración Oculta para FormSubmit */}
@@ -107,7 +110,7 @@ export default function HeroSection() {
           <div className="flex-grow">
             <h2 className="text-xl font-semibold text-white">Blogs</h2>
             <p className="text-gray-300 mt-2">
-              Artículos sobre tecnología, IA y automatización.
+            {t("blogsText")}
             </p>
           </div>
           <button
@@ -124,7 +127,7 @@ export default function HeroSection() {
             }}
             className="mt-auto px-6 py-3 bg-purple-600 rounded-lg text-white hover:bg-purple-500 transition"
           >
-            Ver Blogs
+            {t("blogsText1")}
           </button>
         </div>
 
@@ -133,7 +136,7 @@ export default function HeroSection() {
           <div className="flex-grow">
             <h2 className="text-xl font-semibold text-white">Podcasts</h2>
             <p className="text-gray-300 mt-2">
-              Charlas con expertos y mentores de todas las áreas.
+            {t("podcastsText")}
             </p>
           </div>
           <button
@@ -145,16 +148,16 @@ export default function HeroSection() {
               )
             }
           >
-            Escuchar
+            {t("podcastsText1")}
           </button>
         </div>
 
         {/* Sección Redes Sociales */}
         <div className="bg-[#1a0c44] p-6 rounded-2xl shadow-lg text-center border border-pink-500 hover:scale-105 transition flex flex-col h-full">
           <div className="flex-grow">
-            <h2 className="text-xl font-semibold text-white">Redes Sociales</h2>
+            <h2 className="text-xl font-semibold text-white">{t("socialsTitle")}</h2>
             <p className="text-gray-300 mt-2">
-              Conéctate con nuestra comunidad en línea.
+            {t("socialsText")}
             </p>
           </div>
 
@@ -196,7 +199,7 @@ export default function HeroSection() {
           id="ultimos-blogs"
           className="text-4xl font-bold text-white text-center mb-6"
         >
-          Últimos Blogs
+          {t("latestBlogs")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Blog 1 */}
@@ -212,9 +215,9 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-30 transition"></div>
             <div className="relative z-10 p-6 text-white">
               <h3 className="text-2xl font-semibold">
-                ¿Cuándo invertir en tecnología?
+              {t("blog1.title")}
               </h3>
-              <p className="text-gray-300">Marzo 9, 2025 - Isaac Páez</p>
+              <p className="text-gray-300">{t("blog1.date")} - {t("blog1.author")}</p>
             </div>
           </div>
 
@@ -231,9 +234,9 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-30 transition"></div>
             <div className="relative z-10 p-6 text-white">
               <h3 className="text-2xl font-semibold">
-                Integrando API con Next.js
+              {t("blog2.title")}
               </h3>
-              <p className="text-gray-300">Febrero 15, 2024 - María López</p>
+              <p className="text-gray-300">{t("blog2.date")} - {t("blog2.author")}</p>
             </div>
           </div>
         </div>
