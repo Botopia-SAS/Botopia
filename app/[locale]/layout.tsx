@@ -3,6 +3,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { getMessages } from "next-intl/server";
 import IntlProvider from "@/components/IntlProvider";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata = {
   title: "Botopia",
@@ -31,6 +32,7 @@ export default async function LocaleLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <WhatsAppButton />
         </IntlProvider>
       </body>
     </html>
