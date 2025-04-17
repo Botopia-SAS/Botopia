@@ -128,6 +128,7 @@ export default function ChecklistPage() {
   const [step, setStep] = useState(0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [url, setUrl] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSelect = (questionIndex: number, optionIndex: number) => {
@@ -215,6 +216,13 @@ export default function ChecklistPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          <input
+            type="text"
+            placeholder="URL de tu página web"
+            className="w-full mb-6 p-4 border border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+          />
 
           <button
             className="bg-gradient-to-r from-purple-600 to-indigo-500 hover:from-purple-700 hover:to-indigo-600 text-white px-6 py-3 rounded-lg font-bold w-full transition-all duration-200 shadow-lg"
@@ -265,7 +273,7 @@ export default function ChecklistPage() {
     return (
       <div className="w-full px-4 py-40 flex justify-center bg-gradient-to-br from-purple-800">
         <div className="bg-[#FAECD4] rounded-xl shadow-lg p-8 w-full max-w-xl">
-          <h2 className="text-xl font-semibold text-primary mb-4 text-center">
+          <h2 className="text-xl font-semibold text-primary dark:text-black mb-4 text-center">
             {currentQuestion.question}
           </h2>
           <div className="flex flex-col gap-3">
