@@ -249,6 +249,7 @@ export default function ChecklistPage() {
       const formData = {
         name,
         email,
+        url,
         responses: newResponses,
         result: getResultMessage(),
       };
