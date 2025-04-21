@@ -21,7 +21,7 @@ export default function Hero() {
   }
 
   useEffect(() => {
-    const handleScroll = (e: WheelEvent) => {
+    const handleWheel = (e: WheelEvent) => {
       const phraseContainer = phrasesRef.current
       if (!phraseContainer) return
 
@@ -43,13 +43,37 @@ export default function Hero() {
           phraseContainer.scrollTop += e.deltaY
         }
       }
-      // Si no es visible, dejar que la página scrollee normalmente
     }
 
-    document.addEventListener("wheel", handleScroll, { passive: false })
-    return () => {
-      document.removeEventListener("wheel", handleScroll)
+    const handleTouchMove = (e: TouchEvent) => {
+      const phraseContainer = phrasesRef.current
+      if (!phraseContainer) return
+
+      // Solo interceptar scroll si el container de frases es visible
+      if (isElementInViewport(phraseContainer)) {
+        const touch = e.touches[0]; // Obtener la posición del toque
+        const deltaY = touch.clientY - (phraseContainer.scrollTop); // Calcular la diferencia en Y
+
+        // Scroll hacia abajo: primero frases, luego página
+        if (deltaY > 0) {
+          e.preventDefault()
+          phraseContainer.scrollTop += deltaY
+        }
+        // Scroll hacia arriba: primero frases, luego página global
+        else {
+          e.preventDefault()
+          phraseContainer.scrollTop += deltaY
+        }
+      }
     }
+
+    document.addEventListener("wheel", handleWheel, { passive: false });
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+    return () => {
+      document.removeEventListener("wheel", handleWheel);
+      document.removeEventListener("touchmove", handleTouchMove);
+    };
   }, [])
 
   return (
@@ -82,7 +106,7 @@ export default function Hero() {
             <img
               src="/images/portfolio-hero.png"
               alt="Portfolio de Botopia"
-              className="object-contain w-auto h-auto p-4"
+              className="object-contain w-auto h-auto px-4"
               style={{ pointerEvents: "none" }}
             />
           </div>
