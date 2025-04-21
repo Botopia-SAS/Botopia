@@ -21,7 +21,7 @@ export default function Hero() {
   }
 
   useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
+    const handleScroll = (e: WheelEvent) => {
       const phraseContainer = phrasesRef.current
       if (!phraseContainer) return
 
@@ -43,37 +43,13 @@ export default function Hero() {
           phraseContainer.scrollTop += e.deltaY
         }
       }
+      // Si no es visible, dejar que la página scrollee normalmente
     }
 
-    const handleTouchMove = (e: TouchEvent) => {
-      const phraseContainer = phrasesRef.current
-      if (!phraseContainer) return
-
-      // Solo interceptar scroll si el container de frases es visible
-      if (isElementInViewport(phraseContainer)) {
-        const touch = e.touches[0]; // Obtener la posición del toque
-        const deltaY = touch.clientY - (phraseContainer.scrollTop); // Calcular la diferencia en Y
-
-        const atTop = phraseContainer.scrollTop === 0
-        const atBottom =
-          phraseContainer.scrollHeight - phraseContainer.scrollTop ===
-          phraseContainer.clientHeight
-
-        // Si no hemos llegado al principio ni al final del contenedor de frases, evitar el desplazamiento normal
-        if (!atTop && !atBottom) {
-          e.preventDefault()
-          phraseContainer.scrollTop += deltaY
-        }
-      }
-    }
-
-    document.addEventListener("wheel", handleWheel, { passive: false });
-    document.addEventListener("touchmove", handleTouchMove, { passive: false });
-
+    document.addEventListener("wheel", handleScroll, { passive: false })
     return () => {
-      document.removeEventListener("wheel", handleWheel);
-      document.removeEventListener("touchmove", handleTouchMove);
-    };
+      document.removeEventListener("wheel", handleScroll)
+    }
   }, [])
 
   return (
@@ -106,7 +82,7 @@ export default function Hero() {
             <img
               src="/images/portfolio-hero.png"
               alt="Portfolio de Botopia"
-              className="object-contain w-auto h-auto px-4"
+              className="object-contain w-auto h-auto p-4"
               style={{ pointerEvents: "none" }}
             />
           </div>
