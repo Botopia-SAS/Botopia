@@ -1,5 +1,3 @@
-'use client';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -22,7 +20,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Columna 1: Logo e introducción */}
           <div>
-            <img src="/logo.svg" alt="Botopia Logo" className="h-10 mb-4" />
+            <img src="/images/logo.png" alt="Botopia Logo" className="h-10 mb-4" />
             <p className="text-gray-400">{t('intro')}</p>
             <div className="mt-4 flex space-x-4">
               {/* Redes sociales */}

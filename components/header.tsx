@@ -24,11 +24,11 @@ export default function Header() {
     router.replace(newPath);
   };
 
-  const [logoSrc, setLogoSrc] = useState("/logo.svg");
+  const [logoSrc, setLogoSrc] = useState("/logo.png");
 
   useEffect(() => {
     const handleResize = () => {
-      setLogoSrc(window.innerWidth < 1024 ? "/logo-mobile.svg" : "/logo.svg");
+      setLogoSrc(window.innerWidth < 1024 ? "/logo-mobile.svg" : "/logo.png");
     };
 
     handleResize(); // Llamamos a la función una vez al montar el componente
@@ -42,7 +42,7 @@ export default function Header() {
       {/* Logo */}
       <div className="flex-shrink-0">
         <img
-          src={window.innerWidth < 1024 ? "/logo-mobile.svg" : "/logo.svg"}
+          src={window.innerWidth < 1024 ? "/logo-mobile.svg" : "/logo.png"}
           alt="Botopia Logo"
           className="h-6 lg:h-10 cursor-pointer"
           onClick={() => router.push(`/${currentLanguage}`)}

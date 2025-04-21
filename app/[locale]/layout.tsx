@@ -4,6 +4,7 @@ import Footer from "../../components/footer";
 import { getMessages } from "next-intl/server";
 import IntlProvider from "@/components/IntlProvider";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import HeaderWrapper from "@/components/HeaderWrapper";
 
 export const metadata = {
   title: "Botopia",
@@ -17,19 +18,20 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  // 🔹 Verifica que params.locale no esté vacío
-  if (!params.locale) {
-    console.error("⚠ params.locale está vacío. Puede haber un error en la ruta.");
-  }
 
-  // 🔹 Obtiene los mensajes de traducción
-  const messages = await getMessages({ locale: params.locale });
+  const resolvedParams = await params;
+  const locale = resolvedParams.locale;
+  const messages = await getMessages({ locale });
 
   return (
-    <html lang={params.locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body>
-        <IntlProvider locale={params.locale} messages={messages}>
-          <Header />
+        <IntlProvider
+          locale={locale}
+          messages={messages}
+        >
+
+          <HeaderWrapper />
           <main>{children}</main>
           <Footer />
           <WhatsAppButton />

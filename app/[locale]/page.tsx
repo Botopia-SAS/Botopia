@@ -1,17 +1,33 @@
+// pages/Home.tsx
 import Hero from "@/components/hero";
-import Clientes from "@/components/customers";
+import BannerSection from "@/components/BannerSection";
 import Footer from "@/components/footer";
-import Servicios from "@/components/services"; // Importa el componente Servicios
-import { projectTraceSource } from "next/dist/build/swc/generated-native";
+import Servicios from "@/components/services";
 import Portfolio from "@/components/portafolio";
+import FeatureSection from "@/components/feature-section"
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Clientes />
-      <Servicios />
-      <Portfolio />
+      <BannerSection />  {/* Aquí agregamos el componente de banners */}
+      {/* Otros componentes como Footer, Servicios, etc. */}
+
+
+      <FeatureSection
+        title="Diseño excepcional"
+        description="Creamos experiencias digitales que destacan por su elegancia y funcionalidad, inspiradas en los mejores estándares de diseño."
+        imageUrl="/images/diseñoavanzado.png"
+        imageAlt="Diseño excepcional"
+        reversed={false}
+      />
+      <FeatureSection
+        title="Tecnología avanzada"
+        description="Utilizamos las últimas tecnologías para garantizar un rendimiento óptimo y una experiencia de usuario fluida en todos los dispositivos."
+        imageUrl="/images/techavanzada.png"
+        imageAlt="Tecnología avanzada"
+        reversed={true}
+      />
     </>
   );
 }
