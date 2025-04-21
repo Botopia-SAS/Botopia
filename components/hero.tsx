@@ -54,13 +54,13 @@ export default function Hero() {
         const touch = e.touches[0]; // Obtener la posición del toque
         const deltaY = touch.clientY - (phraseContainer.scrollTop); // Calcular la diferencia en Y
 
-        // Scroll hacia abajo: primero frases, luego página
-        if (deltaY > 0) {
-          e.preventDefault()
-          phraseContainer.scrollTop += deltaY
-        }
-        // Scroll hacia arriba: primero frases, luego página global
-        else {
+        const atTop = phraseContainer.scrollTop === 0
+        const atBottom =
+          phraseContainer.scrollHeight - phraseContainer.scrollTop ===
+          phraseContainer.clientHeight
+
+        // Si no hemos llegado al principio ni al final del contenedor de frases, evitar el desplazamiento normal
+        if (!atTop && !atBottom) {
           e.preventDefault()
           phraseContainer.scrollTop += deltaY
         }
