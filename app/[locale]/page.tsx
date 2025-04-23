@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import Servicios from "@/components/services";
 import Portfolio from "@/components/portafolio";
 import FeatureSection from "@/components/feature-section"
+import { Clientes } from "@/components/clientes";
 
 export default function Home() {
   return (
@@ -28,6 +29,9 @@ export default function Home() {
         imageAlt="Tecnología avanzada"
         reversed={true}
       />
+      <Clientes 
+       
+        />
     </>
   );
 }

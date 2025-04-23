@@ -1,73 +1,76 @@
-"use client"
+"use client";
 
-import { useTheme } from 'next-themes'
-import { useState, useEffect, useRef } from 'react'
+import { useTheme } from "next-themes";
+import { useState, useEffect, useRef } from "react";
 
 export default function Hero() {
-  const { resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  const phrasesRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const hasVideoStarted = useRef(false)   // ✅ Solo una vez declarado
+  const phrasesRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const hasVideoStarted = useRef(false); // ✅ Solo una vez declarado
 
   const phrases = [
     "Tecnología innovadora para tu negocio.",
     "Soluciones tecnológicas avanzadas.",
     "Experiencias digitales extraordinarias.",
     "Transformando ideas en realidad.",
-  ]
+  ];
 
   // Esperar a que el componente esté montado en cliente
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   const isElementInViewport = (el: HTMLElement) => {
-    const rect = el.getBoundingClientRect()
-    return rect.top <= window.innerHeight && rect.bottom >= 0
-  }
+    const rect = el.getBoundingClientRect();
+    return rect.top <= window.innerHeight && rect.bottom >= 0;
+  };
 
   useEffect(() => {
     const handleScroll = (e: WheelEvent) => {
-      const phraseContainer = phrasesRef.current
-      const videoElement = videoRef.current
+      const phraseContainer = phrasesRef.current;
+      const videoElement = videoRef.current;
 
-      if (!phraseContainer || !videoElement) return
+      if (!phraseContainer || !videoElement) return;
 
       // 🚨 Reproducir el video SOLO una vez
       if (!hasVideoStarted.current) {
-        videoElement.play().catch(err => console.log("Error al reproducir video:", err))
-        hasVideoStarted.current = true
+        videoElement
+          .play()
+          .catch((err) => console.log("Error al reproducir video:", err));
+        hasVideoStarted.current = true;
       }
 
       // Control del scroll de frases
       if (isElementInViewport(phraseContainer)) {
-        const atTop = phraseContainer.scrollTop === 0
+        const atTop = phraseContainer.scrollTop === 0;
         const atBottom =
           phraseContainer.scrollHeight - phraseContainer.scrollTop ===
-          phraseContainer.clientHeight
+          phraseContainer.clientHeight;
 
         if (e.deltaY > 0 && !atBottom) {
-          e.preventDefault()
-          phraseContainer.scrollTop += e.deltaY
+          e.preventDefault();
+          phraseContainer.scrollTop += e.deltaY;
         } else if (e.deltaY < 0 && !atTop) {
-          e.preventDefault()
-          phraseContainer.scrollTop += e.deltaY
+          e.preventDefault();
+          phraseContainer.scrollTop += e.deltaY;
         }
       }
-    }
+    };
 
-    document.addEventListener("wheel", handleScroll, { passive: false })
+    document.addEventListener("wheel", handleScroll, { passive: false });
     return () => {
-      document.removeEventListener("wheel", handleScroll)
-    }
-  }, [])
+      document.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
 
   // ⛔️ Evitamos renderizar hasta que esté montado (para evitar hydration issues)
-  if (!mounted) return <div className="h-[60vh]"></div>
+  if (!mounted) return <div className="h-[60vh]"></div>;
 
-  const videoSrc = resolvedTheme === 'dark' ? '/Hero/HeroNegro.webm' : '/Hero/HeroBlanco.webm'
+  const videoSrc =
+    resolvedTheme === "dark" ? "/Hero/HeroNegro.webm" : "/Hero/HeroBlanco.webm";
 
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
@@ -80,7 +83,10 @@ export default function Hero() {
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {phrases.map((phrase, index) => (
-              <section key={index} className="snap-start flex items-center justify-center h-full px-4">
+              <section
+                key={index}
+                className="snap-start flex items-center justify-center h-full px-4"
+              >
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center">
                   {phrase}
                 </h1>
@@ -101,10 +107,8 @@ export default function Hero() {
               style={{ pointerEvents: "none" }}
             />
           </div>
-
-
         </div>
       </div>
     </div>
-  )
+  );
 }
