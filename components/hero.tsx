@@ -103,7 +103,7 @@ export default function Hero() {
 
         {/* Imagen solo móvil */}
         <img
-          src="/Hero/responsive.svg"
+          src="/Hero/Responsive.svg"
           alt="Hero Responsive"
           className="block md:hidden w-[85%] max-w-sm"
         />
