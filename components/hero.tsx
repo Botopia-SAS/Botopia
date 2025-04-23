@@ -67,7 +67,7 @@ export default function Hero() {
   // ⛔️ Evitamos renderizar hasta que esté montado (para evitar hydration issues)
   if (!mounted) return <div className="h-[60vh]"></div>
 
-  const videoSrc = resolvedTheme === 'dark' ? '/Hero/HeroNegro.mp4' : '/Hero/HeroBlanco.webm'
+  const videoSrc = resolvedTheme === 'dark' ? '/Hero/HeroNegro.webm' : '/Hero/HeroBlanco.webm'
 
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
