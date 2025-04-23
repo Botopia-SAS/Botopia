@@ -3,6 +3,7 @@ import Footer from "../../components/footer";
 import { getMessages } from "next-intl/server";
 import IntlProvider from "@/components/IntlProvider";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { ThemeProvider } from "next-themes";
 import HeaderWrapper from "@/components/header/HeaderWrapper";
 
 export const metadata = {
@@ -24,6 +25,14 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <IntlProvider locale={locale} messages={messages}>
+            <HeaderWrapper />
+            <main>{children}</main>
+            <Footer />
+            <WhatsAppButton />
+          </IntlProvider>
+        </ThemeProvider>
         <IntlProvider locale={locale} messages={messages}>
           <HeaderWrapper />
           <main>{children}</main>
