@@ -20,6 +20,12 @@ html, body {
   overflow-x: hidden;
 }
 
+.mask-gradient {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);

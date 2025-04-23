@@ -1,45 +1,91 @@
-// components/BannerSection.tsx
-
 "use client"
 import { useEffect, useState } from 'react';
 
-const BannerSection = () => {
-  const banners = [
-    { imageUrl: '/images/banner1.png', alt: 'Banner 1', text: 'La única tarjeta para Petlovers de corazón' },
-    { imageUrl: '/images/banner2.png', alt: 'Banner 2', text: 'Tu mejor opción para servicios digitales' },
-    { imageUrl: '/images/banner3.png', alt: 'Banner 3', text: 'Aprovecha nuestras promociones exclusivas' }
-  ];
+const banners = [
+  {
+    type: 'visionpro',
+    title: 'Presentamos nuestro nuevo soporte de desarrollo',
+    subtitle: 'Creamos tu aplicación en ',
+    highlight: 'VisionOS',
+    note: 'Disponible únicamente en Estados Unidos y Canadá',
+    bgColor: 'bg-black',
+    textColor: 'text-white',
+    accentColor: 'text-purple-400',
+    image: '/images/visionpro.svg'
+  },
+  {
+    type: 'whatsapp',
+    title: 'Prueba nuestra herramienta de customer engagement',
+    subtitle: 'Sin APIs, sin procesos complicados.\nSolo tu WhatsApp y un QR',
+    bgColor: 'bg-[#F9E8D9]',
+    textColor: 'text-gray-900',
+    accentColor: 'text-[#1B365D]',
+    image: '/images/whatsapp.svg'
+  },
+  {
+    type: 'engineering',
+    title: 'A veces es más fácil contratar un equipo de ingeniería que contratar un proyecto',
+    subtitle: 'Muchas veces la mejor solución que puedes encontrar es tener un equipo 100% dedicado a tu empresa',
+    bgColor: 'bg-[#5D2EBC]',
+    textColor: 'text-white',
+    accentColor: 'text-[#F9E8D9]',
+    image: '/images/engineering.svg'
+  }
+];
 
+const BannerSection = () => {
   const [currentBanner, setCurrentBanner] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBanner((prev) => (prev + 1) % banners.length);
-    }, 7000); // Cambiar cada 5 segundos
-
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="w-full overflow-hidden relative">
-      <div
-        className="flex transition-transform duration-1000 ease-in-out"
-        style={{
-          transform: `translateX(-${currentBanner * 33.33}%)`,
-          width: `${banners.length * 100}%`, // Aseguramos que el contenedor tenga el ancho correcto
-        }}
-      >
-        {banners.map((banner, index) => (
-          <div key={index} className="w-full">
-            <div className="relative p-4 md:p-32 md:m-12 rounded-lg">
-              <img
-                src={banner.imageUrl}
-                alt={banner.alt}
-                className="w-full h-full object-cover rounded-lg"
-              />
+    <div className="w-full flex justify-center items-center py-8 bg-transparent">
+      <div className="relative w-full max-w-7xl overflow-hidden">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{
+            transform: `translateX(-${currentBanner * 100}%)`,
+          }}
+        >
+          {banners.map((banner, index) => (
+            <div key={index} className="w-full flex-shrink-0 flex justify-center">
+              <div className={`${banner.bgColor} rounded-2xl flex flex-col md:flex-row items-center justify-between 
+                  p-6 md:p-10 shadow-lg w-[90%] max-w-6xl`}>
+
+                {/* Texto */}
+                <div className="flex-1 space-y-3 text-center md:text-left">
+                  <h2 className={`text-xl md:text-3xl font-extrabold leading-tight ${banner.accentColor}`}>
+                    {banner.title}
+                  </h2>
+                  <p className={`whitespace-pre-line text-sm md:text-lg ${banner.textColor}`}>
+                    {banner.subtitle}
+                    {banner.highlight && <span className="font-bold"> {banner.highlight}</span>}
+                  </p>
+                  {banner.note && (
+                    <p className="text-xs italic text-gray-300">
+                      {banner.note}
+                    </p>
+                  )}
+                </div>
+
+                {/* Imagen */}
+                <div className="flex-1 mt-6 md:mt-0 flex justify-center">
+                  <img
+                    src={banner.image}
+                    alt={banner.type}
+                    className="max-h-32 md:max-h-48 object-contain"
+                  />
+                </div>
+
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -102,7 +102,8 @@ export default function Hero() {
               src={videoSrc}
               muted
               playsInline
-              className="absolute top-[-110px] scale-130 object-cover max-w-7xl w-full h-auto"
+              className="absolute top-[-110px] scale-100 object-cover max-w-7xl w-full h-auto"
+
               style={{ pointerEvents: "none" }}
             />
           </div>
