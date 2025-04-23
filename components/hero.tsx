@@ -1,12 +1,15 @@
 "use client"
 
-import { useRef, useEffect } from "react"
 import { useTheme } from 'next-themes'
+import { useState, useEffect, useRef } from 'react'
 
 export default function Hero() {
-  const { theme } = useTheme()
+  const { resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
-  const videoSrc = theme === 'dark' ? '/Hero/HeroBlanco.mp4' : '/Hero/HeroNegro.mp4'
+  const phrasesRef = useRef<HTMLDivElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const hasVideoStarted = useRef(false)   // ✅ Solo una vez declarado
 
   const phrases = [
     "Tecnología innovadora para tu negocio.",
@@ -15,11 +18,10 @@ export default function Hero() {
     "Transformando ideas en realidad.",
   ]
 
-  const phrasesRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  // 🚨 Flag para controlar que solo se inicie una vez
-  const hasVideoStarted = useRef(false)
+  // Esperar a que el componente esté montado en cliente
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const isElementInViewport = (el: HTMLElement) => {
     const rect = el.getBoundingClientRect()
@@ -33,13 +35,13 @@ export default function Hero() {
 
       if (!phraseContainer || !videoElement) return
 
-      // ✅ Iniciar video SOLO una vez
+      // 🚨 Reproducir el video SOLO una vez
       if (!hasVideoStarted.current) {
         videoElement.play().catch(err => console.log("Error al reproducir video:", err))
-        hasVideoStarted.current = true  // Marcamos que ya inició
+        hasVideoStarted.current = true
       }
 
-      // Control de scroll de frases
+      // Control del scroll de frases
       if (isElementInViewport(phraseContainer)) {
         const atTop = phraseContainer.scrollTop === 0
         const atBottom =
@@ -62,6 +64,11 @@ export default function Hero() {
     }
   }, [])
 
+  // ⛔️ Evitamos renderizar hasta que esté montado (para evitar hydration issues)
+  if (!mounted) return <div className="h-[60vh]"></div>
+
+  const videoSrc = resolvedTheme === 'dark' ? '/Hero/HeroBlanco1.mp4' : '/Hero/HeroNegro.mp4'
+
   return (
     <div className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
       <div className="md:h-[150vh] h-[75vh]">
@@ -81,7 +88,7 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Video */}
+          {/* Video dinámico */}
           <div className="relative w-full h-[30vh] md:h-[50vh]">
             <video
               ref={videoRef}
@@ -89,12 +96,10 @@ export default function Hero() {
               src={videoSrc}
               muted
               playsInline
-              className="absolute top-[-00px] object-contain w-full h-full"
+              className="absolute top-[-40px] object-contain w-full h-full"
               style={{ pointerEvents: "none" }}
             />
           </div>
-
-
 
         </div>
       </div>
