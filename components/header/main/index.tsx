@@ -41,7 +41,7 @@ export default function MainHeader({
           </div>
           <div className="md:hidden flex items-center">
             <button
-              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 z-50"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (

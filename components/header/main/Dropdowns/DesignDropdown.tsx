@@ -5,14 +5,14 @@ export default function DesignDropdown() {
     <BaseDropdown
       mainTitle="Explora Diseño UX/UI"
       mainItems={[
-        "Diseño de Interfaces (UI) para Web y Apps",
-        "Experiencia de Usuario (UX) Centrada en el Cliente",
-        "Prototipos Interactivos en Figma",
-        "Diseño de Dashboards y Paneles",
-        "Wireframes y Arquitectura de Información",
-        "Rediseño y Optimización de Sitios Web",
-        "Design Systems Personalizados",
-        "Diseño Responsive y Mobile First",
+        "Interfaces Web & Apps",
+        "Experiencia de Usuario (UX)",
+        "Prototipos en Figma",
+        "Diseño de Dashboards",
+        "Wireframes & Arquitectura",
+        "Rediseño de Sitios Web",
+        "Design Systems",
+        "Diseño Responsive",
       ]}
       secondaryColumns={[
         {
@@ -20,16 +20,16 @@ export default function DesignDropdown() {
           items: [
             "Consultoría UX/UI",
             "Pruebas de Usabilidad",
-            "Branding y Manual de Identidad",
-            "Animaciones e Interacciones (Lottie, Spline)",
+            "Branding & Identidad",
+            "Animaciones (Lottie, Spline)",
           ],
         },
         {
           title: "Más sobre Diseño",
           items: [
-            "Casos de Éxito en UX/UI",
-            "Guías de Estilo y Consistencia Visual",
-            "Prototipos Funcionales para MVPs",
+            "Casos de Éxito",
+            "Guías de Estilo",
+            "Prototipos para MVPs",
             "Optimización de Conversión (CRO)",
           ],
         },

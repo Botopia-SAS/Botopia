@@ -17,7 +17,7 @@ export default function AppDropdown() {
         {
           title: "Servicios",
           items: [
-            "Integración con APIs y Sistemas",
+            "Integración con APIs",
             "Publicación en App Store & Play Store",
             "Mantenimiento y Actualizaciones",
           ],

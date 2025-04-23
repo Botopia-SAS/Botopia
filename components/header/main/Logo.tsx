@@ -18,7 +18,7 @@ export default function Logo({ hide = false }: LogoProps) {
         alt="Botopia"
         width={60}
         height={60}
-        className="h-11 w-11 mt-10 ml-2"
+        className="h-11 w-11  ml-2"
         priority
       />
     </Link>

@@ -6,13 +6,13 @@ export default function IADropdown() {
       mainTitle="Explora Inteligencia Artificial"
       mainItems={[
         "Chatbots Inteligentes",
-        "Asistentes Virtuales Personalizados",
+        "Asistentes Virtuales ",
         "Automatización con IA",
         "Análisis Predictivo",
-        "Procesamiento de Lenguaje Natural (NLP)",
-        "Reconocimiento de Imágenes y Video",
+        "Procesamiento de Lenguaje (NLP)",
+        "Reconocimiento de Imágenes",
         "Sistemas de Recomendación",
-        "Integración con OpenAI, GPT y APIs de IA",
+        "Integración con OpenAI y APIs",
       ]}
       secondaryColumns={[
         {
