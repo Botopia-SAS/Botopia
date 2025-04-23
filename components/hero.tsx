@@ -90,16 +90,17 @@ export default function Hero() {
 
           {/* Video dinámico */}
           <div className="relative w-full h-[50vh] md:h-[80vh] flex justify-center">
-  <video
-    ref={videoRef}
-    key={videoSrc}
-    src={videoSrc}
-    muted
-    playsInline
-    className="absolute top-[-80px] object-cover max-w-7xl w-full h-auto"
-    style={{ pointerEvents: "none" }}
-  />
-</div>
+            <video
+              ref={videoRef}
+              key={videoSrc}
+              src={videoSrc}
+              muted
+              playsInline
+              className="absolute top-[-110px] scale-130 object-cover max-w-7xl w-full h-auto"
+
+              style={{ pointerEvents: "none" }}
+            />
+          </div>
 
 
         </div>
