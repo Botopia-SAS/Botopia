@@ -25,41 +25,36 @@ export function Clientes() {
           </h2>
         </div>
         <div className="relative w-full overflow-x-hidden">
-    <div className="pointer-events-none">
-    <div className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-white/90 dark:from-gray-900/50 to-transparent z-10"></div>
-    <div className="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-white/90 dark:from-gray-900/50 to-transparent z-10"></div>
-  </div>
-  <div className="w-full">
-    <Swiper
-      modules={[Autoplay]}
-      spaceBetween={30}
-      slidesPerView={2}
-      breakpoints={{
-        640: { slidesPerView: 3 },
-        1024: { slidesPerView: 5 },
-      }}
-      autoplay={{ delay: 0, disableOnInteraction: false }}
-      loop
-      speed={4000}
-      grabCursor={true}
-    >
-      {clientes.map((cliente, index) => (
-        <SwiperSlide key={index} className="flex items-center justify-center">
-          <div className="w-32 h-24 flex items-center justify-center p-2">
-            <img
-              src={cliente.src}
-              alt={cliente.alt}
-              className={`max-h-full max-w-full object-contain 
-                filter grayscale transition-all duration-300 
-                dark:invert ${cliente.scale || ""}`}
-            />
+          <div className="w-full mask-gradient">
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={30}
+              slidesPerView={2}
+              breakpoints={{
+                640: { slidesPerView: 3 },
+                1024: { slidesPerView: 5 },
+              }}
+              autoplay={{ delay: 0, disableOnInteraction: false }}
+              loop
+              speed={4000}
+              grabCursor={true}
+            >
+              {clientes.map((cliente, index) => (
+                <SwiperSlide key={index} className="flex items-center justify-center">
+                  <div className="w-32 h-24 flex items-center justify-center p-2">
+                    <img
+                      src={cliente.src}
+                      alt={cliente.alt}
+                      className={`max-h-full max-w-full object-contain 
+                        filter grayscale transition-all duration-300 
+                        dark:invert ${cliente.scale || ""}`}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </div>
-</div>
-
+        </div>
       </div>
     </section>
   );
