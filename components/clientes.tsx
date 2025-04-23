@@ -17,43 +17,42 @@ const clientes = [
 
 export function Clientes() {
   return (
-    <section className="w-full pt-6 pb-12 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24">
-      <div className="container">
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            Nuestros Clientes
-          </h2>
-        </div>
-        <div className="relative w-full">
-          <div className="w-full mask-gradient">
-            <Swiper
-              modules={[Autoplay]}
-              spaceBetween={30}
-              slidesPerView={2}
-              breakpoints={{
-                640: { slidesPerView: 3 },
-                1024: { slidesPerView: 5 },
-              }}
-              autoplay={{ delay: 0, disableOnInteraction: false }}
-              loop
-              speed={4000}
-              grabCursor={true}
-            >
-              {clientes.map((cliente, index) => (
-                <SwiperSlide key={index} className="flex items-center justify-center">
-                  <div className="w-32 h-24 flex items-center justify-center p-2">
-                    <img
-                      src={cliente.src}
-                      alt={cliente.alt}
-                      className={`max-h-full max-w-full object-contain 
-                        filter grayscale transition-all duration-300 
-                        dark:invert ${cliente.scale || ""}`}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+    <section className="w-full pt-6 pb-12 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 overflow-hidden">
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+          Nuestros Clientes
+        </h2>
+      </div>
+      <div className="relative w-full overflow-hidden">
+        <div className="mask-gradient">
+          <Swiper
+            className="w-full"
+            modules={[Autoplay]}
+            spaceBetween={30}
+            slidesPerView={2}
+            breakpoints={{
+              640: { slidesPerView: 3 },
+              1024: { slidesPerView: 5 },
+            }}
+            autoplay={{ delay: 0, disableOnInteraction: false }}
+            loop
+            speed={4000}
+            grabCursor={true}
+          >
+            {clientes.map((cliente, index) => (
+              <SwiperSlide key={index} className="flex items-center justify-center">
+                <div className="w-32 h-24 flex items-center justify-center p-2">
+                  <img
+                    src={cliente.src}
+                    alt={cliente.alt}
+                    className={`max-h-full max-w-full object-contain 
+                      filter grayscale transition-all duration-300 
+                      dark:invert ${cliente.scale || ""}`}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
