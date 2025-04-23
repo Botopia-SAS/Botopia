@@ -1,10 +1,10 @@
 import "./globals.css";
-import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { getMessages } from "next-intl/server";
 import IntlProvider from "@/components/IntlProvider";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import HeaderWrapper from "@/components/HeaderWrapper";
+import { ThemeProvider } from "next-themes";
+import HeaderWrapper from "@/components/header/HeaderWrapper";
 
 export const metadata = {
   title: "Botopia",
@@ -18,7 +18,6 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-
   const resolvedParams = await params;
   const locale = resolvedParams.locale;
   const messages = await getMessages({ locale });
@@ -26,11 +25,15 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
-        <IntlProvider
-          locale={locale}
-          messages={messages}
-        >
-
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <IntlProvider locale={locale} messages={messages}>
+            <HeaderWrapper />
+            <main>{children}</main>
+            <Footer />
+            <WhatsAppButton />
+          </IntlProvider>
+        </ThemeProvider>
+        <IntlProvider locale={locale} messages={messages}>
           <HeaderWrapper />
           <main>{children}</main>
           <Footer />
