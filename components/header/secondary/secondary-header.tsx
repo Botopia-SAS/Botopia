@@ -1,12 +1,13 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function SecondaryHeader() {
-  
   return (
     <header className="bg-white/90 dark:bg-black backdrop-blur-md transition-colors">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-12">
-          <div className="font-medium text-gray-800 dark:text-gray-100">Botopia</div>
+          <div className="font-medium text-gray-800 dark:text-gray-100">
+            Botopia
+          </div>
           <div className="flex-grow"></div>
           <div className="flex items-center space-x-4">
             {/* Links de navegación ocultos en móvil */}
@@ -15,7 +16,7 @@ export default function SecondaryHeader() {
                 href="#"
                 className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
-                Descripción
+                Nosotros
               </Link>
               <Link
                 href="#"
@@ -41,5 +42,5 @@ export default function SecondaryHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }
