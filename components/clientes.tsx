@@ -24,7 +24,7 @@ export function Clientes() {
             Nuestros Clientes
           </h2>
         </div>
-        <div className="relative w-full overflow-x-hidden">
+        <div className="relative w-full">
           <div className="w-full mask-gradient">
             <Swiper
               modules={[Autoplay]}
