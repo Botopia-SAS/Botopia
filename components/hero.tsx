@@ -31,13 +31,13 @@ export default function Hero() {
 
       if (!phraseContainer || !videoElement) return
 
-      // Inicia el video solo una vez
+      // 🎯 Inicia el video SOLO UNA VEZ al hacer scroll
       if (!hasVideoStarted.current) {
         videoElement.play().catch(err => console.log("Error al reproducir video:", err))
         hasVideoStarted.current = true
       }
 
-      // Control del scroll SOLO en desktop
+      // Scroll controlado SOLO en desktop
       if (window.innerWidth >= 768 && isElementInViewport(phraseContainer)) {
         const atTop = phraseContainer.scrollTop === 0
         const atBottom =
@@ -89,14 +89,14 @@ export default function Hero() {
 
       {/* Multimedia */}
       <div className="relative w-full flex justify-center mt-6">
-        {/* Video solo desktop */}
+        {/* 🎬 Video solo desktop */}
         <video
           ref={videoRef}
           key={videoSrc}
           src={videoSrc}
           muted
           playsInline
-          loop
+          // SIN loop, SIN autoplay
           className="hidden md:block max-w-7xl w-full h-auto object-contain"
           style={{ pointerEvents: "none" }}
         />
