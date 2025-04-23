@@ -33,12 +33,6 @@ export default async function LocaleLayout({
             <WhatsAppButton />
           </IntlProvider>
         </ThemeProvider>
-        <IntlProvider locale={locale} messages={messages}>
-          <HeaderWrapper />
-          <main>{children}</main>
-          <Footer />
-          <WhatsAppButton />
-        </IntlProvider>
       </body>
     </html>
   );
