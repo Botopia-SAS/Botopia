@@ -25,7 +25,7 @@ const projects: Record<typeof categories[number], { src: string; label: string; 
   { src: "/MarClic.png", label: "Clicsociable", scale: "scale-125 md:scale-150", customStyle: "mb-10", gridPosition: "col-span-3 row-start-1" },
 ],
   "Diseño UX/UI": [
-    { src: "/AppCRM.png", label: "Clicsociable CRM", scale: "scale-150", customStyle: "mt-10" },
+    { src: "/APPCRM.png", label: "Clicsociable CRM", scale: "scale-150", customStyle: "mt-10" },
     { src: "/DiDriv.png", label: "Dashboard Driving School", scale: "scale-150", customStyle: "-mt-20" },
     { src: "/DiLens.png", label: "LensPR UI", scale: "scale-150", customStyle: "mt-10" },
     { src: "/DiBot.png", label: "Botopia Tech", scale: "scale-150", customStyle: "-mt-16" },
