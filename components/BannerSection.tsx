@@ -55,10 +55,10 @@ const BannerSection = () => {
           {banners.map((banner, index) => (
             <div key={index} className="w-full flex-shrink-0 flex justify-center">
               <div className={`${banner.bgColor} rounded-2xl flex flex-col md:flex-row items-center justify-between 
-                  p-6 md:p-10 shadow-lg w-[90%] max-w-6xl`}>
+    p-6 md:p-10 shadow-lg w-[90%] max-w-6xl`}>
 
-                {/* Texto */}
-                <div className="flex-1 space-y-3 text-center md:text-left">
+                {/* TÍTULO y SUBTÍTULO */}
+                <div className="flex-1 space-y-3 text-center md:text-left order-1">
                   <h2 className={`text-xl md:text-3xl font-extrabold leading-tight ${banner.accentColor}`}>
                     {banner.title}
                   </h2>
@@ -66,15 +66,10 @@ const BannerSection = () => {
                     {banner.subtitle}
                     {banner.highlight && <span className="font-bold"> {banner.highlight}</span>}
                   </p>
-                  {banner.note && (
-                    <p className="text-xs italic text-gray-300">
-                      {banner.note}
-                    </p>
-                  )}
                 </div>
 
-                {/* Imagen */}
-                <div className="flex-1 mt-6 md:mt-0 flex justify-center">
+                {/* IMAGEN */}
+                <div className="flex-1 flex justify-center mt-4 md:mt-0 order-2">
                   <img
                     src={banner.image}
                     alt={banner.type}
@@ -82,7 +77,17 @@ const BannerSection = () => {
                   />
                 </div>
 
+                {/* NOTE: Solo debajo en móvil */}
+                {banner.note && (
+                  <div className="order-3 mt-4 md:mt-0">
+                    <p className="text-xs italic text-gray-300 text-center md:text-left">
+                      {banner.note}
+                    </p>
+                  </div>
+                )}
+
               </div>
+
             </div>
           ))}
         </div>

@@ -60,11 +60,11 @@ export default function Hero() {
 
   if (!mounted) return null
 
-  const videoSrc = resolvedTheme === 'dark' ? '/Hero/HeroNegro.mp4' : '/Hero/HeroBlanco.mp4'
+  const videoSrc = resolvedTheme === 'dark' ? '/Hero/HeroNegro1.mp4' : '/Hero/HeroBlanco4.mp4'
 
   return (
     <div className="w-full flex flex-col items-center justify-center bg-white dark:bg-black py-8">
-  
+
       {/* Desktop: Scroll de frases */}
       <div
         ref={phrasesRef}
@@ -79,14 +79,15 @@ export default function Hero() {
           </section>
         ))}
       </div>
-  
+
       {/* Mobile: Frase fija */}
-      <div className="block md:hidden px-4 text-center">
+      <div className="block md:hidden px-4 text-center mt-24">
         <h1 className="text-2xl font-bold text-black dark:text-white">
           Tecnología innovadora para tu negocio.
         </h1>
       </div>
-  
+
+
       {/* Multimedia */}
       <div className="relative w-full flex justify-center mt-6">
         {/* 🎬 Video solo desktop */}
@@ -99,7 +100,7 @@ export default function Hero() {
           className="hidden md:block max-w-7xl w-full h-auto object-contain"
           style={{ pointerEvents: "none" }}
         />
-  
+
         {/* Imagen solo móvil */}
         <img
           src="/Hero/Responsive.svg"
