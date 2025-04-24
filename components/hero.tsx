@@ -7,10 +7,10 @@ export default function Hero() {
   const [mounted, setMounted] = useState(false)
 
   const phrases = [
-    "Tecnología innovadora para tu negocio.",
-    "Soluciones tecnológicas avanzadas.",
-    "Experiencias digitales extraordinarias.",
-    "Transformando ideas en realidad.",
+    "Tecnología innovadora para tu negocio",
+    "Soluciones tecnológicas avanzadas",
+    "Experiencias digitales extraordinarias",
+    "Transformando ideas en realidad",
   ]
 
   const phrasesRef = useRef<HTMLDivElement>(null)
@@ -87,27 +87,41 @@ export default function Hero() {
         </h1>
       </div>
 
-
       {/* Multimedia */}
       <div className="relative w-full flex justify-center mt-6">
-        {/* 🎬 Video solo desktop */}
-        <video
-          ref={videoRef}
-          key={videoSrc}
-          src={videoSrc}
-          muted
-          playsInline
-          className="hidden md:block max-w-7xl w-full h-auto object-contain"
-          style={{ pointerEvents: "none" }}
-        />
 
-        {/* Imagen solo móvil */}
-        <img
-          src="/Hero/Responsive.svg"
-          alt="Hero Responsive"
-          className="block md:hidden w-[85%] max-w-sm"
-        />
+        {/* 🎬 Desktop */}
+        <div className="hidden md:flex justify-center w-full max-w-7xl"
+          style={{ minHeight: '400px', backgroundColor: resolvedTheme === 'dark' ? '#000' : '#fff' }}>
+          <video
+            ref={videoRef}
+            key={videoSrc}
+            src={videoSrc}
+            muted
+            playsInline
+            className="w-full h-auto object-contain"
+            style={{ pointerEvents: "none" }}
+          />
+        </div>
+
+        {/* 🎬 Mobile */}
+        <div className="block md:hidden w-[85%] max-w-sm"
+          style={{ minHeight: '300px', backgroundColor: resolvedTheme === 'dark' ? '#000' : '#fff' }}>
+          <video
+            key={resolvedTheme}
+            src={resolvedTheme === 'dark' ? '/Hero/ResponsiveNegro1.mp4' : '/Hero/ResponsiveBlanco1.mp4'}
+            autoPlay
+            muted
+            playsInline
+            onEnded={(e) => e.currentTarget.pause()}
+            className="w-full h-auto object-contain"
+            style={{ pointerEvents: "none" }}
+          />
+        </div>
+
       </div>
+
+
     </div>
   )
 }
