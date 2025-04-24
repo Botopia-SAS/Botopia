@@ -17,7 +17,7 @@ const projects: Record<typeof categories[number], { src: string; label: string; 
   ],
   "Aplicaciones": [
     { src: "/AppFri.png", label: "Fridoom App", scale: "scale-100 md:scale-110", gridPosition: "col-span-1 row-start-1", customStyle: "mt-4 mb-10" },
-    { src: "/AppVOGHO.png", label: "VOGHO App", scale: "scale-100 md:scale-110", gridPosition: "col-span-2 row-start-1", customStyle: "mb-10" },
+    { src: "/AppVOGHO.png", label: "VOGHO App", scale: "scale-100 md:scale-110", gridPosition: "col-span-2 row-start-1 ml-20", customStyle: "mb-10" },
     { src: "/AppLIV.png", label: "LIVRA App", scale: "scale-100 md:scale-110", gridPosition: "col-span-3 row-start-1", customStyle: "mb-10" },
   ],
   "Marketing y Branding": [
