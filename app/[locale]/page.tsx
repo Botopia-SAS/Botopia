@@ -6,6 +6,7 @@ import Servicios from "@/components/services";
 import Portfolio from "@/components/portafolio";
 import FeatureSection from "@/components/feature-section"
 import { Clientes } from "@/components/clientes";
+import Proyectos from "@/components/proyectos";
 
 export default function Home() {
   return (
@@ -32,6 +33,11 @@ export default function Home() {
       <Clientes 
        
         />
+       
+        <Proyectos />
+
+    
+  
     </>
   );
 }

@@ -18,7 +18,7 @@ const clientes = [
 export function Clientes() {
   return (
     <section className="w-full pt-6 pb-12 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 overflow-hidden">
-      <div className="text-center mb-8">
+      <div className="text-center mb-20">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
           Nuestros Clientes
         </h2>
