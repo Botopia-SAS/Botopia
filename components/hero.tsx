@@ -25,38 +25,50 @@ export default function Hero() {
   }
 
   useEffect(() => {
-    const handleScroll = (e: WheelEvent) => {
-      const phraseContainer = phrasesRef.current
-      const videoElement = videoRef.current
-
-      if (!phraseContainer || !videoElement) return
-
-      // 🎯 Inicia el video SOLO UNA VEZ al hacer scroll
+    const phraseContainer = phrasesRef.current;
+    const videoElement = videoRef.current;
+  
+    if (!phraseContainer || !videoElement) return;
+  
+    const startVideo = () => {
       if (!hasVideoStarted.current) {
-        videoElement.play().catch(err => console.log("Error al reproducir video:", err))
-        hasVideoStarted.current = true
+        videoElement.play().catch(err => console.log("Error al reproducir video:", err));
+        hasVideoStarted.current = true;
       }
-
-      // Scroll controlado SOLO en desktop
+    };
+  
+    const handleWheel = (e: WheelEvent) => {
+      startVideo();
+  
       if (window.innerWidth >= 768 && isElementInViewport(phraseContainer)) {
-        const atTop = phraseContainer.scrollTop === 0
+        const atTop = phraseContainer.scrollTop === 0;
         const atBottom =
           phraseContainer.scrollHeight - phraseContainer.scrollTop ===
-          phraseContainer.clientHeight
-
+          phraseContainer.clientHeight;
+  
         if (e.deltaY > 0 && !atBottom) {
-          e.preventDefault()
-          phraseContainer.scrollTop += e.deltaY
+          e.preventDefault();
+          phraseContainer.scrollTop += e.deltaY;
         } else if (e.deltaY < 0 && !atTop) {
-          e.preventDefault()
-          phraseContainer.scrollTop += e.deltaY
+          e.preventDefault();
+          phraseContainer.scrollTop += e.deltaY;
         }
       }
-    }
-
-    document.addEventListener("wheel", handleScroll, { passive: false })
-    return () => document.removeEventListener("wheel", handleScroll)
-  }, [])
+    };
+  
+    const handleScroll = () => {
+      startVideo();  // Solo inicia el video en cualquier tipo de scroll
+    };
+  
+    document.addEventListener("wheel", handleWheel, { passive: false });
+    document.addEventListener("scroll", handleScroll);
+  
+    return () => {
+      document.removeEventListener("wheel", handleWheel);
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  
 
   if (!mounted) return null
 
