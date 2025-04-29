@@ -38,7 +38,7 @@ export default function Hero() {
     };
   
     const handleWheel = (e: WheelEvent) => {
-      startVideo();
+      startVideo();  // Asegura iniciar el video al primer scroll
   
       if (window.innerWidth >= 768 && isElementInViewport(phraseContainer)) {
         const atTop = phraseContainer.scrollTop === 0;
@@ -56,18 +56,22 @@ export default function Hero() {
       }
     };
   
-    const handleScroll = () => {
-      startVideo();  // Solo inicia el video en cualquier tipo de scroll
+    // 🎯 Detectar cualquier tipo de desplazamiento para iniciar el video
+    const handleGeneralScroll = () => {
+      startVideo();
     };
   
     document.addEventListener("wheel", handleWheel, { passive: false });
-    document.addEventListener("scroll", handleScroll);
+    document.addEventListener("scroll", handleGeneralScroll);
+    document.addEventListener("keydown", handleGeneralScroll);  // Por si usan teclado
   
     return () => {
       document.removeEventListener("wheel", handleWheel);
-      document.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("scroll", handleGeneralScroll);
+      document.removeEventListener("keydown", handleGeneralScroll);
     };
   }, []);
+  
   
 
   if (!mounted) return null

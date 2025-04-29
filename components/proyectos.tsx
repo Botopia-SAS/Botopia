@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const categories = ["Páginas Web", "Aplicaciones", "Marketing y Branding", "Diseño UX/UI"] as const;
 
 const projects: Record<typeof categories[number], { src: string; label: string; scale: string; customStyle?: string; gridPosition?: string }[]> = {
-  // Tu array original sin cambios
   "Páginas Web": [
     { src: "/PagFridoom.png", label: "Fridoom Web", scale: "scale-150", customStyle: "mt-10" },
     { src: "/AppLens.png", label: "LensPR", scale: "scale-150", customStyle: "-mt-20" },
@@ -36,19 +35,24 @@ const projects: Record<typeof categories[number], { src: string; label: string; 
 
 export default function Proyectos() {
   const [selectedCategory, setSelectedCategory] = useState<typeof categories[number]>("Páginas Web");
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const isScrollCategory = selectedCategory === "Aplicaciones" || selectedCategory === "Marketing y Branding";
-  const isFixedGridCategory = selectedCategory === "Páginas Web" || selectedCategory === "Diseño UX/UI";
+  useEffect(() => {
+    const needsScroll = selectedCategory === "Aplicaciones" || selectedCategory === "Marketing y Branding";
+    if (needsScroll && scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    }
+  }, [selectedCategory]);
 
   return (
-    <section className="w-full px-4">
+    <section className="w-full px-4 relative">
       {/* Título */}
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">Nuestros Proyectos</h2>
       </div>
 
       {/* Tabs */}
-      <div className="w-full overflow-x-auto mb-10 md:mb-20 pb-8">
+      <div className="w-full overflow-x-auto mb-16 md:mb-24 pb-8 z-10 relative">
         <div className="flex gap-6 md:gap-20 px-4 md:px-0 w-max md:w-full justify-center">
           {categories.map((cat) => (
             <button
@@ -67,34 +71,33 @@ export default function Proyectos() {
       </div>
 
       {/* Grid dinámico */}
-      <div className={`${isScrollCategory ? "overflow-x-auto" : "overflow-hidden"} md:overflow-visible flex justify-center`}>
-      <div className={`grid grid-cols-4 
-  ${selectedCategory === "Marketing y Branding" ? "gap-36" : "gap-14"} 
-  ${isFixedGridCategory ? "min-w-[900px]" : "min-w-[700px]"} 
-  md:min-w-0 max-w-7xl`}>
+      <div 
+  ref={scrollContainerRef}
+  className="w-full flex justify-center overflow-x-auto md:overflow-visible transition-all duration-500"
+>
+  <div className={`grid grid-cols-4 ${selectedCategory === "Marketing y Branding" ? "gap-36" : "gap-14"} min-w-[1000px] md:min-w-0`}>
+    <AnimatePresence mode="wait">
+      {projects[selectedCategory].map((project, index) => (
+        <motion.div
+          key={project.src}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.3 }}
+          className={`flex flex-col items-center ${project.customStyle || ""} ${project.gridPosition || ""}`}
+        >
+          <img
+            src={project.src}
+            alt={project.label}
+            className={`object-contain max-h-56 transition-transform duration-300 hover:scale-105 ${project.scale}`}
+          />
+          <span className="mt-4 text-center text-xs md:text-sm text-gray-700">{project.label}</span>
+        </motion.div>
+      ))}
+    </AnimatePresence>
+  </div>
+</div>
 
-          <AnimatePresence>
-            {projects[selectedCategory].map((project, index) => (
-              <motion.div
-                key={`project-${index}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className={`flex flex-col items-center ${project.customStyle || ""} ${project.gridPosition || ""}`}
-              >
-                <img
-                  src={project.src}
-                  alt={project.label}
-                  className={`object-contain max-h-56 transition-transform duration-300 hover:scale-105 ${project.scale}`}
-                  style={{ boxShadow: "none" }}
-                />
-                <span className="mt-4 text-center text-xs md:text-sm text-gray-700">{project.label}</span>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
-      </div>
     </section>
   );
 }
