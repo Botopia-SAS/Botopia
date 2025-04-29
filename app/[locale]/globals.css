@@ -24,6 +24,21 @@ html, body {
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  gap: 1rem;
+}
+
+.embla__slide {
+  min-width: 80%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
 
 
 @keyframes bounce {
