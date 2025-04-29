@@ -20,8 +20,19 @@ export default function DesktopMenu({
   setActiveDropdown,
 }: DesktopMenuProps) {
   return (
-    <div className="relative z-30">
-      <nav className="hidden md:flex items-center space-x-8">
+    <div
+      className="relative z-30"
+      onMouseLeave={() => setActiveDropdown(null)} // Mover el onMouseLeave aquí
+    >
+      <nav
+        className="hidden md:flex items-center space-x-8"
+        onMouseEnter={() => {
+          // Mantener el dropdown activo si ya hay uno mostrándose
+          if (activeDropdown) {
+            setActiveDropdown(activeDropdown);
+          }
+        }}
+      >
         {menuItems.map((item) => {
           // Identificador para cada dropdown
           let dropdownKey = "";
@@ -55,8 +66,8 @@ export default function DesktopMenu({
             <div
               key={item.name}
               onMouseEnter={() => dropdownKey && setActiveDropdown(dropdownKey)}
-              onMouseLeave={() => setActiveDropdown(null)}
-              className="relative"
+              // Eliminamos el onMouseLeave de cada item individual
+              className="relative px-4 py-2 -mx-4" // Añadimos padding y margen negativo
             >
               <Link
                 href={item.href}

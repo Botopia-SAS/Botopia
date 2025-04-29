@@ -8,4 +8,5 @@ export const menuItems = [
   { name: "Automatización", href: "#" },
   { name: "Diseño UX/UI", href: "#" },
   { name: "Marketing", href: "#" },
+  { name: "Equipos de ingeniería", href: "#" },
 ];

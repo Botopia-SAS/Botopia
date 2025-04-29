@@ -1,5 +1,4 @@
 "use client";
-import Head from "next/head";
 import {
   FaFacebook,
   FaInstagram,
@@ -14,7 +13,7 @@ import { useDropzone } from "react-dropzone";
 export default function ContactUs() {
   const [file, setFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null); // Guarda la previsualización
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const [, setImageUrl] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
 
   const { getRootProps, getInputProps } = useDropzone({
@@ -88,29 +87,6 @@ export default function ContactUs() {
 
   return (
     <>
-      <Head>
-        <Head>
-          <title>Contact Us - Botopia</title>
-        </Head>
-        <meta
-          name="description"
-          content="Get in touch with Botopia. Contact us for inquiries and collaborations."
-        />
-        <meta
-          name="keywords"
-          content="Botopia, Contact, AI Software, Automation"
-        />
-        <meta name="author" content="Botopia Team" />
-        <meta property="og:title" content="Contact Us - Botopia" />
-        <meta
-          property="og:description"
-          content="Reach out to Botopia for AI and automation solutions."
-        />
-        <meta property="og:image" content="https://botopia.tech/og-image.jpg" />
-        <meta property="og:url" content="https://botopia.tech/contact" />
-        <meta name="robots" content="index, follow" />
-      </Head>
-
       <div className="relative w-full bg-black text-black">
         {/* Sección con el video de fondo */}
         <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden">
