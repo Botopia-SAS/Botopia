@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { menuItems } from "./menuItems";
 
@@ -20,22 +23,52 @@ export default function DesktopMenu({
   activeDropdown,
   setActiveDropdown,
 }: DesktopMenuProps) {
+  // Ref para guardar el timeout de hover
+  const hoverTimeout = useRef<number | null>(null);
+
+  // Limpiar timeout al desmontar
+  useEffect(() => {
+    return () => {
+      if (hoverTimeout.current) {
+        clearTimeout(hoverTimeout.current);
+      }
+    };
+  }, []);
+
+  // Cuando entras en un ítem, programa la apertura tras 500ms
+  const handleMouseEnterItem = (dropdownKey: string) => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    hoverTimeout.current = window.setTimeout(() => {
+      setActiveDropdown(dropdownKey);
+    }, 500);
+  };
+
+  // Si sales antes de los 500ms, cancela la apertura
+  const handleMouseLeaveItem = () => {
+    if (hoverTimeout.current) {
+      clearTimeout(hoverTimeout.current);
+    }
+  };
+
   return (
     <div
       className="relative z-30"
-      onMouseLeave={() => setActiveDropdown(null)} // Mover el onMouseLeave aquí
+      onMouseLeave={() => {
+        // Cierra inmediatamente al salir del área completa
+        setActiveDropdown(null);
+      }}
     >
       <nav
-        className="hidden md:flex items-center space-x-8"
+        className="hidden md:flex items-center space-x-10"
         onMouseEnter={() => {
-          // Mantener el dropdown activo si ya hay uno mostrándose
+          // Si ya había un dropdown abierto, lo mantenemos
           if (activeDropdown) {
             setActiveDropdown(activeDropdown);
           }
         }}
       >
         {menuItems.map((item) => {
-          // Identificador para cada dropdown
+          // Calcula la clave según el nombre
           let dropdownKey = "";
           switch (item.name) {
             case "Páginas web":
@@ -69,18 +102,17 @@ export default function DesktopMenu({
           return (
             <div
               key={item.name}
-              onMouseEnter={() => dropdownKey && setActiveDropdown(dropdownKey)}
-              // Eliminamos el onMouseLeave de cada item individual
-              className="relative px-4 py-2 -mx-4" // Añadimos padding y margen negativo
+              onMouseEnter={() => dropdownKey && handleMouseEnterItem(dropdownKey)}
+              onMouseLeave={handleMouseLeaveItem}
+              className="relative px-2 py-2"
             >
               <Link
                 href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-sm"
+                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-xs"
               >
                 {item.name}
               </Link>
 
-              {/* Renderizado dinámico del Dropdown */}
               {activeDropdown === dropdownKey && (
                 <>
                   {dropdownKey === "web" && <WebDropdown />}

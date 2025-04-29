@@ -87,7 +87,7 @@ export default function ContactUs() {
 
   return (
     <>
-      <div className="relative w-full bg-black text-black">
+      <div className="relative w-full text-black pt-24">
         {/* Sección con el video de fondo */}
         <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden">
           <video
