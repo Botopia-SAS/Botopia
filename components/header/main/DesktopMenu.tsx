@@ -9,6 +9,7 @@ import IADropdown from "./Dropdowns/IADropdown";
 import AutoDropdown from "./Dropdowns/AutoDropdown";
 import DesignDropdown from "./Dropdowns/DesignDropdown";
 import MarketingDropdown from "./Dropdowns/MarketingDropdown";
+import EquiposDropdown from "./Dropdowns/EquiposDropdown";
 
 interface DesktopMenuProps {
   activeDropdown: string | null;
@@ -58,6 +59,9 @@ export default function DesktopMenu({
             case "Marketing":
               dropdownKey = "marketing";
               break;
+            case "Equipos de ingeniería":
+              dropdownKey = "engineering";
+              break;
             default:
               dropdownKey = "";
           }
@@ -86,6 +90,7 @@ export default function DesktopMenu({
                   {dropdownKey === "auto" && <AutoDropdown />}
                   {dropdownKey === "design" && <DesignDropdown />}
                   {dropdownKey === "marketing" && <MarketingDropdown />}
+                  {dropdownKey === "engineering" && <EquiposDropdown />}
                 </>
               )}
             </div>
