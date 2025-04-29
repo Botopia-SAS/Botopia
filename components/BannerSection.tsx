@@ -44,7 +44,10 @@ const BannerSection = () => {
   }, []);
 
   return (
-    <div className="w-full flex justify-center items-center py-8 bg-transparent">
+    <div
+      className="w-full flex justify-center items-center py-8 bg-cover bg-center"
+      style={{ backgroundImage: "url('/Hero/Fondo2.svg')" }}
+    >
       <div className="relative w-full max-w-7xl overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-in-out"
@@ -54,8 +57,8 @@ const BannerSection = () => {
         >
           {banners.map((banner, index) => (
             <div key={index} className="w-full flex-shrink-0 flex justify-center">
-              <div className={`${banner.bgColor} rounded-2xl flex flex-col md:flex-row items-center justify-between 
-    p-6 md:p-10 shadow-lg w-[90%] max-w-6xl`}>
+              <div className={`${banner.bgColor} bg-opacity-90 rounded-2xl flex flex-col md:flex-row items-center justify-between 
+                  p-6 md:p-10 shadow-lg w-[90%] max-w-6xl`}>
 
                 {/* TÍTULO y SUBTÍTULO */}
                 <div className="flex-1 space-y-3 text-center md:text-left order-1">
@@ -87,7 +90,6 @@ const BannerSection = () => {
                 )}
 
               </div>
-
             </div>
           ))}
         </div>
