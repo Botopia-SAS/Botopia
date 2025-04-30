@@ -5,18 +5,34 @@ import IpadModel from "./3D/IpadModel";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Ejecutar al inicio
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   if (!mounted) return null;
 
   return (
     <div
       className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center text-black dark:text-white relative px-6 md:px-16"
-      style={{ backgroundImage: "url('/Hero/Fondo.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{
+        backgroundImage: "url('/Hero/Fondo.svg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      {/* Sección Izquierda: Texto */}
-      <div className="flex-1 flex flex-col justify-center items-start text-left space-y-6 mt-10 md:mt-0 pl-4 md:pl-24">
+      {/* Texto Izquierda */}
+      <div className="flex-1 flex flex-col justify-center items-start text-left space-y-6 pt-[120px] md:pt-0 pl-4 md:pl-24">
         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
           Tecnología innovadora para tu negocio
         </h1>
@@ -28,13 +44,13 @@ export default function Hero() {
         </button>
       </div>
 
-      {/* Sección Derecha: iPad 3D */}
-      <div className="flex-1 flex justify-center items-center h-[400px] md:h-[600px] w-full md:w-auto mt-10 md:mt-0">
+      {/* iPad Derecha */}
+      <div className="flex-1 flex justify-center items-center h-[400px] md:h-[600px] w-full md:w-auto -mt-12 md:mt-0">
         <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
           <ambientLight intensity={1.2} />
           <directionalLight position={[2, 5, 2]} intensity={1} />
           <pointLight position={[0, 0, 2]} intensity={1} color="white" />
-          <IpadModel />
+          <IpadModel scale={isMobile ? 0.014 : 0.025} />
         </Canvas>
       </div>
     </div>

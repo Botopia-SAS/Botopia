@@ -4,10 +4,13 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { MeshStandardMaterial, Mesh } from "three";
 
-export default function IpadModel() {
+interface IpadModelProps {
+  scale?: number;
+}
+
+export default function IpadModel({ scale = 0.025 }: IpadModelProps) {
   const groupRef = useRef<any>(null);
   const { nodes, materials } = useGLTF("/3D/ipad_mini_6_2021.glb");
-
   const textures = useTexture([
     "/models/ipad/textures/pantalla1.svg",
     "/models/ipad/textures/pantalla2.svg",
@@ -19,17 +22,17 @@ export default function IpadModel() {
   const [currentTextureIndex, setCurrentTextureIndex] = useState(0);
   const [slowDown, setSlowDown] = useState(false);
   const [lastWasBack, setLastWasBack] = useState(false);
-  const [hovered, setHovered] = useState(false); // 👈 Nuevo estado para hover
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     textures.forEach((texture) => {
-      texture.flipY = false;
+      texture.flipY = true;
       texture.center.set(0.5, 0.5);
       texture.rotation = 0;
     });
   }, [textures]);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (groupRef.current) {
       const rotationY = groupRef.current.rotation.y;
       const angleDeg = ((rotationY * 180) / Math.PI) % 360;
@@ -45,16 +48,12 @@ export default function IpadModel() {
       setLastWasBack(isBack);
       setSlowDown(isFront);
 
-      // ⚡️ Movimiento base automático
       const speed = slowDown ? delta * 0.3 : delta * 7;
       groupRef.current.rotation.y += speed;
 
-      // ✋ Pequeño tilt si está hovered
-      const tiltAmount = hovered ? 0.05 : 0;
-      groupRef.current.rotation.x = tiltAmount; // pequeño giro en X
-      groupRef.current.rotation.z = hovered ? 0.03 : 0; // pequeño giro en Z
+      groupRef.current.rotation.x = hovered ? 0.05 : 0;
+      groupRef.current.rotation.z = hovered ? 0.03 : 0;
 
-      // 🚿 Mantener rotación Y limpia
       if (groupRef.current.rotation.y > Math.PI * 2) {
         groupRef.current.rotation.y -= Math.PI * 2;
       }
@@ -65,9 +64,9 @@ export default function IpadModel() {
     <group
       ref={groupRef}
       rotation={[0, 0, 0]}
-      scale={0.025}
-      onPointerOver={() => setHovered(true)}  // 👈 Detecta hover
-      onPointerOut={() => setHovered(false)}  // 👈 Detecta salir del hover
+      scale={scale}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
     >
       <group rotation={[0, 0, 0]} scale={100}>
         {Object.keys(nodes).map((key) => {
