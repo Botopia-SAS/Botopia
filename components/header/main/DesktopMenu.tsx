@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { menuItems } from "./menuItems";
 
@@ -9,6 +12,7 @@ import IADropdown from "./Dropdowns/IADropdown";
 import AutoDropdown from "./Dropdowns/AutoDropdown";
 import DesignDropdown from "./Dropdowns/DesignDropdown";
 import MarketingDropdown from "./Dropdowns/MarketingDropdown";
+import EquiposDropdown from "./Dropdowns/EquiposDropdown";
 
 interface DesktopMenuProps {
   activeDropdown: string | null;
@@ -19,11 +23,52 @@ export default function DesktopMenu({
   activeDropdown,
   setActiveDropdown,
 }: DesktopMenuProps) {
+  // Ref para guardar el timeout de hover
+  const hoverTimeout = useRef<number | null>(null);
+
+  // Limpiar timeout al desmontar
+  useEffect(() => {
+    return () => {
+      if (hoverTimeout.current) {
+        clearTimeout(hoverTimeout.current);
+      }
+    };
+  }, []);
+
+  // Cuando entras en un ítem, programa la apertura tras 500ms
+  const handleMouseEnterItem = (dropdownKey: string) => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    hoverTimeout.current = window.setTimeout(() => {
+      setActiveDropdown(dropdownKey);
+    }, 500);
+  };
+
+  // Si sales antes de los 500ms, cancela la apertura
+  const handleMouseLeaveItem = () => {
+    if (hoverTimeout.current) {
+      clearTimeout(hoverTimeout.current);
+    }
+  };
+
   return (
-    <div className="relative z-30">
-      <nav className="hidden md:flex items-center space-x-8">
+    <div
+      className="relative z-30"
+      onMouseLeave={() => {
+        // Cierra inmediatamente al salir del área completa
+        setActiveDropdown(null);
+      }}
+    >
+      <nav
+        className="hidden md:flex items-center space-x-10"
+        onMouseEnter={() => {
+          // Si ya había un dropdown abierto, lo mantenemos
+          if (activeDropdown) {
+            setActiveDropdown(activeDropdown);
+          }
+        }}
+      >
         {menuItems.map((item) => {
-          // Identificador para cada dropdown
+          // Calcula la clave según el nombre
           let dropdownKey = "";
           switch (item.name) {
             case "Páginas web":
@@ -47,6 +92,9 @@ export default function DesktopMenu({
             case "Marketing":
               dropdownKey = "marketing";
               break;
+            case "Equipos de ingeniería":
+              dropdownKey = "engineering";
+              break;
             default:
               dropdownKey = "";
           }
@@ -54,18 +102,17 @@ export default function DesktopMenu({
           return (
             <div
               key={item.name}
-              onMouseEnter={() => dropdownKey && setActiveDropdown(dropdownKey)}
-              onMouseLeave={() => setActiveDropdown(null)}
-              className="relative"
+              onMouseEnter={() => dropdownKey && handleMouseEnterItem(dropdownKey)}
+              onMouseLeave={handleMouseLeaveItem}
+              className="relative px-2 py-2"
             >
               <Link
                 href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-sm"
+                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-xs"
               >
                 {item.name}
               </Link>
 
-              {/* Renderizado dinámico del Dropdown */}
               {activeDropdown === dropdownKey && (
                 <>
                   {dropdownKey === "web" && <WebDropdown />}
@@ -75,6 +122,7 @@ export default function DesktopMenu({
                   {dropdownKey === "auto" && <AutoDropdown />}
                   {dropdownKey === "design" && <DesignDropdown />}
                   {dropdownKey === "marketing" && <MarketingDropdown />}
+                  {dropdownKey === "engineering" && <EquiposDropdown />}
                 </>
               )}
             </div>

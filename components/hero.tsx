@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import IpadModel from "./3D/IpadModel";
@@ -39,7 +40,7 @@ export default function Hero() {
         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-lg">
           Creamos experiencias digitales de alto impacto que transforman tu negocio.
         </p>
-        <button className="mt-4 px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">
+        <button className="mt-4 px-6 py-3 bg-purple-900 text-white rounded-lg hover:bg-purple-500 transition">
           Comienza tu proyecto
         </button>
       </div>

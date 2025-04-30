@@ -9,7 +9,7 @@ export default function Logo({ hide = false }: LogoProps) {
   return (
     <Link
       href="/"
-      className={`flex items-center transition-opacity transition-transform duration-300 ${
+      className={`flex items-center transition-transform duration-300 ${
         hide ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
