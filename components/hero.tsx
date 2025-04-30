@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import IpadModel from "./3D/IpadModel";
-
+import { useRouter, usePathname } from 'next/navigation';
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
+  const router = useRouter();
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1];
   useEffect(() => {
     setMounted(true);
 
@@ -40,9 +42,12 @@ export default function Hero() {
         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-lg">
           Creamos experiencias digitales de alto impacto que transforman tu negocio.
         </p>
-        <button className="mt-4 px-6 py-3 bg-purple-900 text-white rounded-lg hover:bg-purple-500 transition">
-          Comienza tu proyecto
-        </button>
+        <button
+  onClick={() => router.push(`/${locale}/contactUs`)}
+  className="mt-4 px-6 py-3 bg-purple-900 text-white rounded-lg hover:bg-purple-500 transition"
+>
+  Comienza tu proyecto
+</button>
       </div>
 
       {/* iPad Derecha */}
