@@ -27,7 +27,7 @@ export default function Hero() {
 
   return (
     <div
-      className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center text-black dark:text-white relative px-6 md:px-16"
+      className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center text-black dark:text-white relative px-6 md:px-16 "
       style={{
         backgroundImage: "url('/Hero/Fondo.svg')",
         backgroundSize: "cover",
@@ -51,7 +51,7 @@ export default function Hero() {
       </div>
 
       {/* iPad Derecha */}
-      <div className="flex-1 flex justify-center items-center h-[400px] md:h-[600px] w-full md:w-auto -mt-12 md:mt-0">
+      <div className="flex-1 flex justify-center items-center h-[400px] md:h-[600px] w-full mt-28 md:w-auto">
         <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
           <ambientLight intensity={1.2} />
           <directionalLight position={[2, 5, 2]} intensity={1} />
