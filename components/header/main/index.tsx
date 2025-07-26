@@ -4,7 +4,8 @@ import { useState } from "react";
 import Logo from "./Logo";
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
-import { Search, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import SearchBar from "./SearchBar";
 
 interface MainHeaderProps {
   activeDropdown: string | null;
@@ -32,12 +33,7 @@ export default function MainHeader({
             setActiveDropdown={setActiveDropdown}
           />
           <div className="hidden md:flex items-center">
-            <button
-              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800"
-              aria-label="Buscar"
-            >
-              <Search className="h-5 w-5 text-gray-600 dark:text-gray-300" />
-            </button>
+            <SearchBar />
           </div>
           <div className="md:hidden flex items-center">
             <button
