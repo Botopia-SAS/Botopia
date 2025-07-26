@@ -20,7 +20,7 @@ export default function BaseDropdown({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
-      className="fixed left-0 top-10 w-full bg-white dark:bg-black text-black dark:text-white shadow-xl z-2"
+      className="w-full bg-white dark:bg-black text-black dark:text-white shadow-xl"
     >
       <div
         className="max-w-7xl mx-auto px-6 py-8 grid"

@@ -25,8 +25,8 @@ export default function MainHeader({
           activeDropdown ? "shadow-md" : ""
         }`}
       >
-        <div className="container mx-auto px-4 flex items-center justify-between h-16">
-          <Logo hide={!!activeDropdown} />
+        <div className="container mx-auto px-4 flex items-center justify-between h-14">
+          <Logo />
           <DesktopMenu
             activeDropdown={activeDropdown}
             setActiveDropdown={setActiveDropdown}
