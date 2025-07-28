@@ -212,7 +212,13 @@ function highlightMatch(text: string, query: string) {
   );
 }
 
-export default function SearchBar() {
+export default function SearchBar({
+  autoFocus = false,
+  onClose,
+}: {
+  autoFocus?: boolean;
+  onClose?: () => void;
+}) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchItem[]>([]);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -232,6 +238,23 @@ export default function SearchBar() {
     setResults(getFilteredResults(query));
     setActiveIndex(getFilteredResults(query).length > 0 ? 0 : -1);
   }, [query]);
+
+  // Enfocar el input automáticamente si se indica
+  useEffect(() => {
+    if (autoFocus && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [autoFocus]);
+
+  // Cerrar con Escape
+  useEffect(() => {
+    if (!onClose) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [onClose]);
 
   // --- Accesibilidad con teclado ---
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -313,7 +336,7 @@ export default function SearchBar() {
 
   // --- Renderizado del buscador moderno y amigable ---
   return (
-    <div className="relative w-full max-w-xs md:max-w-md">
+    <div className="relative w-full max-w-xl">
       {/* Barra de búsqueda */}
       <div className="flex items-center bg-white dark:bg-black rounded-full shadow-lg px-4 py-2 border border-gray-200 dark:border-gray-700 focus-within:ring-2 ring-purple-400 transition-all duration-200">
         <Search className="h-5 w-5 text-purple-500 mr-2" />
@@ -332,6 +355,15 @@ export default function SearchBar() {
           aria-label="Buscar"
           autoComplete="off"
         />
+        {onClose && (
+          <button
+            className="ml-2 text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            onClick={onClose}
+            aria-label="Cerrar buscador"
+          >
+            <span className="text-lg font-bold">&times;</span>
+          </button>
+        )}
       </div>
       {/* Dropdown de resultados */}
       <div
