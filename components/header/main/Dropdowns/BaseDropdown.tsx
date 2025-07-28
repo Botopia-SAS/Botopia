@@ -25,7 +25,13 @@ export default function BaseDropdown({
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
       className="fixed left-0 top-10 w-full text-black dark:text-white shadow-xl z-2"
-      style={{ background: "linear-gradient(to bottom, white, #b283fd)" }}
+      style={{
+        background: "linear-gradient(to bottom, white, #b283fd)",
+        ...(typeof window !== "undefined" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches && {
+            background: "linear-gradient(to bottom, black, #411E8A)",
+          }),
+      }}
     >
       <div
         className="max-w-7xl mx-auto grid h-full relative"
@@ -33,7 +39,7 @@ export default function BaseDropdown({
       >
         {/* Columna Principal */}
         <div className="px-6 py-8">
-          <h3 className="text-2xl font-light mb-4" style={{ color: "#050044" }}>
+          <h3 className="text-2xl font-light mb-4 text-[#050044] dark:text-[#FAECD4]">
             {mainTitle}
           </h3>
           <ul className="space-y-2">
@@ -41,7 +47,7 @@ export default function BaseDropdown({
               <li key={idx}>
                 <a
                   href="#"
-                  className="text-lg font-normal hover:text-gray-700 dark:hover:text-gray-300 transition transform hover:scale-105 block"
+                  className="text-lg font-normal hover:text-gray-700 dark:hover:text-gray-300 transition transform hover:scale-105 block dark:text-white"
                 >
                   {item}
                 </a>
@@ -54,10 +60,7 @@ export default function BaseDropdown({
         <div className="flex gap-8 px-6 py-8">
           {secondaryColumns.map((col, idx) => (
             <div key={idx}>
-              <h3
-                className="text-lg font-light mb-4"
-                style={{ color: "#050044" }}
-              >
+              <h3 className="text-lg font-light mb-4 text-[#050044] dark:text-[#FAECD4]">
                 {col.title}
               </h3>
               <ul className="space-y-2">
@@ -65,7 +68,7 @@ export default function BaseDropdown({
                   <li key={i}>
                     <a
                       href="#"
-                      className="text-base hover:text-gray-700 dark:hover:text-gray-300 transition transform hover:scale-105 block"
+                      className="text-base hover:text-gray-700 dark:hover:text-gray-300 transition transform hover:scale-105 block dark:text-white"
                     >
                       {item}
                     </a>
