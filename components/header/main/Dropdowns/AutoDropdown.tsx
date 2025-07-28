@@ -5,14 +5,11 @@ export default function AutoDropdown() {
     <BaseDropdown
       mainTitle="Explora Automatización"
       mainItems={[
-        "Procesos Automatizados (BPA)",
-        "Integración de APIs & Sistemas",
-        "RPA y Bots Inteligentes",
-        "E-commerce Automatizado",
-        "Workflows Eficientes",
-        "Marketing & Ventas Auto",
-        "Atención al Cliente 24/7",
-        "Bots para WhatsApp & Redes",
+        "Tareas repetitivas automatizadas",
+
+        "Ventas y marketing automatizados",
+
+        "Atención al cliente automatizada",
       ]}
       secondaryColumns={[
         {
@@ -24,16 +21,9 @@ export default function AutoDropdown() {
             "Automatización con IA",
           ],
         },
-        {
-          title: "Más sobre Automatización",
-          items: [
-            "Casos de Éxito",
-            "Optimización de Procesos",
-            "Prototipos Ágiles",
-            "Monitoreo de Bots",
-          ],
-        },
       ]}
+      imageSrc="/Header4.png"
+      imageAlt="Automatización"
     />
   );
 }

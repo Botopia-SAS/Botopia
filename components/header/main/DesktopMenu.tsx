@@ -7,7 +7,6 @@ import { menuItems } from "./menuItems";
 // Importación de Dropdowns
 import WebDropdown from "./Dropdowns/WebDropdown";
 import AppDropdown from "./Dropdowns/AppDropdown";
-import EcomDropdown from "./Dropdowns/E-comDropdown";
 import IADropdown from "./Dropdowns/IADropdown";
 import AutoDropdown from "./Dropdowns/AutoDropdown";
 import DesignDropdown from "./Dropdowns/DesignDropdown";
@@ -77,9 +76,6 @@ export default function DesktopMenu({
             case "Aplicaciones móviles":
               dropdownKey = "app";
               break;
-            case "E-commerce":
-              dropdownKey = "ecom";
-              break;
             case "Inteligencia artificial":
               dropdownKey = "ia";
               break;
@@ -102,13 +98,15 @@ export default function DesktopMenu({
           return (
             <div
               key={item.name}
-              onMouseEnter={() => dropdownKey && handleMouseEnterItem(dropdownKey)}
+              onMouseEnter={() =>
+                dropdownKey && handleMouseEnterItem(dropdownKey)
+              }
               onMouseLeave={handleMouseLeaveItem}
               className="relative px-2 py-2"
             >
               <Link
                 href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-xs"
+                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-base"
               >
                 {item.name}
               </Link>
@@ -117,7 +115,6 @@ export default function DesktopMenu({
                 <>
                   {dropdownKey === "web" && <WebDropdown />}
                   {dropdownKey === "app" && <AppDropdown />}
-                  {dropdownKey === "ecom" && <EcomDropdown />}
                   {dropdownKey === "ia" && <IADropdown />}
                   {dropdownKey === "auto" && <AutoDropdown />}
                   {dropdownKey === "design" && <DesignDropdown />}

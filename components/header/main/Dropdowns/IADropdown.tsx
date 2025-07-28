@@ -5,35 +5,26 @@ export default function IADropdown() {
     <BaseDropdown
       mainTitle="Explora Inteligencia Artificial"
       mainItems={[
-        "Chatbots Inteligentes",
-        "Asistentes Virtuales ",
+        "Asistente inteligente para WhatsApp",
+        "Análisis predictivo de datos ",
         "Automatización con IA",
-        "Análisis Predictivo",
         "Procesamiento de Lenguaje (NLP)",
         "Reconocimiento de Imágenes",
         "Sistemas de Recomendación",
-        "Integración con OpenAI y APIs",
       ]}
       secondaryColumns={[
         {
           title: "Servicios",
           items: [
+            "Automatización de Procesos con IA",
             "Modelos de Machine Learning",
             "Entrenamiento de Modelos Personalizados",
             "IA en Apps y Sitios Web",
-            "Automatización de Procesos con IA",
-          ],
-        },
-        {
-          title: "Más sobre IA",
-          items: [
-            "Casos de Éxito con IA",
-            "Consultoría en Proyectos de IA",
-            "Desarrollo de Prototipos con Inteligencia Artificial",
-            "Optimización de Operaciones con AI Ops",
           ],
         },
       ]}
+      imageSrc="/Header3.png"
+      imageAlt="Inteligencia Artificial"
     />
   );
 }

@@ -5,32 +5,28 @@ export default function AppDropdown() {
     <BaseDropdown
       mainTitle="Explora Apps Móviles"
       mainItems={[
-        "Aplicaciones Nativas",
-        "Aplicaciones Híbridas",
-        "Apps Multiplataforma",
-        "Apps Empresariales",
-        "MVPs para Startups",
-        "Apps de E-commerce",
-        "Aplicaciones con Geolocalización",
+        "Apps para negocios ",
+
+        "Apps de ventas y e-commerce",
+
+        "Apps con geolocalización",
+
+        "Apps con inteligencia artificial",
       ]}
       secondaryColumns={[
         {
           title: "Servicios",
           items: [
-            "Integración con APIs",
-            "Publicación en App Store & Play Store",
-            "Mantenimiento y Actualizaciones",
-          ],
-        },
-        {
-          title: "Más sobre Apps",
-          items: [
-            "Casos de Éxito",
-            "Consultoría en UX/UI Móvil",
-            "Desarrollo de Prototipos",
+            "Desarrollo de apps a medida",
+
+            "Publicación en App Store y Google Play",
+
+            "Mantenimiento y actualizaciones",
           ],
         },
       ]}
+      imageSrc="/Header2.png"
+      imageAlt="Aplicaciones Móviles"
     />
   );
 }

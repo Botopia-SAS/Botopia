@@ -23,6 +23,8 @@ export default function WebDropdown() {
           items: ["Casos de Éxito", "Guía de Desarrollo", "Soporte Técnico"],
         },
       ]}
+      imageSrc="/Header1.png"
+      imageAlt="Páginas Web"
     />
   );
 }
