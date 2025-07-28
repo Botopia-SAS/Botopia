@@ -95,7 +95,10 @@ export default function BaseDropdown({
             className="absolute top-0 bottom-0"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 30%, rgba(255,255,255,0) 100%)",
+                typeof window !== "undefined" &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches
+                  ? "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(65,30,138,0.8) 30%, rgba(65,30,138,0) 100%)"
+                  : "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 30%, rgba(255,255,255,0) 100%)",
               clipPath: "polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)",
               left: "-15vw",
               right: "-35vw",
