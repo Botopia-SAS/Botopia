@@ -3,15 +3,16 @@
 import { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import IpadModel from "./3D/IpadModel";
-import { useRouter, usePathname } from 'next/navigation';
-import { Typed } from 'react-typed';
+import { useRouter, usePathname } from "next/navigation";
+// Reemplaza react-typed por react-simple-typewriter
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const locale = pathname.split('/')[1];
+  const locale = pathname.split("/")[1];
 
   // Frases para el efecto typing, fácilmente escalable
   const typingPhrases = [
@@ -29,12 +30,8 @@ export default function Hero() {
     "alineada con tus metas",
     "creada para destacar",
     "diseñada para escalar",
-    "potente para tu operación"
-    
+    "potente para tu operación",
   ];
-
-  // Configuración: si quieres que termine en una frase, ponla aquí. Si no, deja como null para loop infinito.
-  const finalPhrase = null; 
 
   useEffect(() => {
     setMounted(true);
@@ -67,19 +64,20 @@ export default function Hero() {
           <span className="mr-2">Tecnología</span>
           {/* Efecto typing solo en la parte variable */}
           <span className="text-primary">
-            <Typed
-              strings={finalPhrase ? [finalPhrase] : typingPhrases}
+            <Typewriter
+              words={typingPhrases}
+              loop={0}
+              cursor
+              cursorStyle="|"
               typeSpeed={50}
-              backSpeed={30}
-              backDelay={1500}
-              loop={!finalPhrase}
-              showCursor={true}
-              cursorChar="|"
+              deleteSpeed={30}
+              delaySpeed={1500}
             />
           </span>
         </h1>
         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-lg">
-          Creamos experiencias digitales de alto impacto que transforman tu negocio.
+          Creamos experiencias digitales de alto impacto que transforman tu
+          negocio.
         </p>
         <button
           onClick={() => router.push(`/${locale}/contactUs`)}
@@ -101,3 +99,4 @@ export default function Hero() {
     </div>
   );
 }
+  

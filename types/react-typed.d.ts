@@ -1,5 +1,5 @@
-declare module 'react-typed' {
-  import * as React from 'react';
+declare module "react-typed" {
+  import * as React from "react";
   export interface TypedProps {
     strings: string[];
     typeSpeed?: number;

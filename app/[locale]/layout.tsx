@@ -28,7 +28,8 @@ export default async function LocaleLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <IntlProvider locale={locale} messages={messages}>
             <HeaderWrapper />
-            <main>{children}</main>            <WhatsAppButton />
+            <main>{children}</main> 
+            <WhatsAppButton />
           </IntlProvider>
         </ThemeProvider>
       </body>
