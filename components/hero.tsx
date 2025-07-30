@@ -16,21 +16,21 @@ export default function Hero() {
 
   // Frases para el efecto typing, fácilmente escalable
   const typingPhrases = [
-    "eficiente para tu negocio",
-    "inteligente para tu empresa",
-    "ágil para tu crecimiento",
-    "escalable para tu futuro",
-    "poderosa para tu marca",
-    "versátil para tu modelo",
-    "conectada a tu propósito",
-    "optimizada para tu industria",
-    "a la medida de tu visión",
-    "lista para transformar",
-    "impulsada por innovación",
-    "alineada con tus metas",
-    "creada para destacar",
-    "diseñada para escalar",
-    "potente para tu operación",
+    "eficiente para tu",
+    "inteligente para tu",
+    "ágil para tu",
+    "escalable para tu",
+    "poderosa para tu",
+    "versátil para tu",
+    "conectada a tu",
+    "optimizada para tu",
+    "a la medida de tu",
+    "lista para tu",
+    // "impulsada por",
+    "alineada con tu",
+    "creada para tu",
+    "diseñada para tu",
+    "potente para tu",
   ];
 
   useEffect(() => {
@@ -50,9 +50,9 @@ export default function Hero() {
 
   return (
     <div
-      className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center text-black dark:text-white relative px-6 md:px-16 "
+      className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center text-black dark:text-white relative px-6 md:px-16 bg-black"
       style={{
-        backgroundImage: "url('/Hero/Fondo.svg')",
+        // backgroundImage: "url('/Hero/Fondo.svg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -62,8 +62,9 @@ export default function Hero() {
         {/* Título principal con efecto typing */}
         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
           <span className="mr-2">Tecnología</span>
+          <br />
           {/* Efecto typing solo en la parte variable */}
-          <span className="text-primary">
+          <span className="text-primary mr-2">
             <Typewriter
               words={typingPhrases}
               loop={0}
@@ -73,6 +74,8 @@ export default function Hero() {
               deleteSpeed={30}
               delaySpeed={1500}
             />
+            <br />
+            <span className="mr-2">negocio</span>
           </span>
         </h1>
         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-lg">
@@ -88,7 +91,7 @@ export default function Hero() {
       </div>
 
       {/* iPad Derecha */}
-      <div className="flex-1 flex justify-center items-center h-[400px] md:h-[600px] w-full mt-28 md:w-auto">
+      <div className="flex-1 flex justify-center items-center h-[400px] md:h-[400px] w-full mt-28 md:w-auto md:mt-0">
         <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
           <ambientLight intensity={1.2} />
           <directionalLight position={[2, 5, 2]} intensity={1} />
@@ -99,4 +102,3 @@ export default function Hero() {
     </div>
   );
 }
-  
