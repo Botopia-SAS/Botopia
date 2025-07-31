@@ -116,19 +116,19 @@ export default function Hero() {
 
   // Frases para el efecto typing, fácilmente escalable
   const typingPhrases = [
-    "eficiente para tu",
-    "inteligente para tu",
+    // "eficiente para tu",
+    // "inteligente para tu",
     "ágil para tu",
-    "escalable para tu",
-    "poderosa para tu",
+    // "escalable para tu",
+    // "poderosa para tu",
     "versátil para tu",
     "conectada a tu",
-    "optimizada para tu",
-    "a la medida de tu",
+    "optimizada a tu",
+    // "a la medida de tu",
     "lista para tu",
     "alineada con tu",
     "creada para tu",
-    "diseñada para tu",
+    // "diseñada para tu",
     "potente para tu",
   ];
 
@@ -154,48 +154,61 @@ export default function Hero() {
 
   return (
     <section
-      className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center bg-white dark:bg-black text-gray-900 dark:text-white relative px-2 md:px-10 transition-colors duration-300 mb-[-42%] md:mb-0 mt-[-36%] md:mt-0"
+      className="w-full min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-gray-900 dark:text-white relative px-4 transition-colors duration-300 mb-[-30%] md:mb-0 mt-[-12%] md:mt-0"
       style={{
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* --- Columna Izquierda: Texto y CTA --- */}
-      <div className="flex-1 flex flex-col justify-center items-start text-left space-y-6 pt-[64px] md:pt-0 pl-2 md:pl-24">
-        {/* Título principal */}
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
-          <span className="mr-2">Tecnología</span>
-          <br />
-          <span className="text-primary mr-2">
-            <Typewriter
-              words={typingPhrases}
-              loop={0}
-              cursor
-              cursorStyle="|"
-              typeSpeed={50}
-              deleteSpeed={30}
-              delaySpeed={1500}
-            />
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center">
+        {/* --- Columna Izquierda: Texto y CTA --- */}
+        <div className="flex-1 flex flex-col justify-center items-start text-left space-y-6 pt-[64px] md:pt-0 lg:ml-2">
+          {/* Título principal */}
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
+            <span className="mr-2">Tecnología</span>
             <br />
-            <span className="mr-2">negocio</span>
-          </span>
-        </h1>
-        {/* Subtítulo */}
-        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-lg">
-          Creamos experiencias digitales de alto impacto que transforman tu
-          negocio.
-        </p>
-        {/* --- Bloque CTA doble --- */}
-        <div className="flex flex-col md:flex-row w-full gap-2 mt-2">
-          {/* --- Input CTA estilo Globant --- */}
-          <div className="flex flex-1 items-center gap-2">
-            <GlobantInputCTA
-              placeholder="Cuéntanos tu idea o proyecto..."
-              ariaLabel="Escribe tu idea o proyecto"
-              onSend={handleGlobantCTA}
-            />
-            {/* Botón secundario alineado a la derecha del input en desktop */}
-            <div className="hidden md:flex ml-2">
+            <span className="text-primary mr-2">
+              <Typewriter
+                words={typingPhrases}
+                loop={0}
+                cursor
+                cursorStyle="|"
+                typeSpeed={50}
+                deleteSpeed={30}
+                delaySpeed={1500}
+              />
+              <br />
+              <span className="mr-2">negocio</span>
+            </span>
+          </h1>
+          {/* Subtítulo */}
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-lg">
+            Creamos experiencias digitales de alto impacto que transforman tu
+            negocio.
+          </p>
+          {/* --- Bloque CTA doble --- */}
+          <div className="flex flex-col md:flex-row w-full gap-2 mt-2">
+            {/* --- Input CTA estilo Globant --- */}
+            <div className="flex flex-1 items-center gap-2 max-w-md w-full">
+              <GlobantInputCTA
+                placeholder="Cuéntanos tu idea o proyecto..."
+                ariaLabel="Escribe tu idea o proyecto"
+                onSend={handleGlobantCTA}
+              />
+              {/* Botón secundario alineado a la derecha del input en desktop */}
+              <div className="hidden md:flex ml-2 w-full h-full">
+                <SecondaryButton
+                  onClick={() => router.push(`/${locale}/contactUs?asesor=1`)}
+                  ariaLabel="Habla con nuestros asesores"
+                >
+                  <span className="w-full h-full flex items-center justify-center">
+                    {CTA_BUTTON}
+                  </span>
+                </SecondaryButton>
+              </div>
+            </div>
+            {/* Botón secundario debajo del input en mobile */}
+            <div className="flex md:hidden w-full mt-2">
               <SecondaryButton
                 onClick={() => router.push(`/${locale}/contactUs?asesor=1`)}
                 ariaLabel="Habla con nuestros asesores"
@@ -204,45 +217,36 @@ export default function Hero() {
               </SecondaryButton>
             </div>
           </div>
-          {/* Botón secundario debajo del input en mobile */}
-          <div className="flex md:hidden w-full mt-2">
-            <SecondaryButton
-              onClick={() => router.push(`/${locale}/contactUs?asesor=1`)}
-              ariaLabel="Habla con nuestros asesores"
-            >
-              {CTA_BUTTON}
-            </SecondaryButton>
-          </div>
+          {/* --- Texto informativo pequeño --- */}
+          <p className="text-xs text-purple-700 dark:text-purple-300 mt-3 max-w-md animate-fadein-sm">
+            {INFO_TEXT}
+          </p>
+          {/* Animaciones */}
+          <style jsx global>{`
+            @keyframes fadein-sm {
+              from {
+                opacity: 0;
+                transform: translateY(12px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            .animate-fadein-sm {
+              animation: fadein-sm 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+            }
+          `}</style>
         </div>
-        {/* --- Texto informativo pequeño --- */}
-        <p className="text-xs text-purple-700 dark:text-purple-300 mt-3 max-w-md animate-fadein-sm">
-          {INFO_TEXT}
-        </p>
-        {/* Animaciones */}
-        <style jsx global>{`
-          @keyframes fadein-sm {
-            from {
-              opacity: 0;
-              transform: translateY(12px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          .animate-fadein-sm {
-            animation: fadein-sm 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
-          }
-        `}</style>
-      </div>
-      {/* --- Columna Derecha: iPad 3D --- */}
-      <div className="hidden md:flex flex-1 justify-center items-center h-[400px] w-full md:w-auto md:mt-0">
-        <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
-          <ambientLight intensity={1.2} />
-          <directionalLight position={[2, 5, 2]} intensity={1} />
-          <pointLight position={[0, 0, 2]} intensity={1} color="white" />
-          <IpadModel scale={isMobile ? 0.014 : 0.025} />
-        </Canvas>
+        {/* --- Columna Derecha: iPad 3D --- */}
+        <div className="hidden md:flex flex-1 justify-center items-center h-[400px] w-full md:w-auto md:mt-0">
+          <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
+            <ambientLight intensity={1.2} />
+            <directionalLight position={[2, 5, 2]} intensity={1} />
+            <pointLight position={[0, 0, 2]} intensity={1} color="white" />
+            <IpadModel scale={isMobile ? 0.014 : 0.025} />
+          </Canvas>
+        </div>
       </div>
     </section>
   );
