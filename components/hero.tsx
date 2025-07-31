@@ -58,9 +58,9 @@ function GlobantInputCTA({
   // UX: Botón de enviar visible solo si hay texto, animación de foco y feedback visual
   return (
     <div
-      className={`flex items-center bg-[#f0f4f8] rounded-xl px-3 py-1 w-full max-w-md shadow transition-all duration-200 border-2 ${
+      className={`flex items-center bg-[#f0f4f8] dark:bg-[#18181b] rounded-xl px-3 py-1 w-full max-w-md shadow transition-all duration-200 border-2 ${
         isFocused
-          ? "border-purple-400 ring-2 ring-purple-200"
+          ? "border-purple-400 ring-2 ring-purple-200 dark:ring-purple-900"
           : "border-purple-400"
       }`}
     >
@@ -70,7 +70,7 @@ function GlobantInputCTA({
         onChange={(e) => setValue(e.target.value)}
         placeholder={placeholder || "¿Cuál es tu idea?"}
         aria-label={ariaLabel || "Escribe tu idea"}
-        className="flex-1 bg-transparent outline-none border-none text-gray-800 placeholder-gray-400 font-medium text-sm md:text-base px-2 py-2 rounded-xl transition-colors"
+        className="flex-1 bg-transparent outline-none border-none text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 font-medium text-sm md:text-base px-2 py-2 rounded-xl transition-colors"
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         onKeyDown={handleKeyDown}
@@ -154,7 +154,7 @@ export default function Hero() {
 
   return (
     <section
-      className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center text-white bg-black relative px-2 md:px-16"
+      className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center bg-white dark:bg-black text-gray-900 dark:text-white relative px-2 md:px-10 transition-colors duration-300 mb-[-42%] md:mb-0 mt-[-36%] md:mt-0"
       style={{
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -163,7 +163,7 @@ export default function Hero() {
       {/* --- Columna Izquierda: Texto y CTA --- */}
       <div className="flex-1 flex flex-col justify-center items-start text-left space-y-6 pt-[64px] md:pt-0 pl-2 md:pl-24">
         {/* Título principal */}
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
           <span className="mr-2">Tecnología</span>
           <br />
           <span className="text-primary mr-2">
@@ -181,7 +181,7 @@ export default function Hero() {
           </span>
         </h1>
         {/* Subtítulo */}
-        <p className="text-lg md:text-xl text-gray-300 max-w-lg">
+        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-lg">
           Creamos experiencias digitales de alto impacto que transforman tu
           negocio.
         </p>
@@ -215,7 +215,7 @@ export default function Hero() {
           </div>
         </div>
         {/* --- Texto informativo pequeño --- */}
-        <p className="text-xs text-purple-300 mt-3 max-w-md animate-fadein-sm">
+        <p className="text-xs text-purple-700 dark:text-purple-300 mt-3 max-w-md animate-fadein-sm">
           {INFO_TEXT}
         </p>
         {/* Animaciones */}
@@ -236,7 +236,7 @@ export default function Hero() {
         `}</style>
       </div>
       {/* --- Columna Derecha: iPad 3D --- */}
-      <div className="flex-1 flex justify-center items-center h-[400px] md:h-[400px] w-full mt-28 md:w-auto md:mt-0">
+      <div className="hidden md:flex flex-1 justify-center items-center h-[400px] w-full md:w-auto md:mt-0">
         <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
           <ambientLight intensity={1.2} />
           <directionalLight position={[2, 5, 2]} intensity={1} />

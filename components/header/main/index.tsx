@@ -31,17 +31,15 @@ export default function MainHeader({
     <>
       {/* Header principal */}
       <header
-        className={`bg-white dark:bg-black backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-colors ml-8 ${
-          activeDropdown ? "shadow-md" : ""
-        }`}
+        className={`bg-white dark:bg-black backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-colors`}
       >
-        <div className="container mx-auto px-4 flex items-center h-14 whitespace-nowrap">
+        <div className="container mx-auto px-4 flex items-center h-14 whitespace-nowrap justify-center">
           {/* Logo alineado verticalmente */}
           <div className="flex items-center h-full mr-8">
             <Logo />
           </div>
           {/* Menú principal */}
-          <div className="flex-1 flex items-center">
+          <div className="flex-1 flex items-center justify-center">
             <DesktopMenu
               activeDropdown={activeDropdown}
               setActiveDropdown={setActiveDropdown}
@@ -77,7 +75,7 @@ export default function MainHeader({
         {/* Buscador full width estilo Apple */}
         {showSearch && (
           <div
-            className="fixed top-14 left-0 right-0 z-50 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-700 shadow-lg flex justify-center items-center"
+            className="fixed top-14 left-0 right-0 z-50 bg-white dark:bg-black dark:border-b dark:border-gray-700 shadow-lg flex justify-center items-center"
             style={{ minHeight: "100px" }}
             onMouseLeave={handleSearchAreaMouseLeave}
           >
