@@ -21,6 +21,13 @@ export default function BaseDropdown({
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
       className="w-full bg-white dark:bg-black text-black dark:text-white shadow-xl"
+      style={{
+        background: "linear-gradient(to bottom, white, #b283fd)",
+        ...(typeof window !== "undefined" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches && {
+            background: "linear-gradient(to bottom, black, #411E8A)",
+          }),
+      }}
     >
       <div
         className="max-w-7xl mx-auto px-6 py-8 grid"
