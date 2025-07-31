@@ -4,7 +4,7 @@ import CTAButton from "./CTAButton";
 
 export default function SecondaryHeader() {
   return (
-    <header className="bg-white/90 dark:bg-black backdrop-blur-md transition-colors">
+    <header className="bg-white/90 dark:bg-black backdrop-blur-md transition-colors ml-8">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-12">
           <div className="font-bold text-gray-800 dark:text-gray-100">
