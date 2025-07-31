@@ -6,7 +6,6 @@ export const menuItems = [
   // { name: "E-commerce", href: "#" },
   { name: "Inteligencia artificial", href: "#" },
   { name: "Automatización", href: "#" },
-  { name: "Diseño UX/UI", href: "#" },
   { name: "Marketing", href: "#" },
   { name: "Equipos de ingeniería", href: "#" },
 ];

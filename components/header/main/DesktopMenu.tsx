@@ -4,6 +4,7 @@ import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import { menuItems } from "./menuItems";
 
+
 interface DesktopMenuProps {
   activeDropdown: string | null;
   setActiveDropdown: (value: string | null) => void;
@@ -55,9 +56,11 @@ export default function DesktopMenu({
             case "Aplicaciones móviles":
               dropdownKey = "app";
               break;
+
             // case "E-commerce":
             //   dropdownKey = "ecom";
             //   break;
+
             case "Inteligencia artificial":
               dropdownKey = "ia";
               break;

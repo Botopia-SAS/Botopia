@@ -1,0 +1,17 @@
+{
+  "name": "typescript-classes-practice",
+  "version": "1.0.0",
+  "description": "A TypeScript project to practice using classes.",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "watch": "tsc -w"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
