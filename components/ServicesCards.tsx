@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 
 // Datos de servicios (no modificar)
 const services = [
@@ -60,16 +61,20 @@ const services = [
 ];
 
 export default function ServicesCards() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1];
+
   return (
     <section className="w-full bg-black py-32">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <div className="max-w-[1500px] mx-auto px-4 md:px-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
           {services.map((service, index) => (
             <div
               key={index}
               className={`
 								flex flex-col items-center justify-center
-								mb-24
+								mb-2
 								relative
 								rounded-[36px]
 								bg-gradient-to-br from-[#23232a] via-[#18181b] to-[#23232a]
@@ -114,27 +119,33 @@ export default function ServicesCards() {
                   <div className="absolute top-0 left-0 right-0 h-14 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
                 </div>
               </div>
-              <p className="text-white/80 text-lg md:text-xl text-center mb-6 font-light leading-normal max-w-lg">
+              <p className="text-white/80 text-lg md:text-xl text-center mb-6 font-light leading-normal max-w-lg mr-5 ml-5">
                 {service.description}
               </p>
               {/* Botones morados y animados mejorados */}
               <div className="flex gap-4 mb-8">
-                <button
+                <a
+                  href={`/${locale}/contactUs?asesor=1`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-gradient-to-r from-purple-600 via-purple-500 to-purple-700 text-white text-base md:text-lg font-semibold px-7 py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_32px_0_rgba(120,80,255,0.18)] focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2"
                   style={{
                     boxShadow: "0 2px 16px 0 rgba(120,80,255,0.13)",
                   }}
                 >
                   Conocer más
-                </button>
-                <button
+                </a>
+                <a
+                  href={`/${locale}/contactUs?asesor=1`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-transparent border-2 border-purple-500 text-purple-400 hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-700 hover:text-white text-base md:text-lg font-semibold px-7 py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_32px_0_rgba(120,80,255,0.18)] focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2"
                   style={{
                     boxShadow: "0 2px 16px 0 rgba(120,80,255,0.13)",
                   }}
                 >
                   Solicitar
-                </button>
+                </a>
               </div>
               {/* Texto gradiente minimalista debajo de la imagen */}
               {service.gradientText && (
