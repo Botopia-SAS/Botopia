@@ -3,11 +3,14 @@ import LoginButton from "./LoginButton";
 import CTAButton from "./CTAButton";
 
 export default function SecondaryHeader() {
+  // Soporte automático para modo claro y oscuro usando clases Tailwind 'dark:'
+  // El fondo, bordes y textos cambian según la preferencia del sistema o usuario
+  // Elimina la franja negra (ml-8) y suaviza el color de los textos en modo claro
   return (
-    <header className="bg-white/90 dark:bg-black backdrop-blur-md transition-colors ml-8">
+    <header className="bg-white dark:bg-black backdrop-blur-md transition-colors duration-300">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-12">
-          <div className="font-bold text-gray-800 dark:text-gray-100">
+        <div className="flex items-center justify-between h-16">
+          <div className="font-bold text-gray-700 dark:text-gray-100 text-lg md:text-xl">
             Botopia
           </div>
           <div className="flex-grow"></div>

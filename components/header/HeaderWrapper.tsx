@@ -57,7 +57,7 @@ export default function HeaderWrapper() {
         }}
         tabIndex={0}
       >
-        <div className="bg-black/90 border-b border-white/10 transition-all duration-300 ease-[cubic-bezier(0.32,0,0.67,0)]">
+        <div className="bg-black/90 transition-all duration-300 ease-[cubic-bezier(0.32,0,0.67,0)]">
           <MainHeader
             activeDropdown={activeDropdown}
             setActiveDropdown={setActiveDropdown}
@@ -84,7 +84,7 @@ export default function HeaderWrapper() {
             : "blur(8px) saturate(1.06) brightness(1.01)",
         }}
       >
-        <div className="bg-black/80 border-b border-white/10">
+        <div className="bg-black/80">
           <SecondaryHeader />
         </div>
       </div>

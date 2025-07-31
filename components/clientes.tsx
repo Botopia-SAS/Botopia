@@ -19,9 +19,11 @@ export function Clientes() {
   const logosDuplicados = [...clientes, ...clientes]; // duplicamos para el efecto infinito
 
   return (
-    <section className="w-full py-16 overflow-hidden bg-black">
+    <section className="w-full py-16 overflow-hidden bg-white dark:bg-black transition-colors duration-300">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white">Nuestros Clientes</h2>
+        <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+          Nuestros Clientes
+        </h2>
       </div>
 
       <div className="relative overflow-hidden">
@@ -37,6 +39,7 @@ export function Clientes() {
                 className={`max-h-full max-w-full object-contain filter grayscale dark:invert ${
                   cliente.scale || ""
                 }`}
+                style={{ filter: "grayscale(1)" }}
               />
             </div>
           ))}
