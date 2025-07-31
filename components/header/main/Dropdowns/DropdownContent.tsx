@@ -1,7 +1,7 @@
 import React from "react";
 import WebDropdown from "./WebDropdown";
 import AppDropdown from "./AppDropdown";
-import EcomDropdown from "./E-comDropdown";
+// import EcomDropdown from "./E-comDropdown";
 import IADropdown from "./IADropdown";
 import AutoDropdown from "./AutoDropdown";
 import DesignDropdown from "./DesignDropdown";
@@ -22,8 +22,8 @@ const DropdownContent: React.FC<DropdownContentProps> = ({
       return <WebDropdown />;
     case "app":
       return <AppDropdown />;
-    case "ecom":
-      return <EcomDropdown />;
+    // case "ecom":
+    //   return <EcomDropdown />;
     case "ia":
       return <IADropdown />;
     case "auto":

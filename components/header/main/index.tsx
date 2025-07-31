@@ -31,7 +31,7 @@ export default function MainHeader({
     <>
       {/* Header principal */}
       <header
-        className={`bg-white dark:bg-black backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-colors ${
+        className={`bg-white dark:bg-black backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-colors ml-8 ${
           activeDropdown ? "shadow-md" : ""
         }`}
       >

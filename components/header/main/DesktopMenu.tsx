@@ -55,9 +55,9 @@ export default function DesktopMenu({
             case "Aplicaciones móviles":
               dropdownKey = "app";
               break;
-            case "E-commerce":
-              dropdownKey = "ecom";
-              break;
+            // case "E-commerce":
+            //   dropdownKey = "ecom";
+            //   break;
             case "Inteligencia artificial":
               dropdownKey = "ia";
               break;

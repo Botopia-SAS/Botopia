@@ -5,35 +5,26 @@ export default function MarketingDropdown() {
     <BaseDropdown
       mainTitle="Explora Marketing Digital"
       mainItems={[
-        "Estrategias 360°",
-        "Gestión de Redes Sociales",
-        "Google Ads & Meta Ads",
-        "Email Marketing",
-        "Marketing de Contenidos",
-        "Inbound Marketing",
-        "Growth Marketing",
-        "Embudos de Venta",
+        "Redes sociales y campañas Ads",
+        "Automatización de marketing",
+        "Posicionamiento en Google (SEO)",
+        "Embudos de ventas",
+        "Contenidos con IA",
       ]}
       secondaryColumns={[
         {
           title: "Servicios",
           items: [
-            "Automatización CRM & Workflows",
-            "Campañas de Remarketing",
-            "Consultoría Digital",
-            "Optimización de Conversiones (CRO)",
-          ],
-        },
-        {
-          title: "Más sobre Marketing",
-          items: [
-            "Casos de Éxito",
-            "Guías de Estrategia",
-            "Análisis de Audiencia",
-            "Reportes & KPIs",
+            "Publicidad digital (Google y Social Ads)",
+            "Redes sociales",
+            "Automatización de marketing",
+            "Posicionamiento en Google (SEO)",
+            "Creación de contenidos",
           ],
         },
       ]}
+      imageSrc="/Header5.png"
+      imageAlt="Marketing Digital"
     />
   );
 }

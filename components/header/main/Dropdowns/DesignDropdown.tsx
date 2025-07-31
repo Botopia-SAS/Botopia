@@ -34,6 +34,8 @@ export default function DesignDropdown() {
           ],
         },
       ]}
+      imageSrc="/icon4.png"
+      imageAlt="Diseño UX/UI"
     />
   );
 }

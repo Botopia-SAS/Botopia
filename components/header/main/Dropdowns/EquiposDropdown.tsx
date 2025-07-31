@@ -5,13 +5,11 @@ export default function EquiposDropdown() {
     <BaseDropdown
       mainTitle="Equipos de Ingeniería Especializados"
       mainItems={[
-        "Desarrollo de Productos Digitales",
-        "Migración a Arquitecturas Cloud",
-        "Equipos para Escalar Startups",
-        "Modernización de Legacy Systems",
-        "Equipos de DevOps & Infraestructura",
-        "Ingeniería de Datos & Analytics",
-        "Equipos de Ciberseguridad",
+        "Software a medida",
+        "Arquitectura en la nube",
+        "Integración de sistemas",
+        "Ciberseguridad",
+        "Automatización empresarial",
       ]}
       secondaryColumns={[
         {
@@ -24,17 +22,9 @@ export default function EquiposDropdown() {
             "Auditorías de código y arquitectura",
           ],
         },
-        {
-          title: "Tecnologías",
-          items: [
-            "Equipos especializados en React/Node",
-            "Expertos en Python/Data Science",
-            "Ingenieros de AWS/GCP/Azure",
-            "Desarrolladores Mobile nativos",
-            "Especialistas en Blockchain/Web3",
-          ],
-        },
       ]}
+      imageSrc="/Header6.png"
+      imageAlt="Equipos de Ingeniería"
     />
   );
 }
