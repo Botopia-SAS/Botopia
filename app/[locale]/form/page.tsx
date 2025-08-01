@@ -10,6 +10,14 @@ interface FormData {
   needsAutomation: boolean;
   needsMarketing: boolean;
   needsSEO: boolean;
+  // Nuevos campos para datos personales
+  personalData: {
+    name: string;
+    email: string;
+    phone: string;
+    company: string;
+    message: string;
+  };
 }
 
 export default function FormPage() {
@@ -21,15 +29,35 @@ export default function FormPage() {
     needsAutomation: false,
     needsMarketing: false,
     needsSEO: false,
+    personalData: {
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      message: "",
+    },
   });
 
   const handleAnswer = (field: keyof FormData, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
 
     // Lógica secuencial: siempre va al siguiente paso
-    if (currentStep < 5) {
+    if (currentStep < 6) {
       setCurrentStep(currentStep + 1);
     }
+  };
+
+  const handlePersonalDataChange = (
+    field: keyof FormData["personalData"],
+    value: string
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      personalData: {
+        ...prev.personalData,
+        [field]: value,
+      },
+    }));
   };
 
   const resetForm = () => {
@@ -41,7 +69,23 @@ export default function FormPage() {
       needsAutomation: false,
       needsMarketing: false,
       needsSEO: false,
+      personalData: {
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
+      },
     });
+  };
+
+  const submitForm = async () => {
+    // Aquí implementaremos la lógica para guardar en la DB
+    console.log("Datos del formulario:", formData);
+    // TODO: Implementar envío a la base de datos
+    alert(
+      "¡Formulario enviado exitosamente! Nos contactaremos contigo pronto."
+    );
   };
 
   const getEstimatedCost = () => {
@@ -147,7 +191,7 @@ export default function FormPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#050044] to-[#010009] flex items-center justify-center p-6 pt-24 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#050044] to-[#010009] flex items-center justify-center p-6 pt-32 pb-12 relative overflow-hidden">
       {/* Animaciones de fondo */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <AnimatePresence mode="wait">
@@ -405,17 +449,17 @@ export default function FormPage() {
 
       <div className="max-w-4xl w-full relative z-10">
         {/* Progress bar */}
-        <div className="mb-12">
+        <div className="mb-16">
           <div className="h-2 bg-[#411E8A]/20 rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-gradient-to-r from-[#411E8A] to-[#FAECD4]"
               initial={{ width: 0 }}
-              animate={{ width: `${(currentStep / 5) * 100}%` }}
+              animate={{ width: `${(currentStep / 6) * 100}%` }}
               transition={{ duration: 0.5, ease: "easeInOut" as const }}
             />
           </div>
-          <p className="text-[#FAECD4]/70 text-sm mt-2 text-center">
-            Paso {currentStep + 1} de 6
+          <p className="text-[#FAECD4]/70 text-sm mt-3 text-center">
+            Paso {currentStep + 1} de 7
           </p>
         </div>
 
@@ -676,10 +720,135 @@ export default function FormPage() {
             </motion.div>
           )}
 
-          {/* Resultado final */}
+          {/* Pregunta 5: Datos personales */}
           {currentStep === 5 && (
             <motion.div
               key="step5"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="text-center"
+            >
+              <motion.h2
+                variants={questionVariants}
+                className="text-3xl md:text-4xl font-bold text-[#FAECD4] mb-8"
+              >
+                Para finalizar, necesitamos tus datos de contacto
+              </motion.h2>
+
+              <motion.div
+                variants={questionVariants}
+                className="bg-[#FAECD4]/10 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label className="block text-[#FAECD4] font-semibold text-left">
+                      Nombre completo *
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.personalData.name}
+                      onChange={(e) =>
+                        handlePersonalDataChange("name", e.target.value)
+                      }
+                      className="w-full p-3 bg-[#050044]/50 border-2 border-[#411E8A]/30 rounded-lg text-[#FAECD4] placeholder-[#FAECD4]/50 focus:border-[#9469EC] focus:outline-none transition-all duration-300"
+                      placeholder="Ingresa tu nombre completo"
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="block text-[#FAECD4] font-semibold text-left">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      value={formData.personalData.email}
+                      onChange={(e) =>
+                        handlePersonalDataChange("email", e.target.value)
+                      }
+                      className="w-full p-3 bg-[#050044]/50 border-2 border-[#411E8A]/30 rounded-lg text-[#FAECD4] placeholder-[#FAECD4]/50 focus:border-[#9469EC] focus:outline-none transition-all duration-300"
+                      placeholder="tu@email.com"
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="block text-[#FAECD4] font-semibold text-left">
+                      Teléfono *
+                    </label>
+                    <input
+                      type="tel"
+                      value={formData.personalData.phone}
+                      onChange={(e) =>
+                        handlePersonalDataChange("phone", e.target.value)
+                      }
+                      className="w-full p-3 bg-[#050044]/50 border-2 border-[#411E8A]/30 rounded-lg text-[#FAECD4] placeholder-[#FAECD4]/50 focus:border-[#9469EC] focus:outline-none transition-all duration-300"
+                      placeholder="+57 300 123 4567"
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="block text-[#FAECD4] font-semibold text-left">
+                      Empresa (opcional)
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.personalData.company}
+                      onChange={(e) =>
+                        handlePersonalDataChange("company", e.target.value)
+                      }
+                      className="w-full p-3 bg-[#050044]/50 border-2 border-[#411E8A]/30 rounded-lg text-[#FAECD4] placeholder-[#FAECD4]/50 focus:border-[#9469EC] focus:outline-none transition-all duration-300"
+                      placeholder="Nombre de tu empresa"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2 mt-4">
+                  <label className="block text-[#FAECD4] font-semibold text-left">
+                    Mensaje adicional (opcional)
+                  </label>
+                  <textarea
+                    value={formData.personalData.message}
+                    onChange={(e) =>
+                      handlePersonalDataChange("message", e.target.value)
+                    }
+                    rows={4}
+                    className="w-full p-3 bg-[#050044]/50 border-2 border-[#411E8A]/30 rounded-lg text-[#FAECD4] placeholder-[#FAECD4]/50 focus:border-[#9469EC] focus:outline-none transition-all duration-300 resize-none"
+                    placeholder="Cuéntanos más detalles sobre tu proyecto..."
+                  />
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => {
+                    if (
+                      formData.personalData.name &&
+                      formData.personalData.email &&
+                      formData.personalData.phone
+                    ) {
+                      setCurrentStep(6);
+                    } else {
+                      alert(
+                        "Por favor completa todos los campos obligatorios."
+                      );
+                    }
+                  }}
+                  className="w-full mt-6 px-6 py-3 bg-gradient-to-r from-[#9469EC] to-[#411E8A] text-[#FAECD4] rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Continuar al Resumen
+                </motion.button>
+              </motion.div>
+            </motion.div>
+          )}
+
+          {/* Resultado final */}
+          {currentStep === 6 && (
+            <motion.div
+              key="step6"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -698,9 +867,30 @@ export default function FormPage() {
                 className="bg-[#FAECD4]/10 backdrop-blur-sm rounded-2xl p-6 mb-6 max-w-2xl mx-auto"
               >
                 <h3 className="text-xl font-bold text-[#FAECD4] mb-4">
-                  Tu selección:
+                  Resumen de tu proyecto:
                 </h3>
                 <div className="space-y-2 text-left text-sm">
+                  <div className="flex justify-between items-center">
+                    <span className="text-[#FAECD4]/80">Cliente:</span>
+                    <span className="text-[#FAECD4] font-semibold">
+                      {formData.personalData.name}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-[#FAECD4]/80">Email:</span>
+                    <span className="text-[#FAECD4] font-semibold">
+                      {formData.personalData.email}
+                    </span>
+                  </div>
+                  {formData.personalData.company && (
+                    <div className="flex justify-between items-center">
+                      <span className="text-[#FAECD4]/80">Empresa:</span>
+                      <span className="text-[#FAECD4] font-semibold">
+                        {formData.personalData.company}
+                      </span>
+                    </div>
+                  )}
+                  <hr className="border-[#411E8A]/30 my-3" />
                   <div className="flex justify-between items-center">
                     <span className="text-[#FAECD4]/80">Tipo de proyecto:</span>
                     <span className="text-[#FAECD4] font-semibold">
@@ -756,9 +946,10 @@ export default function FormPage() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={submitForm}
                   className="px-6 py-3 bg-gradient-to-r from-[#411E8A] to-[#050044] text-[#FAECD4] rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  Solicitar Cotización Detallada
+                  Enviar Solicitud de Cotización
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
