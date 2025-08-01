@@ -154,7 +154,7 @@ export default function Hero() {
 
   return (
     <section
-      className="w-full min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-gray-900 dark:text-white relative px-4 transition-colors duration-300 mb-[-30%] md:mb-0 mt-[-12%] md:mt-0"
+      className="w-full flex flex-col items-center justify-center bg-white dark:bg-black text-gray-900 dark:text-white relative px-4 transition-colors duration-300 min-h-[81vh] sm:min-h-[70vh] md:min-h-screen 2xl:mb-[-40%] 2xl:mt-[-30%]"
       style={{
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -162,7 +162,7 @@ export default function Hero() {
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center">
         {/* --- Columna Izquierda: Texto y CTA --- */}
-        <div className="flex-1 flex flex-col justify-center items-start text-left space-y-6 pt-[64px] md:pt-0 lg:ml-2">
+        <div className="flex-1 flex flex-col justify-center items-start text-left space-y-6 pt-0 sm:pt-0 md:pt-0 lg:ml-2">
           {/* Título principal */}
           <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
             <span className="mr-2">Tecnología</span>
@@ -218,7 +218,7 @@ export default function Hero() {
             </div>
           </div>
           {/* --- Texto informativo pequeño --- */}
-          <p className="text-xs text-purple-700 dark:text-purple-300 mt-3 max-w-md animate-fadein-sm">
+          <p className="text-xs text-purple-700 dark:text-purple-300 mt-3 max-w-md animate-fadein-sm ">
             {INFO_TEXT}
           </p>
           {/* Animaciones */}

@@ -41,7 +41,7 @@ const BannerSection = () => {
 
   return (
     <div
-      className="w-full flex justify-center items-center py-2 md:py-4 bg-cover bg-center bg-white dark:bg-black transition-colors duration-300 md:mt-[-10%] mb:pb-0 md:mb-0"
+      className="w-full flex justify-center items-center py-2 md:py-4 bg-cover bg-center bg-white dark:bg-black transition-colors duration-300 md:mt-[-10%] mb:pb-0 md:mb-0 mt-[-20%]"
       // style={{ backgroundImage: "url('/Hero/Fondo2.svg')" }}
     >
       <div className="relative w-full max-w-7xl overflow-hidden">
