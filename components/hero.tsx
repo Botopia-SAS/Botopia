@@ -154,7 +154,7 @@ export default function Hero() {
 
   return (
     <section
-      className="w-full flex flex-col items-center justify-center bg-white dark:bg-black text-gray-900 dark:text-white relative px-4 transition-colors duration-300 min-h-[81vh] sm:min-h-[70vh] md:min-h-screen 2xl:mb-[-40%] 2xl:mt-[-30%]"
+      className="w-full flex flex-col items-center justify-center bg-white dark:bg-black text-gray-900 dark:text-white relative px-4 transition-colors duration-300 min-h-[81vh] sm:min-h-[70vh] md:min-h-screen lg:min-h-screen xl:min-h-screen 2xl:min-h-screen"
       style={{
         backgroundSize: "cover",
         backgroundPosition: "center",
