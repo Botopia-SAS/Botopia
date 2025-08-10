@@ -1,0 +1,116 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Botopia Technology S.A.S.",
+  "alternateName": "Botopia",
+  "url": "https://botopia.tech",
+  "logo": "https://botopia.tech/images/logo.png",
+  "description": "Empresa líder en transformación digital que acelera el crecimiento empresarial mediante soluciones tecnológicas personalizadas e inteligencia artificial.",
+  "foundingDate": "2021",
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "Fundadores de Botopia"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bogotá",
+    "addressCountry": "CO"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+57-contacto",
+      "contactType": "sales",
+      "email": "contacto@botopia.tech",
+      "availableLanguage": ["Spanish", "English", "Portuguese"]
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/botopiasas/",
+    "https://www.instagram.com/botopia.tech/",
+    "https://x.com/BotopiaSAS",
+    "https://www.youtube.com/@Botopia-SAS"
+  ],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Desarrollo de Páginas Web",
+      "description": "Sitios web corporativos, e-commerce, landing pages y PWAs optimizados para SEO"
+    },
+    {
+      "@type": "Offer",
+      "name": "Desarrollo de Aplicaciones Móviles",
+      "description": "Apps nativas iOS/Android, aplicaciones web progresivas y plataformas SaaS"
+    },
+    {
+      "@type": "Offer",
+      "name": "Inteligencia Artificial para Empresas",
+      "description": "Chatbots inteligentes, análisis predictivo, automatización RPA y computer vision"
+    },
+    {
+      "@type": "Offer",
+      "name": "Automatización de Procesos",
+      "description": "Flujos automatizados, integración de sistemas ERP/CRM, reportes en tiempo real"
+    },
+    {
+      "@type": "Offer",
+      "name": "Chatbots con IA para WhatsApp",
+      "description": "Atención al cliente 24/7, ventas automatizadas y soporte técnico inteligente"
+    },
+    {
+      "@type": "Offer",
+      "name": "Diseño UX/UI",
+      "description": "Investigación de usuarios, diseño de interfaces, prototipado y design systems"
+    }
+  ],
+  "knowsAbout": [
+    "Desarrollo Web",
+    "Desarrollo de Software",
+    "Inteligencia Artificial",
+    "Machine Learning",
+    "Automatización de Procesos",
+    "Chatbots",
+    "WhatsApp Business API",
+    "Diseño UX/UI",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Python",
+    "Node.js",
+    "Cloud Computing",
+    "AWS",
+    "Google Cloud",
+    "Azure"
+  ],
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "Latinoamérica"
+    },
+    {
+      "@type": "Place",
+      "name": "Estados Unidos"
+    },
+    {
+      "@type": "Place",
+      "name": "España"
+    }
+  ],
+  "award": "Top 10 Startups Tecnológicas Colombia 2023",
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "Google Cloud Partner"
+    },
+    {
+      "@type": "Organization",
+      "name": "AWS Partner Network"
+    },
+    {
+      "@type": "Organization",
+      "name": "Microsoft Partner"
+    }
+  ]
+}

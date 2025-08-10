@@ -8,8 +8,34 @@ import HeaderWrapper from "@/components/header/HeaderWrapper";
 import Script from "next/script";
 
 export const metadata = {
-  title: "Botopia",
-  description: "Transformación Digital para el Futuro",
+  title: "Botopia - Transformación Digital con IA | Desarrollo Web y Apps",
+  description: "Empresa líder en transformación digital. Desarrollamos páginas web, aplicaciones móviles, chatbots con IA para WhatsApp, automatización de procesos y diseño UX/UI. Soluciones tecnológicas personalizadas para empresas.",
+  keywords: "desarrollo web, aplicaciones móviles, inteligencia artificial, chatbots WhatsApp, automatización procesos, diseño UX UI, transformación digital, desarrollo software, Botopia, tecnología empresarial",
+  authors: [{ name: "Botopia Technology S.A.S." }],
+  openGraph: {
+    title: "Botopia - Transformación Digital con Inteligencia Artificial",
+    description: "Convertimos tus ideas en productos digitales excepcionales. Desarrollo web, apps móviles, IA, chatbots y automatización.",
+    url: "https://botopia.tech",
+    siteName: "Botopia",
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@BotopiaSAS",
+    creator: "@BotopiaSAS",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default async function LocaleLayout({

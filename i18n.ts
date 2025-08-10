@@ -15,5 +15,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
     return {
         locale,
         messages, // Devuelve los mensajes traducidos
+        timeZone: 'America/Bogota', // Zona horaria recomendada para Colombia
     };
 });

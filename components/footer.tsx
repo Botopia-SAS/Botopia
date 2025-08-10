@@ -7,11 +7,14 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import Link from 'next/link';
 
 config.autoAddCss = false;
 
 export default function Footer() {
   const t = useTranslations('Footer'); // Hook para traducir los textos
+  const locale = useLocale();
 
   return (
     <footer className="bg-black text-white py-10">
@@ -67,14 +70,14 @@ export default function Footer() {
             <h4 className="text-purple-400 font-bold mb-4">{t('quickLinks.title')}</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">
+                <Link href={`/${locale}/terminos-condiciones`} className="text-gray-400 hover:text-white">
                   {t('quickLinks.terms')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white">
+                <Link href={`/${locale}/politica-datos`} className="text-gray-400 hover:text-white">
                   {t('quickLinks.privacy')}
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white">
