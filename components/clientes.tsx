@@ -2,6 +2,7 @@
 
 const clientes = [
   { src: "/Coca-Cola_logo.svg", alt: "Coca Cola", scale: "scale-115" },
+   { src: "/LogoClaro.png", alt: "Claro", scale: "scale-115" }
   { src: "/drivingschool.svg", alt: "Driving School", scale: "scale-125" },
   { src: "/fridoom.svg", alt: "Fridoom", scale: "scale-150" },
   { src: "/logo_LensPR.png", alt: "LensPR" },
@@ -16,6 +17,7 @@ const clientes = [
   { src: "/LogoTambor.png", alt: "Tambor", scale: "scale-150" },
   { src: "/LogoClic.png", alt: "Clic", scale: "scale-150" },
   { src: "/LogoGG.png", alt: "GG", scale: "scale-150" },
+      { src: "/LogoSamsung.png", alt: "Samsung", scale: "scale-115" },
 ];
 
 export function Clientes() {
