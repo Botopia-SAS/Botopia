@@ -10,6 +10,8 @@ const clientes = [
     alt: "Startups Calendar",
     scale: "scale-150",
   },
+  
+  { src: "/LogoClaro.png", alt: "Claro", scale: "scale-115" },
   { src: "/LogoSamsung.png", alt: "Samsung", scale: "scale-115" },
   { src: "/LogoTambor.png", alt: "Tambor", scale: "scale-150" },
   { src: "/LogoClic.png", alt: "Clic", scale: "scale-150" },
