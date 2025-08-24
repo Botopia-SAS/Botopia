@@ -6,11 +6,13 @@ const clientes = [
   { src: "/drivingschool.svg", alt: "Driving School", scale: "scale-125" },
   { src: "/fridoom.svg", alt: "Fridoom", scale: "scale-150" },
   { src: "/logo_LensPR.png", alt: "LensPR" },
+    { src: "/LogoClaro.png", alt: "Claro", scale: "scale-115" },
   {
     src: "/startupscalendar1.svg",
     alt: "Startups Calendar",
     scale: "scale-150",
   },
+  { src: "/LogoSamsung.png", alt: "Samsung", scale: "scale-115" },
   
   { src: "/LogoClaro.png", alt: "Claro", scale: "scale-115" },
   { src: "/LogoSamsung.png", alt: "Samsung", scale: "scale-115" },
