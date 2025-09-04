@@ -1,78 +1,21 @@
 "use client";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
-// Datos de servicios (no modificar)
-const services = [
-  {
-    title: "Desarrollo de Páginas Web",
-    description:
-      "Webs rápidas, seguras y personalizadas para tu empresa. Optimización SEO, integración con sistemas y diseño responsive para destacar en internet.",
-    image: "/images/desarrollo_web.jpg",
-    imageAlt: "Desarrollo de Páginas Web",
-    gradientText: "Optimizado para tu crecimiento digital.",
-    variant: "dark" as const,
-  },
-  {
-    title: "Desarrollo de Aplicaciones",
-    description:
-      "Apps móviles y web intuitivas, escalables y listas para el futuro. Experiencia de usuario sobresaliente y tecnología de alto rendimiento.",
-    image: "/images/desarrollo_apps.jpg",
-    imageAlt: "Desarrollo de Aplicaciones",
-    gradientText: "Tecnología de alto rendimiento.",
-    variant: "light" as const,
-  },
-  {
-    title: "Integraciones con Inteligencia Artificial",
-    description:
-      "Automatiza procesos, personaliza la experiencia de tus clientes y toma decisiones inteligentes con IA aplicada a tu negocio.",
-    image: "/images/IA.jpg",
-    imageAlt: "Integraciones con Inteligencia Artificial",
-    gradientText: "Impulsado por IA de última generación.",
-    variant: "dark" as const,
-  },
-  {
-    title: "Automatizaciones de Procesos",
-    description:
-      "Reduce errores y ahorra tiempo con flujos automáticos: desde ventas y soporte hasta reportes y notificaciones.",
-    image: "/images/automatizaciones.webp",
-    imageAlt: "Automatizaciones de Procesos",
-    gradientText: "Eficiencia sin límites.",
-    variant: "light" as const,
-  },
-  {
-    title: "Integración de AI con WhatsApp",
-    description:
-      "Atiende, vende y resuelve dudas 24/7 con bots inteligentes en WhatsApp. Mejora la experiencia y la velocidad de respuesta.",
-    image: "/images/IA_Whatsapp.webp",
-    imageAlt: "Integración de AI con WhatsApp",
-    gradientText: "Comunicación instantánea y automatizada.",
-    variant: "dark" as const,
-  },
-  {
-    title: "Diseño UX/UI",
-    description:
-      "Diseños modernos, atractivos y funcionales. Potencia la conversión y la satisfacción de tus usuarios en cada interacción.",
-    image: "/images/Diseño_UX_UI.jpg",
-    imageAlt: "Diseño UX/UI",
-    gradientText: "Experiencias que enamoran.",
-    variant: "light" as const,
-  },
-];
+const serviceKeys = ["web", "apps", "ai", "automation", "whatsapp", "uxui"];
 
 export default function ServicesCards() {
   const router = useRouter();
   const pathname = usePathname();
   const locale = pathname.split("/")[1];
+  const t = useTranslations("ServiciosUI");
 
-  // Soporte automático para modo claro y oscuro usando clases Tailwind 'dark:'
-  // El fondo general y los textos cambian según la preferencia del sistema o usuario
-  // Puedes usar NextThemes para selector manual, pero aquí se usa media query por defecto
   return (
     <section className="w-full bg-white dark:bg-black transition-colors duration-300 py-32">
       <div className="max-w-[1500px] mx-auto px-4 md:px-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
-          {services.map((service, index) => (
+          {serviceKeys.map((key, index) => (
             <div
               key={index}
               className={`
@@ -92,21 +35,21 @@ export default function ServicesCards() {
                 p-0 mr-2
               `}
               tabIndex={0}
-              aria-label={service.title}
+              aria-label={t(`cards.${key}.title`)}
               style={{
                 fontFamily: "Inter, Manrope, 'SF Pro Display', sans-serif",
               }}
             >
               {/* Título y descripción centrados, minimalista */}
               <h2 className="text-4xl md:text-5xl font-bold text-center mb-10 mt-10 leading-tight tracking-tight drop-shadow-lg text-gray-900 dark:text-white">
-                {service.title}
+                {t(`cards.${key}.title`)}
               </h2>
               {/* Imagen protagonista, grande y con sombra elegante */}
               <div className="w-full flex justify-center mb-6">
                 <div className="relative w-full max-w-lg h-[340px] md:h-[400px] rounded-2xl overflow-hidden bg-gray-100 dark:bg-black group-hover:scale-105 transition-transform duration-400 shadow-lg">
                   <Image
-                    src={service.image}
-                    alt={service.imageAlt}
+                    src={t.raw(`cards.${key}.image`)}
+                    alt={t(`cards.${key}.imageAlt`)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 1200px"
@@ -124,7 +67,7 @@ export default function ServicesCards() {
                 </div>
               </div>
               <p className="text-lg md:text-xl text-center mb-6 font-light leading-normal max-w-lg mr-5 ml-5 text-gray-800 dark:text-white/80">
-                {service.description}
+                {t(`cards.${key}.description`)}
               </p>
               {/* Botones morados y animados mejorados */}
               <div className="flex gap-4 mb-8">
@@ -137,7 +80,7 @@ export default function ServicesCards() {
                     boxShadow: "0 2px 16px 0 rgba(120,80,255,0.13)",
                   }}
                 >
-                  Conocer más
+                  {t("knowMore")}
                 </a>
                 <a
                   href={`/${locale}/contactUs?asesor=1`}
@@ -148,13 +91,13 @@ export default function ServicesCards() {
                     boxShadow: "0 2px 16px 0 rgba(120,80,255,0.13)",
                   }}
                 >
-                  Solicitar
+                  {t("request")}
                 </a>
               </div>
               {/* Texto gradiente minimalista debajo de la imagen */}
-              {service.gradientText && (
+              {t(`cards.${key}.gradientText`) && (
                 <span className="block text-base font-medium text-center mt-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 animate-fade-in mb-10">
-                  {service.gradientText}
+                  {t(`cards.${key}.gradientText`)}
                 </span>
               )}
             </div>

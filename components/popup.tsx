@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 
 export default function GiveawayPopup() {
   const [showPopup, setShowPopup] = useState(false);
   const locale = useLocale();
+  const t = useTranslations("Popup");
 
   useEffect(() => {
     const hasSeenPopup = sessionStorage.getItem("seenGiveawayPopup");
@@ -39,31 +40,21 @@ export default function GiveawayPopup() {
         </button>
 
         {/* Contenido del Popup */}
-        <h2 className="text-2xl font-bold mb-2">
-          🎉 ¡Giveaway Explorador Digital! 🎁
-        </h2>
-        <p className="text-gray-700 mb-4">
-          ¿Encontraste alguna pestaña secreta en nuestras páginas web? ¡Podrías
-          ser el ganador de <strong>dos meses gratis</strong> en la plataforma
-          de streaming que prefieras!
-        </p>
-
-        <p className="text-sm font-semibold text-purple-600 mb-4">
-          📸 Envía tus capturas ahora y gana.
-        </p>
-
+        <h2 className="text-2xl font-bold mb-2">{t("title")}</h2>
+        <p
+          className="text-gray-700 mb-4"
+          dangerouslySetInnerHTML={{ __html: t("description") }}
+        />
+        <p className="text-sm font-semibold text-purple-600 mb-4">{t("cta")}</p>
         {/* Botón hacia ContactUs */}
         <Link
           href={`/${locale}/contactUs`}
           className="bg-purple-500 text-white py-3 px-6 rounded-full font-semibold hover:bg-purple-600 w-full block"
         >
-          ¡Enviar capturas ahora!
+          {t("button")}
         </Link>
-
         {/* Nota de condiciones */}
-        <p className="text-xs mt-3 text-gray-400">
-          *Aplican términos y condiciones.
-        </p>
+        <p className="text-xs mt-3 text-gray-400">{t("note")}</p>
       </div>
     </div>
   );

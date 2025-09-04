@@ -3,17 +3,20 @@ import TarjetaServicio from "./servicetarjet";
 import { useTranslations } from "next-intl";
 
 export default function Servicios() {
-  const t = useTranslations("Servicios");
+  const t = useTranslations("ServiciosUI");
 
-  // Convertir los filtros en un array
+  // Convertir los filtros en un array traducido
   const filters = Object.keys(t.raw("filters")).map((key) => ({
     key,
     label: t(`filters.${key}`),
   }));
 
-  // Convertir los servicios en un array
+  // Convertir los servicios en un array traducido
   const services = Object.keys(t.raw("services")).map((key) => ({
-    ...t.raw(`services.${key}`),
+    title: t(`services.${key}.title`),
+    category: t(`services.${key}.category`),
+    description: t(`services.${key}.description`),
+    icon: t.raw(`services.${key}.icon`),
   }));
 
   return (

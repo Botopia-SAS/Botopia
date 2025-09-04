@@ -1,41 +1,38 @@
 import BaseDropdown from "./BaseDropdown";
+import { useTranslations } from "next-intl";
 
 export default function DesignDropdown() {
+  const t = useTranslations("Dropdowns.DesignDropdown");
   return (
     <BaseDropdown
-      mainTitle="Explora Diseño UX/UI"
+      mainTitle={t("mainTitle")}
       mainItems={[
-        "Interfaces Web & Apps",
-        "Experiencia de Usuario (UX)",
-        "Prototipos en Figma",
-        "Diseño de Dashboards",
-        "Wireframes & Arquitectura",
-        "Rediseño de Sitios Web",
-        "Design Systems",
-        "Diseño Responsive",
+        t("categories.0"),
+        t("categories.1"),
+        t("categories.2"),
+        t("categories.3"),
+        t("categories.4"),
+        t("categories.5"),
+        t("categories.6"),
+        t("categories.7"),
       ]}
       secondaryColumns={[
         {
-          title: "Servicios",
+          title: t("servicesTitle"),
           items: [
-            "Consultoría UX/UI",
-            "Pruebas de Usabilidad",
-            "Branding & Identidad",
-            "Animaciones (Lottie, Spline)",
+            t("services.0"),
+            t("services.1"),
+            t("services.2"),
+            t("services.3"),
           ],
         },
         {
-          title: "Más sobre Diseño",
-          items: [
-            "Casos de Éxito",
-            "Guías de Estilo",
-            "Prototipos para MVPs",
-            "Optimización de Conversión (CRO)",
-          ],
+          title: t("moreTitle"),
+          items: [t("more.0"), t("more.1"), t("more.2"), t("more.3")],
         },
       ]}
       imageSrc="/icon4.png"
-      imageAlt="Diseño UX/UI"
+      imageAlt={t("imageAlt")}
     />
   );
 }

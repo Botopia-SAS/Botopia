@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-export default function CTAButton() {
+const CTAButton = () => {
+  const t = useTranslations();
   // Botón con soporte para modo claro y oscuro
   return (
     <Link
@@ -11,7 +13,9 @@ export default function CTAButton() {
         focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-black"
       style={{ boxShadow: "0 2px 12px 0 rgba(65,30,138,0.10)" }}
     >
-      Hablemos
+      {t("ctaButton.label")}
     </Link>
   );
-}
+};
+
+export default CTAButton;

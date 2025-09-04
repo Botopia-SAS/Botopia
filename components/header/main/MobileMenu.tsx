@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Search } from "lucide-react";
-import { menuItems } from "./menuItems";
+import { useTranslations } from "next-intl";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -9,6 +9,16 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+  const t = useTranslations();
+  const menuItems = [
+    { key: "menu.pages", href: "#" },
+    { key: "menu.apps", href: "#" },
+    // { key: "menu.ecommerce", href: "#" },
+    { key: "menu.ai", href: "#" },
+    { key: "menu.automation", href: "#" },
+    { key: "menu.marketing", href: "#" },
+    { key: "menu.engineering", href: "#" },
+  ];
   return (
     <AnimatePresence>
       {isOpen && (
@@ -23,12 +33,12 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <nav className="flex flex-col space-y-4">
               {menuItems.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.key}
                   href={item.href}
                   className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors py-2"
                   onClick={onClose}
                 >
-                  {item.name}
+                  {t(item.key)}
                 </Link>
               ))}
               <div className="pt-2 border-t border-gray-100 dark:border-gray-800">
@@ -37,7 +47,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   aria-label="Buscar"
                 >
                   <Search className="h-5 w-5 mr-2" />
-                  <span>Buscar</span>
+                  <span>{t("common.search", { default: "Buscar" })}</span>
                 </button>
               </div>
             </nav>

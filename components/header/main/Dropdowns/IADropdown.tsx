@@ -1,30 +1,32 @@
 import BaseDropdown from "./BaseDropdown";
+import { useTranslations } from "next-intl";
 
 export default function IADropdown() {
+  const t = useTranslations("Dropdowns.IADropdown");
   return (
     <BaseDropdown
-      mainTitle="Explora Inteligencia Artificial"
+      mainTitle={t("mainTitle")}
       mainItems={[
-        "Asistente inteligente para WhatsApp",
-        "Análisis predictivo de datos ",
-        "Automatización con IA",
-        "Procesamiento de Lenguaje (NLP)",
-        "Reconocimiento de Imágenes",
-        "Sistemas de Recomendación",
+        t("categories.0"),
+        t("categories.1"),
+        t("categories.2"),
+        t("categories.3"),
+        t("categories.4"),
+        t("categories.5"),
       ]}
       secondaryColumns={[
         {
-          title: "Servicios",
+          title: t("servicesTitle"),
           items: [
-            "Automatización de Procesos con IA",
-            "Modelos de Machine Learning",
-            "Entrenamiento de Modelos Personalizados",
-            "IA en Apps y Sitios Web",
+            t("services.0"),
+            t("services.1"),
+            t("services.2"),
+            t("services.3"),
           ],
         },
       ]}
       imageSrc="/Header3.png"
-      imageAlt="Inteligencia Artificial"
+      imageAlt={t("imageAlt")}
     />
   );
 }

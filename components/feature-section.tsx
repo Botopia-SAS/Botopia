@@ -1,14 +1,13 @@
-"use client"
-
-import { motion } from "framer-motion"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface FeatureSectionProps {
-  title: string
-  description: string
-  imageUrl: string
-  imageAlt: string
-  reversed?: boolean
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+  reversed?: boolean;
 }
 
 export default function FeatureSection({
@@ -18,10 +17,15 @@ export default function FeatureSection({
   imageAlt,
   reversed = false,
 }: FeatureSectionProps) {
+  const t = useTranslations("FeatureSection");
   return (
     <section className="py-24">
       <div className="container mx-auto px-4">
-        <div className={`flex flex-col ${reversed ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-12`}>
+        <div
+          className={`flex flex-col ${
+            reversed ? "md:flex-row-reverse" : "md:flex-row"
+          } items-center gap-12`}
+        >
           <motion.div
             className="w-full md:w-1/2"
             initial={{ opacity: 0, x: reversed ? 50 : -50 }}
@@ -33,7 +37,7 @@ export default function FeatureSection({
             <p className="text-lg text-gray-600 mb-6">{description}</p>
             <div className="flex items-center">
               <div className="h-0.5 w-12 bg-gray-900 mr-4"></div>
-              <span className="text-sm font-medium">Descubre más</span>
+              <span className="text-sm font-medium">{t("discoverMore")}</span>
             </div>
           </motion.div>
 
@@ -57,5 +61,5 @@ export default function FeatureSection({
         </div>
       </div>
     </section>
-  )
+  );
 }

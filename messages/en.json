@@ -1,179 +1,498 @@
 {
-    "Header": {
-        "phrase": "We boost your business with personalized technology",
-        "Languages": {
-            "Spanish": "Spanish",
-            "English": "English",
-            "Portuguese": "Portuguese"
-        },
-        "menu": {
-            "home": "Home",
-            "ourSolutions": "Solutions",
-            "aboutUs": "About Us",
-            "contact": "Contact Us"
-        }
-    },
-    "Hero": {
-        "title": {
-            "part1": "Connecting",
-            "highlight1": "businesses",
-            "and": "&",
-            "highlight2": "technology"
-        },
-        "subtitle": {
-            "part1": "Make it easier",
-            "part2": "to access your services with technology",
-            "part3": "and improve relationships with your customers"
-        },
-        "buttons": {
-            "contactSales": "Contact Sales",
-            "tryUsFree": "Try us for free!"
-        },
-        "images": {
-            "mainAlt": "Person",
-            "icon1Alt": "Chatbot icon",
-            "icon2Alt": "Web page icon",
-            "icon3Alt": "App icon",
-            "icon4Alt": "Another floating icon"
-        }
-    },
-    "Clientes": {
-        "title": "Join those who trust us",
-        "images": {
-            "alt": "Client number {index}"
-        }
-    },
-    "Footer": {
-        "intro": "Let’s start transforming the future together!",
-        "quickLinks": {
-            "title": "Quick Links",
-            "terms": "Terms and Conditions",
-            "privacy": "Privacy Policy",
-            "careers": "Careers"
-        },
-        "contact": {
-            "title": "Contact",
-            "email": "contact@botopia.tech"
-        },
-        "newsletter": {
-            "title": "Subscribe to our Newsletter",
-            "label": "Sign up for our Newsletter",
-            "placeholder": "Please enter your email"
-        },
-        "footerRights": "Botopia Technology S.A.S. All rights reserved."
-    },
-    "Servicios": {
-        "title": "Technology Services",
-        "filters": {
-            "strategy": "Consulting & Strategy",
-            "technology": "Technology Services",
-            "design": "Design & Branding Services",
-            "marketing": "Marketing Services"
-        },
-        "services": {
-            "ecommerce": {
-                "title": "E-commerce Development",
-                "category": "Online Sales",
-                "description": "We build robust and customized e-commerce platforms to help your business grow effectively in the digital world.",
-                "icon": "/dumpster-solid.svg"
-            },
-            "aiIntegration": {
-                "title": "AI Integration",
-                "category": "Business",
-                "description": "Take your applications and websites to the next level with customized artificial intelligence. We enhance personalization, optimize automation, and provide smarter experiences.",
-                "icon": "/robot-solid.svg"
-            },
-            "customTechnology": {
-                "title": "Custom Technology",
-                "category": "Personalization",
-                "description": "We develop tailored technology solutions that adapt to your business’s specific needs, driving growth and efficiency.",
-                "icon": "/microchip-solid.svg"
-            },
-            "webDevelopment": {
-                "title": "Website Development",
-                "category": "Web",
-                "description": "We create dynamic, attractive, and optimized websites to offer the best user experience, helping your business stand out in the digital landscape.",
-                "icon": "/globe-solid.svg"
-            }
-        }
-    },
-    "Demos": {
-        "title": "Explore Our Demos",
-        "description": "Discover how our tailored solutions can help you achieve your goals.",
-        "ctaButton": "View Demos",
-        "productsTitle": "Our products",
-        "viewDemo": "View Demo",
-        "contactTitle": "Interested in working with us?",
-        "contactDescription": "Get in touch for more information about how our solutions can help you.",
-        "contactButton": "Contact Us"
-    },
-    "Blog1": {
-        "title": "When to invest in technology? 5 key signs",
-        "intro": "Find out if your company is losing money and opportunities by not going digital. Here are 5 signs that indicate you need to invest in technology.",
-        "highlight": "NOW",
-        "videoNotSupported": "Your browser does not support videos.",
-        "section1": {
-            "title": " 1. Your competition is growing faster",
-            "content1": "If you notice that your competitors are expanding, closing more deals, or improving their digital presence while your company remains the same, you are losing competitive advantage.",
-            "content2": "Today, most successful companies use automation, artificial intelligence, and digital tools to optimize their processes and enhance customer experience. If you don't invest in technology, you are not only limiting your growth but also handing over the market to your competition."
-        },
-        "section2": {
-            "title": " 2. Your team is overwhelmed with manual tasks",
-            "content1": "Does your team spend hours managing data manually?",
-            "content2": "Process automation can reduce time by up to 60%, allowing your team to focus on more strategic tasks instead of operational activities."
-        },
-        "section3": {
-            "title": " 3. Your sales are stagnating",
-            "content1": "If it’s becoming harder to acquire new customers, it’s probably because your sales strategies are not optimized with technology.",
-            "content2": "Companies that implement automated sales funnels, artificial intelligence in marketing, and customer relationship management (CRM) platforms increase their sales by an average of 35% in the first year."
-        },
-        "section4": {
-            "title": " 4. Your information is not protected",
-            "content1": "60% of small businesses that suffer data breaches close within the next six months.",
-            "content2": "If you are still storing information in Excel, physical documents, or unsecured databases, you are at high risk of losing valuable data or becoming a victim of cyberattacks."
-        },
-        "section5": {
-            "title": " 5. You are spending more money than necessary",
-            "content1": "If you are not using technology to automate, optimize costs, and reduce operational errors, you are probably spending up to 30% more than you should.",
-            "content2": "Companies that invest in digital transformation reduce their operational costs and increase profitability. Not investing in technology is costing you more than you think."
-        },
-        "caseStudy": {
-            "title": "🚀 Case Study: How we helped LensPR digitize their business",
-            "description": "LensPR, a public relations firm, faced a common challenge: updating their website required a lot of time and technical knowledge.",
-            "point1": "Reduced web maintenance costs.",
-            "point2": "Increased organic visits and engagement.",
-            "point3": "Optimized content updates without relying on third parties."
-        },
-        "cta": {
-            "title": "💡 Are you ready to transform your business?",
-            "button": "🚀 Schedule a free consultation"
-        },
-        "backToBlog": "🔙 Back to Blog"
-    },
-    "Podcast": {
-  "title": "Everything for tech lovers",
-  "description": "Subscribe to our Newsletter to receive our blogs and podcasts before anyone else!",
-  "Email": "Your email address",
-  "Suscribe": "Subscribe",
-  "blogsTitle": "Blogs",
-  "blogsText": "Articles on technology, AI, and automation.",
-  "blogsText1": "View Blogs",
-  "podcastsTitle": "Podcasts",
-  "podcastsText": "Talks with experts and mentors from all fields.",
-  "podcastsText1": "Listen",
-  "socialsTitle": "Social Media",
-  "socialsText": "Connect with our online community.",
-  "latestBlogs": "Latest Blogs",
-  "blog1": {
-    "title": "When to invest in technology?",
-    "author": "Isaac Páez",
-    "date": "March 9, 2025"
+  "ctaButton": {
+    "label": "Let's connect"
   },
-  "blog2": {
-    "title": "Integrating API with Next.js",
-    "author": "María López",
-    "date": "February 15, 2024"
+  "menu": {
+    "pages": "Web pages",
+    "apps": "Mobile applications",
+    "ai": "Artificial intelligence",
+    "automation": "Automation",
+    "marketing": "Marketing",
+    "engineering": "Engineering teams"
+  },
+  "Header": {
+    "mainTitle": "Welcome to Botopia",
+    "subtitle": "Digital solutions for your business",
+    "ctaButton": {
+      "main": "Contact Us"
+    },
+    "menu": {
+      "home": "Home",
+      "about": "About Us",
+      "services": "Services",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "search": {
+      "placeholder": "Search..."
+    },
+    "languageSwitcher": {
+      "languages": {
+        "label": "Language",
+        "es": "Español",
+        "en": "English",
+        "pt": "Português"
+      }
+    },
+    "secondary": {
+      "welcome": "Explore our solutions!",
+      "login": "Login"
+    },
+    "loginButton": {
+      "label": "Login"
+    }
+  },
+  "Dropdowns": {
+    "AppDropdown": {
+      "mainTitle": "Explore Mobile Apps",
+      "categories": [
+        "Apps for businesses",
+        "Sales and e-commerce apps",
+        "Apps with geolocation",
+        "Apps with artificial intelligence"
+      ],
+      "servicesTitle": "Services",
+      "services": [
+        "Custom app development",
+        "Publishing on App Store and Google Play",
+        "Maintenance and updates"
+      ]
+    },
+    "AutoDropdown": {
+      "mainTitle": "Explore Automation",
+      "categories": [
+        "Automated repetitive tasks",
+        "Automated sales and marketing",
+        "Automated customer service"
+      ],
+      "servicesTitle": "Services",
+      "services": [
+        "Automation consulting",
+        "Custom Bots & Scripts",
+        "Zapier, Make & n8n",
+        "AI automation"
+      ]
+    },
+    "DesignDropdown": {
+      "mainTitle": "Explore UX/UI Design",
+      "categories": [
+        "Web & App Interfaces",
+        "User Experience (UX)",
+        "Prototypes in Figma",
+        "Dashboard Design",
+        "Wireframes & Architecture",
+        "Website Redesign",
+        "Design Systems",
+        "Responsive Design"
+      ],
+      "servicesTitle": "Services"
+    },
+    "EcomDropdown": {
+      "mainTitle": "Explore E-commerce",
+      "categories": [
+        "Online Stores",
+        "Shopify & WooCommerce",
+        "Marketplaces",
+        "Digital Products",
+        "Memberships and Subscriptions",
+        "Apps for E-commerce",
+        "E-commerce B2B/B2C"
+      ],
+      "servicesTitle": "Services",
+      "services": ["Payment Gateways"]
+    },
+    "EquiposDropdown": {
+      "mainTitle": "Specialized Engineering Teams",
+      "categories": [
+        "Custom software",
+        "Cloud architecture",
+        "Systems integration",
+        "Cybersecurity",
+        "Business automation"
+      ],
+      "servicesTitle": "Key Services",
+      "services": [
+        "Dedicated teams per project",
+        "Staff augmentation",
+        "Specialized technical consulting"
+      ]
+    },
+    "IADropdown": {
+      "mainTitle": "Explore Artificial Intelligence",
+      "categories": [
+        "Smart WhatsApp assistant",
+        "Predictive data analysis",
+        "AI automation",
+        "Natural Language Processing (NLP)",
+        "Image Recognition",
+        "Recommendation Systems"
+      ],
+      "servicesTitle": "Services",
+      "services": ["Process automation with AI", "Machine Learning models"]
+    },
+    "MarketingDropdown": {
+      "mainTitle": "Explore Digital Marketing",
+      "categories": [
+        "Social media and Ads campaigns",
+        "Marketing automation",
+        "Google SEO",
+        "Sales funnels",
+        "AI content"
+      ],
+      "servicesTitle": "Services",
+      "services": [
+        "Digital advertising (Google and Social Ads)",
+        "Social media",
+        "Marketing automation"
+      ]
+    },
+    "WebDropdown": {
+      "mainTitle": "Explore Web",
+      "categories": [
+        "Landing Pages",
+        "Corporate",
+        "E-commerce",
+        "Startup Pages",
+        "Public Dashboards",
+        "Educational Portals",
+        "Portfolios"
+      ],
+      "servicesTitle": "Services",
+      "services": ["Hosting & Domain", "Web Maintenance", "SEO Optimization"],
+      "moreTitle": "More about Web",
+      "more": ["Case Studies", "Development Guide", "Technical Support"]
+    }
+  },
+  "Hero": {
+    "title": {
+      "tech": "Technology",
+      "business": "business"
+    },
+    "typingPhrases": [
+      "agile for your",
+      "versatile for your",
+      "connected to your",
+      "optimized for your",
+      "ready for your",
+      "aligned with your",
+      "created for your",
+      "powerful for your"
+    ],
+    "subtitle": {
+      "main": "We create high-impact digital experiences that transform your business."
+    },
+    "input": {
+      "placeholder": "Tell us your idea or project...",
+      "ariaLabel": "Write your idea or project"
+    },
+    "ctaButton": {
+      "main": "Talk to our advisors"
+    },
+    "infoText": {
+      "main": "We use artificial intelligence and specialized talent to turn your ideas into exceptional products."
+    }
+  },
+  "Clientes": {
+    "title": "Join those who trust us",
+    "images": {
+      "alt": "Client number {index}"
+    }
+  },
+  "Footer": {
+    "intro": "Let’s start transforming the future together!",
+    "quickLinks": {
+      "title": "Quick Links",
+      "terms": "Terms and Conditions",
+      "privacy": "Privacy Policy",
+      "careers": "Careers"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "contact@botopia.tech"
+    },
+    "newsletter": {
+      "title": "Subscribe to our Newsletter",
+      "label": "Sign up for our Newsletter",
+      "placeholder": "Please enter your email"
+    },
+    "footerRights": "Botopia Technology S.A.S. All rights reserved.",
+    "title": {
+      "tech": "Technology",
+      "business": "business"
+    },
+    "typingPhrases": [
+      "agile for your",
+      "versatile for your",
+      "connected to your",
+      "optimized for your",
+      "ready for your",
+      "aligned with your",
+      "created for your",
+      "powerful for your"
+    ],
+    "subtitle": {
+      "main": "We create high-impact digital experiences that transform your business."
+    },
+    "input": {
+      "placeholder": "Tell us your idea or project...",
+      "ariaLabel": "Write your idea or project"
+    },
+    "ctaButton": {
+      "main": "Talk to our advisors"
+    },
+    "infoText": {
+      "main": "We use artificial intelligence and specialized talent to turn your ideas into exceptional products."
+    }
+  },
+  "Demos": {
+    "title": "Explore Our Demos",
+    "description": "Discover how our tailored solutions can help you achieve your goals.",
+    "ctaButton": "View Demos",
+    "productsTitle": "Our products",
+    "viewDemo": "View Demo",
+    "contactTitle": "Interested in working with us?",
+    "contactDescription": "Get in touch for more information about how our solutions can help you.",
+    "contactButton": "Contact Us"
+  },
+  "Blog1": {
+    "title": "When to invest in technology? 5 key signs",
+    "intro": "Find out if your company is losing money and opportunities by not going digital. Here are 5 signs that indicate you need to invest in technology.",
+    "highlight": "NOW",
+    "videoNotSupported": "Your browser does not support videos.",
+    "section1": {
+      "title": " 1. Your competition is growing faster",
+      "content1": "If you notice that your competitors are expanding, closing more deals, or improving their digital presence while your company remains the same, you are losing competitive advantage.",
+      "content2": "Today, most successful companies use automation, artificial intelligence, and digital tools to optimize their processes and enhance customer experience. If you don't invest in technology, you are not only limiting your growth but also handing over the market to your competition."
+    },
+    "section2": {
+      "title": " 2. Your team is overwhelmed with manual tasks",
+      "content1": "Does your team spend hours managing data manually?",
+      "content2": "Process automation can reduce time by up to 60%, allowing your team to focus on more strategic tasks instead of operational activities."
+    },
+    "section3": {
+      "title": " 3. Your sales are stagnating",
+      "content1": "If it’s becoming harder to acquire new customers, it’s probably because your sales strategies are not optimized with technology.",
+      "content2": "Companies that implement automated sales funnels, artificial intelligence in marketing, and customer relationship management (CRM) platforms increase their sales by an average of 35% in the first year."
+    },
+    "section4": {
+      "title": " 4. Your information is not protected",
+      "content1": "60% of small businesses that suffer data breaches close within the next six months.",
+      "content2": "If you are still storing information in Excel, physical documents, or unsecured databases, you are at high risk of losing valuable data or becoming a victim of cyberattacks."
+    },
+    "section5": {
+      "title": " 5. You are spending more money than necessary",
+      "content1": "If you are not using technology to automate, optimize costs, and reduce operational errors, you are probably spending up to 30% more than you should.",
+      "content2": "Companies that invest in digital transformation reduce their operational costs and increase profitability. Not investing in technology is costing you more than you think."
+    },
+    "caseStudy": {
+      "title": "🚀 Case Study: How we helped LensPR digitize their business",
+      "description": "LensPR, a public relations firm, faced a common challenge: updating their website required a lot of time and technical knowledge.",
+      "point1": "Reduced web maintenance costs.",
+      "point2": "Increased organic visits and engagement.",
+      "point3": "Optimized content updates without relying on third parties."
+    },
+    "cta": {
+      "title": "💡 Are you ready to transform your business?",
+      "button": "🚀 Schedule a free consultation"
+    },
+    "backToBlog": "🔙 Back to Blog"
+  },
+  "Podcast": {
+    "title": "Everything for tech lovers",
+    "description": "Subscribe to our Newsletter to receive our blogs and podcasts before anyone else!",
+    "Email": "Your email address",
+    "Suscribe": "Subscribe",
+    "blogsTitle": "Blogs",
+    "blogsText": "Articles on technology, AI, and automation.",
+    "blogsText1": "View Blogs",
+    "podcastsTitle": "Podcasts",
+    "podcastsText": "Talks with experts and mentors from all fields.",
+    "podcastsText1": "Listen",
+    "socialsTitle": "Social Media",
+    "socialsText": "Connect with our online community.",
+    "latestBlogs": "Latest Blogs",
+    "blog1": {
+      "title": "When to invest in technology?",
+      "author": "Isaac Páez",
+      "date": "March 9, 2025"
+    },
+    "blog2": {
+      "title": "Integrating API with Next.js",
+      "author": "María López",
+      "date": "February 15, 2024"
+    }
+  },
+  "AboutUs": {
+    "title": "About Us",
+    "intro": {
+      "1": "At ",
+      "company": "Botopia",
+      "2": ", we connect companies with the technology of the future through innovative solutions that transform the way business is done."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "text": "We drive digital transformation with custom, agile, and scalable software. We accelerate business innovation through automation, AI integration, and high-impact technological development, helping our clients optimize operations and improve competitiveness."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "To be the world’s leading software development company, offering not only agile and innovative solutions but an experience that transforms how businesses adopt technology. We will become the key strategic partner for executives and managers, with an elite team of engineers, designers, and product managers building essential products for business growth. At Botopia, we don’t just create tools, we build indispensable solutions that drive businesses with efficiency and sustainability."
+    },
+    "commitment": {
+      "title": "Our Commitment",
+      "text": "We offer a strategic experience, accompanying our clients from conception to implementation of solutions that drive scalability. At Botopia, we turn innovation into a real competitive advantage."
+    },
+    "cta": "Contact Us"
+  },
+  "Popup": {
+    "title": "🎉 Digital Explorer Giveaway! 🎁",
+    "description": "Did you find any secret tab on our web pages? You could win <strong>two free months</strong> on your favorite streaming platform!",
+    "cta": "📸 Send your screenshots now and win.",
+    "button": "Send screenshots now!",
+    "note": "*Terms and conditions apply."
+  },
+  "Proyectos": {
+    "title": "Our Projects",
+    "categories": {
+      "web": "Web Pages",
+      "apps": "Applications",
+      "marketing": "Marketing & Branding",
+      "design": "UX/UI Design"
+    },
+    "projects": {
+      "FridoomWeb": "Fridoom Web",
+      "LensPR": "LensPR",
+      "DrivingSchool": "Driving School",
+      "StartupsCalendar": "Startups Calendar",
+      "Invercloud": "Invercloud",
+      "AgroFinance": "AgroFinance",
+      "FridoomApp": "Fridoom App",
+      "VOGHOApp": "VOGHO App",
+      "LIVRAApp": "LIVRA App",
+      "Fridoom": "Fridoom",
+      "Clicsociable": "Clicsociable",
+      "ClicsociableCRM": "Clicsociable CRM",
+      "DashboardDrivingSchool": "Dashboard Driving School",
+      "LensPRUI": "LensPR UI",
+      "BotopiaTech": "Botopia Tech",
+      "DashboardBotopia": "Dashboard Botopia",
+      "StartupsCalendarUI": "Startups Calendar UI"
+    }
+  },
+  "TarjetaServicio": {
+    "button": "See more"
+  },
+  "ServiciosUI": {
+    "title": "Our Services",
+    "cards": {
+      "web": {
+        "title": "Web Page Development",
+        "description": "We create modern, optimized websites.",
+        "gradientText": "Optimized for your digital growth.",
+        "image": "/images/desarrollo_web.jpg",
+        "imageAlt": "Web Page Development"
+      },
+      "apps": {
+        "title": "App Development",
+        "description": "Custom mobile and web apps.",
+        "gradientText": "High-performance technology.",
+        "image": "/images/desarrollo_apps.jpg",
+        "imageAlt": "App Development"
+      },
+      "ai": {
+        "title": "AI Integrations",
+        "description": "AI solutions for your business.",
+        "gradientText": "Powered by next-gen AI.",
+        "image": "/images/IA.jpg",
+        "imageAlt": "AI Integrations"
+      },
+      "automation": {
+        "title": "Process Automation",
+        "description": "Automate key tasks and processes.",
+        "gradientText": "Unlimited efficiency.",
+        "image": "/images/automatizaciones.webp",
+        "imageAlt": "Process Automation"
+      },
+      "whatsapp": {
+        "title": "AI Integration with WhatsApp",
+        "description": "Chatbots and automation in WhatsApp.",
+        "gradientText": "Instant and automated communication.",
+        "image": "/images/IA_Whatsapp.webp",
+        "imageAlt": "AI Integration with WhatsApp"
+      },
+      "uxui": {
+        "title": "UX/UI Design",
+        "description": "Attractive digital experiences.",
+        "gradientText": "Experiences that captivate.",
+        "image": "/images/Diseño_UX_UI.jpg",
+        "imageAlt": "UX/UI Design"
+      }
+    },
+    "knowMore": "Learn more",
+    "request": "Request",
+    "seeMore": "See more"
+  },
+  "ServicesCarousel": {
+    "services": [
+      {
+        "title": "Mobile Applications",
+        "description": "Native and hybrid app development."
+      },
+      {
+        "title": "Web Applications",
+        "description": "Progressive and dynamic web apps."
+      },
+      {
+        "title": "Chatbot or AI Integrations",
+        "description": "Smart automation for your business."
+      },
+      {
+        "title": "E-commerce",
+        "description": "Online stores with secure and scalable payments."
+      },
+      {
+        "title": "Basic API Integration",
+        "description": "Connect with external systems via API."
+      },
+      {
+        "title": "Standard Landing Page",
+        "description": "Pages optimized for conversions."
+      },
+      {
+        "title": "SaaS Platforms",
+        "description": "Cloud solutions with scalable architecture."
+      },
+      {
+        "title": "Special Projects",
+        "description": "Custom developments for unique needs."
+      },
+      {
+        "title": "Corporate Website",
+        "description": "Professional digital presence for companies."
+      },
+      {
+        "title": "Custom Software",
+        "description": "Systems tailored to your company's needs."
+      }
+    ]
+  },
+  "BannerSection": {
+    "visionpro": {
+      "title": "Introducing our new development support",
+      "subtitle": "We build your app on ",
+      "highlight": "VisionOS",
+      "note": "Available only in the United States and Canada",
+      "image": "/images/visionpro.svg"
+    },
+    "whatsapp": {
+      "title": "Try our customer engagement tool",
+      "subtitle": "No APIs, no complicated processes.\nJust your WhatsApp and a QR",
+      "highlight": "WhatsApp",
+      "image": "/images/whatsapp.svg"
+    },
+    "engineering": {
+      "title": "Sometimes it's easier to hire an engineering team than a project",
+      "subtitle": "Often the best solution is to have a team 100% dedicated to your company",
+      "image": "/images/engineering.svg"
+    }
   }
-}
-
 }

@@ -1,40 +1,199 @@
 {
+  "ctaButton": {
+    "label": "Vamos conversar"
+  },
+  "menu": {
+    "pages": "Páginas web",
+    "apps": "Aplicativos móveis",
+    "ai": "Inteligência artificial",
+    "automation": "Automatização",
+    "marketing": "Marketing",
+    "engineering": "Equipes de engenharia"
+  },
   "Header": {
-    "phrase": "Impulsionamos o seu negócio com tecnologia personalizada",
-    "Languages": {
-      "Spanish": "Espanhol",
-      "English": "Inglês",
-      "Portuguese": "Português"
+    "mainTitle": "Bem-vindo à Botopia",
+    "subtitle": "Soluções digitais para o seu negócio",
+    "ctaButton": {
+      "main": "Contate-nos"
     },
     "menu": {
       "home": "Início",
-      "ourSolutions": "Soluções",
-      "aboutUs": "Sobre Nós",
-      "contact": "Contate-nos"
+      "about": "Sobre Nós",
+      "services": "Serviços",
+      "projects": "Projetos",
+      "contact": "Contato"
+    },
+    "search": {
+      "placeholder": "Pesquisar..."
+    },
+    "languageSwitcher": {
+      "label": "Idioma",
+      "languages": {
+        "label": "Idioma",
+        "es": "Español",
+        "en": "English",
+        "pt": "Português"
+      }
+    },
+    "secondary": {
+      "welcome": "Explore nossas soluções!",
+      "login": "Entrar"
+    },
+    "loginButton": {
+      "label": "Entrar"
+    }
+  },
+  "Dropdowns": {
+    "AppDropdown": {
+      "mainTitle": "Explore Apps Móveis",
+      "categories": [
+        "Apps para negócios",
+        "Apps de vendas e e-commerce",
+        "Apps com geolocalização",
+        "Apps com inteligência artificial"
+      ],
+      "servicesTitle": "Serviços",
+      "services": [
+        "Desenvolvimento de apps sob medida",
+        "Publicação na App Store e Google Play",
+        "Manutenção e atualizações"
+      ]
+    },
+    "AutoDropdown": {
+      "mainTitle": "Explore Automação",
+      "categories": [
+        "Tarefas repetitivas automatizadas",
+        "Vendas e marketing automatizados",
+        "Atendimento ao cliente automatizado"
+      ],
+      "servicesTitle": "Serviços",
+      "services": [
+        "Consultoria em Automação",
+        "Bots & Scripts Personalizados",
+        "Zapier, Make & n8n",
+        "Automação com IA"
+      ]
+    },
+    "DesignDropdown": {
+      "mainTitle": "Explore Design UX/UI",
+      "categories": [
+        "Interfaces Web & Apps",
+        "Experiência do Usuário (UX)",
+        "Protótipos no Figma",
+        "Design de Dashboards",
+        "Wireframes & Arquitetura",
+        "Redesign de Sites",
+        "Design Systems",
+        "Design Responsivo"
+      ],
+      "servicesTitle": "Serviços"
+    },
+    "EcomDropdown": {
+      "mainTitle": "Explore E-commerce",
+      "categories": [
+        "Lojas Online",
+        "Shopify & WooCommerce",
+        "Marketplaces",
+        "Produtos Digitais",
+        "Assinaturas e Membresias",
+        "Apps para E-commerce",
+        "E-commerce B2B/B2C"
+      ],
+      "servicesTitle": "Serviços",
+      "services": ["Gateways de Pagamento"]
+    },
+    "EquiposDropdown": {
+      "mainTitle": "Equipes de Engenharia Especializadas",
+      "categories": [
+        "Software sob medida",
+        "Arquitetura em nuvem",
+        "Integração de sistemas",
+        "Cibersegurança",
+        "Automação empresarial"
+      ],
+      "servicesTitle": "Serviços Chave",
+      "services": [
+        "Equipes dedicadas por projeto",
+        "Staff augmentation",
+        "Consultoria técnica especializada"
+      ]
+    },
+    "IADropdown": {
+      "mainTitle": "Explore Inteligência Artificial",
+      "categories": [
+        "Assistente inteligente para WhatsApp",
+        "Análise preditiva de dados",
+        "Automação com IA",
+        "Processamento de Linguagem (NLP)",
+        "Reconhecimento de Imagens",
+        "Sistemas de Recomendação"
+      ],
+      "servicesTitle": "Serviços",
+      "services": [
+        "Automação de Processos com IA",
+        "Modelos de Machine Learning"
+      ]
+    },
+    "MarketingDropdown": {
+      "mainTitle": "Explore Marketing Digital",
+      "categories": [
+        "Redes sociais e campanhas Ads",
+        "Automação de marketing",
+        "Posicionamento no Google (SEO)",
+        "Funis de vendas",
+        "Conteúdos com IA"
+      ],
+      "servicesTitle": "Serviços",
+      "services": [
+        "Publicidade digital (Google e Social Ads)",
+        "Redes sociais",
+        "Automação de marketing"
+      ]
+    },
+    "WebDropdown": {
+      "mainTitle": "Explore Web",
+      "categories": [
+        "Landing Pages",
+        "Corporativos",
+        "E-commerce",
+        "Páginas para Startups",
+        "Dashboards Públicos",
+        "Portais Educativos",
+        "Portfólios"
+      ],
+      "servicesTitle": "Serviços",
+      "services": ["Hospedagem & Domínio", "Manutenção Web", "Otimização SEO"],
+      "moreTitle": "Mais sobre Web",
+      "more": ["Casos de Sucesso", "Guia de Desenvolvimento", "Suporte Técnico"]
     }
   },
   "Hero": {
     "title": {
-      "part1": "Conectamos",
-      "highlight1": "empresas",
-      "and": "e",
-      "highlight2": "tecnologia"
+      "tech": "Tecnologia",
+      "business": "negócio"
     },
+    "typingPhrases": [
+      "ágil para o seu",
+      "versátil para o seu",
+      "conectada ao seu",
+      "otimizada para o seu",
+      "pronta para o seu",
+      "alinhada com o seu",
+      "criada para o seu",
+      "potente para o seu"
+    ],
     "subtitle": {
-      "part1": "Facilite o",
-      "part2": "acesso aos seus serviços com tecnologia",
-      "part3": "e melhore o relacionamento com seus clientes"
+      "main": "Criamos experiências digitais de alto impacto que transformam seu negócio."
     },
-    "buttons": {
-      "contactSales": "Falar com vendas",
-      "tryUsFree": "Experimente grátis!"
+    "input": {
+      "placeholder": "Conte-nos sua ideia ou projeto...",
+      "ariaLabel": "Escreva sua ideia ou projeto"
     },
-    "images": {
-      "mainAlt": "Pessoa",
-      "icon1Alt": "Ícone de chatbot",
-      "icon2Alt": "Ícone de página web",
-      "icon3Alt": "Ícone de aplicativo",
-      "icon4Alt": "Outro ícone flutuante"
+    "ctaButton": {
+      "main": "Fale com nossos assessores"
+    },
+    "infoText": {
+      "main": "Usamos inteligência artificial e talento especializado para transformar suas ideias em produtos excepcionais."
     }
   },
   "Clientes": {
@@ -151,29 +310,200 @@
     "backToBlog": "🔙 Voltar ao Blog"
   },
   "Podcast": {
-  "title": "Tudo para amantes de tecnologia",
-  "description": "Inscreva-se na nossa Newsletter para receber nossos blogs e podcasts antes de todo mundo!",
-  "Email": "Seu e-mail",
-  "Suscribe": "Inscrever-se",
-  "blogsTitle": "Blogs",
-  "blogsText": "Artigos sobre tecnologia, IA e automação.",
-  "blogsText1": "Ver Blogs",
-  "podcastsTitle": "Podcasts",
-  "podcastsText": "Conversas com especialistas e mentores de todas as áreas.",
-  "podcastsText1": "Ouvir",
-  "socialsTitle": "Redes Sociais",
-  "socialsText": "Conecte-se com nossa comunidade online.",
-  "latestBlogs": "Últimos Blogs",
-  "blog1": {
-    "title": "Quando investir em tecnologia?",
-    "author": "Isaac Páez",
-    "date": "9 de março de 2025"
+    "title": "Tudo para amantes de tecnologia",
+    "description": "Inscreva-se na nossa Newsletter para receber nossos blogs e podcasts antes de todo mundo!",
+    "Email": "Seu e-mail",
+    "Suscribe": "Inscrever-se",
+    "blogsTitle": "Blogs",
+    "blogsText": "Artigos sobre tecnologia, IA e automação.",
+    "blogsText1": "Ver Blogs",
+    "podcastsTitle": "Podcasts",
+    "podcastsText": "Conversas com especialistas e mentores de todas as áreas.",
+    "podcastsText1": "Ouvir",
+    "socialsTitle": "Redes Sociais",
+    "socialsText": "Conecte-se com nossa comunidade online.",
+    "latestBlogs": "Últimos Blogs",
+    "blog1": {
+      "title": "Quando investir em tecnologia?",
+      "author": "Isaac Páez",
+      "date": "9 de março de 2025"
+    },
+    "blog2": {
+      "title": "Integrando API com Next.js",
+      "author": "María López",
+      "date": "15 de fevereiro de 2024"
+    }
   },
-  "blog2": {
-    "title": "Integrando API com Next.js",
-    "author": "María López",
-    "date": "15 de fevereiro de 2024"
+  "AboutUs": {
+    "title": "Sobre Nós",
+    "intro": {
+      "1": "Na ",
+      "company": "Botopia",
+      "2": ", conectamos empresas com a tecnologia do futuro através de soluções inovadoras que transformam a maneira de fazer negócios."
+    },
+    "mission": {
+      "title": "Nossa Missão",
+      "text": "Impulsionamos a transformação digital com software personalizado, ágil e escalável. Aceleramos a inovação empresarial por meio de automação, integração de IA e desenvolvimento tecnológico de alto impacto, ajudando nossos clientes a otimizar operações e melhorar a competitividade."
+    },
+    "vision": {
+      "title": "Nossa Visão",
+      "text": "Ser a empresa líder mundial em desenvolvimento de software, oferecendo não apenas soluções ágeis e inovadoras, mas uma experiência que transforma a forma como as empresas adotam tecnologia. Tornar-nos o parceiro estratégico chave para diretores e executivos, com uma equipe de elite de engenheiros, designers e gerentes de produto que constroem produtos essenciais para o crescimento empresarial. Na Botopia, não criamos ferramentas, mas soluções indispensáveis que impulsionam negócios com eficiência e sustentabilidade."
+    },
+    "commitment": {
+      "title": "Nosso Compromisso",
+      "text": "Oferecemos uma experiência estratégica, acompanhando nossos clientes desde a concepção até a implementação de soluções que impulsionam sua escalabilidade. Na Botopia, transformamos inovação em uma vantagem competitiva real."
+    },
+    "cta": "Contate-nos"
+  },
+  "Popup": {
+    "title": "🎉 Sorteio Explorador Digital! 🎁",
+    "description": "Você encontrou alguma aba secreta em nossas páginas? Você pode ganhar <strong>dois meses grátis</strong> na plataforma de streaming que preferir!",
+    "cta": "📸 Envie suas capturas agora e ganhe.",
+    "button": "Enviar capturas agora!",
+    "note": "*Aplicam-se termos e condições."
+  },
+  "Proyectos": {
+    "title": "Nossos Projetos",
+    "categories": {
+      "web": "Páginas Web",
+      "apps": "Aplicativos",
+      "marketing": "Marketing e Branding",
+      "design": "Design UX/UI"
+    },
+    "projects": {
+      "FridoomWeb": "Fridoom Web",
+      "LensPR": "LensPR",
+      "DrivingSchool": "Driving School",
+      "StartupsCalendar": "Startups Calendar",
+      "Invercloud": "Invercloud",
+      "AgroFinance": "AgroFinance",
+      "FridoomApp": "Fridoom App",
+      "VOGHOApp": "VOGHO App",
+      "LIVRAApp": "LIVRA App",
+      "Fridoom": "Fridoom",
+      "Clicsociable": "Clicsociable",
+      "ClicsociableCRM": "Clicsociable CRM",
+      "DashboardDrivingSchool": "Dashboard Driving School",
+      "LensPRUI": "LensPR UI",
+      "BotopiaTech": "Botopia Tech",
+      "DashboardBotopia": "Dashboard Botopia",
+      "StartupsCalendarUI": "Startups Calendar UI"
+    }
+  },
+  "TarjetaServicio": {
+    "button": "Ver mais"
+  },
+  "ServiciosUI": {
+    "title": "Nossos Serviços",
+    "cards": {
+      "web": {
+        "title": "Desenvolvimento de Sites",
+        "description": "Criamos sites modernos e otimizados.",
+        "gradientText": "Otimizado para seu crescimento digital.",
+        "image": "/images/desarrollo_web.jpg",
+        "imageAlt": "Desenvolvimento de Sites"
+      },
+      "apps": {
+        "title": "Desenvolvimento de Aplicativos",
+        "description": "Apps móveis e web personalizados.",
+        "gradientText": "Tecnologia de alto desempenho.",
+        "image": "/images/desarrollo_apps.jpg",
+        "imageAlt": "Desenvolvimento de Aplicativos"
+      },
+      "ai": {
+        "title": "Integrações com Inteligência Artificial",
+        "description": "Soluções de IA para seu negócio.",
+        "gradientText": "Impulsionado por IA de última geração.",
+        "image": "/images/IA.jpg",
+        "imageAlt": "Integrações com Inteligência Artificial"
+      },
+      "automation": {
+        "title": "Automatização de Processos",
+        "description": "Automatize tarefas e processos chave.",
+        "gradientText": "Eficiência sem limites.",
+        "image": "/images/automatizaciones.webp",
+        "imageAlt": "Automatização de Processos"
+      },
+      "whatsapp": {
+        "title": "Integração de IA com WhatsApp",
+        "description": "Chatbots e automação no WhatsApp.",
+        "gradientText": "Comunicação instantânea e automatizada.",
+        "image": "/images/IA_Whatsapp.webp",
+        "imageAlt": "Integração de IA com WhatsApp"
+      },
+      "uxui": {
+        "title": "Design UX/UI",
+        "description": "Experiências digitais atraentes.",
+        "gradientText": "Experiências que encantam.",
+        "image": "/images/Diseño_UX_UI.jpg",
+        "imageAlt": "Design UX/UI"
+      }
+    },
+    "knowMore": "Conhecer mais",
+    "request": "Solicitar",
+    "seeMore": "Ver mais"
+  },
+  "ServicesCarousel": {
+    "services": [
+      {
+        "title": "Aplicativos Móveis",
+        "description": "Desenvolvimento de apps nativos e híbridos."
+      },
+      {
+        "title": "Aplicativos Web",
+        "description": "Aplicativos progressivos e dinâmicos."
+      },
+      {
+        "title": "Chatbot ou Integrações de IA",
+        "description": "Automatização inteligente para seu negócio."
+      },
+      {
+        "title": "E-commerce",
+        "description": "Lojas online com pagamentos seguros e escaláveis."
+      },
+      {
+        "title": "Integração API Básica",
+        "description": "Conexão com sistemas externos via API."
+      },
+      {
+        "title": "Landing Page padrão",
+        "description": "Páginas otimizadas para conversões."
+      },
+      {
+        "title": "Plataformas SaaS",
+        "description": "Soluções em nuvem com arquitetura escalável."
+      },
+      {
+        "title": "Projetos Especiais",
+        "description": "Desenvolvimentos personalizados para necessidades únicas."
+      },
+      {
+        "title": "Site Corporativo",
+        "description": "Presença digital profissional para empresas."
+      },
+      {
+        "title": "Software Sob Medida",
+        "description": "Sistemas adaptados às necessidades da sua empresa."
+      }
+    ]
+  },
+  "BannerSection": {
+    "visionpro": {
+      "title": "Apresentamos nosso novo suporte de desenvolvimento",
+      "subtitle": "Criamos seu aplicativo em ",
+      "highlight": "VisionOS",
+      "note": "Disponível apenas nos Estados Unidos e Canadá",
+      "image": "/images/visionpro.svg"
+    },
+    "whatsapp": {
+      "title": "Experimente nossa ferramenta de customer engagement",
+      "subtitle": "Sem APIs, sem processos complicados.\nApenas seu WhatsApp e um QR",
+      "image": "/images/whatsapp.svg"
+    },
+    "engineering": {
+      "title": "Às vezes é mais fácil contratar uma equipe de engenharia do que um projeto",
+      "subtitle": "Muitas vezes a melhor solução é ter uma equipe 100% dedicada à sua empresa",
+      "image": "/images/engineering.svg"
+    }
   }
-}
-
 }

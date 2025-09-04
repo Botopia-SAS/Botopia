@@ -1,181 +1,504 @@
 {
-    "Header": {
-        "phrase": "Impulsamos tu negocio con tecnología personalizada",
-        "Languages": {
-            "Spanish": "Español",
-            "English": "Inglés",
-            "Portuguese": "Portugués"
-        },
-        "menu": {
-            "home": "Inicio",
-            "ourSolutions": "Soluciones",
-            "aboutUs": "Nosotros",
-            "contact": "Contáctanos"
-        }
+  "ctaButton": {
+    "label": "Hablemos..."
+  },
+  "menu": {
+    "pages": "Páginas web",
+    "apps": "Aplicaciones móviles",
+    "ai": "Inteligencia artificial",
+    "automation": "Automatización",
+    "marketing": "Marketing",
+    "engineering": "Equipos de ingeniería"
+  },
+  "Header": {
+    "mainTitle": "Bienvenido a Botopia",
+    "subtitle": "Soluciones digitales para tu empresa",
+    "ctaButton": {
+      "main": "Contáctanos"
     },
-    "Hero": {
-        "title": {
-            "part1": "Conectamos",
-            "highlight1": "empresas",
-            "and": "y",
-            "highlight2": "tecnología"
-        },
-        "subtitle": {
-            "part1": "Facilita el",
-            "part2": "acceso a tus servicios con tecnología",
-            "part3": "y mejora las relaciones con tus clientes"
-        },
-        "buttons": {
-            "contactSales": "Hablar con ventas",
-            "tryUsFree": "¡Pruébanos gratis!"
-        },
-        "images": {
-            "mainAlt": "Persona",
-            "icon1Alt": "Icono de chatbot",
-            "icon2Alt": "Icono de página web",
-            "icon3Alt": "Icono de aplicación",
-            "icon4Alt": "Otro icono flotante"
-        }
+    "menu": {
+      "home": "Inicio",
+      "about": "Sobre Nosotros",
+      "services": "Servicios",
+      "projects": "Proyectos",
+      "contact": "Contacto"
     },
-    "Clientes": {
-        "title": "Únete a quienes confían en nosotros",
-        "images": {
-            "alt": "Cliente número {index}"
-        }
+    "search": {
+      "placeholder": "Buscar..."
     },
-    "Footer": {
-        "intro": "¡Comencemos a transformar el futuro juntos!",
-        "quickLinks": {
-            "title": "Accesos rápidos",
-            "terms": "Términos y condiciones",
-            "privacy": "Políticas de privacidad",
-            "careers": "Trabaja con nosotros"
-        },
-        "contact": {
-            "title": "Contacto",
-            "email": "contacto@botopia.tech"
-        },
-        "newsletter": {
-            "title": "Suscríbete a nuestro Newsletter",
-            "label": "Regístrate a nuestro Newsletter",
-            "placeholder": "Por favor ingresa tu correo"
-        },
-        "footerRights": "Botopia Technology S.A.S. Todos los derechos reservados."
-    },
-    "Servicios": {
-        "title": "Nuestros servicios",
-        "filters": {
-            "strategy": "Consultoría & Estrategia",
-            "technology": "Servicios de Tecnología",
-            "design": "Servicios de Diseño & Branding",
-            "marketing": "Servicios de Marketing"
-        },
-        "services": {
-            "ecommerce": {
-                "title": "Desarrollo E-commerce",
-                "category": "Ventas Online",
-                "description": "Construimos plataformas de comercio electrónico robustas y personalizadas para que tu negocio crezca en el mundo digital de forma efectiva.",
-                "icon": "/dumpster-solid.svg"
-            },
-            "aiIntegration": {
-                "title": "Integración AI",
-                "category": "Negocios",
-                "description": "Lleva tus aplicaciones y sitios web al siguiente nivel con inteligencia artificial personalizada. Mejoramos personalización, optimizamos automatización y ofrecemos experiencias más inteligentes.",
-                "icon": "/robot-solid.svg"
-            },
-            "customTechnology": {
-                "title": "Tecnología a la Medida",
-                "category": "Personalización",
-                "description": "Desarrollamos soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de tu negocio, impulsando su crecimiento y eficiencia.",
-                "icon": "/microchip-solid.svg"
-            },
-            "webDevelopment": {
-                "title": "Desarrollo de Sitio Web",
-                "category": "Web",
-                "description": "Creamos sitios web dinámicos, atractivos y optimizados para ofrecer la mejor experiencia de usuario, ayudando a tu negocio a destacar en el entorno digital.",
-                "icon": "/globe-solid.svg"
-            }
-        }
-    },
-    "Demos": {
-        "title": "Explora nuestras demos",
-        "description": "Descubre cómo nuestras soluciones personalizadas pueden ayudarte a alcanzar tus metas.",
-        "ctaButton": "Ver demos",
-        "productsTitle": "Nuestros productos",
-        "viewDemo": "Haz tu demo",
-        "contactTitle": "¿Interesado en trabajar con nosotros?",
-        "contactDescription": "Contáctanos para más información sobre cómo nuestras soluciones pueden ayudarte.",
-        "contactButton": "Contáctanos"
-    },
-    "Blog1": {
-        "title": "¿Cuándo invertir en tecnología? 5 señales clave",
-        "intro": "En un mundo cada vez más digital, la tecnología se ha convertido en un pilar esencial para el crecimiento empresarial. Sin embargo, muchas empresas siguen postergando su transformación digital sin darse cuenta de que están perdiendo oportunidades valiosas. ¿Cómo saber si tu empresa necesita invertir en tecnología? Aquí te presentamos 5 señales clave que indican que es momento de modernizarte.",
-        "highlight": "AHORA",
-        "videoNotSupported": "Tu navegador no soporta videos.",
-        "section1": {
-            "title": " 1. Tu competencia está creciendo más rápido",
-            "content1": "Si notas que tus competidores están cerrando más negocios, ganando nuevos clientes y expandiéndose mientras tu empresa se mantiene en el mismo lugar, es posible que la tecnología esté marcando la diferencia. Hoy en día, las empresas que adoptan herramientas digitales avanzadas pueden optimizar sus procesos, reducir costos y mejorar su relación con los clientes de manera más eficiente.",
-            "content2": "Automatización, inteligencia artificial y plataformas de análisis de datos permiten a las empresas tomar decisiones más inteligentes basadas en información en tiempo real. Si no te adaptas a estas nuevas tecnologías, corres el riesgo de quedarte atrás en un mercado cada vez más competitivo."
-        },
-        "section2": {
-            "title": " 2. Tu equipo está sobrecargado con tareas manuales",
-            "content1": "Uno de los mayores problemas en las empresas tradicionales es la dependencia excesiva de procesos manuales. ¿Tu equipo pasa largas horas en tareas repetitivas como la gestión de inventario, la facturación o el seguimiento de clientes? Si la respuesta es sí, es una señal clara de que necesitas tecnología para automatizar estos procesos.",
-            "content2": "Las herramientas digitales pueden ayudarte a reducir hasta un 60% el tiempo empleado en tareas administrativas, permitiendo que tu equipo se enfoque en actividades más estratégicas que realmente generen valor para tu negocio. Además, la automatización minimiza errores humanos y mejora la eficiencia operativa."
-        },
-        "section3": {
-            "title": " 3. Tus ventas están estancadas",
-            "content1": "Si sientes que cada vez es más difícil captar clientes y aumentar tus ingresos, la falta de tecnología puede estar afectando tus ventas. Las estrategias tradicionales de marketing y ventas han cambiado drásticamente con la digitalización, y hoy en día es fundamental contar con herramientas que te ayuden a atraer, convertir y fidelizar clientes.",
-            "content2": "Las empresas que implementan embudos de ventas automatizados, inteligencia artificial para personalización de ofertas y plataformas de CRM para gestionar la relación con los clientes, logran aumentar sus ventas en un promedio del 35% en su primer año de digitalización. Si aún confías en métodos obsoletos, estás perdiendo una gran oportunidad de crecimiento."
-        },
-        "section4": {
-            "title": " 4. Tu información no está protegida",
-            "content1": "La ciberseguridad es una de las principales preocupaciones en la era digital. Según estudios recientes, el 60% de las pequeñas empresas que sufren filtraciones de datos terminan cerrando en menos de seis meses debido al impacto financiero y la pérdida de confianza de sus clientes.",
-            "content2": "Si todavía almacenas información en hojas de Excel, documentos físicos o sistemas desactualizados, estás corriendo un alto riesgo de perder datos valiosos. Migrar a soluciones en la nube, implementar sistemas de seguridad avanzada y adoptar buenas prácticas de protección de datos no solo te permitirá prevenir ataques cibernéticos, sino que también garantizará la continuidad de tu negocio."
-        },
-        "section5": {
-            "title": " 5. Estás gastando más dinero del necesario",
-            "content1": "Muchas empresas creen que invertir en tecnología es un gasto innecesario, cuando en realidad es una inversión estratégica que reduce costos a largo plazo. Si no cuentas con herramientas digitales, es probable que estés gastando hasta un 30% más en procesos ineficientes y en la corrección de errores operativos.",
-            "content2": "Las empresas que apuestan por la digitalización reducen significativamente sus costos operativos, optimizan el uso de recursos y aumentan su rentabilidad. No modernizar tu empresa hoy podría estar costándote mucho más de lo que imaginas."
-        },
-        "caseStudy": {
-            "title": "🚀 Caso de éxito: Cómo ayudamos a LensPR a digitalizar su negocio",
-            "description": "LensPR, una firma de relaciones públicas, enfrentaba un gran desafío: su sitio web se había convertido en una barrera en lugar de una herramienta de crecimiento. Cada actualización requería conocimientos técnicos y un alto consumo de tiempo, lo que dificultaba mantener su presencia digital al día.",
-            "point1": "Automatizamos el mantenimiento web, reduciendo significativamente la carga operativa y mejorando la eficiencia del equipo.",
-            "point2": "Desarrollamos una plataforma con herramientas avanzadas de SEO y contenido dinámico, lo que impulsó su visibilidad y tráfico orgánico.",
-            "point3": "Optimizamos el sistema de actualizaciones, permitiendo a nuestro cliente gestionar su contenido de manera ágil y autónoma, sin depender de terceros."
-        },
-        "cta": {
-            "title": " ¿Estás listo para transformar tu empresa?",
-            "button": "🚀 Agenda una consulta gratuita"
-        },
-        "backToBlog": "🔙 Volver al Blog"
-    },
-
-    "Podcast": {
-      "title": "Todo para amantes de la tecnología",
-      "description": "Suscríbete a nuestro Newsletter para recibir nuestros blogs y podcasts antes que nadie!",
-      "Email": "Tu correo electrónico",
-      "Suscribe": "Suscribirme",
-      "blogsTitle": "Blogs",
-      "blogsText": "Artículos sobre tecnología, IA y automatización.",
-      "blogsText1": "Ver Blogs",
-      "podcastsTitle": "Podcasts",
-      "podcastsText": "Charlas con expertos y mentores de todas las áreas.",
-      "podcastsText1": "Escuchar",
-      "socialsTitle": "Redes Sociales",
-      "socialsText": "Conéctate con nuestra comunidad en línea.",
-      "latestBlogs": "Últimos Blogs",
-      "blog1": {
-        "title": "¿Cuándo invertir en tecnología?",
-        "author": "Isaac Páez",
-        "date": "Marzo 9, 2025"
-      },
-      "blog2": {
-        "title": "Integrando API con Next.js",
-        "author": "María López",
-        "date": "Febrero 15, 2024"
+    "languageSwitcher": {
+      "languages": {
+        "label": "Idioma",
+        "es": "Español",
+        "en": "English",
+        "pt": "Português"
       }
+    },
+    "secondary": {
+      "welcome": "¡Explora nuestras soluciones!",
+      "login": "Iniciar sesión"
+    },
+    "loginButton": {
+      "label": "Iniciar sesión"
     }
-  
-  
+  },
+  "Dropdowns": {
+    "AppDropdown": {
+      "mainTitle": "Explora Apps Móviles",
+      "categories": [
+        "Apps para negocios",
+        "Apps de ventas y e-commerce",
+        "Apps con geolocalización",
+        "Apps con inteligencia artificial"
+      ],
+      "servicesTitle": "Servicios",
+      "services": [
+        "Desarrollo de apps a medida",
+        "Publicación en App Store y Google Play",
+        "Mantenimiento y actualizaciones"
+      ]
+    },
+    "AutoDropdown": {
+      "mainTitle": "Explora Automatización",
+      "categories": [
+        "Tareas repetitivas automatizadas",
+        "Ventas y marketing automatizados",
+        "Atención al cliente automatizada"
+      ],
+      "servicesTitle": "Servicios",
+      "services": [
+        "Consultoría en Automatización",
+        "Bots & Scripts Personalizados",
+        "Zapier, Make & n8n",
+        "Automatización con IA"
+      ]
+    },
+    "DesignDropdown": {
+      "mainTitle": "Explora Diseño UX/UI",
+      "categories": [
+        "Interfaces Web & Apps",
+        "Experiencia de Usuario (UX)",
+        "Prototipos en Figma",
+        "Diseño de Dashboards",
+        "Wireframes & Arquitectura",
+        "Rediseño de Sitios Web",
+        "Design Systems",
+        "Diseño Responsive"
+      ],
+      "servicesTitle": "Servicios"
+    },
+    "EcomDropdown": {
+      "mainTitle": "Explora E-commerce",
+      "categories": [
+        "Tiendas Online",
+        "Shopify & WooCommerce",
+        "Marketplaces",
+        "Productos Digitales",
+        "Membresías y Suscripciones",
+        "Apps para E-commerce",
+        "E-commerce B2B/B2C"
+      ],
+      "servicesTitle": "Servicios",
+      "services": ["Pasarelas de Pago"]
+    },
+    "EquiposDropdown": {
+      "mainTitle": "Equipos de Ingeniería Especializados",
+      "categories": [
+        "Software a medida",
+        "Arquitectura en la nube",
+        "Integración de sistemas",
+        "Ciberseguridad",
+        "Automatización empresarial"
+      ],
+      "servicesTitle": "Servicios Clave",
+      "services": [
+        "Equipos dedicados por proyecto",
+        "Staff augmentation",
+        "Consultoría técnica especializada"
+      ]
+    },
+    "IADropdown": {
+      "mainTitle": "Explora Inteligencia Artificial",
+      "categories": [
+        "Asistente inteligente para WhatsApp",
+        "Análisis predictivo de datos",
+        "Automatización con IA",
+        "Procesamiento de Lenguaje (NLP)",
+        "Reconocimiento de Imágenes",
+        "Sistemas de Recomendación"
+      ],
+      "servicesTitle": "Servicios",
+      "services": [
+        "Automatización de Procesos con IA",
+        "Modelos de Machine Learning"
+      ]
+    },
+    "MarketingDropdown": {
+      "mainTitle": "Explora Marketing Digital",
+      "categories": [
+        "Redes sociales y campañas Ads",
+        "Automatización de marketing",
+        "Posicionamiento en Google (SEO)",
+        "Embudos de ventas",
+        "Contenidos con IA"
+      ],
+      "servicesTitle": "Servicios",
+      "services": [
+        "Publicidad digital (Google y Social Ads)",
+        "Redes sociales",
+        "Automatización de marketing"
+      ]
+    },
+    "WebDropdown": {
+      "mainTitle": "Explora Web",
+      "categories": [
+        "Landing Pages",
+        "Corporativos",
+        "E-commerce",
+        "Páginas para Startups",
+        "Dashboards Públicos",
+        "Portales Educativos",
+        "Portafolios"
+      ],
+      "servicesTitle": "Servicios",
+      "services": [
+        "Hosting & Dominio",
+        "Mantenimiento Web",
+        "Optimización SEO"
+      ],
+      "moreTitle": "Más sobre Web",
+      "more": ["Casos de Éxito", "Guía de Desarrollo", "Soporte Técnico"]
+    }
+  },
+  "Hero": {
+    "title": {
+      "tech": "Tecnología",
+      "business": "negocio"
+    },
+    "typingPhrases": [
+      "ágil para tu",
+      "versátil para tu",
+      "conectada a tu",
+      "optimizada para tu",
+      "lista para tu",
+      "alineada con tu",
+      "creada para tu",
+      "potente para tu"
+    ],
+    "subtitle": {
+      "main": "Creamos experiencias digitales de alto impacto que transforman tu negocio."
+    },
+    "input": {
+      "placeholder": "Cuéntanos tu idea o proyecto...",
+      "ariaLabel": "Escribe tu idea o proyecto"
+    },
+    "ctaButton": {
+      "main": "Habla con nuestros asesores"
+    },
+    "infoText": {
+      "main": "Usamos inteligencia artificial y talento especializado para transformar tus ideas en productos excepcionales."
+    }
+  },
+  "Clientes": {
+    "title": "Únete a quienes confían en nosotros",
+    "images": {
+      "alt": "Cliente número {index}"
+    }
+  },
+  "Footer": {
+    "intro": "¡Comencemos a transformar el futuro juntos!",
+    "quickLinks": {
+      "title": "Enlaces rápidos",
+      "terms": "Términos y condiciones",
+      "privacy": "Política de privacidad",
+      "careers": "Trabaja con nosotros"
+    },
+    "contact": {
+      "title": "Contacto",
+      "email": "contacto@botopia.tech"
+    },
+    "newsletter": {
+      "title": "Suscríbete a nuestro Newsletter",
+      "label": "Regístrate en nuestro Newsletter",
+      "placeholder": "Por favor ingresa tu correo electrónico"
+    },
+    "footerRights": "Botopia Technology S.A.S. Todos los derechos reservados."
+  },
+  "Solutions": {
+    "ecommerce": {
+      "title": "Desarrollo E-commerce",
+      "category": "Ventas Online",
+      "description": "Construimos plataformas de comercio electrónico robustas y personalizadas para que tu negocio crezca en el mundo digital de forma efectiva.",
+      "icon": "/dumpster-solid.svg"
+    },
+    "aiIntegration": {
+      "title": "Integración AI",
+      "category": "Negocios",
+      "description": "Lleva tus aplicaciones y sitios web al siguiente nivel con inteligencia artificial personalizada. Mejoramos personalización, optimizamos automatización y ofrecemos experiencias más inteligentes.",
+      "icon": "/robot-solid.svg"
+    },
+    "customTechnology": {
+      "title": "Tecnología a la Medida",
+      "category": "Personalización",
+      "description": "Desarrollamos soluciones tecnológicas personalizadas que se adaptan a las necesidades específicas de tu negocio, impulsando su crecimiento y eficiencia.",
+      "icon": "/microchip-solid.svg"
+    },
+    "webDevelopment": {
+      "title": "Desarrollo de Sitio Web",
+      "category": "Web",
+      "description": "Creamos sitios web dinámicos, atractivos y optimizados para ofrecer la mejor experiencia de usuario, ayudando a tu negocio a destacar en el entorno digital.",
+      "icon": "/globe-solid.svg"
+    }
+  },
+  "Demos": {
+    "title": "Explora nuestras demos",
+    "description": "Descubre cómo nuestras soluciones personalizadas pueden ayudarte a alcanzar tus metas.",
+    "ctaButton": "Ver demos",
+    "productsTitle": "Nuestros productos",
+    "viewDemo": "Haz tu demo",
+    "contactTitle": "¿Interesado en trabajar con nosotros?",
+    "contactDescription": "Contáctanos para más información sobre cómo nuestras soluciones pueden ayudarte.",
+    "contactButton": "Contáctanos"
+  },
+  "Blog1": {
+    "title": "¿Cuándo invertir en tecnología? 5 señales clave",
+    "intro": "En un mundo cada vez más digital, la tecnología se ha convertido en un pilar esencial para el crecimiento empresarial. Sin embargo, muchas empresas siguen postergando su transformación digital sin darse cuenta de que están perdiendo oportunidades valiosas. ¿Cómo saber si tu empresa necesita invertir en tecnología? Aquí te presentamos 5 señales clave que indican que es momento de modernizarte.",
+    "highlight": "AHORA",
+    "videoNotSupported": "Tu navegador no soporta videos.",
+    "section1": {
+      "title": " 1. Tu competencia está creciendo más rápido",
+      "content1": "Si notas que tus competidores están cerrando más negocios, ganando nuevos clientes y expandiéndose mientras tu empresa se mantiene en el mismo lugar, es posible que la tecnología esté marcando la diferencia. Hoy en día, las empresas que adoptan herramientas digitales avanzadas pueden optimizar sus procesos, reducir costos y mejorar su relación con los clientes de manera más eficiente.",
+      "content2": "Automatización, inteligencia artificial y plataformas de análisis de datos permiten a las empresas tomar decisiones más inteligentes basadas en información en tiempo real. Si no te adaptas a estas nuevas tecnologías, corres el riesgo de quedarte atrás en un mercado cada vez más competitivo."
+    },
+    "section2": {
+      "title": " 2. Tu equipo está sobrecargado con tareas manuales",
+      "content1": "Uno de los mayores problemas en las empresas tradicionales es la dependencia excesiva de procesos manuales. ¿Tu equipo pasa largas horas en tareas repetitivas como la gestión de inventario, la facturación o el seguimiento de clientes? Si la respuesta es sí, es una señal clara de que necesitas tecnología para automatizar estos procesos.",
+      "content2": "Las herramientas digitales pueden ayudarte a reducir hasta un 60% el tiempo empleado en tareas administrativas, permitiendo que tu equipo se enfoque en actividades más estratégicas que realmente generen valor para tu negocio. Además, la automatización minimiza errores humanos y mejora la eficiencia operativa."
+    },
+    "section3": {
+      "title": " 3. Tus ventas están estancadas",
+      "content1": "Si sientes que cada vez es más difícil captar clientes y aumentar tus ingresos, la falta de tecnología puede estar afectando tus ventas. Las estrategias tradicionales de marketing y ventas han cambiado drásticamente con la digitalización, y hoy en día es fundamental contar con herramientas que te ayuden a atraer, convertir y fidelizar clientes.",
+      "content2": "Las empresas que implementan embudos de ventas automatizados, inteligencia artificial para personalización de ofertas y plataformas de CRM para gestionar la relación con los clientes, logran aumentar sus ventas en un promedio del 35% en su primer año de digitalización. Si aún confías en métodos obsoletos, estás perdiendo una gran oportunidad de crecimiento."
+    },
+    "section4": {
+      "title": " 4. Tu información no está protegida",
+      "content1": "La ciberseguridad es una de las principales preocupaciones en la era digital. Según estudios recientes, el 60% de las pequeñas empresas que sufren filtraciones de datos terminan cerrando en menos de seis meses debido al impacto financiero y la pérdida de confianza de sus clientes.",
+      "content2": "Si todavía almacenas información en hojas de Excel, documentos físicos o sistemas desactualizados, estás corriendo un alto riesgo de perder datos valiosos. Migrar a soluciones en la nube, implementar sistemas de seguridad avanzada y adoptar buenas prácticas de protección de datos no solo te permitirá prevenir ataques cibernéticos, sino que también garantizará la continuidad de tu negocio."
+    },
+    "section5": {
+      "title": " 5. Estás gastando más dinero del necesario",
+      "content1": "Muchas empresas creen que invertir en tecnología es un gasto innecesario, cuando en realidad es una inversión estratégica que reduce costos a largo plazo. Si no cuentas con herramientas digitales, es probable que estés gastando hasta un 30% más en procesos ineficientes y en la corrección de errores operativos.",
+      "content2": "Las empresas que apuestan por la digitalización reducen significativamente sus costos operativos, optimizan el uso de recursos y aumentan su rentabilidad. No modernizar tu empresa hoy podría estar costándote mucho más de lo que imaginas."
+    },
+    "caseStudy": {
+      "title": "🚀 Caso de éxito: Cómo ayudamos a LensPR a digitalizar su negocio",
+      "description": "LensPR, una firma de relaciones públicas, enfrentaba un gran desafío: su sitio web se había convertido en una barrera en lugar de una herramienta de crecimiento. Cada actualización requería conocimientos técnicos y un alto consumo de tiempo, lo que dificultaba mantener su presencia digital al día.",
+      "point1": "Automatizamos el mantenimiento web, reduciendo significativamente la carga operativa y mejorando la eficiencia del equipo.",
+      "point2": "Desarrollamos una plataforma con herramientas avanzadas de SEO y contenido dinámico, lo que impulsó su visibilidad y tráfico orgánico.",
+      "point3": "Optimizamos el sistema de actualizaciones, permitiendo a nuestro cliente gestionar su contenido de manera ágil y autónoma, sin depender de terceros."
+    },
+    "cta": {
+      "title": " ¿Estás listo para transformar tu empresa?",
+      "button": "🚀 Agenda una consulta gratuita"
+    },
+    "backToBlog": "🔙 Volver al Blog"
+  },
+
+  "Podcast": {
+    "title": "Todo para amantes de la tecnología",
+    "description": "Suscríbete a nuestro Newsletter para recibir nuestros blogs y podcasts antes que nadie!",
+    "Email": "Tu correo electrónico",
+    "Suscribe": "Suscribirme",
+    "blogsTitle": "Blogs",
+    "blogsText": "Artículos sobre tecnología, IA y automatización.",
+    "blogsText1": "Ver Blogs",
+    "podcastsTitle": "Podcasts",
+    "podcastsText": "Charlas con expertos y mentores de todas las áreas.",
+    "podcastsText1": "Escuchar",
+    "socialsTitle": "Redes Sociales",
+    "socialsText": "Conéctate con nuestra comunidad en línea.",
+    "latestBlogs": "Últimos Blogs",
+    "blog1": {
+      "title": "¿Cuándo invertir en tecnología?",
+      "author": "Isaac Páez",
+      "date": "Marzo 9, 2025"
+    },
+    "blog2": {
+      "title": "Integrando API con Next.js",
+      "author": "María López",
+      "date": "Febrero 15, 2024"
+    }
+  },
+  "AboutUs": {
+    "title": "Acerca de Nosotros",
+    "intro": {
+      "1": "En ",
+      "company": "Botopia",
+      "2": ", conectamos empresas con la tecnología del futuro a través de soluciones innovadoras que transforman la manera de hacer negocios."
+    },
+    "mission": {
+      "title": "Nuestra Misión",
+      "text": "Impulsamos la transformación digital con software personalizado, ágil y escalable. Aceleramos la innovación empresarial mediante automatización, integración de IA y desarrollo tecnológico de alto impacto, ayudando a nuestros clientes a optimizar sus operaciones y mejorar su competitividad."
+    },
+    "vision": {
+      "title": "Nuestra Visión",
+      "text": "Ser la empresa líder mundial en desarrollo de software, ofreciendo no solo soluciones ágiles e innovadoras, sino una experiencia que transforma la manera en que las empresas adoptan tecnología. Nos convertiremos en el socio estratégico clave para directivos y ejecutivos, con un equipo élite de ingenieros, diseñadores y product managers que construyen productos esenciales para el crecimiento empresarial. En Botopia, no creamos herramientas, sino soluciones indispensables que impulsan negocios con eficiencia y sostenibilidad."
+    },
+    "commitment": {
+      "title": "Nuestro Compromiso",
+      "text": "Ofrecemos una experiencia estratégica, acompañando a nuestros clientes desde la concepción hasta la implementación de soluciones que impulsan su escalabilidad. En Botopia convertimos la innovación en una ventaja competitiva real."
+    },
+    "cta": "Contáctanos"
+  },
+  "Popup": {
+    "title": "🎉 ¡Giveaway Explorador Digital! 🎁",
+    "description": "¿Encontraste alguna pestaña secreta en nuestras páginas web? ¡Podrías ser el ganador de <strong>dos meses gratis</strong> en la plataforma de streaming que prefieras!",
+    "cta": "📸 Envía tus capturas ahora y gana.",
+    "button": "¡Enviar capturas ahora!",
+    "note": "*Aplican términos y condiciones."
+  },
+  "Proyectos": {
+    "title": "Nuestros Proyectos",
+    "categories": {
+      "web": "Páginas Web",
+      "apps": "Aplicaciones",
+      "marketing": "Marketing y Branding",
+      "design": "Diseño UX/UI"
+    },
+    "projects": {
+      "FridoomWeb": "Fridoom Web",
+      "LensPR": "LensPR",
+      "DrivingSchool": "Driving School",
+      "StartupsCalendar": "Startups Calendar",
+      "Invercloud": "Invercloud",
+      "AgroFinance": "AgroFinance",
+      "FridoomApp": "Fridoom App",
+      "VOGHOApp": "VOGHO App",
+      "LIVRAApp": "LIVRA App",
+      "Fridoom": "Fridoom",
+      "Clicsociable": "Clicsociable",
+      "ClicsociableCRM": "Clicsociable CRM",
+      "DashboardDrivingSchool": "Dashboard Driving School",
+      "LensPRUI": "LensPR UI",
+      "BotopiaTech": "Botopia Tech",
+      "DashboardBotopia": "Dashboard Botopia",
+      "StartupsCalendarUI": "Startups Calendar UI"
+    }
+  },
+  "TarjetaServicio": {
+    "button": "Ver más"
+  },
+  "ServiciosUI": {
+    "title": "Nuestros Servicios",
+    "cards": {
+      "web": {
+        "title": "Desarrollo de Páginas Web",
+        "description": "Creamos sitios web modernos y optimizados.",
+        "gradientText": "Optimizado para tu crecimiento digital.",
+        "image": "/images/desarrollo_web.jpg",
+        "imageAlt": "Desarrollo de Páginas Web"
+      },
+      "apps": {
+        "title": "Desarrollo de Aplicaciones",
+        "description": "Aplicaciones móviles y web personalizadas.",
+        "gradientText": "Tecnología de alto rendimiento.",
+        "image": "/images/desarrollo_apps.jpg",
+        "imageAlt": "Desarrollo de Aplicaciones"
+      },
+      "ai": {
+        "title": "Integraciones con Inteligencia Artificial",
+        "description": "Soluciones de IA para tu negocio.",
+        "gradientText": "Impulsado por IA de última generación.",
+        "image": "/images/IA.jpg",
+        "imageAlt": "Integraciones con Inteligencia Artificial"
+      },
+      "automation": {
+        "title": "Automatizaciones de Procesos",
+        "description": "Automatiza tareas y procesos clave.",
+        "gradientText": "Eficiencia sin límites.",
+        "image": "/images/automatizaciones.webp",
+        "imageAlt": "Automatizaciones de Procesos"
+      },
+      "whatsapp": {
+        "title": "Integración de AI con WhatsApp",
+        "description": "Chatbots y automatización en WhatsApp.",
+        "gradientText": "Comunicación instantánea y automatizada.",
+        "image": "/images/IA_Whatsapp.webp",
+        "imageAlt": "Integración de AI con WhatsApp"
+      },
+      "uxui": {
+        "title": "Diseño UX/UI",
+        "description": "Experiencias digitales atractivas.",
+        "gradientText": "Experiencias que enamoran.",
+        "image": "/images/Diseño_UX_UI.jpg",
+        "imageAlt": "Diseño UX/UI"
+      }
+    },
+    "knowMore": "Conocer más",
+    "request": "Solicitar",
+    "seeMore": "Ver más"
+  },
+  "ServicesCarousel": {
+    "services": [
+      {
+        "title": "Aplicaciones Móviles",
+        "description": "Desarrollo de apps nativas e híbridas."
+      },
+      {
+        "title": "Aplicaciones Web",
+        "description": "Aplicaciones progresivas y dinámicas."
+      },
+      {
+        "title": "Chatbot o Integraciones de IA",
+        "description": "Automatización inteligente para tu negocio."
+      },
+      {
+        "title": "E-commerce",
+        "description": "Tiendas online con pagos seguros y escalables."
+      },
+      {
+        "title": "Integración API Básica",
+        "description": "Conexión con sistemas externos mediante API."
+      },
+      {
+        "title": "Landing Page estándar",
+        "description": "Páginas optimizadas para conversiones."
+      },
+      {
+        "title": "Plataformas SaaS",
+        "description": "Soluciones en la nube con arquitectura escalable."
+      },
+      {
+        "title": "Proyectos Especiales",
+        "description": "Desarrollos personalizados para necesidades únicas."
+      },
+      {
+        "title": "Sitio Web Corporativo",
+        "description": "Presencia digital profesional para empresas."
+      },
+      {
+        "title": "Software a la Medida",
+        "description": "Sistemas adaptados a los requerimientos de tu empresa."
+      }
+    ]
+  },
+  "BannerSection": {
+    "visionpro": {
+      "title": "Presentamos nuestro nuevo soporte de desarrollo",
+      "subtitle": "Creamos tu aplicación en ",
+      "highlight": "VisionOS",
+      "note": "Disponible únicamente en Estados Unidos y Canadá",
+      "image": "/images/visionpro.svg"
+    },
+    "whatsapp": {
+      "title": "Prueba nuestra herramienta de customer engagement",
+      "subtitle": "Sin APIs, sin procesos complicados.\nSolo tu WhatsApp y un QR",
+      "image": "/images/whatsapp.svg"
+    },
+    "engineering": {
+      "title": "A veces es más fácil contratar un equipo de ingeniería que contratar un proyecto",
+      "subtitle": "Muchas veces la mejor solución que puedes encontrar es tener un equipo 100% dedicado a tu empresa",
+      "image": "/images/engineering.svg"
+    }
+  }
 }

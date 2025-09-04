@@ -1,49 +1,27 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
-const banners = [
-  {
-    type: "visionpro",
-    title: "Presentamos nuestro nuevo soporte de desarrollo",
-    subtitle: "Creamos tu aplicación en ",
-    highlight: "VisionOS",
-    note: "Disponible únicamente en Estados Unidos y Canadá",
-    image: "/images/visionpro.svg",
-    variant: "dark" as const,
-  },
-  {
-    type: "whatsapp",
-    title: "Prueba nuestra herramienta de customer engagement",
-    subtitle: "Sin APIs, sin procesos complicados.\nSolo tu WhatsApp y un QR",
-    image: "/images/whatsapp.svg",
-    variant: "light" as const,
-  },
-  {
-    type: "engineering",
-    title:
-      "A veces es más fácil contratar un equipo de ingeniería que contratar un proyecto",
-    subtitle:
-      "Muchas veces la mejor solución que puedes encontrar es tener un equipo 100% dedicado a tu empresa",
-    image: "/images/engineering.svg",
-    variant: "dark" as const,
-  },
-];
+const bannerTypes = ["visionpro", "whatsapp", "engineering"];
+const bannerVariants: Record<string, "dark" | "light"> = {
+  visionpro: "dark",
+  whatsapp: "light",
+  engineering: "dark",
+};
 
 const BannerSection = () => {
+  const t = useTranslations("BannerSection");
   const [currentBanner, setCurrentBanner] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentBanner((prev) => (prev + 1) % banners.length);
+      setCurrentBanner((prev) => (prev + 1) % bannerTypes.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div
-      className="w-full flex justify-center items-center py-2 md:py-4 bg-cover bg-center bg-white dark:bg-black transition-colors duration-300 md:mt-[-10%] mb:pb-0 md:mb-0 mt-[-20%]"
-      // style={{ backgroundImage: "url('/Hero/Fondo2.svg')" }}
-    >
+    <div className="w-full flex justify-center items-center py-2 md:py-4 bg-cover bg-center bg-white dark:bg-black transition-colors duration-300 md:mt-[-10%] mb:pb-0 md:mb-0 mt-[-20%]">
       <div className="relative w-full max-w-7xl overflow-hidden">
         <div
           className="flex transition-transform duration-700 ease-in-out"
@@ -51,7 +29,7 @@ const BannerSection = () => {
             transform: `translateX(-${currentBanner * 100}%)`,
           }}
         >
-          {banners.map((banner, index) => (
+          {bannerTypes.map((type, index) => (
             <div
               key={index}
               className="w-full flex-shrink-0 flex justify-center"
@@ -59,7 +37,7 @@ const BannerSection = () => {
               <div
                 className={
                   `rounded-2xl flex flex-col md:flex-row items-center justify-between p-2 md:p-4 shadow-none w-[90%] max-w-6xl transition-colors duration-300 ` +
-                  (banner.variant === "dark"
+                  (bannerVariants[type] === "dark"
                     ? "bg-black bg-opacity-90 text-white dark:bg-black dark:text-white"
                     : "bg-[#F9E8D9] bg-opacity-90 text-gray-900 dark:bg-[#23232a] dark:text-gray-100")
                 }
@@ -69,26 +47,26 @@ const BannerSection = () => {
                   <h2
                     className={
                       `text-base md:text-2xl font-extrabold leading-tight ` +
-                      (banner.variant === "dark"
+                      (bannerVariants[type] === "dark"
                         ? "text-purple-400 dark:text-purple-300"
                         : "text-[#1B365D] dark:text-purple-300")
                     }
                   >
-                    {banner.title}
+                    {t(`${type}.title`)}
                   </h2>
                   <p
                     className={
                       `whitespace-pre-line text-xs md:text-base ` +
-                      (banner.variant === "dark"
+                      (bannerVariants[type] === "dark"
                         ? "text-white dark:text-gray-200"
                         : "text-gray-900 dark:text-gray-100")
                     }
                   >
-                    {banner.subtitle}
-                    {banner.highlight && (
+                    {t(`${type}.subtitle`)}
+                    {t(`${type}.highlight`, { default: "" }) && (
                       <span className="font-bold text-purple-400 dark:text-purple-400">
                         {" "}
-                        {banner.highlight}
+                        {t(`${type}.highlight`)}
                       </span>
                     )}
                   </p>
@@ -96,16 +74,16 @@ const BannerSection = () => {
                 {/* IMAGEN */}
                 <div className="flex-1 flex justify-center mt-2 md:mt-0 order-2">
                   <img
-                    src={banner.image}
-                    alt={banner.type}
+                    src={t.raw(`${type}.image`)}
+                    alt={type}
                     className="max-h-16 md:max-h-24 object-contain"
                   />
                 </div>
                 {/* NOTE: Solo debajo en móvil */}
-                {banner.note && (
+                {t(`${type}.note`, { default: "" }) && (
                   <div className="order-3 mt-1 md:mt-0">
                     <p className="text-xs italic text-gray-400 dark:text-gray-300 text-center md:text-left">
-                      {banner.note}
+                      {t(`${type}.note`)}
                     </p>
                   </div>
                 )}

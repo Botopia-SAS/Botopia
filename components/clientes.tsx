@@ -1,35 +1,37 @@
 "use client";
+import { useTranslations } from "next-intl";
 
 const clientes = [
   { src: "/Coca-Cola_logo.svg", alt: "Coca Cola", scale: "scale-115" },
-   { src: "/LogoClaro.png", alt: "Claro", scale: "scale-115" },
+  { src: "/LogoClaro.png", alt: "Claro", scale: "scale-115" },
   { src: "/drivingschool.svg", alt: "Driving School", scale: "scale-125" },
   { src: "/fridoom.svg", alt: "Fridoom", scale: "scale-150" },
   { src: "/logo_LensPR.png", alt: "LensPR" },
-    { src: "/LogoClaro.png", alt: "Claro", scale: "scale-115" },
+  { src: "/LogoClaro.png", alt: "Claro", scale: "scale-115" },
   {
     src: "/startupscalendar1.svg",
     alt: "Startups Calendar",
     scale: "scale-150",
   },
   { src: "/LogoSamsung.png", alt: "Samsung", scale: "scale-115" },
-  
+
   { src: "/LogoClaro.png", alt: "Claro", scale: "scale-115" },
   { src: "/LogoSamsung.png", alt: "Samsung", scale: "scale-115" },
   { src: "/LogoTambor.png", alt: "Tambor", scale: "scale-150" },
   { src: "/LogoClic.png", alt: "Clic", scale: "scale-150" },
   { src: "/LogoGG.png", alt: "GG", scale: "scale-150" },
-      { src: "/LogoSamsung.png", alt: "Samsung", scale: "scale-115" },
+  { src: "/LogoSamsung.png", alt: "Samsung", scale: "scale-115" },
 ];
 
 export function Clientes() {
+  const t = useTranslations("Clientes");
   const logosDuplicados = [...clientes, ...clientes]; // duplicamos para el efecto infinito
 
   return (
     <section className="w-full py-16 overflow-hidden bg-white dark:bg-black transition-colors duration-300">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-          Nuestros Clientes
+          {t("title")}
         </h2>
       </div>
 

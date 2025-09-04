@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function SecondaryHeader() {
+  const t = useTranslations("Header.secondary");
   return (
     <header className="bg-white/90 dark:bg-black backdrop-blur-md transition-colors">
       <div className="container mx-auto px-4">
@@ -16,19 +18,13 @@ export default function SecondaryHeader() {
                 href="#"
                 className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
-                Nosotros
+                {t("welcome")}
               </Link>
               <Link
                 href="#"
                 className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
-                ¿Por qué Botopia?
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                Iniciar sesión
+                {t("login")}
               </Link>
             </nav>
             {/* Botón visible siempre */}
@@ -36,7 +32,7 @@ export default function SecondaryHeader() {
               href="#"
               className="px-4 py-2 bg-blue-600 dark:bg-blue-500 text-white rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors text-base"
             >
-              Hablemos
+              {t("ctaButton.main")}
             </Link>
           </div>
         </div>

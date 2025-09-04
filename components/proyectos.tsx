@@ -4,133 +4,129 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
+import { useTranslations } from "next-intl";
 
-const categories = [
-  "Páginas Web",
-  "Aplicaciones",
-  "Marketing y Branding",
-  "Diseño UX/UI",
-] as const;
+const categories = ["web", "apps", "marketing", "design"] as const;
 
 const projects: Record<
   (typeof categories)[number],
   {
     src: string;
-    label: string;
+    key: string;
     scale: string;
     customStyle?: string;
     gridPosition?: string;
   }[]
 > = {
-  "Páginas Web": [
+  web: [
     {
       src: "/PagFridoom.png",
-      label: "Fridoom Web",
+      key: "FridoomWeb",
       scale: "scale-150",
       customStyle: "mt-10",
     },
     {
       src: "/AppLens.png",
-      label: "LensPR",
+      key: "LensPR",
       scale: "scale-150",
       customStyle: "-mt-20",
     },
     {
       src: "/PagDriving.png",
-      label: "Driving School",
+      key: "DrivingSchool",
       scale: "scale-150",
       customStyle: "mt-10",
     },
     {
       src: "/AppStart.png",
-      label: "Startups Calendar",
+      key: "StartupsCalendar",
       scale: "scale-150",
       customStyle: "-mt-20",
     },
     {
       src: "/PagMan.png",
-      label: "Invercloud",
+      key: "Invercloud",
       scale: "scale-150",
       gridPosition: "col-start-2 row-start-2",
       customStyle: "-mt-20 mb-10",
     },
     {
       src: "/AppFin.png",
-      label: "AgroFinance",
+      key: "AgroFinance",
       scale: "scale-150",
       gridPosition: "col-start-4 row-start-2",
       customStyle: "-mt-20",
     },
   ],
-  Aplicaciones: [
+  apps: [
     {
       src: "/AppFri.png",
-      label: "Fridoom App",
+      key: "FridoomApp",
       scale: "scale-110",
       customStyle: "mt-4 mb-6",
     },
     {
       src: "/AppVOGHO.png",
-      label: "VOGHO App",
+      key: "VOGHOApp",
       scale: "scale-110",
       customStyle: "mb-6",
     },
     {
       src: "/AppLIV.png",
-      label: "LIVRA App",
+      key: "LIVRAApp",
       scale: "scale-110",
       customStyle: "mb-6",
     },
   ],
-  "Marketing y Branding": [
+  marketing: [
     {
       src: "/MarFri.png",
-      label: "Fridoom",
+      key: "Fridoom",
       scale: "scale-150",
       customStyle: "mb-10",
     },
     {
       src: "/MarClic.png",
-      label: "Clicsociable",
+      key: "Clicsociable",
       scale: "scale-150",
       customStyle: "mb-10",
     },
   ],
-  "Diseño UX/UI": [
+  design: [
     {
       src: "/APPCRM.png",
-      label: "Clicsociable CRM",
+      key: "ClicsociableCRM",
       scale: "scale-150",
       customStyle: "mt-10",
     },
     {
       src: "/DiDriv.png",
-      label: "Dashboard Driving School",
+      key: "DashboardDrivingSchool",
       scale: "scale-150",
       customStyle: "-mt-20",
     },
     {
       src: "/DiLens.png",
-      label: "LensPR UI",
+      key: "LensPRUI",
       scale: "scale-150",
       customStyle: "mt-10",
     },
     {
       src: "/DiBot.png",
-      label: "Botopia Tech",
+      key: "BotopiaTech",
       scale: "scale-150",
       customStyle: "-mt-16",
     },
     {
       src: "/DiBotDash.png",
-      label: "Dashboard Botopia",
+      key: "DashboardBotopia",
       scale: "scale-150",
       gridPosition: "col-start-2 row-start-2",
       customStyle: "-mt-20 mb-10",
     },
     {
       src: "/DiStart.png",
-      label: "Startups Calendar UI",
+      key: "StartupsCalendarUI",
       scale: "scale-150",
       gridPosition: "col-start-4 row-start-2",
       customStyle: "-mt-20",
@@ -139,8 +135,9 @@ const projects: Record<
 };
 
 export default function Proyectos() {
+  const t = useTranslations("Proyectos");
   const [selectedCategory, setSelectedCategory] =
-    useState<(typeof categories)[number]>("Páginas Web");
+    useState<(typeof categories)[number]>("web");
   const [isMobile, setIsMobile] = useState(false);
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 3000 }),
@@ -160,7 +157,7 @@ export default function Proyectos() {
       {/* Título */}
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-          Nuestros Proyectos
+          {t("title")}
         </h2>
       </div>
 
@@ -177,7 +174,7 @@ export default function Proyectos() {
                   : "border-gray-300 text-gray-500 hover:border-purple-400 hover:text-purple-500"
               }`}
             >
-              {cat}
+              {t(`categories.${cat}`)}
             </button>
           ))}
         </div>
@@ -196,12 +193,12 @@ export default function Proyectos() {
                 <div className="w-full max-w-xs mx-auto">
                   <img
                     src={project.src}
-                    alt={project.label}
+                    alt={t(`projects.${project.key}`)}
                     className="w-full h-auto object-contain max-h-[400px] transition-transform duration-300 hover:scale-105"
                   />
                 </div>
                 <span className="mt-4 text-center text-sm text-gray-700">
-                  {project.label}
+                  {t(`projects.${project.key}`)}
                 </span>
               </div>
             ))}
@@ -209,8 +206,7 @@ export default function Proyectos() {
         </div>
       ) : (
         <div className="w-full flex justify-center">
-          {selectedCategory === "Aplicaciones" ||
-          selectedCategory === "Marketing y Branding" ? (
+          {selectedCategory === "apps" || selectedCategory === "marketing" ? (
             <div className="flex justify-center gap-20 w-full max-w-[1000px]">
               <AnimatePresence mode="wait">
                 {projects[selectedCategory].map((project) => (
@@ -226,11 +222,11 @@ export default function Proyectos() {
                   >
                     <img
                       src={project.src}
-                      alt={project.label}
+                      alt={t(`projects.${project.key}`)}
                       className={`object-contain max-h-56 md:max-h-48 w-auto transition-transform duration-300 hover:scale-105 ${project.scale}`}
                     />
                     <span className="mt-3 text-center text-sm text-gray-700 whitespace-nowrap">
-                      {project.label}
+                      {t(`projects.${project.key}`)}
                     </span>
                   </motion.div>
                 ))}
@@ -252,11 +248,11 @@ export default function Proyectos() {
                   >
                     <img
                       src={project.src}
-                      alt={project.label}
+                      alt={t(`projects.${project.key}`)}
                       className={`object-contain max-h-56 md:max-h-48 w-auto transition-transform duration-300 hover:scale-105 ${project.scale}`}
                     />
                     <span className="mt-3 text-center text-sm text-gray-700 whitespace-nowrap">
-                      {project.label}
+                      {t(`projects.${project.key}`)}
                     </span>
                   </motion.div>
                 ))}

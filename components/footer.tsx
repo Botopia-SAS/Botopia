@@ -1,19 +1,19 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
-import { useTranslations } from 'next-intl';
-import { useLocale } from 'next-intl';
-import Link from 'next/link';
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import Link from "next/link";
 
 config.autoAddCss = false;
 
 export default function Footer() {
-  const t = useTranslations('Footer'); // Hook para traducir los textos
+  const t = useTranslations("Footer"); // Hook para traducir los textos
   const locale = useLocale();
 
   return (
@@ -23,8 +23,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Columna 1: Logo e introducción */}
           <div>
-            <img src="/images/logo.png" alt="Botopia Logo" className="h-10 mb-4" />
-            <p className="text-gray-400">{t('intro')}</p>
+            <img
+              src="/images/logo.png"
+              alt="Botopia Logo"
+              className="h-10 mb-4"
+            />
+            <p className="text-gray-400">{t("intro")}</p>
             <div className="mt-4 flex space-x-4">
               {/* Redes sociales */}
               <a
@@ -33,13 +37,13 @@ export default function Footer() {
               >
                 <FontAwesomeIcon
                   icon={faLinkedin}
-                  style={{ color: 'white', fontSize: '2rem' }}
+                  style={{ color: "white", fontSize: "2rem" }}
                 />
               </a>
               <a href="https://x.com/BotopiaSAS" aria-label="Twitter">
                 <FontAwesomeIcon
                   icon={faXTwitter}
-                  style={{ color: 'white', fontSize: '2rem' }}
+                  style={{ color: "white", fontSize: "2rem" }}
                 />
               </a>
               <a
@@ -49,7 +53,7 @@ export default function Footer() {
               >
                 <FontAwesomeIcon
                   icon={faInstagram}
-                  style={{ color: 'white', fontSize: '2rem' }}
+                  style={{ color: "white", fontSize: "2rem" }}
                 />
               </a>
               <a
@@ -59,29 +63,37 @@ export default function Footer() {
               >
                 <FontAwesomeIcon
                   icon={faYoutube}
-                  style={{ color: 'white', fontSize: '2rem' }}
+                  style={{ color: "white", fontSize: "2rem" }}
                 />
               </a>
             </div>
           </div>
 
-          {/* Columna 2: Accesos rápidos */}
+          {/* Columna 2: {t('quickLinks.title')} */}
           <div>
-            <h4 className="text-purple-400 font-bold mb-4">{t('quickLinks.title')}</h4>
+            <h4 className="text-purple-400 font-bold mb-4">
+              {t("quickLinks.title")}
+            </h4>
             <ul className="space-y-2">
               <li>
-                <Link href={`/${locale}/terminos-condiciones`} className="text-gray-400 hover:text-white">
-                  {t('quickLinks.terms')}
+                <Link
+                  href={`/${locale}/terminos-condiciones`}
+                  className="text-gray-400 hover:text-white"
+                >
+                  {t("quickLinks.terms")}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/politica-datos`} className="text-gray-400 hover:text-white">
-                  {t('quickLinks.privacy')}
+                <Link
+                  href={`/${locale}/politica-datos`}
+                  className="text-gray-400 hover:text-white"
+                >
+                  {t("quickLinks.privacy")}
                 </Link>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white">
-                  {t('quickLinks.careers')}
+                  {t("quickLinks.careers")}
                 </a>
               </li>
             </ul>
@@ -89,19 +101,23 @@ export default function Footer() {
 
           {/* Columna 3: Contacto */}
           <div>
-            <h4 className="text-purple-400 font-bold mb-4">{t('contact.title')}</h4>
-            <p className="text-gray-400">{t('contact.email')}</p>
+            <h4 className="text-purple-400 font-bold mb-4">
+              {t("contact.title")}
+            </h4>
+            <p className="text-gray-400">{t("contact.email")}</p>
 
-            <h2 className="text-white mt-12 md:mt-2">{t('newsletter.title')}</h2>
+            <h2 className="text-white mt-12 md:mt-2">
+              {t("newsletter.title")}
+            </h2>
             <form className="mt-4">
               <label htmlFor="newsletter" className="sr-only">
-                {t('newsletter.label')}
+                {t("newsletter.label")}
               </label>
               <div className="flex items-center border border-gray-600 rounded-md overflow-hidden">
                 <input
                   type="email"
                   id="newsletter"
-                  placeholder={t('newsletter.placeholder')}
+                  placeholder={t("newsletter.placeholder")}
                   className="bg-black text-gray-400 placeholder-gray-600 px-4 py-2 focus:outline-none flex-grow"
                 />
                 <button
@@ -118,10 +134,12 @@ export default function Footer() {
         {/* Línea divisoria */}
         <div className="border-t border-gray-800 mt-10 pt-6 text-center">
           <p className="text-gray-500">
-            &copy; {new Date().getFullYear()} {t('footerRights')}
+            &copy; {new Date().getFullYear()} {t("footerRights")}
           </p>
         </div>
       </div>
     </footer>
   );
 }
+
+// Todos los textos visibles se obtienen mediante t("..."), por lo que debes editar los archivos de traducción.

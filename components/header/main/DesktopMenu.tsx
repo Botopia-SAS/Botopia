@@ -2,8 +2,8 @@
 
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
-import { menuItems } from "./menuItems";
-
+// Menú principal definido localmente para traducción dinámica
+import { useTranslations } from "next-intl";
 
 interface DesktopMenuProps {
   activeDropdown: string | null;
@@ -47,44 +47,22 @@ export default function DesktopMenu({
           }
         }}
       >
-        {menuItems.map((item) => {
-          let dropdownKey = "";
-          switch (item.name) {
-            case "Páginas web":
-              dropdownKey = "web";
-              break;
-            case "Aplicaciones móviles":
-              dropdownKey = "app";
-              break;
-
-            // case "E-commerce":
-            //   dropdownKey = "ecom";
-            //   break;
-
-            case "Inteligencia artificial":
-              dropdownKey = "ia";
-              break;
-            case "Automatización":
-              dropdownKey = "auto";
-              break;
-            case "Diseño UX/UI":
-              dropdownKey = "design";
-              break;
-            case "Marketing":
-              dropdownKey = "marketing";
-              break;
-            case "Equipos de ingeniería":
-              dropdownKey = "engineering";
-              break;
-            default:
-              dropdownKey = "";
-          }
-
-          return (
+        {(() => {
+          const t = useTranslations();
+          const menuItems = [
+            { key: "menu.pages", href: "#", dropdown: "web" },
+            { key: "menu.apps", href: "#", dropdown: "app" },
+            // { key: "menu.ecommerce", href: "#", dropdown: "ecom" },
+            { key: "menu.ai", href: "#", dropdown: "ia" },
+            { key: "menu.automation", href: "#", dropdown: "auto" },
+            { key: "menu.marketing", href: "#", dropdown: "marketing" },
+            { key: "menu.engineering", href: "#", dropdown: "engineering" },
+          ];
+          return menuItems.map((item) => (
             <div
-              key={item.name}
+              key={item.key}
               onMouseEnter={() =>
-                dropdownKey && handleMouseEnterItem(dropdownKey)
+                item.dropdown && handleMouseEnterItem(item.dropdown)
               }
               onMouseLeave={handleMouseLeaveItem}
               className="relative px-2 py-2"
@@ -92,16 +70,16 @@ export default function DesktopMenu({
               <Link
                 href={item.href}
                 className={`text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-xs ${
-                  activeDropdown === dropdownKey
+                  activeDropdown === item.dropdown
                     ? "font-semibold text-white dark:text-white"
                     : ""
                 }`}
               >
-                {item.name}
+                {t(item.key)}
               </Link>
             </div>
-          );
-        })}
+          ));
+        })()}
       </nav>
     </div>
   );

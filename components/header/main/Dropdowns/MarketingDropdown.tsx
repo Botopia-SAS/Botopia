@@ -1,30 +1,32 @@
 import BaseDropdown from "./BaseDropdown";
+import { useTranslations } from "next-intl";
 
 export default function MarketingDropdown() {
+  const t = useTranslations("Dropdowns.MarketingDropdown");
   return (
     <BaseDropdown
-      mainTitle="Explora Marketing Digital"
+      mainTitle={t("mainTitle")}
       mainItems={[
-        "Redes sociales y campañas Ads",
-        "Automatización de marketing",
-        "Posicionamiento en Google (SEO)",
-        "Embudos de ventas",
-        "Contenidos con IA",
+        t("categories.0"),
+        t("categories.1"),
+        t("categories.2"),
+        t("categories.3"),
+        t("categories.4"),
       ]}
       secondaryColumns={[
         {
-          title: "Servicios",
+          title: t("servicesTitle"),
           items: [
-            "Publicidad digital (Google y Social Ads)",
-            "Redes sociales",
-            "Automatización de marketing",
-            "Posicionamiento en Google (SEO)",
-            "Creación de contenidos",
+            t("services.0"),
+            t("services.1"),
+            t("services.2"),
+            t("services.3"),
+            t("services.4"),
           ],
         },
       ]}
       imageSrc="/Header5.png"
-      imageAlt="Marketing Digital"
+      imageAlt={t("imageAlt")}
     />
   );
 }

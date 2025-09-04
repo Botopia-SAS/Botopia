@@ -1,16 +1,13 @@
 "use client";
 
 import { useState, useEffect, ReactNode } from "react";
+import { useTranslations } from "next-intl";
 import { Canvas } from "@react-three/fiber";
 import IpadModel from "./3D/IpadModel";
 import { useRouter, usePathname } from "next/navigation";
 import { Typewriter } from "react-simple-typewriter";
 
-// --- Textos escalables y reutilizables ---
-const CTA_MAIN = "Comienza tu proyecto con nosotros";
-const CTA_BUTTON = "Habla con nuestros asesores";
-const INFO_TEXT =
-  "Usamos inteligencia artificial y talento especializado para convertir tus ideas en productos excepcionales.";
+// Textos ahora se obtienen por i18n
 
 // --- Botón secundario reutilizable ---
 function SecondaryButton({
@@ -113,24 +110,10 @@ export default function Hero() {
   const router = useRouter();
   const pathname = usePathname();
   const locale = pathname.split("/")[1];
+  const t = useTranslations("Hero");
 
-  // Frases para el efecto typing, fácilmente escalable
-  const typingPhrases = [
-    // "eficiente para tu",
-    // "inteligente para tu",
-    "ágil para tu",
-    // "escalable para tu",
-    // "poderosa para tu",
-    "versátil para tu",
-    "conectada a tu",
-    "optimizada a tu",
-    // "a la medida de tu",
-    "lista para tu",
-    "alineada con tu",
-    "creada para tu",
-    // "diseñada para tu",
-    "potente para tu",
-  ];
+  // Frases para el efecto typing, ahora por i18n
+  const typingPhrases = t.raw("typingPhrases");
 
   useEffect(() => {
     setMounted(true);
@@ -165,7 +148,7 @@ export default function Hero() {
         <div className="flex-1 flex flex-col justify-center items-start text-left space-y-6 pt-0 sm:pt-0 md:pt-0 lg:ml-2">
           {/* Título principal */}
           <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
-            <span className="mr-2">Tecnología</span>
+            <span className="mr-2">{t("title.tech")}</span>
             <br />
             <span className="text-primary mr-2">
               <Typewriter
@@ -178,21 +161,20 @@ export default function Hero() {
                 delaySpeed={1500}
               />
               <br />
-              <span className="mr-2">negocio</span>
+              <span className="mr-2">{t("title.business")}</span>
             </span>
           </h1>
           {/* Subtítulo */}
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-lg">
-            Creamos experiencias digitales de alto impacto que transforman tu
-            negocio.
+            {t("subtitle.main")}
           </p>
           {/* --- Bloque CTA doble --- */}
           <div className="flex flex-col md:flex-row w-full gap-2 mt-2">
             {/* --- Input CTA estilo Globant --- */}
             <div className="flex flex-1 items-center gap-2 max-w-md w-full">
               <GlobantInputCTA
-                placeholder="Cuéntanos tu idea o proyecto..."
-                ariaLabel="Escribe tu idea o proyecto"
+                placeholder={t("input.placeholder")}
+                ariaLabel={t("input.ariaLabel")}
                 onSend={handleGlobantCTA}
               />
               {/* Botón secundario alineado a la derecha del input en desktop */}
@@ -202,7 +184,7 @@ export default function Hero() {
                   ariaLabel="Habla con nuestros asesores"
                 >
                   <span className="w-full h-full flex items-center justify-center">
-                    {CTA_BUTTON}
+                    {t("ctaButton.main")}
                   </span>
                 </SecondaryButton>
               </div>
@@ -213,13 +195,13 @@ export default function Hero() {
                 onClick={() => router.push(`/${locale}/contactUs?asesor=1`)}
                 ariaLabel="Habla con nuestros asesores"
               >
-                {CTA_BUTTON}
+                {t("ctaButton.main")}
               </SecondaryButton>
             </div>
           </div>
           {/* --- Texto informativo pequeño --- */}
           <p className="text-xs text-purple-700 dark:text-purple-300 mt-3 max-w-md animate-fadein-sm ">
-            {INFO_TEXT}
+            {t("infoText.main")}
           </p>
           {/* Animaciones */}
           <style jsx global>{`

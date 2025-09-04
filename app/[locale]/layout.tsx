@@ -2,19 +2,24 @@ import "./globals.css";
 import Footer from "../../components/footer";
 import { getMessages } from "next-intl/server";
 import IntlProvider from "@/components/IntlProvider";
+import GiveawayPopup from "@/components/popup";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { ThemeProvider } from "next-themes";
 import HeaderWrapper from "@/components/header/HeaderWrapper";
 import Script from "next/script";
+import { useTranslations } from "next-intl";
 
 export const metadata = {
   title: "Botopia - Transformación Digital con IA | Desarrollo Web y Apps",
-  description: "Empresa líder en transformación digital. Desarrollamos páginas web, aplicaciones móviles, chatbots con IA para WhatsApp, automatización de procesos y diseño UX/UI. Soluciones tecnológicas personalizadas para empresas.",
-  keywords: "desarrollo web, aplicaciones móviles, inteligencia artificial, chatbots WhatsApp, automatización procesos, diseño UX UI, transformación digital, desarrollo software, Botopia, tecnología empresarial",
+  description:
+    "Empresa líder en transformación digital. Desarrollamos páginas web, aplicaciones móviles, chatbots con IA para WhatsApp, automatización de procesos y diseño UX/UI. Soluciones tecnológicas personalizadas para empresas.",
+  keywords:
+    "desarrollo web, aplicaciones móviles, inteligencia artificial, chatbots WhatsApp, automatización procesos, diseño UX UI, transformación digital, desarrollo software, Botopia, tecnología empresarial",
   authors: [{ name: "Botopia Technology S.A.S." }],
   openGraph: {
     title: "Botopia - Transformación Digital con Inteligencia Artificial",
-    description: "Convertimos tus ideas en productos digitales excepcionales. Desarrollo web, apps móviles, IA, chatbots y automatización.",
+    description:
+      "Convertimos tus ideas en productos digitales excepcionales. Desarrollo web, apps móviles, IA, chatbots y automatización.",
     url: "https://botopia.tech",
     siteName: "Botopia",
     locale: "es_ES",

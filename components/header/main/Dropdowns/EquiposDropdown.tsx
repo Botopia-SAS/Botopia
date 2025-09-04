@@ -1,30 +1,32 @@
 import BaseDropdown from "./BaseDropdown";
+import { useTranslations } from "next-intl";
 
 export default function EquiposDropdown() {
+  const t = useTranslations("Dropdowns.EquiposDropdown");
   return (
     <BaseDropdown
-      mainTitle="Equipos de Ingeniería Especializados"
+      mainTitle={t("mainTitle")}
       mainItems={[
-        "Software a medida",
-        "Arquitectura en la nube",
-        "Integración de sistemas",
-        "Ciberseguridad",
-        "Automatización empresarial",
+        t("categories.0"),
+        t("categories.1"),
+        t("categories.2"),
+        t("categories.3"),
+        t("categories.4"),
       ]}
       secondaryColumns={[
         {
-          title: "Servicios Clave",
+          title: t("servicesTitle"),
           items: [
-            "Equipos dedicados por proyecto",
-            "Staff augmentation",
-            "Consultoría técnica especializada",
-            "Mentoría para equipos internos",
-            "Auditorías de código y arquitectura",
+            t("services.0"),
+            t("services.1"),
+            t("services.2"),
+            t("services.3"),
+            t("services.4"),
           ],
         },
       ]}
       imageSrc="/Header6.png"
-      imageAlt="Equipos de Ingeniería"
+      imageAlt={t("imageAlt")}
     />
   );
 }

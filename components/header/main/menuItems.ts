@@ -1,11 +1,11 @@
 // components/header/main/menuItems.ts
 
 export const menuItems = [
-  { name: "Páginas web", href: "#" },
-  { name: "Aplicaciones móviles", href: "#" },
-  // { name: "E-commerce", href: "#" },
-  { name: "Inteligencia artificial", href: "#" },
-  { name: "Automatización", href: "#" },
-  { name: "Marketing", href: "#" },
-  { name: "Equipos de ingeniería", href: "#" },
+  { key: "Páginas web", href: "#" },
+  { key: "Aplicaciones móviles", href: "#" },
+  // { key: "E-commerce", href: "#" },
+  { key: "Inteligencia artificial", href: "#" },
+  { key: "Automatización", href: "#" },
+  { key: "Marketing", href: "#" },
+  { key: "Equipos de ingeniería", href: "#" },
 ];
