@@ -474,25 +474,5 @@
         "description": "Systems tailored to your company's needs."
       }
     ]
-  },
-  "BannerSection": {
-    "visionpro": {
-      "title": "Introducing our new development support",
-      "subtitle": "We build your app on ",
-      "highlight": "VisionOS",
-      "note": "Available only in the United States and Canada",
-      "image": "/images/visionpro.svg"
-    },
-    "whatsapp": {
-      "title": "Try our customer engagement tool",
-      "subtitle": "No APIs, no complicated processes.\nJust your WhatsApp and a QR",
-      "highlight": "WhatsApp",
-      "image": "/images/whatsapp.svg"
-    },
-    "engineering": {
-      "title": "Sometimes it's easier to hire an engineering team than a project",
-      "subtitle": "Often the best solution is to have a team 100% dedicated to your company",
-      "image": "/images/engineering.svg"
-    }
   }
 }

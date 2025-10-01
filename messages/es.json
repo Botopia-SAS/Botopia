@@ -481,24 +481,5 @@
         "description": "Sistemas adaptados a los requerimientos de tu empresa."
       }
     ]
-  },
-  "BannerSection": {
-    "visionpro": {
-      "title": "Presentamos nuestro nuevo soporte de desarrollo",
-      "subtitle": "Creamos tu aplicación en ",
-      "highlight": "VisionOS",
-      "note": "Disponible únicamente en Estados Unidos y Canadá",
-      "image": "/images/visionpro.svg"
-    },
-    "whatsapp": {
-      "title": "Prueba nuestra herramienta de customer engagement",
-      "subtitle": "Sin APIs, sin procesos complicados.\nSolo tu WhatsApp y un QR",
-      "image": "/images/whatsapp.svg"
-    },
-    "engineering": {
-      "title": "A veces es más fácil contratar un equipo de ingeniería que contratar un proyecto",
-      "subtitle": "Muchas veces la mejor solución que puedes encontrar es tener un equipo 100% dedicado a tu empresa",
-      "image": "/images/engineering.svg"
-    }
   }
 }
