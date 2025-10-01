@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFile } from "fs/promises";
-import { join } from "path";
+import { v2 as cloudinary } from "cloudinary";
+
+// Configurar Cloudinary
+cloudinary.config({
+  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 export async function GET(
   request: NextRequest,
@@ -9,19 +15,24 @@ export async function GET(
   try {
     const { id } = await params;
 
-    // Path where sales team uploads PDFs: public/quotes/
-    const filePath = join(process.cwd(), "public", "quotes", `${id}.pdf`);
+    // Obtener la URL del PDF desde Cloudinary
+    const publicId = `quotes/${id}`;
+    
+    try {
+      // Verificar que el recurso existe en Cloudinary
+      const resource = await cloudinary.api.resource(publicId, {
+        resource_type: "raw",
+      });
 
-    const fileBuffer = await readFile(filePath);
-
-    // Convert Buffer to Uint8Array for Next.js 15 compatibility
-    return new NextResponse(new Uint8Array(fileBuffer), {
-      headers: {
-        "Content-Type": "application/pdf",
-        "Content-Disposition": `inline; filename="cotizacion-${id}.pdf"`,
-        "Cache-Control": "private, max-age=3600",
-      },
-    });
+      // Redirigir directamente a la URL de Cloudinary
+      return NextResponse.redirect(resource.secure_url);
+    } catch (cloudinaryError) {
+      console.error("PDF not found in Cloudinary:", cloudinaryError);
+      return NextResponse.json(
+        { error: "PDF not found" },
+        { status: 404 }
+      );
+    }
   } catch (error) {
     console.error("PDF fetch error:", error);
     return NextResponse.json({ error: "PDF not found" }, { status: 404 });

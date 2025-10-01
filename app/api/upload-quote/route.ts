@@ -1,8 +1,13 @@
-// API para subir PDFs
+// API para subir PDFs usando Cloudinary
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, mkdir } from "fs/promises";
-import { join } from "path";
-import { existsSync } from "fs";
+import { v2 as cloudinary } from "cloudinary";
+
+// Configurar Cloudinary
+cloudinary.config({
+  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 export async function POST(request: NextRequest) {
   try {
@@ -41,26 +46,27 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Crear directorio si no existe
-    const quotesDir = join(process.cwd(), "public", "quotes");
-    if (!existsSync(quotesDir)) {
-      await mkdir(quotesDir, { recursive: true });
-    }
-
-    // Convertir archivo a buffer
+    // Convertir archivo a buffer y luego a base64
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
+    const base64 = buffer.toString("base64");
+    const dataURI = `data:${file.type};base64,${base64}`;
 
-    // Guardar archivo
-    const filePath = join(quotesDir, `${quoteId}.pdf`);
-    await writeFile(filePath, buffer);
+    // Subir a Cloudinary
+    const uploadResult = await cloudinary.uploader.upload(dataURI, {
+      resource_type: "raw", // Para PDFs usamos "raw"
+      public_id: quoteId,
+      folder: "quotes", // Carpeta en Cloudinary
+      overwrite: true,
+    });
 
     // Generar URL del cliente
     const clientUrl = `${
       process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
     }/es/cotizacion/${quoteId}`;
 
-    console.log(`✅ PDF subido exitosamente: ${quoteId}.pdf`);
+    console.log(`✅ PDF subido exitosamente a Cloudinary: ${quoteId}.pdf`);
+    console.log(`📎 Cloudinary URL: ${uploadResult.secure_url}`);
 
     return NextResponse.json({
       success: true,
@@ -69,9 +75,10 @@ export async function POST(request: NextRequest) {
       fileName: `${quoteId}.pdf`,
       fileSize: file.size,
       clientUrl,
+      cloudinaryUrl: uploadResult.secure_url, // URL directa del PDF en Cloudinary
     });
   } catch (error) {
-    console.error("Error subiendo PDF:", error);
+    console.error("Error subiendo PDF a Cloudinary:", error);
     return NextResponse.json(
       { error: "Error al subir el archivo" },
       { status: 500 }
@@ -79,43 +86,40 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// API para listar PDFs existentes
+// API para listar PDFs existentes desde Cloudinary
 export async function GET() {
   try {
-    const { readdir, stat } = require("fs/promises");
-    const quotesDir = join(process.cwd(), "public", "quotes");
+    // Listar recursos en la carpeta "quotes" de Cloudinary
+    const result = await cloudinary.api.resources({
+      type: "upload",
+      resource_type: "raw", // PDFs están como "raw"
+      prefix: "quotes/", // Carpeta en Cloudinary
+      max_results: 500,
+    });
 
-    if (!existsSync(quotesDir)) {
-      return NextResponse.json({ quotes: [] });
-    }
+    const quotes = result.resources.map((resource: any) => {
+      const quoteId = resource.public_id.replace("quotes/", "");
 
-    const files = await readdir(quotesDir);
-    const pdfFiles = files.filter((file: string) => file.endsWith(".pdf"));
-
-    const quotes = await Promise.all(
-      pdfFiles.map(async (file: string) => {
-        const filePath = join(quotesDir, file);
-        const stats = await stat(filePath);
-        const quoteId = file.replace(".pdf", "");
-
-        return {
-          quoteId,
-          fileName: file,
-          size: stats.size,
-          uploadDate: stats.mtime,
-          clientUrl: `${
-            process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-          }/es/cotizacion/${quoteId}`,
-        };
-      })
-    );
+      return {
+        quoteId,
+        fileName: `${quoteId}.pdf`,
+        size: resource.bytes,
+        uploadDate: new Date(resource.created_at),
+        clientUrl: `${
+          process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+        }/es/cotizacion/${quoteId}`,
+        cloudinaryUrl: resource.secure_url,
+      };
+    });
 
     // Ordenar por fecha de subida (más reciente primero)
-    quotes.sort((a, b) => b.uploadDate.getTime() - a.uploadDate.getTime());
+    quotes.sort(
+      (a: any, b: any) => b.uploadDate.getTime() - a.uploadDate.getTime()
+    );
 
     return NextResponse.json({ quotes });
   } catch (error) {
-    console.error("Error listando PDFs:", error);
+    console.error("Error listando PDFs desde Cloudinary:", error);
     return NextResponse.json(
       { error: "Error al listar archivos" },
       { status: 500 }
@@ -123,7 +127,7 @@ export async function GET() {
   }
 }
 
-// API para eliminar PDF
+// API para eliminar PDF de Cloudinary
 export async function DELETE(request: NextRequest) {
   try {
     const { quoteId } = await request.json();
@@ -135,26 +139,19 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    const { unlink } = require("fs/promises");
-    const filePath = join(process.cwd(), "public", "quotes", `${quoteId}.pdf`);
+    // Eliminar de Cloudinary
+    await cloudinary.uploader.destroy(`quotes/${quoteId}`, {
+      resource_type: "raw",
+    });
 
-    if (!existsSync(filePath)) {
-      return NextResponse.json(
-        { error: "El archivo no existe" },
-        { status: 404 }
-      );
-    }
-
-    await unlink(filePath);
-
-    console.log(`🗑️ PDF eliminado: ${quoteId}.pdf`);
+    console.log(`🗑️ PDF eliminado de Cloudinary: ${quoteId}.pdf`);
 
     return NextResponse.json({
       success: true,
       message: "PDF eliminado exitosamente",
     });
   } catch (error) {
-    console.error("Error eliminando PDF:", error);
+    console.error("Error eliminando PDF de Cloudinary:", error);
     return NextResponse.json(
       { error: "Error al eliminar el archivo" },
       { status: 500 }
