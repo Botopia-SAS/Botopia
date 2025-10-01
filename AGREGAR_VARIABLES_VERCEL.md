@@ -17,6 +17,7 @@ Para que funcione la carga de PDFs, necesitas agregar estas 2 variables en Verce
 ## 📋 PASO 2: Agregar Variables
 
 ### Variable 1: CLOUDINARY_API_KEY
+
 ```
 Name: CLOUDINARY_API_KEY
 Value: 789867751362878
@@ -24,6 +25,7 @@ Environment: Production ✅
 ```
 
 ### Variable 2: CLOUDINARY_API_SECRET
+
 ```
 Name: CLOUDINARY_API_SECRET
 Value: gyQDNMssYedJYW-EkvU_6DIvWOU
@@ -44,6 +46,7 @@ Environment: Production ✅
 ## ✅ DESPUÉS DEL REDEPLOY
 
 Prueba subir un PDF en:
+
 ```
 https://www.botopia.tech/es/admin/cotizaciones
 ```
@@ -65,11 +68,13 @@ https://www.botopia.tech/es/admin/cotizaciones
 ## 📊 Cómo funciona ahora:
 
 ### Antes (Filesystem - ❌ No funciona en Vercel):
+
 ```
 Usuario → Upload → Vercel Filesystem → Error 500
 ```
 
 ### Ahora (Cloudinary - ✅ Funciona):
+
 ```
 Usuario → Upload → Cloudinary → URL generada → Cliente ve PDF
 ```
@@ -79,11 +84,13 @@ Usuario → Upload → Cloudinary → URL generada → Cliente ve PDF
 ## 🌐 URLs de Cloudinary
 
 Los PDFs ahora se almacenan en:
+
 ```
 https://res.cloudinary.com/dqay3uml6/raw/upload/v1234567890/quotes/quote-XXXXX.pdf
 ```
 
 **Ventajas:**
+
 - ✅ Persistente (no se pierden los PDFs)
 - ✅ CDN global (carga rápida en todo el mundo)
 - ✅ Compatible con Vercel Serverless

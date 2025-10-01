@@ -24,11 +24,24 @@ export async function GET(
         resource_type: "raw",
       });
 
-      // Devolver la URL en formato JSON para que el frontend la use
-      return NextResponse.json({
-        success: true,
-        url: resource.secure_url,
-        quoteId: id,
+      // Descargar el PDF desde Cloudinary
+      const response = await fetch(resource.secure_url);
+      
+      if (!response.ok) {
+        throw new Error("Failed to fetch PDF from Cloudinary");
+      }
+
+      const pdfBuffer = await response.arrayBuffer();
+
+      // Servir el PDF con los headers correctos para que se muestre en el navegador
+      return new NextResponse(pdfBuffer, {
+        status: 200,
+        headers: {
+          "Content-Type": "application/pdf",
+          "Content-Disposition": `inline; filename="cotizacion-${id}.pdf"`,
+          "Cache-Control": "public, max-age=31536000, immutable",
+          "Access-Control-Allow-Origin": "*",
+        },
       });
     } catch (cloudinaryError) {
       console.error("PDF not found in Cloudinary:", cloudinaryError);

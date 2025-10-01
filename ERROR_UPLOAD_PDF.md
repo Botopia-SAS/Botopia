@@ -34,6 +34,7 @@ npm install @vercel/blob
 ### 3️⃣ Agregar Variable de Entorno
 
 En Vercel:
+
 - **Settings** → **Environment Variables**
 - Agrega: `BLOB_READ_WRITE_TOKEN` = [tu token]
 
@@ -48,11 +49,13 @@ Cambiaré el código para usar Vercel Blob en lugar del filesystem.
 Ya tienes Cloudinary configurado. Podemos usar eso para los PDFs también.
 
 **Ventajas:**
+
 - Ya está configurado
 - No necesitas crear nada nuevo
 - Funciona inmediatamente
 
 **¿Prefieres?**
+
 1. **Vercel Blob** (oficial de Vercel, más integrado)
 2. **Cloudinary** (ya configurado, más rápido)
 
