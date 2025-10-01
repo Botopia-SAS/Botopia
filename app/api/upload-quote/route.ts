@@ -60,13 +60,18 @@ export async function POST(request: NextRequest) {
       overwrite: true,
     });
 
-    // Generar URL del cliente
-    const clientUrl = `${
-      process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-    }/es/cotizacion/${quoteId}`;
+    // Generar URL del cliente - usar variable del servidor o headers
+    const baseUrl =
+      process.env.BASE_URL ||
+      process.env.NEXT_PUBLIC_BASE_URL ||
+      process.env.VERCEL_URL ||
+      "https://www.botopia.tech";
+
+    const clientUrl = `${baseUrl}/es/cotizacion/${quoteId}`;
 
     console.log(`✅ PDF subido exitosamente a Cloudinary: ${quoteId}.pdf`);
     console.log(`📎 Cloudinary URL: ${uploadResult.secure_url}`);
+    console.log(`🔗 Client URL: ${clientUrl}`);
 
     return NextResponse.json({
       success: true,
@@ -89,6 +94,12 @@ export async function POST(request: NextRequest) {
 // API para listar PDFs existentes desde Cloudinary
 export async function GET() {
   try {
+    const baseUrl =
+      process.env.BASE_URL ||
+      process.env.NEXT_PUBLIC_BASE_URL ||
+      process.env.VERCEL_URL ||
+      "https://www.botopia.tech";
+
     // Listar recursos en la carpeta "quotes" de Cloudinary
     const result = await cloudinary.api.resources({
       type: "upload",
@@ -105,9 +116,7 @@ export async function GET() {
         fileName: `${quoteId}.pdf`,
         size: resource.bytes,
         uploadDate: new Date(resource.created_at),
-        clientUrl: `${
-          process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-        }/es/cotizacion/${quoteId}`,
+        clientUrl: `${baseUrl}/es/cotizacion/${quoteId}`,
         cloudinaryUrl: resource.secure_url,
       };
     });

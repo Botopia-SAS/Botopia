@@ -82,10 +82,7 @@ export default function PDFViewer({ quoteId, userData }: PDFViewerProps) {
           className="mt-4 text-center text-gray-600 text-sm"
         >
           <p>
-            Esta cotización fue enviada a <strong>{userData.email}</strong>
-          </p>
-          <p className="mt-1">
-            ¿Tienes preguntas? Contáctanos al número registrado
+            ¿Tienes preguntas? Contáctanos para más información
           </p>
         </motion.div>
       </motion.div>
