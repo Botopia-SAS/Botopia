@@ -1,7 +1,7 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Download, ArrowLeft } from "lucide-react";
+import { Download, ArrowLeft, Loader2 } from "lucide-react";
 import { trackPDFView } from "@/lib/tracking";
 
 interface PDFViewerProps {
@@ -10,19 +10,42 @@ interface PDFViewerProps {
 }
 
 export default function PDFViewer({ quoteId, userData }: PDFViewerProps) {
-  const pdfUrl = `/api/pdf/${quoteId}`;
+  const [pdfUrl, setPdfUrl] = useState<string>("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     trackPDFView(quoteId);
+    
+    // Obtener la URL del PDF desde Cloudinary
+    fetch(`/api/pdf/${quoteId}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.url) {
+          setPdfUrl(data.url);
+          setLoading(false);
+        } else {
+          setError("PDF no encontrado");
+          setLoading(false);
+        }
+      })
+      .catch(err => {
+        console.error("Error cargando PDF:", err);
+        setError("Error al cargar el PDF");
+        setLoading(false);
+      });
   }, [quoteId]);
 
   const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = pdfUrl;
-    link.download = `cotizacion-${quoteId}.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (pdfUrl) {
+      const link = document.createElement("a");
+      link.href = pdfUrl;
+      link.download = `cotizacion-${quoteId}.pdf`;
+      link.target = "_blank";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (
@@ -49,13 +72,15 @@ export default function PDFViewer({ quoteId, userData }: PDFViewerProps) {
                 <p className="text-sm text-gray-600">ID: {quoteId}</p>
               </div>
             </div>
-            <button
-              onClick={handleDownload}
-              className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              <Download className="w-5 h-5" />
-              Descargar PDF
-            </button>
+            {pdfUrl && (
+              <button
+                onClick={handleDownload}
+                className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                <Download className="w-5 h-5" />
+                Descargar PDF
+              </button>
+            )}
           </div>
         </div>
 
@@ -66,12 +91,32 @@ export default function PDFViewer({ quoteId, userData }: PDFViewerProps) {
           className="bg-white rounded-lg shadow-lg overflow-hidden"
           style={{ height: "calc(100vh - 200px)" }}
         >
-          <iframe
-            src={pdfUrl}
-            className="w-full h-full"
-            title="Cotización PDF"
-            style={{ border: "none" }}
-          />
+          {loading && (
+            <div className="flex items-center justify-center h-full">
+              <div className="text-center">
+                <Loader2 className="w-12 h-12 animate-spin text-blue-600 mx-auto mb-4" />
+                <p className="text-gray-600">Cargando tu cotización...</p>
+              </div>
+            </div>
+          )}
+          
+          {error && (
+            <div className="flex items-center justify-center h-full">
+              <div className="text-center">
+                <p className="text-red-600 text-lg mb-2">❌ {error}</p>
+                <p className="text-gray-600">Por favor, contacta con soporte</p>
+              </div>
+            </div>
+          )}
+          
+          {pdfUrl && !loading && !error && (
+            <iframe
+              src={pdfUrl}
+              className="w-full h-full"
+              title="Cotización PDF"
+              style={{ border: "none" }}
+            />
+          )}
         </motion.div>
 
         <motion.div

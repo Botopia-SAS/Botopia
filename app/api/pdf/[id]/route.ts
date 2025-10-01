@@ -24,17 +24,24 @@ export async function GET(
         resource_type: "raw",
       });
 
-      // Redirigir directamente a la URL de Cloudinary
-      return NextResponse.redirect(resource.secure_url);
+      // Devolver la URL en formato JSON para que el frontend la use
+      return NextResponse.json({
+        success: true,
+        url: resource.secure_url,
+        quoteId: id,
+      });
     } catch (cloudinaryError) {
       console.error("PDF not found in Cloudinary:", cloudinaryError);
       return NextResponse.json(
-        { error: "PDF not found" },
+        { success: false, error: "PDF not found" },
         { status: 404 }
       );
     }
   } catch (error) {
     console.error("PDF fetch error:", error);
-    return NextResponse.json({ error: "PDF not found" }, { status: 404 });
+    return NextResponse.json(
+      { success: false, error: "PDF not found" },
+      { status: 404 }
+    );
   }
 }
