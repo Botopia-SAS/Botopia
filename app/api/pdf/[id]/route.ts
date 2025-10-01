@@ -17,7 +17,7 @@ export async function GET(
 
     // Obtener la URL del PDF desde Cloudinary
     const publicId = `quotes/${id}`;
-    
+
     try {
       // Verificar que el recurso existe en Cloudinary
       const resource = await cloudinary.api.resource(publicId, {
@@ -26,7 +26,7 @@ export async function GET(
 
       // Descargar el PDF desde Cloudinary
       const response = await fetch(resource.secure_url);
-      
+
       if (!response.ok) {
         throw new Error("Failed to fetch PDF from Cloudinary");
       }

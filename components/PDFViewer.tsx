@@ -81,9 +81,7 @@ export default function PDFViewer({ quoteId, userData }: PDFViewerProps) {
           transition={{ delay: 0.4 }}
           className="mt-4 text-center text-gray-600 text-sm"
         >
-          <p>
-            ¿Tienes preguntas? Contáctanos para más información
-          </p>
+          <p>¿Tienes preguntas? Contáctanos para más información</p>
         </motion.div>
       </motion.div>
     </div>
