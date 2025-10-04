@@ -98,7 +98,7 @@ export default function QuoteForm({ quoteId, onSubmit }: QuoteFormProps) {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 pt-24">
+    <div className="flex items-center justify-center min-h-screen p-4">
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

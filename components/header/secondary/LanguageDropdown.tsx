@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 export default function LanguageDropdown({
@@ -9,7 +8,6 @@ export default function LanguageDropdown({
   onChange: (code: string) => void;
 }) {
   const t = useTranslations("Header.languageSwitcher.languages");
-  const [open, setOpen] = useState(false);
 
   const LANGUAGES = [
     { code: "es", name: t("es"), label: "ES" },
@@ -22,10 +20,9 @@ export default function LanguageDropdown({
     LANGUAGES[0];
 
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex items-center group">
       <button
         className="flex items-center space-x-2 focus:outline-none px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-        onClick={() => setOpen((o) => !o)}
         aria-label={t("label")}
         tabIndex={0}
       >
@@ -33,9 +30,7 @@ export default function LanguageDropdown({
           {selected.label}
         </span>
         <svg
-          className={`w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform ${
-            open ? "rotate-180" : ""
-          }`}
+          className="w-4 h-4 text-gray-500 dark:text-gray-400 transition-transform group-hover:rotate-180"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -48,32 +43,29 @@ export default function LanguageDropdown({
           />
         </svg>
       </button>
-      {open && (
-        <div
-          className="absolute left-0 bg-white dark:bg-black shadow-lg rounded-lg z-50 min-w-[100px] border border-gray-200 dark:border-gray-700"
-          style={{ marginTop: "80px" }}
-        >
-          {LANGUAGES.map(
-            (lang: { code: string; name: string; label: string }) => (
-              <button
-                key={lang.code}
-                className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                onClick={() => {
-                  setOpen(false);
-                  onChange(lang.code);
-                }}
-              >
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300 mr-3">
-                  {lang.label}
-                </span>
-                <span className="text-xs text-gray-500 dark:text-gray-400">
-                  {lang.name}
-                </span>
-              </button>
-            )
-          )}
-        </div>
-      )}
+      <div
+        className="absolute left-0 bg-white dark:bg-black shadow-lg rounded-lg z-50 min-w-[100px] border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+        style={{ marginTop: "80px" }}
+      >
+        {LANGUAGES.map(
+          (lang: { code: string; name: string; label: string }) => (
+            <button
+              key={lang.code}
+              className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors first:rounded-t-lg last:rounded-b-lg"
+              onClick={() => {
+                onChange(lang.code);
+              }}
+            >
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300 mr-3">
+                {lang.label}
+              </span>
+              <span className="text-xs text-gray-500 dark:text-gray-400">
+                {lang.name}
+              </span>
+            </button>
+          )
+        )}
+      </div>
     </div>
   );
 }

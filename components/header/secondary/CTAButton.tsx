@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 import { MessageCircle } from "lucide-react";
 
 const LANGUAGES = [
-  { code: "es", name: "Español", flag: "/icons/es_flag.png" },
-  { code: "en", name: "English", flag: "/icons/us_flag.png" },
-  { code: "pt", name: "Português", flag: "/icons/br_flag.png" },
+  { code: "es", name: "Español", label: "ES" },
+  { code: "en", name: "English", label: "EN" },
+  { code: "pt", name: "Português", label: "PT" },
 ];
 
 const CTAButton = () => {
@@ -22,6 +22,9 @@ const CTAButton = () => {
     setShowLangDropdown(false);
   };
 
+  const selectedLanguage =
+    LANGUAGES.find((l) => l.code === locale) || LANGUAGES[0];
+
   return (
     <div className="flex items-center gap-2 relative">
       {/* Language dropdown trigger - solo en mobile */}
@@ -30,33 +33,23 @@ const CTAButton = () => {
           className="flex items-center px-2 py-1 rounded hover:bg-purple-100 dark:hover:bg-purple-900"
           onClick={() => setShowLangDropdown((v) => !v)}
           aria-label={t("Header.languageSwitcher.languages.label")}
-          style={{ minWidth: 36 }}
         >
-          <img
-            src={
-              LANGUAGES.find((l) => l.code === locale)?.flag ||
-              "/icons/es_flag.png"
-            }
-            alt={locale}
-            className="w-6 h-6 rounded-full"
-          />
+          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+            {selectedLanguage.label}
+          </span>
         </button>
         {showLangDropdown && (
-          <div className="absolute left-0 top-10 bg-black text-white rounded shadow-lg z-50 w-40">
+          <div className="absolute left-0 top-10 bg-black text-white rounded shadow-lg z-50 w-32">
             {LANGUAGES.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => handleChangeLanguage(lang.code)}
-                className={`flex items-center w-full px-3 py-2 hover:bg-purple-700 ${
+                className={`flex items-center justify-between w-full px-3 py-2 hover:bg-purple-700 ${
                   locale === lang.code ? "font-bold" : ""
                 }`}
               >
-                <img
-                  src={lang.flag}
-                  alt={lang.name}
-                  className="w-5 h-5 rounded-full mr-2"
-                />
-                {lang.name}
+                <span className="text-sm font-medium">{lang.label}</span>
+                <span className="text-xs text-gray-400">{lang.name}</span>
               </button>
             ))}
           </div>
