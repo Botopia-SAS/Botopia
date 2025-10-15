@@ -3,12 +3,24 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Download, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { trackPDFView } from "@/lib/tracking";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
+import dynamic from "next/dynamic";
 
-// Configurar el worker de PDF.js
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+// Importar react-pdf solo del lado del cliente para evitar errores de SSR
+const Document = dynamic(
+  () => import("react-pdf").then((mod) => mod.Document),
+  { ssr: false }
+);
+const Page = dynamic(
+  () => import("react-pdf").then((mod) => mod.Page),
+  { ssr: false }
+);
+
+// Configurar el worker de PDF.js después de la carga
+if (typeof window !== "undefined") {
+  import("react-pdf").then((pdfjs) => {
+    pdfjs.pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.pdfjs.version}/build/pdf.worker.min.mjs`;
+  });
+}
 
 interface PDFViewerProps {
   quoteId: string;

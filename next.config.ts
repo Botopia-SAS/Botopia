@@ -6,6 +6,16 @@ const withNextIntl = createNextIntlPlugin();
 
 // Configurar Webpack para SVGs
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'flagcdn.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/, // Identifica los archivos SVG
