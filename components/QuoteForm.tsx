@@ -176,13 +176,13 @@ export default function QuoteForm({ quoteId, onSubmit }: QuoteFormProps) {
               <Phone className="w-4 h-4 mr-2 text-gray-700" />
               Celular
             </label>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               {/* Dropdown personalizado */}
               <div className="relative" ref={dropdownRef}>
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="flex items-center gap-2 px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white hover:bg-gray-50 transition-colors"
+                  className="w-full sm:w-auto flex items-center gap-2 px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white hover:bg-gray-50 transition-colors"
                   style={{ minWidth: "130px" }}
                 >
                   <div className="flex items-center gap-2">
@@ -217,7 +217,7 @@ export default function QuoteForm({ quoteId, onSubmit }: QuoteFormProps) {
 
                 {/* Menú desplegable */}
                 {isDropdownOpen && (
-                  <div className="absolute z-50 mt-2 w-64 bg-white border border-gray-300 rounded-lg shadow-xl max-h-72 overflow-y-auto">
+                  <div className="absolute z-50 mt-2 w-full sm:w-64 left-0 bg-white border border-gray-300 rounded-lg shadow-xl max-h-72 overflow-y-auto">
                     {countryCodes.map((country) => (
                       <button
                         key={country.code}

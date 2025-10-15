@@ -22,6 +22,20 @@ if (typeof window !== "undefined") {
   });
 }
 
+// Suprimir warnings de consola de react-pdf
+if (typeof window !== "undefined") {
+  const originalWarn = console.warn;
+  console.warn = (...args) => {
+    if (
+      args[0]?.includes?.("TextLayer") ||
+      args[0]?.includes?.("AnnotationLayer")
+    ) {
+      return;
+    }
+    originalWarn(...args);
+  };
+}
+
 interface PDFViewerProps {
   quoteId: string;
   userData: { email: string; phone: string };
@@ -95,28 +109,54 @@ export default function PDFViewer({ quoteId, userData }: PDFViewerProps) {
         className="max-w-6xl mx-auto"
       >
         <div className="bg-white rounded-lg shadow-lg p-3 md:p-6 mb-2 md:mb-4">
-          <div className="flex items-center justify-between flex-wrap gap-2 md:gap-4">
-            <div className="flex items-center gap-2 md:gap-4">
-              <button
-                onClick={() => window.history.back()}
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                <span className="hidden sm:inline">Volver</span>
-              </button>
-              <div>
-                <h1 className="text-lg md:text-2xl font-bold text-gray-800">
-                  Tu Cotización
-                </h1>
+          <div className="flex items-center justify-between gap-2">
+            <button
+              onClick={() => window.history.back()}
+              className="flex items-center gap-1 text-gray-600 hover:text-gray-900 transition-colors p-2"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              <span className="hidden sm:inline text-sm">Volver</span>
+            </button>
+
+            {isMobile && !loading && totalPages > 0 ? (
+              // Controles de navegación en el header para móvil
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={prevPage}
+                  disabled={currentPage === 1}
+                  className="p-2 bg-[#411E8A] text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#5a2db3] transition-colors"
+                  aria-label="Página anterior"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+
+                <div className="text-sm font-bold text-gray-900 min-w-[80px] text-center">
+                  {currentPage} / {totalPages}
+                </div>
+
+                <button
+                  onClick={nextPage}
+                  disabled={currentPage === totalPages}
+                  className="p-2 bg-[#411E8A] text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#5a2db3] transition-colors"
+                  aria-label="Página siguiente"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
-            </div>
+            ) : (
+              // Título para desktop
+              <h1 className="text-lg md:text-2xl font-bold text-gray-800">
+                Tu Cotización
+              </h1>
+            )}
+
             <button
               onClick={handleDownload}
-              className="flex items-center gap-2 bg-[#411E8A] text-white px-3 md:px-6 py-2 md:py-3 rounded-lg hover:bg-[#5a2db3] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              className="flex items-center gap-1 md:gap-2 bg-[#411E8A] text-white px-3 md:px-6 py-2 md:py-3 rounded-lg hover:bg-[#5a2db3] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
               style={{ boxShadow: "0 2px 12px 0 rgba(65,30,138,0.10)" }}
             >
               <Download className="w-4 h-4 md:w-5 md:h-5" />
-              <span className="text-xs md:text-base">Descargar PDF</span>
+              <span className="text-xs md:text-base hidden sm:inline">Descargar PDF</span>
             </button>
           </div>
         </div>
@@ -140,43 +180,15 @@ export default function PDFViewer({ quoteId, userData }: PDFViewerProps) {
               }
             >
               {!loading && (
-                <>
-                  {/* Renderizar la página actual */}
-                  <div className="relative w-full bg-white overflow-x-auto">
-                    <Page
-                      pageNumber={currentPage}
-                      width={pageWidth || undefined}
-                      renderTextLayer={true}
-                      renderAnnotationLayer={true}
-                      className="mx-auto"
-                    />
-                  </div>
-
-                  {/* Controles de navegación */}
-                  <div className="flex items-center justify-between p-4 bg-gray-50 border-t">
-                    <button
-                      onClick={prevPage}
-                      disabled={currentPage === 1}
-                      className="flex items-center gap-2 px-4 py-2 bg-[#411E8A] text-white rounded-lg shadow disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#5a2db3] transition-colors"
-                    >
-                      <ChevronLeft className="w-5 h-5 text-white" />
-                      <span className="text-sm text-white font-medium">Anterior</span>
-                    </button>
-
-                    <div className="text-sm font-bold text-gray-900">
-                      Página {currentPage} de {totalPages}
-                    </div>
-
-                    <button
-                      onClick={nextPage}
-                      disabled={currentPage === totalPages}
-                      className="flex items-center gap-2 px-4 py-2 bg-[#411E8A] text-white rounded-lg shadow disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#5a2db3] transition-colors"
-                    >
-                      <span className="text-sm text-white font-medium">Siguiente</span>
-                      <ChevronRight className="w-5 h-5 text-white" />
-                    </button>
-                  </div>
-                </>
+                <div className="relative w-full bg-white">
+                  <Page
+                    pageNumber={currentPage}
+                    width={pageWidth || undefined}
+                    renderTextLayer={false}
+                    renderAnnotationLayer={false}
+                    className="mx-auto"
+                  />
+                </div>
               )}
             </Document>
           </motion.div>
