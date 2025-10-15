@@ -1,8 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Download, ArrowLeft } from "lucide-react";
+import { Download, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { trackPDFView } from "@/lib/tracking";
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
+
+// Configurar el worker de PDF.js
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 interface PDFViewerProps {
   quoteId: string;
@@ -11,10 +17,41 @@ interface PDFViewerProps {
 
 export default function PDFViewer({ quoteId, userData }: PDFViewerProps) {
   const pdfUrl = `/api/pdf/${quoteId}`;
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [pageWidth, setPageWidth] = useState(0);
 
   useEffect(() => {
     trackPDFView(quoteId);
+
+    // Detectar si es móvil
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+
+      // Establecer el ancho de la página para móvil
+      if (mobile) {
+        setPageWidth(window.innerWidth - 32); // Restar padding
+      }
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, [quoteId]);
+
+  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
+    setTotalPages(numPages);
+    setLoading(false);
+  };
+
+  const onDocumentLoadError = (error: Error) => {
+    console.error("Error loading PDF:", error);
+    setLoading(false);
+  };
 
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -24,6 +61,18 @@ export default function PDFViewer({ quoteId, userData }: PDFViewerProps) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
   return (
@@ -60,27 +109,89 @@ export default function PDFViewer({ quoteId, userData }: PDFViewerProps) {
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="bg-white rounded-lg shadow-lg overflow-hidden"
-          style={{
-            height: "calc(100vh - 200px)",
-            minHeight: "400px"
-          }}
-        >
-          <iframe
-            src={pdfUrl}
-            className="w-full h-full"
-            title="Cotización PDF"
+        {isMobile ? (
+          // Vista móvil: usar react-pdf para renderizar páginas
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="bg-white rounded-lg shadow-lg overflow-hidden"
+          >
+            <Document
+              file={pdfUrl}
+              onLoadSuccess={onDocumentLoadSuccess}
+              onLoadError={onDocumentLoadError}
+              loading={
+                <div className="flex items-center justify-center py-20">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#411E8A]"></div>
+                </div>
+              }
+            >
+              {!loading && (
+                <>
+                  {/* Renderizar la página actual */}
+                  <div className="relative w-full bg-white overflow-x-auto">
+                    <Page
+                      pageNumber={currentPage}
+                      width={pageWidth || undefined}
+                      renderTextLayer={true}
+                      renderAnnotationLayer={true}
+                      className="mx-auto"
+                    />
+                  </div>
+
+                  {/* Controles de navegación */}
+                  <div className="flex items-center justify-between p-4 bg-gray-50 border-t">
+                    <button
+                      onClick={prevPage}
+                      disabled={currentPage === 1}
+                      className="flex items-center gap-2 px-4 py-2 bg-[#411E8A] text-white rounded-lg shadow disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#5a2db3] transition-colors"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-white" />
+                      <span className="text-sm text-white font-medium">Anterior</span>
+                    </button>
+
+                    <div className="text-sm font-bold text-gray-900">
+                      Página {currentPage} de {totalPages}
+                    </div>
+
+                    <button
+                      onClick={nextPage}
+                      disabled={currentPage === totalPages}
+                      className="flex items-center gap-2 px-4 py-2 bg-[#411E8A] text-white rounded-lg shadow disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#5a2db3] transition-colors"
+                    >
+                      <span className="text-sm text-white font-medium">Siguiente</span>
+                      <ChevronRight className="w-5 h-5 text-white" />
+                    </button>
+                  </div>
+                </>
+              )}
+            </Document>
+          </motion.div>
+        ) : (
+          // Vista desktop: mostrar iframe del PDF
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="bg-white rounded-lg shadow-lg overflow-hidden"
             style={{
-              border: "none",
-              width: "100%",
-              height: "100%"
+              height: "calc(100vh - 200px)",
+              minHeight: "400px"
             }}
-          />
-        </motion.div>
+          >
+            <iframe
+              src={pdfUrl}
+              className="w-full h-full"
+              title="Cotización PDF"
+              style={{
+                border: "none",
+                width: "100%",
+                height: "100%"
+              }}
+            />
+          </motion.div>
+        )}
 
         <motion.div
           initial={{ opacity: 0 }}
